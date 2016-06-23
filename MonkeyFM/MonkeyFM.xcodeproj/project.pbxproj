@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A57E607B1D1BE159007EF7F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
+		A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60801D1BE159007EF7F1 /* ViewController.m */; };
+		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
+		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
+		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */; };
+		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
+		D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.release.xcconfig"; sourceTree = "<group>"; };
+		5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonkeyFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A57E60801D1BE159007EF7F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A57E60831D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A57E60851D1BE159007EF7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
+		D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A57E60731D1BE159007EF7F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56115F0FD4C90EFAF5A1BDD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */,
+				2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A57E606D1D1BE159007EF7F1 = {
+			isa = PBXGroup;
+			children = (
+				A57E60781D1BE159007EF7F1 /* MonkeyFM */,
+				A57E60771D1BE159007EF7F1 /* Products */,
+				56115F0FD4C90EFAF5A1BDD0 /* Pods */,
+				DA675FF270CCF4B89ECD1891 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A57E60771D1BE159007EF7F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60761D1BE159007EF7F1 /* MonkeyFM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A57E60781D1BE159007EF7F1 /* MonkeyFM */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60901D1BE1E0007EF7F1 /* Classes */,
+				A57E607F1D1BE159007EF7F1 /* ViewController.h */,
+				A57E60801D1BE159007EF7F1 /* ViewController.m */,
+				A57E60791D1BE159007EF7F1 /* Supporting Files */,
+			);
+			path = MonkeyFM;
+			sourceTree = "<group>";
+		};
+		A57E60791D1BE159007EF7F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60821D1BE159007EF7F1 /* Main.storyboard */,
+				A57E60851D1BE159007EF7F1 /* Assets.xcassets */,
+				A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */,
+				A57E608A1D1BE159007EF7F1 /* Info.plist */,
+				A57E607A1D1BE159007EF7F1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A57E60901D1BE1E0007EF7F1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60911D1BE1E0007EF7F1 /* AppDelegate */,
+				A57E60941D1BE1E0007EF7F1 /* General */,
+				A57E60961D1BE1E0007EF7F1 /* Helpers */,
+				A57E60971D1BE1E0007EF7F1 /* Marco */,
+				A57E60981D1BE1E0007EF7F1 /* Resources */,
+				A57E60991D1BE1E0007EF7F1 /* Scenes */,
+				A57E60A81D1BE1E0007EF7F1 /* Vendors */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A57E60911D1BE1E0007EF7F1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */,
+				A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */,
+				D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */,
+				D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A57E60941D1BE1E0007EF7F1 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60951D1BE1E0007EF7F1 /* Categories */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		A57E60951D1BE1E0007EF7F1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A57E60961D1BE1E0007EF7F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A57E60971D1BE1E0007EF7F1 /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		A57E60981D1BE1E0007EF7F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A57E60991D1BE1E0007EF7F1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A57E609A1D1BE1E0007EF7F1 /* Bases（基础公共） */,
+				A57E609F1D1BE1E0007EF7F1 /* Discover（发现） */,
+				A57E60A41D1BE1E0007EF7F1 /* Mine（我的） */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A57E609A1D1BE1E0007EF7F1 /* Bases（基础公共） */ = {
+			isa = PBXGroup;
+			children = (
+				A57E609B1D1BE1E0007EF7F1 /* DisPlayList（展示列表） */,
+				A57E609C1D1BE1E0007EF7F1 /* PlayerDetail（播放详情） */,
+				A57E609D1D1BE1E0007EF7F1 /* PlayerList（播放列表） */,
+				A57E609E1D1BE1E0007EF7F1 /* RadioPlayerDetail（电台播放详情） */,
+			);
+			path = "Bases（基础公共）";
+			sourceTree = "<group>";
+		};
+		A57E609B1D1BE1E0007EF7F1 /* DisPlayList（展示列表） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "DisPlayList（展示列表）";
+			sourceTree = "<group>";
+		};
+		A57E609C1D1BE1E0007EF7F1 /* PlayerDetail（播放详情） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "PlayerDetail（播放详情）";
+			sourceTree = "<group>";
+		};
+		A57E609D1D1BE1E0007EF7F1 /* PlayerList（播放列表） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "PlayerList（播放列表）";
+			sourceTree = "<group>";
+		};
+		A57E609E1D1BE1E0007EF7F1 /* RadioPlayerDetail（电台播放详情） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "RadioPlayerDetail（电台播放详情）";
+			sourceTree = "<group>";
+		};
+		A57E609F1D1BE1E0007EF7F1 /* Discover（发现） */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60A01D1BE1E0007EF7F1 /* Anchor（主播） */,
+				A57E60A11D1BE1E0007EF7F1 /* Classification（分类） */,
+				A57E60A21D1BE1E0007EF7F1 /* Radio（电台） */,
+				A57E60A31D1BE1E0007EF7F1 /* Recommend（推荐） */,
+			);
+			path = "Discover（发现）";
+			sourceTree = "<group>";
+		};
+		A57E60A01D1BE1E0007EF7F1 /* Anchor（主播） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Anchor（主播）";
+			sourceTree = "<group>";
+		};
+		A57E60A11D1BE1E0007EF7F1 /* Classification（分类） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Classification（分类）";
+			sourceTree = "<group>";
+		};
+		A57E60A21D1BE1E0007EF7F1 /* Radio（电台） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Radio（电台）";
+			sourceTree = "<group>";
+		};
+		A57E60A31D1BE1E0007EF7F1 /* Recommend（推荐） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Recommend（推荐）";
+			sourceTree = "<group>";
+		};
+		A57E60A41D1BE1E0007EF7F1 /* Mine（我的） */ = {
+			isa = PBXGroup;
+			children = (
+				A57E60A51D1BE1E0007EF7F1 /* Login */,
+				A57E60A61D1BE1E0007EF7F1 /* Register */,
+				A57E60A71D1BE1E0007EF7F1 /* User */,
+			);
+			path = "Mine（我的）";
+			sourceTree = "<group>";
+		};
+		A57E60A51D1BE1E0007EF7F1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A57E60A61D1BE1E0007EF7F1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A57E60A71D1BE1E0007EF7F1 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A57E60A81D1BE1E0007EF7F1 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		DA675FF270CCF4B89ECD1891 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A57E60751D1BE159007EF7F1 /* MonkeyFM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
+			buildPhases = (
+				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
+				A57E60721D1BE159007EF7F1 /* Sources */,
+				A57E60731D1BE159007EF7F1 /* Frameworks */,
+				A57E60741D1BE159007EF7F1 /* Resources */,
+				CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */,
+				7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyFM;
+			productName = MonkeyFM;
+			productReference = A57E60761D1BE159007EF7F1 /* MonkeyFM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A57E606E1D1BE159007EF7F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = FGProject;
+				TargetAttributes = {
+					A57E60751D1BE159007EF7F1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A57E60711D1BE159007EF7F1 /* Build configuration list for PBXProject "MonkeyFM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A57E606D1D1BE159007EF7F1;
+			productRefGroup = A57E60771D1BE159007EF7F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A57E60751D1BE159007EF7F1 /* MonkeyFM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A57E60741D1BE159007EF7F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
+				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
+				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A57E60721D1BE159007EF7F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */,
+				A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */,
+				D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */,
+				A57E607B1D1BE159007EF7F1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A57E60821D1BE159007EF7F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A57E60831D1BE159007EF7F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A57E60881D1BE159007EF7F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A57E608B1D1BE159007EF7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A57E608C1D1BE159007EF7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A57E608E1D1BE159007EF7F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MonkeyFM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A57E608F1D1BE159007EF7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MonkeyFM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A57E60711D1BE159007EF7F1 /* Build configuration list for PBXProject "MonkeyFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57E608B1D1BE159007EF7F1 /* Debug */,
+				A57E608C1D1BE159007EF7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57E608E1D1BE159007EF7F1 /* Debug */,
+				A57E608F1D1BE159007EF7F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A57E606E1D1BE159007EF7F1 /* Project object */;
+}
