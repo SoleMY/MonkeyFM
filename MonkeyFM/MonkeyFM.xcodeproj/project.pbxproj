@@ -12,9 +12,9 @@
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
-		A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */; };
+		D69460A01D1BF4E700E72309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D69460881D1BF4E700E72309 /* AppDelegate.m */; };
+		D69460A11D1BF4E700E72309 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D694608A1D1BF4E700E72309 /* RootViewController.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
-		D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +28,11 @@
 		A57E60851D1BE159007EF7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
-		D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		D69460871D1BF4E700E72309 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D69460881D1BF4E700E72309 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D69460891D1BF4E700E72309 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D694608A1D1BF4E700E72309 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 		A57E60781D1BE159007EF7F1 /* MonkeyFM */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60901D1BE1E0007EF7F1 /* Classes */,
+				D69460851D1BF4E700E72309 /* Classes */,
 				A57E607F1D1BE159007EF7F1 /* ViewController.h */,
 				A57E60801D1BE159007EF7F1 /* ViewController.m */,
 				A57E60791D1BE159007EF7F1 /* Supporting Files */,
@@ -97,187 +97,187 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A57E60901D1BE1E0007EF7F1 /* Classes */ = {
+		D69460851D1BF4E700E72309 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60911D1BE1E0007EF7F1 /* AppDelegate */,
-				A57E60941D1BE1E0007EF7F1 /* General */,
-				A57E60961D1BE1E0007EF7F1 /* Helpers */,
-				A57E60971D1BE1E0007EF7F1 /* Marco */,
-				A57E60981D1BE1E0007EF7F1 /* Resources */,
-				A57E60991D1BE1E0007EF7F1 /* Scenes */,
-				A57E60A81D1BE1E0007EF7F1 /* Vendors */,
+				D69460861D1BF4E700E72309 /* AppDelegate */,
+				D694608B1D1BF4E700E72309 /* General */,
+				D694608D1D1BF4E700E72309 /* Helpers */,
+				D694608E1D1BF4E700E72309 /* Marco */,
+				D694608F1D1BF4E700E72309 /* Resources */,
+				D69460901D1BF4E700E72309 /* Scenes */,
+				D694609F1D1BF4E700E72309 /* Vendors */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		A57E60911D1BE1E0007EF7F1 /* AppDelegate */ = {
+		D69460861D1BF4E700E72309 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */,
-				A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */,
-				D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */,
-				D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */,
+				D69460871D1BF4E700E72309 /* AppDelegate.h */,
+				D69460881D1BF4E700E72309 /* AppDelegate.m */,
+				D69460891D1BF4E700E72309 /* RootViewController.h */,
+				D694608A1D1BF4E700E72309 /* RootViewController.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		A57E60941D1BE1E0007EF7F1 /* General */ = {
+		D694608B1D1BF4E700E72309 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60951D1BE1E0007EF7F1 /* Categories */,
+				D694608C1D1BF4E700E72309 /* Categories */,
 			);
 			path = General;
 			sourceTree = "<group>";
 		};
-		A57E60951D1BE1E0007EF7F1 /* Categories */ = {
+		D694608C1D1BF4E700E72309 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		A57E60961D1BE1E0007EF7F1 /* Helpers */ = {
+		D694608D1D1BF4E700E72309 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		A57E60971D1BE1E0007EF7F1 /* Marco */ = {
+		D694608E1D1BF4E700E72309 /* Marco */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Marco;
 			sourceTree = "<group>";
 		};
-		A57E60981D1BE1E0007EF7F1 /* Resources */ = {
+		D694608F1D1BF4E700E72309 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A57E60991D1BE1E0007EF7F1 /* Scenes */ = {
+		D69460901D1BF4E700E72309 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A57E609A1D1BE1E0007EF7F1 /* Bases（基础公共） */,
-				A57E609F1D1BE1E0007EF7F1 /* Discover（发现） */,
-				A57E60A41D1BE1E0007EF7F1 /* Mine（我的） */,
+				D69460911D1BF4E700E72309 /* Bases（基础公共） */,
+				D69460961D1BF4E700E72309 /* Discover（发现） */,
+				D694609B1D1BF4E700E72309 /* Mine（我的） */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		A57E609A1D1BE1E0007EF7F1 /* Bases（基础公共） */ = {
+		D69460911D1BF4E700E72309 /* Bases（基础公共） */ = {
 			isa = PBXGroup;
 			children = (
-				A57E609B1D1BE1E0007EF7F1 /* DisPlayList（展示列表） */,
-				A57E609C1D1BE1E0007EF7F1 /* PlayerDetail（播放详情） */,
-				A57E609D1D1BE1E0007EF7F1 /* PlayerList（播放列表） */,
-				A57E609E1D1BE1E0007EF7F1 /* RadioPlayerDetail（电台播放详情） */,
+				D69460921D1BF4E700E72309 /* DisPlayList（展示列表） */,
+				D69460931D1BF4E700E72309 /* PlayerDetail（播放详情） */,
+				D69460941D1BF4E700E72309 /* PlayerList（播放列表） */,
+				D69460951D1BF4E700E72309 /* RadioPlayerDetail（电台播放详情） */,
 			);
 			path = "Bases（基础公共）";
 			sourceTree = "<group>";
 		};
-		A57E609B1D1BE1E0007EF7F1 /* DisPlayList（展示列表） */ = {
+		D69460921D1BF4E700E72309 /* DisPlayList（展示列表） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "DisPlayList（展示列表）";
 			sourceTree = "<group>";
 		};
-		A57E609C1D1BE1E0007EF7F1 /* PlayerDetail（播放详情） */ = {
+		D69460931D1BF4E700E72309 /* PlayerDetail（播放详情） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "PlayerDetail（播放详情）";
 			sourceTree = "<group>";
 		};
-		A57E609D1D1BE1E0007EF7F1 /* PlayerList（播放列表） */ = {
+		D69460941D1BF4E700E72309 /* PlayerList（播放列表） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "PlayerList（播放列表）";
 			sourceTree = "<group>";
 		};
-		A57E609E1D1BE1E0007EF7F1 /* RadioPlayerDetail（电台播放详情） */ = {
+		D69460951D1BF4E700E72309 /* RadioPlayerDetail（电台播放详情） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "RadioPlayerDetail（电台播放详情）";
 			sourceTree = "<group>";
 		};
-		A57E609F1D1BE1E0007EF7F1 /* Discover（发现） */ = {
+		D69460961D1BF4E700E72309 /* Discover（发现） */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60A01D1BE1E0007EF7F1 /* Anchor（主播） */,
-				A57E60A11D1BE1E0007EF7F1 /* Classification（分类） */,
-				A57E60A21D1BE1E0007EF7F1 /* Radio（电台） */,
-				A57E60A31D1BE1E0007EF7F1 /* Recommend（推荐） */,
+				D69460971D1BF4E700E72309 /* Anchor（主播） */,
+				D69460981D1BF4E700E72309 /* Classification（分类） */,
+				D69460991D1BF4E700E72309 /* Radio（电台） */,
+				D694609A1D1BF4E700E72309 /* Recommend（推荐） */,
 			);
 			path = "Discover（发现）";
 			sourceTree = "<group>";
 		};
-		A57E60A01D1BE1E0007EF7F1 /* Anchor（主播） */ = {
+		D69460971D1BF4E700E72309 /* Anchor（主播） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Anchor（主播）";
 			sourceTree = "<group>";
 		};
-		A57E60A11D1BE1E0007EF7F1 /* Classification（分类） */ = {
+		D69460981D1BF4E700E72309 /* Classification（分类） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Classification（分类）";
 			sourceTree = "<group>";
 		};
-		A57E60A21D1BE1E0007EF7F1 /* Radio（电台） */ = {
+		D69460991D1BF4E700E72309 /* Radio（电台） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Radio（电台）";
 			sourceTree = "<group>";
 		};
-		A57E60A31D1BE1E0007EF7F1 /* Recommend（推荐） */ = {
+		D694609A1D1BF4E700E72309 /* Recommend（推荐） */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Recommend（推荐）";
 			sourceTree = "<group>";
 		};
-		A57E60A41D1BE1E0007EF7F1 /* Mine（我的） */ = {
+		D694609B1D1BF4E700E72309 /* Mine（我的） */ = {
 			isa = PBXGroup;
 			children = (
-				A57E60A51D1BE1E0007EF7F1 /* Login */,
-				A57E60A61D1BE1E0007EF7F1 /* Register */,
-				A57E60A71D1BE1E0007EF7F1 /* User */,
+				D694609C1D1BF4E700E72309 /* Login */,
+				D694609D1D1BF4E700E72309 /* Register */,
+				D694609E1D1BF4E700E72309 /* User */,
 			);
 			path = "Mine（我的）";
 			sourceTree = "<group>";
 		};
-		A57E60A51D1BE1E0007EF7F1 /* Login */ = {
+		D694609C1D1BF4E700E72309 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		A57E60A61D1BE1E0007EF7F1 /* Register */ = {
+		D694609D1D1BF4E700E72309 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Register;
 			sourceTree = "<group>";
 		};
-		A57E60A71D1BE1E0007EF7F1 /* User */ = {
+		D694609E1D1BF4E700E72309 /* User */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = User;
 			sourceTree = "<group>";
 		};
-		A57E60A81D1BE1E0007EF7F1 /* Vendors */ = {
+		D694609F1D1BF4E700E72309 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -299,12 +299,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
+				B691471E8C72E957D0D6912F /* 📦 Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
 				A57E60731D1BE159007EF7F1 /* Frameworks */,
 				A57E60741D1BE159007EF7F1 /* Resources */,
 				CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */,
 				7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */,
+				A13A89AB02A6F8CE3BED561F /* 📦 Embed Pods Frameworks */,
+				BE00E1CB45AAE204C4F85B21 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,6 +394,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A13A89AB02A6F8CE3BED561F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B691471E8C72E957D0D6912F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE00E1CB45AAE204C4F85B21 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,10 +461,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */,
 				A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */,
-				D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */,
 				A57E607B1D1BE159007EF7F1 /* main.m in Sources */,
+				D69460A11D1BF4E700E72309 /* RootViewController.m in Sources */,
+				D69460A01D1BF4E700E72309 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
