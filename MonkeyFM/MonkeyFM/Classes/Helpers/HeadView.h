@@ -1,13 +1,13 @@
 //
-//  RootViewController.h
+//  HeadView.h
 //  MonkeyFM
 //
 //  Created by lanou3g on 16/6/23.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseView.h"
 
-@interface RootViewController : UIViewController
+@interface HeadView : BaseView
 
 @end
