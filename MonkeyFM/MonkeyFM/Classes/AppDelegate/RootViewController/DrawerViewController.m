@@ -1,22 +1,22 @@
 //
-//  RootViewController.m
+//  DrawerViewController.m
 //  MonkeyFM
 //
-//  Created by lanou3g on 16/6/23.
+//  Created by 彭柞淞 on 16/6/23.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "DrawerViewController.h"
 
-@interface RootViewController ()
+@interface DrawerViewController ()
 
 @end
 
-@implementation RootViewController
+@implementation DrawerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

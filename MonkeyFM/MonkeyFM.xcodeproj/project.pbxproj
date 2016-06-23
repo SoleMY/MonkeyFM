@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52A91E11D1BF7FD0005E26E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */; };
+		A52A91E21D1BF7FD0005E26E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */; };
+		A52A91E51D1BF8590005E26E /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91E41D1BF8590005E26E /* BaseView.m */; };
+		A52A91E81D1BF86D0005E26E /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91E71D1BF86D0005E26E /* BaseModel.m */; };
+		A52A91ED1D1BF8FF0005E26E /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */; };
+		A52A91EE1D1BF8FF0005E26E /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */; };
 		A57E607B1D1BE159007EF7F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
 		A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60801D1BE159007EF7F1 /* ViewController.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
@@ -14,12 +20,21 @@
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
 		A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
-		D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.release.xcconfig"; sourceTree = "<group>"; };
 		5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonkeyFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A52A91DE1D1BF7FD0005E26E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		A52A91E31D1BF8590005E26E /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		A52A91E41D1BF8590005E26E /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		A52A91E61D1BF86D0005E26E /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		A52A91E71D1BF86D0005E26E /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		A52A91EA1D1BF8FF0005E26E /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -31,8 +46,6 @@
 		A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
-		D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +67,16 @@
 				2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A52A91E91D1BF8CD0005E26E /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52A91EA1D1BF8FF0005E26E /* DrawerViewController.h */,
+				A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */,
+				A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 		A57E606D1D1BE159007EF7F1 = {
@@ -114,10 +137,9 @@
 		A57E60911D1BE1E0007EF7F1 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				A52A91E91D1BF8CD0005E26E /* RootViewController */,
 				A57E60921D1BE1E0007EF7F1 /* AppDelegate.h */,
 				A57E60931D1BE1E0007EF7F1 /* AppDelegate.m */,
-				D640CAAF1D1BE3BA00A1EB4D /* RootViewController.h */,
-				D640CAB01D1BE3BA00A1EB4D /* RootViewController.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -175,6 +197,13 @@
 				A57E609C1D1BE1E0007EF7F1 /* PlayerDetail（播放详情） */,
 				A57E609D1D1BE1E0007EF7F1 /* PlayerList（播放列表） */,
 				A57E609E1D1BE1E0007EF7F1 /* RadioPlayerDetail（电台播放详情） */,
+				A52A91DE1D1BF7FD0005E26E /* BaseViewController.h */,
+				A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */,
+				A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */,
+				A52A91E31D1BF8590005E26E /* BaseView.h */,
+				A52A91E41D1BF8590005E26E /* BaseView.m */,
+				A52A91E61D1BF86D0005E26E /* BaseModel.h */,
+				A52A91E71D1BF86D0005E26E /* BaseModel.m */,
 			);
 			path = "Bases（基础公共）";
 			sourceTree = "<group>";
@@ -353,6 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
+				A52A91E21D1BF7FD0005E26E /* BaseViewController.xib in Resources */,
+				A52A91EE1D1BF8FF0005E26E /* DrawerViewController.xib in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
 			);
@@ -413,9 +444,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52A91E81D1BF86D0005E26E /* BaseModel.m in Sources */,
 				A57E60A91D1BE1E0007EF7F1 /* AppDelegate.m in Sources */,
+				A52A91E11D1BF7FD0005E26E /* BaseViewController.m in Sources */,
+				A52A91E51D1BF8590005E26E /* BaseView.m in Sources */,
+				A52A91ED1D1BF8FF0005E26E /* DrawerViewController.m in Sources */,
 				A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */,
-				D640CAB11D1BE3BA00A1EB4D /* RootViewController.m in Sources */,
 				A57E607B1D1BE159007EF7F1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
