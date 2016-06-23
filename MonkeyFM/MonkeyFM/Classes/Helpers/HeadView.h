@@ -10,4 +10,10 @@
 
 @interface HeadView : BaseView
 
+- (instancetype)initWithFrame:(CGRect)frame URLArray:(NSArray *)URLArray;
+
+@property (nonatomic, strong)UIScrollView *scrollView;
+
+@property (nonatomic, strong)UIPageControl *pageControl;
+
 @end
