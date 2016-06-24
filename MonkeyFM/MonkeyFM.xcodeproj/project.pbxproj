@@ -10,6 +10,11 @@
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
+		A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92111D1CDDCD0005E26E /* ClassificationController.m */; };
+		A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92141D1CDDCD0005E26E /* ClassificationModel.m */; };
+		A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92171D1CDDCD0005E26E /* ClassificationCell.m */; };
+		A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */; };
+		A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A921A1D1CDDCD0005E26E /* ClassificationView.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -28,11 +33,6 @@
 		D61922D61D1CD8A20008648A /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922981D1CD8A20008648A /* BaseView.m */; };
 		D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D619229A1D1CD8A20008648A /* BaseViewController.m */; };
 		D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D619229B1D1CD8A20008648A /* BaseViewController.xib */; };
-		D61922D91D1CD8A20008648A /* ClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922A51D1CD8A20008648A /* ClassificationController.m */; };
-		D61922DA1D1CD8A20008648A /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922A81D1CD8A20008648A /* ClassificationModel.m */; };
-		D61922DB1D1CD8A20008648A /* ClassificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922AB1D1CD8A20008648A /* ClassificationCell.m */; };
-		D61922DC1D1CD8A20008648A /* ClassificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922AC1D1CD8A20008648A /* ClassificationCell.xib */; };
-		D61922DD1D1CD8A20008648A /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922AE1D1CD8A20008648A /* ClassificationView.m */; };
 		D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922C01D1CD8A20008648A /* RecommendViewController.m */; };
 		D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922C11D1CD8A20008648A /* RecommendViewController.xib */; };
 		D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922E81D1CD93F0008648A /* SWRevealViewController.m */; };
@@ -46,6 +46,15 @@
 		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A52A92101D1CDDCD0005E26E /* ClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationController.h; sourceTree = "<group>"; };
+		A52A92111D1CDDCD0005E26E /* ClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationController.m; sourceTree = "<group>"; };
+		A52A92131D1CDDCD0005E26E /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
+		A52A92141D1CDDCD0005E26E /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
+		A52A92161D1CDDCD0005E26E /* ClassificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationCell.h; sourceTree = "<group>"; };
+		A52A92171D1CDDCD0005E26E /* ClassificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationCell.m; sourceTree = "<group>"; };
+		A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationCell.xib; sourceTree = "<group>"; };
+		A52A92191D1CDDCD0005E26E /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
+		A52A921A1D1CDDCD0005E26E /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -82,15 +91,6 @@
 		D61922991D1CD8A20008648A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		D619229A1D1CD8A20008648A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D619229B1D1CD8A20008648A /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
-		D61922A41D1CD8A20008648A /* ClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationController.h; sourceTree = "<group>"; };
-		D61922A51D1CD8A20008648A /* ClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationController.m; sourceTree = "<group>"; };
-		D61922A71D1CD8A20008648A /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
-		D61922A81D1CD8A20008648A /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
-		D61922AA1D1CD8A20008648A /* ClassificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationCell.h; sourceTree = "<group>"; };
-		D61922AB1D1CD8A20008648A /* ClassificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationCell.m; sourceTree = "<group>"; };
-		D61922AC1D1CD8A20008648A /* ClassificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationCell.xib; sourceTree = "<group>"; };
-		D61922AD1D1CD8A20008648A /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
-		D61922AE1D1CD8A20008648A /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
 		D61922BF1D1CD8A20008648A /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		D61922C01D1CD8A20008648A /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		D61922C11D1CD8A20008648A /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +120,46 @@
 				2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A52A920E1D1CDDCD0005E26E /* Classification(分类) */ = {
+			isa = PBXGroup;
+			children = (
+				A52A920F1D1CDDCD0005E26E /* Controller */,
+				A52A92121D1CDDCD0005E26E /* Model */,
+				A52A92151D1CDDCD0005E26E /* View */,
+			);
+			path = "Classification(分类)";
+			sourceTree = "<group>";
+		};
+		A52A920F1D1CDDCD0005E26E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92101D1CDDCD0005E26E /* ClassificationController.h */,
+				A52A92111D1CDDCD0005E26E /* ClassificationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A52A92121D1CDDCD0005E26E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92131D1CDDCD0005E26E /* ClassificationModel.h */,
+				A52A92141D1CDDCD0005E26E /* ClassificationModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A52A92151D1CDDCD0005E26E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92161D1CDDCD0005E26E /* ClassificationCell.h */,
+				A52A92171D1CDDCD0005E26E /* ClassificationCell.m */,
+				A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */,
+				A52A92191D1CDDCD0005E26E /* ClassificationView.h */,
+				A52A921A1D1CDDCD0005E26E /* ClassificationView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A57E606D1D1BE159007EF7F1 = {
@@ -315,6 +355,7 @@
 		D61922A01D1CD8A20008648A /* Discover（发现） */ = {
 			isa = PBXGroup;
 			children = (
+				A52A920E1D1CDDCD0005E26E /* Classification(分类) */,
 				D61922A11D1CD8A20008648A /* Anchor（主播） */,
 				D61922BC1D1CD8A20008648A /* Radio（电台） */,
 				D61922BD1D1CD8A20008648A /* Recommend（推荐） */,
@@ -325,49 +366,8 @@
 		D61922A11D1CD8A20008648A /* Anchor（主播） */ = {
 			isa = PBXGroup;
 			children = (
-				D61922A21D1CD8A20008648A /* Classification(分类) */,
 			);
 			path = "Anchor（主播）";
-			sourceTree = "<group>";
-		};
-		D61922A21D1CD8A20008648A /* Classification(分类) */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A31D1CD8A20008648A /* Controller */,
-				D61922A61D1CD8A20008648A /* Model */,
-				D61922A91D1CD8A20008648A /* View */,
-			);
-			path = "Classification(分类)";
-			sourceTree = "<group>";
-		};
-		D61922A31D1CD8A20008648A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A41D1CD8A20008648A /* ClassificationController.h */,
-				D61922A51D1CD8A20008648A /* ClassificationController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D61922A61D1CD8A20008648A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A71D1CD8A20008648A /* ClassificationModel.h */,
-				D61922A81D1CD8A20008648A /* ClassificationModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D61922A91D1CD8A20008648A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D61922AA1D1CD8A20008648A /* ClassificationCell.h */,
-				D61922AB1D1CD8A20008648A /* ClassificationCell.m */,
-				D61922AC1D1CD8A20008648A /* ClassificationCell.xib */,
-				D61922AD1D1CD8A20008648A /* ClassificationView.h */,
-				D61922AE1D1CD8A20008648A /* ClassificationView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D61922BC1D1CD8A20008648A /* Radio（电台） */ = {
@@ -461,7 +461,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
-				B691471E8C72E957D0D6912F /* 📦 Check Pods Manifest.lock */,
+				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
 				A57E60731D1BE159007EF7F1 /* Frameworks */,
@@ -520,8 +520,8 @@
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
-				D61922DC1D1CD8A20008648A /* ClassificationCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
+				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
@@ -577,14 +577,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B691471E8C72E957D0D6912F /* 📦 Check Pods Manifest.lock */ = {
+		B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,20 +631,20 @@
 			files = (
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
+				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
-				D61922DA1D1CD8A20008648A /* ClassificationModel.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
 				D61922D41D1CD8A20008648A /* BaseModel.m in Sources */,
+				A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */,
 				D61922EA1D1CD9E10008648A /* main.m in Sources */,
-				D61922DD1D1CD8A20008648A /* ClassificationView.m in Sources */,
-				D61922DB1D1CD8A20008648A /* ClassificationCell.m in Sources */,
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
-				D61922D91D1CD8A20008648A /* ClassificationController.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
+				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
+				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
 				D61922CD1D1CD8A20008648A /* HeadView.m in Sources */,
 			);
