@@ -91,7 +91,6 @@
 		D61922841D1CD8A20008648A /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		D61922851D1CD8A20008648A /* shuffingNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shuffingNetRequest.h; sourceTree = "<group>"; };
 		D61922861D1CD8A20008648A /* shuffingNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shuffingNetRequest.m; sourceTree = "<group>"; };
-		D61922871D1CD8A20008648A /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
 		D619228A1D1CD8A20008648A /* shufflingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shufflingModel.h; sourceTree = "<group>"; };
 		D619228B1D1CD8A20008648A /* shufflingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shufflingModel.m; sourceTree = "<group>"; };
 		D619228D1D1CD8A20008648A /* left_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_list.png; sourceTree = "<group>"; };
@@ -298,7 +297,6 @@
 				D61922841D1CD8A20008648A /* Request.m */,
 				D61922851D1CD8A20008648A /* shuffingNetRequest.h */,
 				D61922861D1CD8A20008648A /* shuffingNetRequest.m */,
-				D61922871D1CD8A20008648A /* URL.h */,
 				A52A922C1D1CE3600005E26E /* SmallTools.h */,
 				A52A922D1D1CE3600005E26E /* SmallTools.m */,
 			);
