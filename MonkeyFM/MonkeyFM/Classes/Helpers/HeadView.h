@@ -8,12 +8,11 @@
 
 #import "BaseView.h"
 
-@interface HeadView : BaseView
+@interface HeadView : BaseView <UIScrollViewDelegate>
 
-- (instancetype)initWithFrame:(CGRect)frame URLArray:(NSArray *)URLArray;
-
+- (instancetype)initWithFrame:(CGRect)frame URLArray:(NSMutableArray *)URLArray;
 @property (nonatomic, strong)UIScrollView *scrollView;
-
 @property (nonatomic, strong)UIPageControl *pageControl;
+@property (nonatomic, strong)NSTimer *timer;
 
 @end
