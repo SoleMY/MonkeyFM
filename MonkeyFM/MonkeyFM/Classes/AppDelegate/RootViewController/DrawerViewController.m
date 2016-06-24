@@ -13,10 +13,20 @@
 #import "ClassificationController.h"
 #import "AnchorViewController.h"
 #import "RadioViewController.h"
+#import "Masonry.h"
+#import "MFM_Tool_COLOR.h"
+
+#define kCellColor [UIColor clearColor]
+#define kHeadViewHeight self.rearTableView.frame.size.height / 5
+#define kUserPhotoWidth self.rearTableView.frame.size.width / 7
+
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     NSInteger _presentedRow;
 }
+
+// 抽屉的大背景图片
+@property (nonatomic, strong) UIImageView *backImageView;
 
 @end
 
@@ -26,21 +36,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
-//    self.rearTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 150, self.view.frame.size.width - 40, self.view.frame.size.height - 200)];
-//    self.rearTableView.backgroundColor = [UIColor grayColor];
-    // Do any additional setup after loading the view from its nib.
-//    SWRevealViewController *parentRevealController = self.revealViewController;
-    self.rearTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
-    self.rearTableView.delegate = self;
-    self.rearTableView.dataSource = self;
-    [self.view addSubview:self.rearTableView];
+    self.backImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:self.backImageView];
     
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+    // 设置头视图
+    [self layoutTableViewHeadView];
     
-    headView.backgroundColor = [UIColor blueColor];
-    
+    //    SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
+
+}
+
+- (void)layoutTableViewHeadView
+{
+    // tableView头视图
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.rearTableView.frame.size.width, kHeadViewHeight)];
+    headView.backgroundColor = kNavigationBarTintColor;
     self.rearTableView.tableHeaderView = headView;
-//    SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
+    NSLog(@"%f", self.view.bounds.size.width);
+    // 用户头像
+    UIImageView *userPhotoImageView = [[UIImageView alloc] init];
+    userPhotoImageView.image = [UIImage imageNamed:@"user_photo"];
+    userPhotoImageView.backgroundColor = [UIColor grayColor];
+    userPhotoImageView.layer.cornerRadius = kUserPhotoWidth / 2;
+    userPhotoImageView.layer.masksToBounds = YES;
+    [headView addSubview:userPhotoImageView];
+    [userPhotoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(headView).offset(20);
+        make.left.equalTo(headView).offset(20);
+        make.width.mas_equalTo(kUserPhotoWidth);
+        make.height.mas_equalTo(kUserPhotoWidth);
+    }];
+    // 用户名
+    UILabel *userNameLabel = [[UILabel alloc] init];
+    userNameLabel.text = @"UserNameLabel";
+    [headView addSubview:userNameLabel];
+    [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(userPhotoImageView.mas_centerY);
+        make.left.equalTo(userPhotoImageView.mas_right);
+        make.width.mas_equalTo(kUserPhotoWidth * 2);
+    }];
 
 }
 
@@ -106,7 +140,7 @@
     }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
-    
+    cell.backgroundColor = kCellColor;
     return cell;
 }
 
@@ -154,13 +188,14 @@
     }
     else if (row == 2)
     {
-        AnchorViewController *anchorViewController = [[AnchorViewController alloc] init];
-        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:anchorViewController];
+        RadioViewController *radioViewController = [[RadioViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:radioViewController];
     }
     else if (row == 3)
     {
-        RadioViewController *radioViewController = [[RadioViewController alloc] init];
-        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:radioViewController];
+        
+        AnchorViewController *anchorViewController = [[AnchorViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:anchorViewController];
     }
     else {
         return;

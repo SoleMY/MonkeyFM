@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawerViewController">
             <connections>
+                <outlet property="rearTableView" destination="f5R-hF-hay" id="kTX-Sd-do1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,33 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drawerView.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FDf-xS-OO9">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f5R-hF-hay">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4PG-4r-TAK"/>
+                        <outlet property="delegate" destination="-1" id="urh-QZ-8td"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="FDf-xS-OO9" secondAttribute="bottom" id="Crs-V5-ygB"/>
+                <constraint firstAttribute="trailing" secondItem="FDf-xS-OO9" secondAttribute="trailing" id="I67-ZC-XIi"/>
+                <constraint firstItem="f5R-hF-hay" firstAttribute="width" secondItem="FDf-xS-OO9" secondAttribute="width" id="I8g-kf-wAv"/>
+                <constraint firstItem="FDf-xS-OO9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ICI-QY-QRe"/>
+                <constraint firstItem="f5R-hF-hay" firstAttribute="height" secondItem="FDf-xS-OO9" secondAttribute="height" id="JaG-hY-9Sn"/>
+                <constraint firstItem="FDf-xS-OO9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LpZ-lb-tff"/>
+                <constraint firstItem="f5R-hF-hay" firstAttribute="centerX" secondItem="FDf-xS-OO9" secondAttribute="centerX" id="WqB-Dd-cZG"/>
+                <constraint firstItem="f5R-hF-hay" firstAttribute="centerY" secondItem="FDf-xS-OO9" secondAttribute="centerY" id="ucF-Hi-Pou"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="drawerView.jpg" width="117" height="220"/>
+    </resources>
 </document>

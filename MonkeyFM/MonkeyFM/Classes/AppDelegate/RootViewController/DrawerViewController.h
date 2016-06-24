@@ -10,6 +10,7 @@
 
 @interface DrawerViewController : BaseViewController
 
-@property (nonatomic, strong) UITableView *rearTableView;
+//@property (nonatomic, strong) UITableView *rearTableView;
+@property (weak, nonatomic) IBOutlet UITableView *rearTableView;
 
 @end
