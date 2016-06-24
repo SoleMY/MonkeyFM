@@ -12,4 +12,14 @@
 
 @property (nonatomic, strong)TheHostShow *HostShow;
 
+
+///头像
+@property (nonatomic, strong)UIImageView *headPortrait;
+
+///姓名
+@property (nonatomic, strong)UILabel *nameLabel;
+
+///简介
+@property (nonatomic, strong)UILabel *introduction;
+
 @end

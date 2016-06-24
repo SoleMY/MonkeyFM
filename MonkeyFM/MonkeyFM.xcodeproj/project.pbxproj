@@ -51,6 +51,9 @@
 		D61922EA1D1CD9E10008648A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
 		D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB21D1D328200EEE263 /* CollectionView.m */; };
 		D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */; };
+		D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */; };
+		D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */; };
+		D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +138,12 @@
 		D6442DB21D1D328200EEE263 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		D6442DB71D1D4EB600EEE263 /* HeadCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadCollectionReusableView.h; sourceTree = "<group>"; };
+		D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadCollectionReusableView.m; sourceTree = "<group>"; };
+		D6442DBA1D1D582800EEE263 /* FirstCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstCollectionReusableView.h; sourceTree = "<group>"; };
+		D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCollectionReusableView.m; sourceTree = "<group>"; };
+		D6442DBD1D1D6A8B00EEE263 /* FooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterCollectionReusableView.h; sourceTree = "<group>"; };
+		D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +300,12 @@
 				D6442DB21D1D328200EEE263 /* CollectionView.m */,
 				D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */,
 				D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */,
+				D6442DB71D1D4EB600EEE263 /* HeadCollectionReusableView.h */,
+				D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */,
+				D6442DBA1D1D582800EEE263 /* FirstCollectionReusableView.h */,
+				D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */,
+				D6442DBD1D1D6A8B00EEE263 /* FooterCollectionReusableView.h */,
+				D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -756,6 +771,7 @@
 			files = (
 				A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */,
 				A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */,
+				D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
@@ -777,7 +793,9 @@
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
+				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
 				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
+				D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */,
 				D609EBF11D1D0D640042B23F /* TheHostShow.m in Sources */,
 				D61922CD1D1CD8A20008648A /* HeadView.m in Sources */,
 				D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */,

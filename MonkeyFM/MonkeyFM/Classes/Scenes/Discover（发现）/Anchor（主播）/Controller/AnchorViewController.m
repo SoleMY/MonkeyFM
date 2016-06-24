@@ -12,7 +12,8 @@
 #import "MFM_URL.h"
 #import "CollectionView.h"
 #import "CollectionViewCell.h"
-
+#import "HeadCollectionReusableView.h"
+#import "FirstCollectionReusableView.h"
 #define kHeadViewHeight 200
 #define kHeadViewY 40
 @interface AnchorViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
@@ -37,66 +38,81 @@ static NSString *const identifier_cell = @"identifier_cell";
     //    设置代理
     self.collection.collectionView.dataSource = self;
     self.collection.collectionView.delegate = self;
-    
     //   第一步： 注册collectionViewCell
     [self.collection.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_cell];
     //    注册头视图
-    [self.collection.collectionView registerClass:[HeaderReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+    [self.collection.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+    [self.collection.collectionView registerClass:[FirstCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
     //    注册尾视图
     [self.collection.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
-    
 }
 
 #pragma mark UICollectionViewDataSource Method----
 
 //设置多少个分区
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 3;
+    return 20;
 }
 
 //设置每一个分区里有几个item
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        return 0;
+    }else if (section ==1){
+    return 6;
+    } else {
+        return 3;
+    }
 }
 
 //返回每一个item的cell对象
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     //    第二步：重用cell
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_cell forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
-    
-    return cell;
-    
+//    cell.backgroundColor = [UIColor orangeColor];
+    cell.HostShow.headPortrait.backgroundColor = [UIColor redColor];
+    cell.nameLabel.text = @"123";
+     return cell;
 }
-//
-////返回头视图和尾视图
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//    //    判断是头视图和还是尾视图
-//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-//        HeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
-//        switch (indexPath.section) {
-//            case 0:
-//                headerView.headeLabel.text = @"haha";
-//                break;
-//            case 1:
-//                headerView.headeLabel.text = @"哈哈";
-//                break;
-//            case 2:
-//                headerView.headeLabel.text = @"呵呵";
-//                break;
-//            default:
-//                break;
-//        }
-//        
-//        
-//        return headerView;
-//    }
-//    UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView" forIndexPath:indexPath];
-//    footerView.backgroundColor = [UIColor greenColor];
-//    return footerView;
-//}
-//
+
+//返回头视图和尾视图
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if ([kind isEqualToString: UICollectionElementKindSectionHeader]) {
+            FirstCollectionReusableView *firstHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"firstHeaderView" forIndexPath:indexPath];
+            [[Request alloc] requestWithURL:shuffing_host_URL view:firstHeaderView frame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+               return firstHeaderView;
+        } else {
+        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView" forIndexPath:indexPath];
+    footerView.backgroundColor = [UIColor greenColor];
+    return footerView;
+    }
+    } else {
+        if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+            HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
+            otherHead.titleLabel.text = @"标题";
+            [otherHead.more setTitle:@"更多  >"
+                            forState:UIControlStateNormal];
+            return otherHead;
+        }else {
+            UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView" forIndexPath:indexPath];
+            footerView.backgroundColor = [UIColor greenColor];
+            
+            return footerView;
+        }
+    }
+}
+
+#pragma mark 设置header和footer高度
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return CGSizeMake(self.view.bounds.size.width, 200);
+    } else {
+        return CGSizeMake(self.view.bounds.size.width, 10);
+    }
+}
+
 ////点击item
 //- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //    SecondViewController *secondVC = [[SecondViewController alloc] init];
