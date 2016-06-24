@@ -1,5 +1,5 @@
 //
-//  DrawerViewController.h
+//  RecommendViewController.h
 //  MonkeyFM
 //
 //  Created by 彭柞淞 on 16/6/23.
@@ -8,8 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface DrawerViewController : BaseViewController
-
-@property (nonatomic, strong) UITableView *rearTableView;
+@interface RecommendViewController : BaseViewController
 
 @end
