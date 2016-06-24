@@ -68,6 +68,9 @@
 		A52A92291D1CE0890005E26E /* RadioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioViewController.xib; sourceTree = "<group>"; };
 		A52A922C1D1CE3600005E26E /* SmallTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallTools.h; sourceTree = "<group>"; };
 		A52A922D1D1CE3600005E26E /* SmallTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallTools.m; sourceTree = "<group>"; };
+		A52A92301D1CE71C0005E26E /* MFM_URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFM_URL.h; sourceTree = "<group>"; };
+		A52A92311D1CE7610005E26E /* MFM_Tool_COLOR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFM_Tool_COLOR.h; sourceTree = "<group>"; };
+		A52A92321D1CE7930005E26E /* Sinleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sinleton.h; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -305,6 +308,9 @@
 		D61922881D1CD8A20008648A /* Marco */ = {
 			isa = PBXGroup;
 			children = (
+				A52A92301D1CE71C0005E26E /* MFM_URL.h */,
+				A52A92311D1CE7610005E26E /* MFM_Tool_COLOR.h */,
+				A52A92321D1CE7930005E26E /* Sinleton.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
