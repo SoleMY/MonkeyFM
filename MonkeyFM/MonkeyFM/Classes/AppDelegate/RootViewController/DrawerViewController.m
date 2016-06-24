@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "RecommendViewController.h"
 #import "BaseNavigationViewController.h"
-
+#import "ClassificationController.h"
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     NSInteger _presentedRow;
@@ -147,8 +147,8 @@
     
     else if (row == 1)
     {
-//        MapViewController *mapViewController = [[MapViewController alloc] init];
-//        newFrontController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+        ClassificationController *classificationController = [[ClassificationController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:classificationController];
     }
     
     else if ( row == 4 )
