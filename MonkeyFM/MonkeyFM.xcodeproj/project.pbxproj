@@ -393,8 +393,8 @@
 		D619228F1D1CD8A20008648A /* Bases（基础公共） */ = {
 			isa = PBXGroup;
 			children = (
-				D61922901D1CD8A20008648A /* BaseCell.h */,
 				D61922911D1CD8A20008648A /* BaseCell.m */,
+				D61922901D1CD8A20008648A /* BaseCell.h */,
 				D61922921D1CD8A20008648A /* BaseCell.xib */,
 				D61922931D1CD8A20008648A /* BaseModel.h */,
 				D61922941D1CD8A20008648A /* BaseModel.m */,
