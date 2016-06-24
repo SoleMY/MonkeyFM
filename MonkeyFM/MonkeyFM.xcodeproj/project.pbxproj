@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+=======
+		A52A91E11D1BF7FD0005E26E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */; };
+		A52A91E21D1BF7FD0005E26E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */; };
+		A52A91E51D1BF8590005E26E /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91E41D1BF8590005E26E /* BaseView.m */; };
+		A52A91E81D1BF86D0005E26E /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91E71D1BF86D0005E26E /* BaseModel.m */; };
+		A52A91ED1D1BF8FF0005E26E /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */; };
+		A52A91EE1D1BF8FF0005E26E /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */; };
+		A52A91F81D1C04C60005E26E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91F61D1C04C60005E26E /* RecommendViewController.m */; };
+		A52A91F91D1C04C60005E26E /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91F71D1C04C60005E26E /* RecommendViewController.xib */; };
+		A52A91FD1D1C04F40005E26E /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A91FB1D1C04F40005E26E /* BaseCell.m */; };
+		A52A91FE1D1C04F40005E26E /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A91FC1D1C04F40005E26E /* BaseCell.xib */; };
+		A52A92011D1C0AD90005E26E /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92001D1C0AD90005E26E /* BaseNavigationViewController.m */; };
+		A52A92031D1C13700005E26E /* left_list.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A92021D1C13700005E26E /* left_list.png */; };
+		A52A92071D1CBFFD0005E26E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92061D1CBFFD0005E26E /* SWRevealViewController.m */; };
+		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
+		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
+		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 		A57E607B1D1BE159007EF7F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
 		A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E60801D1BE159007EF7F1 /* ViewController.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
@@ -31,6 +50,33 @@
 /* Begin PBXFileReference section */
 		2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.release.xcconfig"; sourceTree = "<group>"; };
 		5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonkeyFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
+=======
+		A52A91DE1D1BF7FD0005E26E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		A52A91E31D1BF8590005E26E /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		A52A91E41D1BF8590005E26E /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		A52A91E61D1BF86D0005E26E /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		A52A91E71D1BF86D0005E26E /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		A52A91EA1D1BF8FF0005E26E /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
+		A52A91F51D1C04C60005E26E /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		A52A91F61D1C04C60005E26E /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		A52A91F71D1C04C60005E26E /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
+		A52A91FA1D1C04F40005E26E /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
+		A52A91FB1D1C04F40005E26E /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
+		A52A91FC1D1C04F40005E26E /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
+		A52A91FF1D1C0AD90005E26E /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
+		A52A92001D1C0AD90005E26E /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
+		A52A92021D1C13700005E26E /* left_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_list.png; sourceTree = "<group>"; };
+		A52A92051D1CBFFD0005E26E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A52A92061D1CBFFD0005E26E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -70,6 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */,
+				A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */,
+				A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */,
 				FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +135,52 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+		A52A91E91D1BF8CD0005E26E /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52A91EA1D1BF8FF0005E26E /* DrawerViewController.h */,
+				A52A91EB1D1BF8FF0005E26E /* DrawerViewController.m */,
+				A52A91EC1D1BF8FF0005E26E /* DrawerViewController.xib */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		A52A91F21D1C04970005E26E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A52A91F51D1C04C60005E26E /* RecommendViewController.h */,
+				A52A91F61D1C04C60005E26E /* RecommendViewController.m */,
+				A52A91F71D1C04C60005E26E /* RecommendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A52A91F31D1C04A60005E26E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A52A91F41D1C04B00005E26E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A52A92041D1CBFFD0005E26E /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92051D1CBFFD0005E26E /* SWRevealViewController.h */,
+				A52A92061D1CBFFD0005E26E /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 		A57E606D1D1BE159007EF7F1 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +290,7 @@
 		D61922321D1CCA0C0008648A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A52A92021D1C13700005E26E /* left_list.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,6 +308,7 @@
 		D61922341D1CCA0C0008648A /* Bases（基础公共） */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				D61922351D1CCA0C0008648A /* BaseModel.h */,
 				D61922361D1CCA0C0008648A /* BaseModel.m */,
 				D61922371D1CCA0C0008648A /* BaseView.h */,
@@ -223,6 +320,24 @@
 				D619223D1D1CCA0C0008648A /* PlayerDetail（播放详情） */,
 				D619223E1D1CCA0C0008648A /* PlayerList（播放列表） */,
 				D619223F1D1CCA0C0008648A /* RadioPlayerDetail（电台播放详情） */,
+=======
+				D69460921D1BF4E700E72309 /* DisPlayList（展示列表） */,
+				D69460931D1BF4E700E72309 /* PlayerDetail（播放详情） */,
+				D69460941D1BF4E700E72309 /* PlayerList（播放列表） */,
+				D69460951D1BF4E700E72309 /* RadioPlayerDetail（电台播放详情） */,
+				A52A91FA1D1C04F40005E26E /* BaseCell.h */,
+				A52A91FB1D1C04F40005E26E /* BaseCell.m */,
+				A52A91FC1D1C04F40005E26E /* BaseCell.xib */,
+				A52A91DE1D1BF7FD0005E26E /* BaseViewController.h */,
+				A52A91DF1D1BF7FD0005E26E /* BaseViewController.m */,
+				A52A91E01D1BF7FD0005E26E /* BaseViewController.xib */,
+				A52A91E31D1BF8590005E26E /* BaseView.h */,
+				A52A91E41D1BF8590005E26E /* BaseView.m */,
+				A52A91E61D1BF86D0005E26E /* BaseModel.h */,
+				A52A91E71D1BF86D0005E26E /* BaseModel.m */,
+				A52A91FF1D1C0AD90005E26E /* BaseNavigationViewController.h */,
+				A52A92001D1C0AD90005E26E /* BaseNavigationViewController.m */,
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 			);
 			path = "Bases（基础公共）";
 			sourceTree = "<group>";
@@ -283,6 +398,9 @@
 		D61922441D1CCA0C0008648A /* Recommend（推荐） */ = {
 			isa = PBXGroup;
 			children = (
+				A52A91F41D1C04B00005E26E /* Model */,
+				A52A91F31D1C04A60005E26E /* View */,
+				A52A91F21D1C04970005E26E /* Controller */,
 			);
 			path = "Recommend（推荐）";
 			sourceTree = "<group>";
@@ -321,6 +439,7 @@
 		D61922491D1CCA0C0008648A /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				A52A92041D1CBFFD0005E26E /* SWRevealViewController */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -368,6 +487,9 @@
 		DA675FF270CCF4B89ECD1891 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A52A920C1D1CC5990005E26E /* Foundation.framework */,
+				A52A920A1D1CC5900005E26E /* CoreGraphics.framework */,
+				A52A92081D1CC5880005E26E /* UIKit.framework */,
 				5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */,
 			);
 			name = Frameworks;
@@ -441,7 +563,10 @@
 				D61922511D1CCA0C0008648A /* BaseViewController.xib in Resources */,
 				D619224C1D1CCA0C0008648A /* DrawerViewController.xib in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
+				A52A91FE1D1C04F40005E26E /* BaseCell.xib in Resources */,
+				A52A92031D1C13700005E26E /* left_list.png in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
+				A52A91F91D1C04C60005E26E /* RecommendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +670,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				D619224E1D1CCA0C0008648A /* BaseModel.m in Sources */,
 				D61922501D1CCA0C0008648A /* BaseViewController.m in Sources */,
 				D61922751D1CCAE90008648A /* ClassificationView.m in Sources */,
+=======
+				A52A92071D1CBFFD0005E26E /* SWRevealViewController.m in Sources */,
+				A52A91E81D1BF86D0005E26E /* BaseModel.m in Sources */,
+				A52A91F81D1C04C60005E26E /* RecommendViewController.m in Sources */,
+				A52A91E11D1BF7FD0005E26E /* BaseViewController.m in Sources */,
+				D69460A91D1BFADB00E72309 /* HeadView.m in Sources */,
+				A52A91E51D1BF8590005E26E /* BaseView.m in Sources */,
+				A52A91ED1D1BF8FF0005E26E /* DrawerViewController.m in Sources */,
+				A52A92011D1C0AD90005E26E /* BaseNavigationViewController.m in Sources */,
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 				A57E60811D1BE159007EF7F1 /* ViewController.m in Sources */,
 				D619224F1D1CCA0C0008648A /* BaseView.m in Sources */,
 				D619224D1D1CCA0C0008648A /* HeadView.m in Sources */,
@@ -555,8 +691,13 @@
 				D619224B1D1CCA0C0008648A /* DrawerViewController.m in Sources */,
 				D61922721D1CCAE90008648A /* ClassificationModel.m in Sources */,
 				A57E607B1D1BE159007EF7F1 /* main.m in Sources */,
+<<<<<<< HEAD
 				D61922731D1CCAE90008648A /* ClassificationCell.m in Sources */,
 				D619224A1D1CCA0C0008648A /* AppDelegate.m in Sources */,
+=======
+				A52A91FD1D1C04F40005E26E /* BaseCell.m in Sources */,
+				D69460A01D1BF4E700E72309 /* AppDelegate.m in Sources */,
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
