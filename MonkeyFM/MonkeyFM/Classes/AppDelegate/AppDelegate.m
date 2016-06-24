@@ -20,9 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-<<<<<<< HEAD
-  
-=======
+
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -34,9 +32,7 @@
     mainRevealController.delegate = self;
     self.window.rootViewController = mainRevealController;
     
-    
->>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
-    return YES;
+        return YES;
 }
 
 //- (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position
