@@ -45,6 +45,8 @@
 		D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922C11D1CD8A20008648A /* RecommendViewController.xib */; };
 		D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922E81D1CD93F0008648A /* SWRevealViewController.m */; };
 		D61922EA1D1CD9E10008648A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
+		D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB21D1D328200EEE263 /* CollectionView.m */; };
+		D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,10 @@
 		D61922C11D1CD8A20008648A /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
 		D61922E71D1CD93F0008648A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D61922E81D1CD93F0008648A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D6442DB11D1D328200EEE263 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
+		D6442DB21D1D328200EEE263 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
+		D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,10 @@
 			children = (
 				D609EBEF1D1D0D640042B23F /* TheHostShow.h */,
 				D609EBF01D1D0D640042B23F /* TheHostShow.m */,
+				D6442DB11D1D328200EEE263 /* CollectionView.h */,
+				D6442DB21D1D328200EEE263 /* CollectionView.m */,
+				D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */,
+				D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,6 +531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
+				1616043E69D5DAEC408694FA /* 📦 Check Pods Manifest.lock */,
 				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
@@ -596,6 +607,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1616043E69D5DAEC408694FA /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,6 +725,7 @@
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
+				D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */,
 				D61922D41D1CD8A20008648A /* BaseModel.m in Sources */,
 				A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */,
 				D61922EA1D1CD9E10008648A /* main.m in Sources */,
@@ -715,6 +742,7 @@
 				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
 				D609EBF11D1D0D640042B23F /* TheHostShow.m in Sources */,
 				D61922CD1D1CD8A20008648A /* HeadView.m in Sources */,
+				D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
