@@ -11,6 +11,7 @@
 #import "ClassificationCell.h"
 #import "ClassificationModel.h"
 #import <UIImageView+WebCache.h>
+#import "DetailClassificationController.h"
 @interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong)ClassificationView *myView;
 
@@ -82,12 +83,12 @@ static  NSString *const identifile_cell = @"identifile_cell";
     return cell;
 }
 
-//// 点击item
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    SecondController *second = [SecondController new];
-//    
-//    [self.navigationController pushViewController:second animated:YES];
-//}
+// 点击item
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    DetailClassificationController *detailVC = [DetailClassificationController new];
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 - (void)requstData
 {

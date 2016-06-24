@@ -42,6 +42,9 @@
 		D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922C11D1CD8A20008648A /* RecommendViewController.xib */; };
 		D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922E81D1CD93F0008648A /* SWRevealViewController.m */; };
 		D61922EA1D1CD9E10008648A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
+		D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922F61D1D4E7C0008648A /* SegmentView.m */; };
+		D61922FE1D1D52260008648A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922FC1D1D52260008648A /* DetailClassificationController.m */; };
+		D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922FD1D1D52260008648A /* DetailClassificationController.xib */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +114,11 @@
 		D61922C11D1CD8A20008648A /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
 		D61922E71D1CD93F0008648A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D61922E81D1CD93F0008648A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D61922F51D1D4E7C0008648A /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
+		D61922F61D1D4E7C0008648A /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
+		D61922FB1D1D52260008648A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
+		D61922FC1D1D52260008648A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
+		D61922FD1D1D52260008648A /* DetailClassificationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailClassificationController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,9 @@
 			children = (
 				A52A92101D1CDDCD0005E26E /* ClassificationController.h */,
 				A52A92111D1CDDCD0005E26E /* ClassificationController.m */,
+				D61922FB1D1D52260008648A /* DetailClassificationController.h */,
+				D61922FC1D1D52260008648A /* DetailClassificationController.m */,
+				D61922FD1D1D52260008648A /* DetailClassificationController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +310,8 @@
 				D61922861D1CD8A20008648A /* shuffingNetRequest.m */,
 				A52A922C1D1CE3600005E26E /* SmallTools.h */,
 				A52A922D1D1CE3600005E26E /* SmallTools.m */,
+				D61922F51D1D4E7C0008648A /* SegmentView.h */,
+				D61922F61D1D4E7C0008648A /* SegmentView.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -502,6 +515,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
+				AB363DEDC331AAFCF2F8C570 /* 📦 Check Pods Manifest.lock */,
 				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
@@ -564,6 +578,7 @@
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
+				D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */,
 				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
@@ -618,6 +633,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB363DEDC331AAFCF2F8C570 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */ = {
@@ -679,6 +709,7 @@
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
 				D61922D41D1CD8A20008648A /* BaseModel.m in Sources */,
+				D61922FE1D1D52260008648A /* DetailClassificationController.m in Sources */,
 				A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */,
 				D61922EA1D1CD9E10008648A /* main.m in Sources */,
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
@@ -686,6 +717,7 @@
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
 				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
+				D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
