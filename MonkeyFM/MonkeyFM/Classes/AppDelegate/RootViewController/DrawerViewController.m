@@ -11,6 +11,8 @@
 #import "RecommendViewController.h"
 #import "BaseNavigationViewController.h"
 #import "ClassificationController.h"
+#import "AnchorViewController.h"
+#import "RadioViewController.h"
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     NSInteger _presentedRow;
@@ -124,16 +126,16 @@
         [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
         return;
     }
-    else if (row == 2)
-    {
-        [revealController setFrontViewPosition:FrontViewPositionRightMost animated:YES];
-        return;
-    }
-    else if (row == 3)
-    {
-        [revealController setFrontViewPosition:FrontViewPositionRight animated:YES];
-        return;
-    }
+//    else if (row == 2)
+//    {
+//        [revealController setFrontViewPosition:FrontViewPositionRightMost animated:YES];
+//        return;
+//    }
+//    else if (row == 3)
+//    {
+//        [revealController setFrontViewPosition:FrontViewPositionRight animated:YES];
+//        return;
+//    }
     
     // otherwise we'll create a new frontViewController and push it with animation
     
@@ -150,9 +152,21 @@
         ClassificationController *classificationController = [[ClassificationController alloc] init];
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:classificationController];
     }
-    
-    else if ( row == 4 )
+    else if (row == 2)
     {
+        AnchorViewController *anchorViewController = [[AnchorViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:anchorViewController];
+    }
+    else if (row == 3)
+    {
+        RadioViewController *radioViewController = [[RadioViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:radioViewController];
+    }
+    else {
+        return;
+    }
+//    else if ( row == 4 )
+//    {
 //        FrontViewController *frontViewController = [[FrontViewController alloc] init];
 //        UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
 //        
@@ -166,7 +180,7 @@
 //        [childRevealController setFrontViewPosition:FrontViewPositionRight animated:NO];
 //        
 //        newFrontController = childRevealController;
-    }
+//    }
     
     [revealController pushFrontViewController:newFrontController animated:YES];
     

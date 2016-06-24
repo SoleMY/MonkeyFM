@@ -15,6 +15,10 @@
 		A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92171D1CDDCD0005E26E /* ClassificationCell.m */; };
 		A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */; };
 		A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A921A1D1CDDCD0005E26E /* ClassificationView.m */; };
+		A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92231D1CE0790005E26E /* AnchorViewController.m */; };
+		A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92241D1CE0790005E26E /* AnchorViewController.xib */; };
+		A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92281D1CE0890005E26E /* RadioViewController.m */; };
+		A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92291D1CE0890005E26E /* RadioViewController.xib */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -55,6 +59,12 @@
 		A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationCell.xib; sourceTree = "<group>"; };
 		A52A92191D1CDDCD0005E26E /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
 		A52A921A1D1CDDCD0005E26E /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
+		A52A92221D1CE0790005E26E /* AnchorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorViewController.h; sourceTree = "<group>"; };
+		A52A92231D1CE0790005E26E /* AnchorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorViewController.m; sourceTree = "<group>"; };
+		A52A92241D1CE0790005E26E /* AnchorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnchorViewController.xib; sourceTree = "<group>"; };
+		A52A92271D1CE0890005E26E /* RadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioViewController.h; sourceTree = "<group>"; };
+		A52A92281D1CE0890005E26E /* RadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioViewController.m; sourceTree = "<group>"; };
+		A52A92291D1CE0890005E26E /* RadioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioViewController.xib; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -160,6 +170,26 @@
 				A52A921A1D1CDDCD0005E26E /* ClassificationView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A52A92201D1CE0560005E26E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92221D1CE0790005E26E /* AnchorViewController.h */,
+				A52A92231D1CE0790005E26E /* AnchorViewController.m */,
+				A52A92241D1CE0790005E26E /* AnchorViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A52A92211D1CE0660005E26E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A52A92271D1CE0890005E26E /* RadioViewController.h */,
+				A52A92281D1CE0890005E26E /* RadioViewController.m */,
+				A52A92291D1CE0890005E26E /* RadioViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A57E606D1D1BE159007EF7F1 = {
@@ -366,6 +396,7 @@
 		D61922A11D1CD8A20008648A /* Anchor（主播） */ = {
 			isa = PBXGroup;
 			children = (
+				A52A92201D1CE0560005E26E /* Controller */,
 			);
 			path = "Anchor（主播）";
 			sourceTree = "<group>";
@@ -373,6 +404,7 @@
 		D61922BC1D1CD8A20008648A /* Radio（电台） */ = {
 			isa = PBXGroup;
 			children = (
+				A52A92211D1CE0660005E26E /* Controller */,
 			);
 			path = "Radio（电台）";
 			sourceTree = "<group>";
@@ -518,10 +550,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
+				A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
+				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
@@ -640,12 +674,14 @@
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
+				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
+				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
 				D61922CD1D1CD8A20008648A /* HeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
