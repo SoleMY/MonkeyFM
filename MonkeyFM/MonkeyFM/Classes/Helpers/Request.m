@@ -9,7 +9,7 @@
 #import "Request.h"
 #import "HeadView.h"
 #import "shuffingNetRequest.h"
-#import "URL.h"
+#import "MFM_URL.h"
 #import "shufflingModel.h"
 @implementation Request
 - (void)requestWithURL:(NSString *)URL view:(UIView *)view frame:(CGRect)frame{
