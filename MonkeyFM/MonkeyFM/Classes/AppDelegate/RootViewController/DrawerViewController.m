@@ -13,10 +13,16 @@
 #import "ClassificationController.h"
 #import "AnchorViewController.h"
 #import "RadioViewController.h"
+
+#define kCellColor [UIColor clearColor]
+
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     NSInteger _presentedRow;
 }
+
+// 抽屉的大背景图片
+@property (nonatomic, strong) UIImageView *backImageView;
 
 @end
 
@@ -26,19 +32,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
-//    self.rearTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 150, self.view.frame.size.width - 40, self.view.frame.size.height - 200)];
-//    self.rearTableView.backgroundColor = [UIColor grayColor];
-    // Do any additional setup after loading the view from its nib.
-//    SWRevealViewController *parentRevealController = self.revealViewController;
-    self.rearTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
-    self.rearTableView.delegate = self;
-    self.rearTableView.dataSource = self;
-    [self.view addSubview:self.rearTableView];
+    self.backImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:self.backImageView];
+
     
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
     
     headView.backgroundColor = [UIColor blueColor];
-    
+//    UIImageView *userPhotoImageView = [[UIImageView alloc] initWithFrame:<#(CGRect)#>]
     self.rearTableView.tableHeaderView = headView;
 //    SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
 
@@ -106,7 +107,7 @@
     }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
-    
+    cell.backgroundColor = kCellColor;
     return cell;
 }
 
