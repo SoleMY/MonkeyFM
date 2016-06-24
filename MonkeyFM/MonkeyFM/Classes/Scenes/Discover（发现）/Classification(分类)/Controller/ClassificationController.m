@@ -10,10 +10,12 @@
 #import "ClassificationView.h"
 #import "ClassificationCell.h"
 #import "ClassificationModel.h"
+#import <UIImageView+WebCache.h>
 @interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong)ClassificationView *myView;
 
 @property (nonatomic, strong)NSMutableArray *allArray;
+
 @end
 
 @implementation ClassificationController
@@ -63,7 +65,7 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
 // 设置每个分区有几个item
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 23;
+    return self.allArray.count;
 }
 
 // 返回每一个item的cell对象
@@ -71,13 +73,12 @@ static  NSString *const identifile_cell = @"identifile_cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     // 第二步：重用cell
     ClassificationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifile_cell forIndexPath:indexPath];
-    cell.photoImage.image = [UIImage imageNamed:@"猴子"];
-//    cell.label.text = @"分类";
-//    ClassificationModel *model = self.allArray[indexPath.row];
-    
-//    ClassificationModel *model = self.allArray[2];
-//    NSLog(@"%@", self.allArray);
 
+
+    ClassificationModel *model = self.allArray[indexPath.row];
+        cell.label.text = model.title;
+    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+    
     return cell;
 }
 
