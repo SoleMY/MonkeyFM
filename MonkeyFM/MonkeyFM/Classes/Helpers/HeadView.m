@@ -31,7 +31,8 @@
     self.scrollView.contentSize = CGSizeMake(kScrolleViewWidth,0);
     self.scrollView.contentOffset = CGPointMake(kViewWidth, 0);
     self.scrollView.pagingEnabled = YES;
-    self.scrollView.showsVerticalScrollIndicator = YES;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
     
 //    第一个图

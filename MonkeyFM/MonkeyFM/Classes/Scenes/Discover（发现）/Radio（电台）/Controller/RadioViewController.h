@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface RadioViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
