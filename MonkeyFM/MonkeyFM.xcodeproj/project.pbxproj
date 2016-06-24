@@ -29,6 +29,7 @@
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		D609EBF11D1D0D640042B23F /* TheHostShow.m in Sources */ = {isa = PBXBuildFile; fileRef = D609EBF01D1D0D640042B23F /* TheHostShow.m */; };
 		D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922791D1CD8A20008648A /* AppDelegate.m */; };
 		D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D619227C1D1CD8A20008648A /* DrawerViewController.m */; };
 		D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D619227D1D1CD8A20008648A /* DrawerViewController.xib */; };
@@ -95,6 +96,8 @@
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
+		D609EBEF1D1D0D640042B23F /* TheHostShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHostShow.h; sourceTree = "<group>"; };
+		D609EBF01D1D0D640042B23F /* TheHostShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHostShow.m; sourceTree = "<group>"; };
 		D61922781D1CD8A20008648A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D61922791D1CD8A20008648A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D619227B1D1CD8A20008648A /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
@@ -273,6 +276,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D609EBEE1D1D0D540042B23F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D609EBEF1D1D0D640042B23F /* TheHostShow.h */,
+				D609EBF01D1D0D640042B23F /* TheHostShow.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D61922761D1CD8A20008648A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +455,7 @@
 		D61922A11D1CD8A20008648A /* Anchor（主播） */ = {
 			isa = PBXGroup;
 			children = (
+				D609EBEE1D1D0D540042B23F /* View */,
 				A52A92201D1CE0560005E26E /* Controller */,
 			);
 			path = "Anchor（主播）";
@@ -738,6 +751,7 @@
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
 				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
+				D609EBF11D1D0D640042B23F /* TheHostShow.m in Sources */,
 				D61922CD1D1CD8A20008648A /* HeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +871,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -869,6 +884,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

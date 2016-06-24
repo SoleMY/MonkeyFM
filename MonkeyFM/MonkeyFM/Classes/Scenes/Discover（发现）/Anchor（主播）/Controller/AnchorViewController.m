@@ -7,7 +7,7 @@
 //
 
 #import "AnchorViewController.h"
-
+#import "TheHostShow.h"
 @interface AnchorViewController ()
 
 @end
@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor orangeColor];
     // Do any additional setup after loading the view from its nib.
+    TheHostShow *host = [[TheHostShow alloc] init];
+    host.frame =CGRectMake(0, 200, self.view.frame.size.width , 200);
+    [self.view addSubview:host];
 }
 
 - (void)didReceiveMemoryWarning {
