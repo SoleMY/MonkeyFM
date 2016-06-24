@@ -186,6 +186,7 @@
 		D69460851D1BF4E700E72309 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D69460AA1D1C061000E72309 /* Models */,
 				D69460861D1BF4E700E72309 /* AppDelegate */,
 				D694608B1D1BF4E700E72309 /* General */,
 				D694608D1D1BF4E700E72309 /* Helpers */,
@@ -386,6 +387,13 @@
 				A52A92041D1CBFFD0005E26E /* SWRevealViewController */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		D69460AA1D1C061000E72309 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DA675FF270CCF4B89ECD1891 /* Frameworks */ = {
