@@ -13,6 +13,7 @@
 #import "SmallTools.h"
 
 #define kLeftItemSize(x,y) CGSizeMake(x, y)
+#define kRightItemSize(x,y) CGSizeMake(x, y)
 
 @interface BaseViewController ()
 @property (nonatomic, strong) UIView *centerView;
@@ -31,15 +32,26 @@
     //设置NavigationItem背景图片
     
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(drawerListAction:) ];
+    // 左侧抽屉按钮
     SWRevealViewController *revealController = [self revealViewController];
     UIImage *left_list = [UIImage imageNamed:@"left_list"];  //获取图片
     CGSize itemSize = kLeftItemSize(30, 30);
     left_list = [SmallTools scaleToSize:left_list size:itemSize]; //设置图片的大小与Navigation Bar相同
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:left_list style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-
+    
+    // 右侧播放按钮
+    UIImage *right_play = [UIImage imageNamed:@"audio-frequency"];
+    CGSize rightItemSize = kRightItemSize(30, 30);
+    right_play = [SmallTools scaleToSize:right_play size:rightItemSize];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:right_play style:UIBarButtonItemStylePlain target:self action:@selector(currentPlayDetail:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
-
+// 跳转当前播放详情页面
+- (void)currentPlayDetail:(id)sender
+{
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

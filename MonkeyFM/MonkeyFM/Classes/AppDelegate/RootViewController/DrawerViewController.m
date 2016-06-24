@@ -17,8 +17,8 @@
 #import "MFM_Tool_COLOR.h"
 
 #define kCellColor [UIColor clearColor]
-#define kHeadViewHeight self.rearTableView.frame.size.height / 5
-#define kUserPhotoWidth self.rearTableView.frame.size.width / 7
+#define kHeadViewHeight self.rearTableView.frame.size.height / 4
+#define kUserPhotoWidth self.rearTableView.frame.size.width / 10
 
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -50,9 +50,9 @@
 {
     // tableView头视图
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.rearTableView.frame.size.width, kHeadViewHeight)];
-    headView.backgroundColor = kNavigationBarTintColor;
+    headView.backgroundColor = [UIColor clearColor];
     self.rearTableView.tableHeaderView = headView;
-    NSLog(@"%f", self.view.bounds.size.width);
+//    NSLog(@"%f", self.view.bounds.size.width);
     // 用户头像
     UIImageView *userPhotoImageView = [[UIImageView alloc] init];
     userPhotoImageView.image = [UIImage imageNamed:@"user_photo"];
@@ -61,7 +61,7 @@
     userPhotoImageView.layer.masksToBounds = YES;
     [headView addSubview:userPhotoImageView];
     [userPhotoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(headView).offset(20);
+        make.top.equalTo(headView).offset(71);
         make.left.equalTo(headView).offset(20);
         make.width.mas_equalTo(kUserPhotoWidth);
         make.height.mas_equalTo(kUserPhotoWidth);
@@ -73,7 +73,7 @@
     [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(userPhotoImageView.mas_centerY);
         make.left.equalTo(userPhotoImageView.mas_right);
-        make.width.mas_equalTo(kUserPhotoWidth * 2);
+        make.width.mas_equalTo(kUserPhotoWidth * 3);
     }];
 
 }

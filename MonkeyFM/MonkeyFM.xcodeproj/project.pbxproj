@@ -22,6 +22,10 @@
 		A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A922D1D1CE3600005E26E /* SmallTools.m */; };
 		A52A92341D1D14D70005E26E /* user_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A92331D1D14D70005E26E /* user_photo.png */; };
 		A52A92361D1D18110005E26E /* drawerView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A52A92351D1D18110005E26E /* drawerView.jpg */; };
+		A52A92381D1D1E2A0005E26E /* audio-frequency.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A92371D1D1E2A0005E26E /* audio-frequency.png */; };
+		A52A923C1D1D24E60005E26E /* RadioView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A923B1D1D24E60005E26E /* RadioView.m */; };
+		A52A92401D1D25800005E26E /* RadioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A923F1D1D25800005E26E /* RadioModel.m */; };
+		A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -75,6 +79,13 @@
 		A52A92321D1CE7930005E26E /* Sinleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sinleton.h; sourceTree = "<group>"; };
 		A52A92331D1D14D70005E26E /* user_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_photo.png; sourceTree = "<group>"; };
 		A52A92351D1D18110005E26E /* drawerView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drawerView.jpg; sourceTree = "<group>"; };
+		A52A92371D1D1E2A0005E26E /* audio-frequency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-frequency.png"; sourceTree = "<group>"; };
+		A52A923A1D1D24E60005E26E /* RadioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioView.h; sourceTree = "<group>"; };
+		A52A923B1D1D24E60005E26E /* RadioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioView.m; sourceTree = "<group>"; };
+		A52A923E1D1D25800005E26E /* RadioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioModel.h; sourceTree = "<group>"; };
+		A52A923F1D1D25800005E26E /* RadioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioModel.m; sourceTree = "<group>"; };
+		A52A92411D1D2EB60005E26E /* RadioHeadReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioHeadReusableView.h; sourceTree = "<group>"; };
+		A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioHeadReusableView.m; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -199,6 +210,26 @@
 				A52A92291D1CE0890005E26E /* RadioViewController.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A52A92391D1D24BE0005E26E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A52A923A1D1D24E60005E26E /* RadioView.h */,
+				A52A923B1D1D24E60005E26E /* RadioView.m */,
+				A52A92411D1D2EB60005E26E /* RadioHeadReusableView.h */,
+				A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A52A923D1D1D25390005E26E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A52A923E1D1D25800005E26E /* RadioModel.h */,
+				A52A923F1D1D25800005E26E /* RadioModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A57E606D1D1BE159007EF7F1 = {
@@ -332,6 +363,7 @@
 				D619228D1D1CD8A20008648A /* left_list.png */,
 				A52A92331D1D14D70005E26E /* user_photo.png */,
 				A52A92351D1D18110005E26E /* drawerView.jpg */,
+				A52A92371D1D1E2A0005E26E /* audio-frequency.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -419,6 +451,8 @@
 		D61922BC1D1CD8A20008648A /* Radio（电台） */ = {
 			isa = PBXGroup;
 			children = (
+				A52A923D1D1D25390005E26E /* Model */,
+				A52A92391D1D24BE0005E26E /* View */,
 				A52A92211D1CE0660005E26E /* Controller */,
 			);
 			path = "Radio（电台）";
@@ -573,6 +607,7 @@
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
 				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
+				A52A92381D1D1E2A0005E26E /* audio-frequency.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
@@ -681,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */,
+				A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
@@ -692,7 +728,9 @@
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
+				A52A923C1D1D24E60005E26E /* RadioView.m in Sources */,
 				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
+				A52A92401D1D25800005E26E /* RadioModel.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
