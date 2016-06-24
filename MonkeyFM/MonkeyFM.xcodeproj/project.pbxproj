@@ -20,6 +20,8 @@
 		A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92281D1CE0890005E26E /* RadioViewController.m */; };
 		A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92291D1CE0890005E26E /* RadioViewController.xib */; };
 		A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A922D1D1CE3600005E26E /* SmallTools.m */; };
+		A52A92341D1D14D70005E26E /* user_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A92331D1D14D70005E26E /* user_photo.png */; };
+		A52A92361D1D18110005E26E /* drawerView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A52A92351D1D18110005E26E /* drawerView.jpg */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -71,6 +73,8 @@
 		A52A92301D1CE71C0005E26E /* MFM_URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFM_URL.h; sourceTree = "<group>"; };
 		A52A92311D1CE7610005E26E /* MFM_Tool_COLOR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFM_Tool_COLOR.h; sourceTree = "<group>"; };
 		A52A92321D1CE7930005E26E /* Sinleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sinleton.h; sourceTree = "<group>"; };
+		A52A92331D1D14D70005E26E /* user_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_photo.png; sourceTree = "<group>"; };
+		A52A92351D1D18110005E26E /* drawerView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drawerView.jpg; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				D619228D1D1CD8A20008648A /* left_list.png */,
+				A52A92331D1D14D70005E26E /* user_photo.png */,
+				A52A92351D1D18110005E26E /* drawerView.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -559,7 +565,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
+				A52A92341D1D14D70005E26E /* user_photo.png in Resources */,
 				A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */,
+				A52A92361D1D18110005E26E /* drawerView.jpg in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
