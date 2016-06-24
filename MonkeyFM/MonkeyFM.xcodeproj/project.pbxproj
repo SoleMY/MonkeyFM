@@ -28,11 +28,6 @@
 		D61922D61D1CD8A20008648A /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922981D1CD8A20008648A /* BaseView.m */; };
 		D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D619229A1D1CD8A20008648A /* BaseViewController.m */; };
 		D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D619229B1D1CD8A20008648A /* BaseViewController.xib */; };
-		D61922D91D1CD8A20008648A /* ClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922A51D1CD8A20008648A /* ClassificationController.m */; };
-		D61922DA1D1CD8A20008648A /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922A81D1CD8A20008648A /* ClassificationModel.m */; };
-		D61922DB1D1CD8A20008648A /* ClassificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922AB1D1CD8A20008648A /* ClassificationCell.m */; };
-		D61922DC1D1CD8A20008648A /* ClassificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922AC1D1CD8A20008648A /* ClassificationCell.xib */; };
-		D61922DD1D1CD8A20008648A /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922AE1D1CD8A20008648A /* ClassificationView.m */; };
 		D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922C01D1CD8A20008648A /* RecommendViewController.m */; };
 		D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922C11D1CD8A20008648A /* RecommendViewController.xib */; };
 		D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922E81D1CD93F0008648A /* SWRevealViewController.m */; };
@@ -82,15 +77,6 @@
 		D61922991D1CD8A20008648A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		D619229A1D1CD8A20008648A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		D619229B1D1CD8A20008648A /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
-		D61922A41D1CD8A20008648A /* ClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationController.h; sourceTree = "<group>"; };
-		D61922A51D1CD8A20008648A /* ClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationController.m; sourceTree = "<group>"; };
-		D61922A71D1CD8A20008648A /* ClassificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationModel.h; sourceTree = "<group>"; };
-		D61922A81D1CD8A20008648A /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
-		D61922AA1D1CD8A20008648A /* ClassificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationCell.h; sourceTree = "<group>"; };
-		D61922AB1D1CD8A20008648A /* ClassificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationCell.m; sourceTree = "<group>"; };
-		D61922AC1D1CD8A20008648A /* ClassificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationCell.xib; sourceTree = "<group>"; };
-		D61922AD1D1CD8A20008648A /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
-		D61922AE1D1CD8A20008648A /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
 		D61922BF1D1CD8A20008648A /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		D61922C01D1CD8A20008648A /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		D61922C11D1CD8A20008648A /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
@@ -325,49 +311,8 @@
 		D61922A11D1CD8A20008648A /* Anchor（主播） */ = {
 			isa = PBXGroup;
 			children = (
-				D61922A21D1CD8A20008648A /* Classification(分类) */,
 			);
 			path = "Anchor（主播）";
-			sourceTree = "<group>";
-		};
-		D61922A21D1CD8A20008648A /* Classification(分类) */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A31D1CD8A20008648A /* Controller */,
-				D61922A61D1CD8A20008648A /* Model */,
-				D61922A91D1CD8A20008648A /* View */,
-			);
-			path = "Classification(分类)";
-			sourceTree = "<group>";
-		};
-		D61922A31D1CD8A20008648A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A41D1CD8A20008648A /* ClassificationController.h */,
-				D61922A51D1CD8A20008648A /* ClassificationController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D61922A61D1CD8A20008648A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D61922A71D1CD8A20008648A /* ClassificationModel.h */,
-				D61922A81D1CD8A20008648A /* ClassificationModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D61922A91D1CD8A20008648A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D61922AA1D1CD8A20008648A /* ClassificationCell.h */,
-				D61922AB1D1CD8A20008648A /* ClassificationCell.m */,
-				D61922AC1D1CD8A20008648A /* ClassificationCell.xib */,
-				D61922AD1D1CD8A20008648A /* ClassificationView.h */,
-				D61922AE1D1CD8A20008648A /* ClassificationView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D61922BC1D1CD8A20008648A /* Radio（电台） */ = {
@@ -520,7 +465,6 @@
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
-				D61922DC1D1CD8A20008648A /* ClassificationCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
@@ -632,14 +576,10 @@
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
-				D61922DA1D1CD8A20008648A /* ClassificationModel.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
 				D61922D41D1CD8A20008648A /* BaseModel.m in Sources */,
 				D61922EA1D1CD9E10008648A /* main.m in Sources */,
-				D61922DD1D1CD8A20008648A /* ClassificationView.m in Sources */,
-				D61922DB1D1CD8A20008648A /* ClassificationCell.m in Sources */,
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
-				D61922D91D1CD8A20008648A /* ClassificationController.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
