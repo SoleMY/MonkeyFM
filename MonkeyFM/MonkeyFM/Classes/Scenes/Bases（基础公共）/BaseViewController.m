@@ -10,6 +10,7 @@
 #import "DrawerViewController.h"
 #import "RecommendViewController.h"
 #import "SWRevealViewController.h"
+#import "SmallTools.h"
 
 #define kLeftItemSize(x,y) CGSizeMake(x, y)
 
@@ -33,7 +34,7 @@
     SWRevealViewController *revealController = [self revealViewController];
     UIImage *left_list = [UIImage imageNamed:@"left_list"];  //获取图片
     CGSize itemSize = kLeftItemSize(30, 30);
-    left_list = [self scaleToSize:left_list size:itemSize];//设置图片的大小与Navigation Bar相同
+    left_list = [SmallTools scaleToSize:left_list size:itemSize]; //设置图片的大小与Navigation Bar相同
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:left_list style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 
@@ -50,14 +51,7 @@
 //{
 //    
 //}
-//调整图片大小
-- (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size{
-    UIGraphicsBeginImageContext(size);
-    [img drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return scaledImage;
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
