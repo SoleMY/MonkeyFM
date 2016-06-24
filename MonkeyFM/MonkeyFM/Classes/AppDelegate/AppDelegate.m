@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "RecommendViewController.h"
+#import "BaseNavigationViewController.h"
+#import "SWRevealViewController.h"
+#import "DrawerViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<SWRevealViewControllerDelegate>
 
 @end
 
@@ -16,9 +20,84 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<<<<<<< HEAD
+  
+=======
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    BaseNavigationViewController *recommendNav = [[BaseNavigationViewController alloc] initWithRootViewController:[[RecommendViewController alloc] init]];
+    DrawerViewController *drawerVC = [[DrawerViewController alloc] init];
+    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
+                                                    initWithRearViewController:drawerVC frontViewController:recommendNav];
+    mainRevealController.delegate = self;
+    self.window.rootViewController = mainRevealController;
+    
+    
+>>>>>>> cc303a32ff14d457d124f7a6355baa2656d17e77
     return YES;
 }
+
+//- (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position
+//{
+//    NSString *str = nil;
+//    if ( position == FrontViewPositionLeft ) str = @"FrontViewPositionLeft";
+//    if ( position == FrontViewPositionRight ) str = @"FrontViewPositionRight";
+//    if ( position == FrontViewPositionRightMost ) str = @"FrontViewPositionRightMost";
+//    if ( position == FrontViewPositionRightMostRemoved ) str = @"FrontViewPositionRightMostRemoved";
+//    return str;
+//}
+//- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
+//{
+//    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
+//{
+//    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController willRevealRearViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController didRevealRearViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController willHideRearViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//- (void)revealController:(SWRevealViewController *)revealController didHideRearViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController willShowFrontViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController didShowFrontViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController willHideFrontViewController:(UIViewController *)rearViewController
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
+//- (void)revealController:(SWRevealViewController *)revealController didHideFrontViewController:(UIViewController *)rearViewController
+//
+//{
+//    NSLog( @"%@", NSStringFromSelector(_cmd));
+//}
+//
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
