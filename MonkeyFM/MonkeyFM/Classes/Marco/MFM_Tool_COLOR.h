@@ -19,6 +19,10 @@
 
 #define MAIN_BACK_COLOR COLOR(128,149,170,1.0)
 
-#define kNavigationBarTintColor [UIColor colorWithRed:(70/255.0) green:(184 / 255.0) blue:(113 / 255.0) alpha:1]
+/// 导航栏颜色
+#define kNavigationBarTintColor [UIColor colorWithRed:(46/255.0) green:(196 / 255.0) blue:(196 / 255.0) alpha:1]
+
+/// 控件颜色
+#define kControlTintColor [UIColor colorWithRed:(46/255.0) green:(196 / 255.0) blue:(196 / 255.0) alpha:1]
 
 #endif /* MFM_Tool_COLOR_h */
