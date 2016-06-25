@@ -79,9 +79,6 @@
 		D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */; };
 		D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */; };
 		D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */; };
-		D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */; };
-		D6721BF21D1E7FF800CFF94A /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF11D1E7FF800CFF94A /* NewsViewController.m */; };
-		D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF41D1E821500CFF94A /* NewsCell.m */; };
 		D6562D621D1E182D0035FAC7 /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562D611D1E182D0035FAC7 /* Host.m */; };
 		D6562D691D1E195F0035FAC7 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562D681D1E195F0035FAC7 /* NetWorking.m */; };
 		D6562D6C1D1E1CC60035FAC7 /* HostTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562D6B1D1E1CC60035FAC7 /* HostTitle.m */; };
@@ -110,6 +107,9 @@
 		D6562DB91D1E60F10035FAC7 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562DA51D1E60F10035FAC7 /* UIView+MJExtension.m */; };
 		D6562DBF1D1E68CB0035FAC7 /* HostViewDetaileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */; };
 		D6562DC11D1E733B0035FAC7 /* addAttention@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6562DC01D1E733B0035FAC7 /* addAttention@3x.png */; };
+		D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */; };
+		D6721BF21D1E7FF800CFF94A /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF11D1E7FF800CFF94A /* NewsViewController.m */; };
+		D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF41D1E821500CFF94A /* NewsCell.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -230,12 +230,6 @@
 		D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCollectionReusableView.m; sourceTree = "<group>"; };
 		D6442DBD1D1D6A8B00EEE263 /* FooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterCollectionReusableView.h; sourceTree = "<group>"; };
 		D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCollectionReusableView.m; sourceTree = "<group>"; };
-		D6721BE41D1E6C4600CFF94A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
-		D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
-		D6721BF01D1E7FF800CFF94A /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
-		D6721BF11D1E7FF800CFF94A /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		D6721BF31D1E821500CFF94A /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
-		D6721BF41D1E821500CFF94A /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		D6562D601D1E182D0035FAC7 /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Host.h; path = ../Host.h; sourceTree = "<group>"; };
 		D6562D611D1E182D0035FAC7 /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Host.m; path = ../Host.m; sourceTree = "<group>"; };
 		D6562D671D1E195F0035FAC7 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
@@ -289,6 +283,12 @@
 		D6562DBD1D1E68CB0035FAC7 /* HostViewDetaileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewDetaileCell.h; path = "MonkeyFM/Classes/Scenes/Discover（发现）/Anchor（主播）/Controller/HostViewDetaileCell.h"; sourceTree = SOURCE_ROOT; };
 		D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewDetaileCell.m; path = "MonkeyFM/Classes/Scenes/Discover（发现）/Anchor（主播）/Controller/HostViewDetaileCell.m"; sourceTree = SOURCE_ROOT; };
 		D6562DC01D1E733B0035FAC7 /* addAttention@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addAttention@3x.png"; path = "MJRefresh/addAttention@3x.png"; sourceTree = "<group>"; };
+		D6721BE41D1E6C4600CFF94A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
+		D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
+		D6721BF01D1E7FF800CFF94A /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		D6721BF11D1E7FF800CFF94A /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		D6721BF31D1E821500CFF94A /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		D6721BF41D1E821500CFF94A /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -886,7 +886,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
-				AB363DEDC331AAFCF2F8C570 /* 📦 Check Pods Manifest.lock */,
+				AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */,
 				1616043E69D5DAEC408694FA /* 📦 Check Pods Manifest.lock */,
 				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
@@ -966,10 +966,8 @@
 				A50FC3961D1E1706002A940D /* 省市台.png in Resources */,
 				D6562DB41D1E60F10035FAC7 /* MJRefresh.bundle in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
-				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
 				A50FC3861D1E1706002A940D /* chat_support_blue@2x.png in Resources */,
 				A50FC3931D1E1706002A940D /* ic_homeinternet@3x.png in Resources */,
-				D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */,
 				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
 				A52A92381D1D1E2A0005E26E /* audio-frequency.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
@@ -1050,14 +1048,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB363DEDC331AAFCF2F8C570 /* 📦 Check Pods Manifest.lock */ = {
+		AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1154,7 +1152,6 @@
 				A52A92401D1D25800005E26E /* RadioModel.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D6562D741D1E599D0035FAC7 /* HostViewController.m in Sources */,
-				D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */,
 				A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */,
 				D6562DAE1D1E60F10035FAC7 /* MJRefreshBackGifFooter.m in Sources */,
 				D6562DA81D1E60F10035FAC7 /* MJRefreshComponent.m in Sources */,
