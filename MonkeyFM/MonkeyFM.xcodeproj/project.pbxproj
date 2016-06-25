@@ -13,7 +13,6 @@
 		A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92111D1CDDCD0005E26E /* ClassificationController.m */; };
 		A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92141D1CDDCD0005E26E /* ClassificationModel.m */; };
 		A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92171D1CDDCD0005E26E /* ClassificationCell.m */; };
-		A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */; };
 		A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A921A1D1CDDCD0005E26E /* ClassificationView.m */; };
 		A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92231D1CE0790005E26E /* AnchorViewController.m */; };
 		A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52A92241D1CE0790005E26E /* AnchorViewController.xib */; };
@@ -49,14 +48,14 @@
 		D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922C11D1CD8A20008648A /* RecommendViewController.xib */; };
 		D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922E81D1CD93F0008648A /* SWRevealViewController.m */; };
 		D61922EA1D1CD9E10008648A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57E607A1D1BE159007EF7F1 /* main.m */; };
-		D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922F61D1D4E7C0008648A /* SegmentView.m */; };
-		D61922FE1D1D52260008648A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922FC1D1D52260008648A /* DetailClassificationController.m */; };
-		D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61922FD1D1D52260008648A /* DetailClassificationController.xib */; };
 		D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB21D1D328200EEE263 /* CollectionView.m */; };
 		D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */; };
 		D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */; };
 		D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */; };
 		D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */; };
+		D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */; };
+		D6721BF21D1E7FF800CFF94A /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF11D1E7FF800CFF94A /* NewsViewController.m */; };
+		D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF41D1E821500CFF94A /* NewsCell.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		A52A92141D1CDDCD0005E26E /* ClassificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationModel.m; sourceTree = "<group>"; };
 		A52A92161D1CDDCD0005E26E /* ClassificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationCell.h; sourceTree = "<group>"; };
 		A52A92171D1CDDCD0005E26E /* ClassificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationCell.m; sourceTree = "<group>"; };
-		A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassificationCell.xib; sourceTree = "<group>"; };
 		A52A92191D1CDDCD0005E26E /* ClassificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassificationView.h; sourceTree = "<group>"; };
 		A52A921A1D1CDDCD0005E26E /* ClassificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationView.m; sourceTree = "<group>"; };
 		A52A92221D1CE0790005E26E /* AnchorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorViewController.h; sourceTree = "<group>"; };
@@ -137,11 +135,6 @@
 		D61922C11D1CD8A20008648A /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
 		D61922E71D1CD93F0008648A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D61922E81D1CD93F0008648A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		D61922F51D1D4E7C0008648A /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
-		D61922F61D1D4E7C0008648A /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
-		D61922FB1D1D52260008648A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
-		D61922FC1D1D52260008648A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
-		D61922FD1D1D52260008648A /* DetailClassificationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailClassificationController.xib; sourceTree = "<group>"; };
 		D6442DB11D1D328200EEE263 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
 		D6442DB21D1D328200EEE263 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -152,6 +145,12 @@
 		D6442DBB1D1D582800EEE263 /* FirstCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCollectionReusableView.m; sourceTree = "<group>"; };
 		D6442DBD1D1D6A8B00EEE263 /* FooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterCollectionReusableView.h; sourceTree = "<group>"; };
 		D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCollectionReusableView.m; sourceTree = "<group>"; };
+		D6721BE41D1E6C4600CFF94A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
+		D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
+		D6721BF01D1E7FF800CFF94A /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		D6721BF11D1E7FF800CFF94A /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		D6721BF31D1E821500CFF94A /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		D6721BF41D1E821500CFF94A /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +192,12 @@
 			children = (
 				A52A92101D1CDDCD0005E26E /* ClassificationController.h */,
 				A52A92111D1CDDCD0005E26E /* ClassificationController.m */,
-				D61922FB1D1D52260008648A /* DetailClassificationController.h */,
-				D61922FC1D1D52260008648A /* DetailClassificationController.m */,
-				D61922FD1D1D52260008648A /* DetailClassificationController.xib */,
+				D6721BE41D1E6C4600CFF94A /* DetailClassificationController.h */,
+				D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */,
+				D6721BF01D1E7FF800CFF94A /* NewsViewController.h */,
+				D6721BF11D1E7FF800CFF94A /* NewsViewController.m */,
+				D6721BF31D1E821500CFF94A /* NewsCell.h */,
+				D6721BF41D1E821500CFF94A /* NewsCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,7 +216,6 @@
 			children = (
 				A52A92161D1CDDCD0005E26E /* ClassificationCell.h */,
 				A52A92171D1CDDCD0005E26E /* ClassificationCell.m */,
-				A52A92181D1CDDCD0005E26E /* ClassificationCell.xib */,
 				A52A92191D1CDDCD0005E26E /* ClassificationView.h */,
 				A52A921A1D1CDDCD0005E26E /* ClassificationView.m */,
 			);
@@ -382,8 +383,6 @@
 				D61922861D1CD8A20008648A /* shuffingNetRequest.m */,
 				A52A922C1D1CE3600005E26E /* SmallTools.h */,
 				A52A922D1D1CE3600005E26E /* SmallTools.m */,
-				D61922F51D1D4E7C0008648A /* SegmentView.h */,
-				D61922F61D1D4E7C0008648A /* SegmentView.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -658,8 +657,6 @@
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
-				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
-				D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */,
 				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
 				A52A92381D1D1E2A0005E26E /* audio-frequency.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
@@ -804,22 +801,23 @@
 				D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
+				D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
 				D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */,
 				D61922D41D1CD8A20008648A /* BaseModel.m in Sources */,
-				D61922FE1D1D52260008648A /* DetailClassificationController.m in Sources */,
 				A52A921B1D1CDDCD0005E26E /* ClassificationController.m in Sources */,
+				D6721BF21D1E7FF800CFF94A /* NewsViewController.m in Sources */,
 				D61922EA1D1CD9E10008648A /* main.m in Sources */,
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
+				D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
 				A52A923C1D1D24E60005E26E /* RadioView.m in Sources */,
 				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
 				A52A92401D1D25800005E26E /* RadioModel.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
-				D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,

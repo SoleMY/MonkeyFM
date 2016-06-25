@@ -16,4 +16,5 @@
 //UICollectionViewFlowLayout用来给UICollectionView布局的
 
 @property (nonatomic, strong)UICollectionViewFlowLayout *myFlowLayout;
+
 @end

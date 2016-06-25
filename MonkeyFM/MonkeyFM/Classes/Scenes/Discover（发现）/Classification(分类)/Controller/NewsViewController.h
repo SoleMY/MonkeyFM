@@ -1,5 +1,5 @@
 //
-//  DetailClassificationController.h
+//  NewsViewController.h
 //  MonkeyFM
 //
 //  Created by lanou3g on 16/6/25.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface DetailClassificationController : BaseViewController
+@interface NewsViewController : BaseViewController
 
 @end
