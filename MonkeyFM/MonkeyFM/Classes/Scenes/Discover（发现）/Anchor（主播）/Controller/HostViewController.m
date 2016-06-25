@@ -54,8 +54,8 @@
 
 - (void)request {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *str = [NSString stringWithFormat:@"%@%@%@", ]
-    [manager GET:<#(nonnull NSString *)#> parameters:<#(nullable id)#> progress:<#^(NSProgress * _Nonnull downloadProgress)downloadProgress#> success:<#^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)success#> failure:<#^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)failure#>]
+//    NSString *str = [NSString stringWithFormat:@"%@%@%@", ]
+//    [manager GET:<#(nonnull NSString *)#> parameters:<#(nullable id)#> progress:<#^(NSProgress * _Nonnull downloadProgress)downloadProgress#> success:<#^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)success#> failure:<#^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)failure#>]
 }
 
 - (void)back:(UIBarButtonItem *)sender  {

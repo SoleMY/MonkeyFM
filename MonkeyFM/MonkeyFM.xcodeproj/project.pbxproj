@@ -588,14 +588,11 @@
 		D619228C1D1CD8A20008648A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				A50FC3711D1E1706002A940D /* 图标 */,
-=======
 				D6562D771D1E60F10035FAC7 /* MJRefresh */,
 				D6562D751D1E5D130035FAC7 /* btn_anchor_back@2x.png */,
 				D6562DC01D1E733B0035FAC7 /* addAttention@3x.png */,
 				D6562D6D1D1E370E0035FAC7 /* btn_anchor_more@2x.png */,
->>>>>>> 37244ede1365caee8bf2ec17e156026a27063c97
 				D619228D1D1CD8A20008648A /* left_list.png */,
 				A52A92331D1D14D70005E26E /* user_photo.png */,
 				A52A92351D1D18110005E26E /* drawerView.jpg */,
@@ -948,14 +945,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				A50FC3881D1E1706002A940D /* chat_support_yellow@2x.png in Resources */,
 				A50FC38F1D1E1706002A940D /* ic_homeIntelligent@3x.png in Resources */,
 				A50FC38E1D1E1706002A940D /* ic_homeIntelligent@2x.png in Resources */,
 				A50FC38D1D1E1706002A940D /* ic_homehomeinternet@2x.png in Resources */,
-=======
 				D6562DC11D1E733B0035FAC7 /* addAttention@3x.png in Resources */,
->>>>>>> 37244ede1365caee8bf2ec17e156026a27063c97
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
 				A50FC3891D1E1706002A940D /* 国家台.png in Resources */,
 				A50FC3981D1E1706002A940D /* ic_homeprovince_on@2x.png in Resources */,
@@ -963,21 +957,15 @@
 				A52A92341D1D14D70005E26E /* user_photo.png in Resources */,
 				A50FC3871D1E1706002A940D /* chat_support_green@2x.png in Resources */,
 				A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */,
-<<<<<<< HEAD
 				A50FC3971D1E1706002A940D /* ic_homeprovince@3x.png in Resources */,
-=======
 				D6562D6E1D1E370E0035FAC7 /* btn_anchor_more@2x.png in Resources */,
->>>>>>> 37244ede1365caee8bf2ec17e156026a27063c97
 				A52A92361D1D18110005E26E /* drawerView.jpg in Resources */,
 				D6562D761D1E5D130035FAC7 /* btn_anchor_back@2x.png in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
-<<<<<<< HEAD
 				A50FC3AD1D1E7144002A940D /* RadioPlayerListViewController.xib in Resources */,
 				A50FC3961D1E1706002A940D /* 省市台.png in Resources */,
-=======
 				D6562DB41D1E60F10035FAC7 /* MJRefresh.bundle in Resources */,
->>>>>>> 37244ede1365caee8bf2ec17e156026a27063c97
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
 				A50FC3861D1E1706002A940D /* chat_support_blue@2x.png in Resources */,
@@ -1166,13 +1154,10 @@
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D6562D741D1E599D0035FAC7 /* HostViewController.m in Sources */,
 				D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */,
-<<<<<<< HEAD
 				A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */,
-=======
 				D6562DAE1D1E60F10035FAC7 /* MJRefreshBackGifFooter.m in Sources */,
 				D6562DA81D1E60F10035FAC7 /* MJRefreshComponent.m in Sources */,
 				D6562D6C1D1E1CC60035FAC7 /* HostTitle.m in Sources */,
->>>>>>> 37244ede1365caee8bf2ec17e156026a27063c97
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
