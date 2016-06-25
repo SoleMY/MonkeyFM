@@ -7,27 +7,33 @@
 //
 
 #import "RadioViewController.h"
-#import "RadioView.h"
-#import "RadioHeadReusableView.h"
 #import "Request.h"
 #import "MFM_URL.h"
 #import <AFNetworking.h>
 #import <AFNetworkActivityIndicatorManager.h>
 #import "RadioModel.h"
+#import "Masonry.h"
+#import "RadioContentTableViewCell.h"
+#import "RadioTypeTableViewCell.h"
+#import "RadioPlayerListViewController.h"
 
-@interface RadioViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+#define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
+#define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3
 
-@property (nonatomic, strong) RadioView *radioView;
+@interface RadioViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+//@property (nonatomic, strong) RadioView *radioView;
 // 存放所有Model对象的数组
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
-
+@property (nonatomic, strong) UITableView *radioTableView;
 
 @end
 
 @implementation RadioViewController
 // 定义全局的重用标识符
 static NSString * const identifier_cell = @"identifier_cell";
-
+static NSString * const identifier_contentCell = @"identifier_contentCell";
+static NSString * const identifier_typeCell = @"identifier_typeCell";
 - (NSMutableArray *)allInfoDataArray
 {
     if (!_allInfoDataArray) {
@@ -36,20 +42,23 @@ static NSString * const identifier_cell = @"identifier_cell";
     return _allInfoDataArray;
 }
 
-- (void)loadView
-{
-    self.radioView = [[RadioView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.view = self.radioView;
-}
+//- (void)loadView
+//{
+//    self.radioView = [[RadioView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.view = self.radioView;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor grayColor];
-    self.radioView.collectionView.delegate = self;
-    self.radioView.collectionView.dataSource = self;
-    // 注册collection相关cell 头尾视图
-    [self registerClassWithCellAndHeaderFooter];
+    [self createRadioTableView];
+    
+//    self.radioView.collectionView.delegate = self;
+//    self.radioView.collectionView.dataSource = self;
+//    // 注册collection相关cell 头尾视图
+//    [self registerClassWithCellAndHeaderFooter];
+    
     // 数据请求
     [self requestData];
     
@@ -79,21 +88,128 @@ static NSString * const identifier_cell = @"identifier_cell";
 
 - (void)reloadDataAndShowUI
 {
-    NSLog(@"%@", self.allInfoDataArray);
+    [self.radioTableView reloadData];
 }
 
-- (void)registerClassWithCellAndHeaderFooter
+- (void)createRadioTableView
 {
-    // 注册Cell
-    [self.radioView.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier_cell];
-    // 注册头视图
-    [self.radioView.collectionView registerClass:[RadioHeadReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
-    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
-    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"normalHeaderView"];
+    self.radioTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    [self.view addSubview:self.radioTableView];
+    self.radioTableView.delegate = self;
+    self.radioTableView.dataSource = self;
+    self.radioTableView.showsVerticalScrollIndicator = NO;
+    self.radioTableView.bounces = NO;
+    self.radioTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.radioTableView.sectionFooterHeight = 0;
+    
+    
+    [self.view addSubview:_radioTableView];
+    [self.radioTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).with.offset(0);
+        make.top.equalTo(self.view).with.offset(0);
+        make.right.equalTo(self.view).with.offset(0);
+        make.bottom.equalTo(self.view).with.offset(0);
+    }];
+    // 注册cell
+    [self registerClassWithCell];
+    // 设置头视图
+    [self setTableHeaderView];
 }
 
-#pragma mark UICollectionViewDataSource Method------
+- (void)registerClassWithCell
+{
 
+    // 注册系统cell
+    [self.radioTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier_cell];
+    [self.radioTableView registerClass:[RadioContentTableViewCell class] forCellReuseIdentifier:identifier_contentCell];
+    [self.radioTableView registerClass:[RadioTypeTableViewCell class] forCellReuseIdentifier:identifier_typeCell];
+    // 注册头视图
+//    [self.radioView.collectionView registerClass:[RadioHeadReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
+//    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
+//    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"normalHeaderView"];
+}
+
+- (void)setTableHeaderView
+{
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:kHeaderRect];
+    [[Request alloc] requestWithURL:shuffing_radio_URL view:tableHeaderView frame:kHeaderRect];
+    self.radioTableView.tableHeaderView = tableHeaderView;
+}
+
+#pragma mark - UITableViewDataSource Delegate Method-----
+// 设置分区数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 4;
+}
+// 设置行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+// 返回cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __weak typeof(self) weakSelf = self;
+    switch (indexPath.section) {
+        case 0:{
+            RadioContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_contentCell];
+            cell.radioContentView.backgroundColor = [UIColor whiteColor];
+            cell.allInfoDataArray = self.allInfoDataArray;
+            cell.pushBlock = ^() {
+                RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                [weakSelf.navigationController pushViewController:listVC animated:YES];
+            };
+            return cell;
+        }
+            break;
+        case 1:{
+//            tableView.sectionHeaderHeight = 0;
+            RadioTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_typeCell forIndexPath:indexPath];
+            cell.radioTypeView.backgroundColor = [UIColor whiteColor];
+            cell.pushBlock = ^() {
+                RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                [weakSelf.navigationController pushViewController:listVC animated:YES];
+            };
+            cell.allInfoDataArray = self.allInfoDataArray;
+            return cell;
+        }
+            
+        default:
+        {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell];
+            cell.backgroundColor = [UIColor redColor];
+            return cell;
+        }
+            break;
+    }
+    
+    
+   
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 100;
+    } else if (indexPath.section == 1) {
+        return kTypeCellHeight;
+    } else {
+        return 100;
+    }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+// 每行的头视图
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    
+//}
+
+/*
+#pragma mark UICollectionViewDataSource Method------
 // 设置多少个分区
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -104,11 +220,11 @@ static NSString * const identifier_cell = @"identifier_cell";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 4;
+        return 0;
     } else if (section == 1) {
-        return 15;
-    } else if (section == 2) {
         return 3;
+    } else if (section == 2) {
+        return 15;
     } else {
         return 3;
     }
@@ -118,15 +234,30 @@ static NSString * const identifier_cell = @"identifier_cell";
 // 返回每一个item的cell对象那个
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    RootCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_cell forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor lightGrayColor];
-    //    if (indexPath.section == 0) {
-    //        cell.photoImageView.image = [UIImage imageNamed:@"1.jpg"];
-    //    }else if (indexPath.section == 1) {
-    //        cell.photoImageView.image = [UIImage imageNamed:@"2.jpg"];
-    //    }else if (indexPath.section == 2) {
-    //        cell.photoImageView.image = [UIImage imageNamed:@"111"];
-    //    }
+    if (self.allInfoDataArray.count > 0) {
+        if (indexPath.section == 0) {
+            return nil;
+        } else if (indexPath.section == 1) {
+            
+                RadioContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_contentCell forIndexPath:indexPath];
+    //            cell.topImageView.backgroundColor = [UIColor cyanColor];
+                RadioModel *model = [[RadioModel alloc] init];
+                model = self.allInfoDataArray[indexPath.section];
+                NSDictionary *dic = [model.dataList firstObject];
+                NSArray *nameArray = [dic objectForKey:@"dataList"];
+                cell.bottomLabel.text = [nameArray[indexPath.row] objectForKey:@"name"];
+                cell.topImageView.image = [[UIImage imageNamed:[NSString stringWithFormat:@"%@", cell.bottomLabel.text]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                return cell;
+            
+        } else if (indexPath.section == 2) {
+            RadioTypeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_typeCell forIndexPath:indexPath];
+            RadioModel *model = self.allInfoDataArray[1];
+            NSDictionary *dic = [model.dataList lastObject];
+            NSArray *nameArray = [dic objectForKey:@"dataList"];
+            cell.radioTypeLabel.text = [nameArray[indexPath.row] objectForKey:@"name"];
+            return cell;
+        }
+    }
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_cell forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
@@ -174,5 +305,5 @@ static NSString * const identifier_cell = @"identifier_cell";
 {
     return CGSizeMake(self.view.bounds.size.width, 20);
 }
-
+*/
 @end

@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50FC3861D1E1706002A940D /* chat_support_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3721D1E1706002A940D /* chat_support_blue@2x.png */; };
+		A50FC3871D1E1706002A940D /* chat_support_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3731D1E1706002A940D /* chat_support_green@2x.png */; };
+		A50FC3881D1E1706002A940D /* chat_support_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3741D1E1706002A940D /* chat_support_yellow@2x.png */; };
+		A50FC3891D1E1706002A940D /* 国家台.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3751D1E1706002A940D /* 国家台.png */; };
+		A50FC38A1D1E1706002A940D /* ic_homecountry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3761D1E1706002A940D /* ic_homecountry@3x.png */; };
+		A50FC38B1D1E1706002A940D /* ic_homecountry_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3771D1E1706002A940D /* ic_homecountry_on@2x.png */; };
+		A50FC38C1D1E1706002A940D /* ic_homecountry_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3781D1E1706002A940D /* ic_homecountry_on@3x.png */; };
+		A50FC38D1D1E1706002A940D /* ic_homehomeinternet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3791D1E1706002A940D /* ic_homehomeinternet@2x.png */; };
+		A50FC38E1D1E1706002A940D /* ic_homeIntelligent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37A1D1E1706002A940D /* ic_homeIntelligent@2x.png */; };
+		A50FC38F1D1E1706002A940D /* ic_homeIntelligent@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37B1D1E1706002A940D /* ic_homeIntelligent@3x.png */; };
+		A50FC3901D1E1706002A940D /* ic_homeIntelligent_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37C1D1E1706002A940D /* ic_homeIntelligent_on@2x.png */; };
+		A50FC3911D1E1706002A940D /* ic_homeIntelligent_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37D1D1E1706002A940D /* ic_homeIntelligent_on@3x.png */; };
+		A50FC3921D1E1706002A940D /* 网络台.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37E1D1E1706002A940D /* 网络台.png */; };
+		A50FC3931D1E1706002A940D /* ic_homeinternet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC37F1D1E1706002A940D /* ic_homeinternet@3x.png */; };
+		A50FC3941D1E1706002A940D /* ic_homeinternet_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3801D1E1706002A940D /* ic_homeinternet_on@2x.png */; };
+		A50FC3951D1E1706002A940D /* ic_homeinternet_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3811D1E1706002A940D /* ic_homeinternet_on@3x.png */; };
+		A50FC3961D1E1706002A940D /* 省市台.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3821D1E1706002A940D /* 省市台.png */; };
+		A50FC3971D1E1706002A940D /* ic_homeprovince@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3831D1E1706002A940D /* ic_homeprovince@3x.png */; };
+		A50FC3981D1E1706002A940D /* ic_homeprovince_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3841D1E1706002A940D /* ic_homeprovince_on@2x.png */; };
+		A50FC3991D1E1706002A940D /* ic_homeprovince_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3851D1E1706002A940D /* ic_homeprovince_on@3x.png */; };
+		A50FC39C1D1E1ACF002A940D /* RadioTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC39B1D1E1ACF002A940D /* RadioTypeCell.m */; };
+		A50FC3A21D1E3886002A940D /* RadioContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3A11D1E3886002A940D /* RadioContentTableViewCell.m */; };
+		A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3A41D1E6734002A940D /* RadioTypeTableViewCell.m */; };
+		A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */; };
+		A50FC3AD1D1E7144002A940D /* RadioPlayerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */; };
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
@@ -26,6 +51,8 @@
 		A52A923C1D1D24E60005E26E /* RadioView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A923B1D1D24E60005E26E /* RadioView.m */; };
 		A52A92401D1D25800005E26E /* RadioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A923F1D1D25800005E26E /* RadioModel.m */; };
 		A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */; };
+		A52A926D1D1D7CDC0005E26E /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */; };
+		A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A926F1D1D7D250005E26E /* RadioContentCell.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -63,6 +90,35 @@
 /* Begin PBXFileReference section */
 		2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.release.xcconfig"; sourceTree = "<group>"; };
 		5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonkeyFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50FC3721D1E1706002A940D /* chat_support_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_support_blue@2x.png"; sourceTree = "<group>"; };
+		A50FC3731D1E1706002A940D /* chat_support_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_support_green@2x.png"; sourceTree = "<group>"; };
+		A50FC3741D1E1706002A940D /* chat_support_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_support_yellow@2x.png"; sourceTree = "<group>"; };
+		A50FC3751D1E1706002A940D /* 国家台.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "国家台.png"; sourceTree = "<group>"; };
+		A50FC3761D1E1706002A940D /* ic_homecountry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homecountry@3x.png"; sourceTree = "<group>"; };
+		A50FC3771D1E1706002A940D /* ic_homecountry_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homecountry_on@2x.png"; sourceTree = "<group>"; };
+		A50FC3781D1E1706002A940D /* ic_homecountry_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homecountry_on@3x.png"; sourceTree = "<group>"; };
+		A50FC3791D1E1706002A940D /* ic_homehomeinternet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homehomeinternet@2x.png"; sourceTree = "<group>"; };
+		A50FC37A1D1E1706002A940D /* ic_homeIntelligent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeIntelligent@2x.png"; sourceTree = "<group>"; };
+		A50FC37B1D1E1706002A940D /* ic_homeIntelligent@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeIntelligent@3x.png"; sourceTree = "<group>"; };
+		A50FC37C1D1E1706002A940D /* ic_homeIntelligent_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeIntelligent_on@2x.png"; sourceTree = "<group>"; };
+		A50FC37D1D1E1706002A940D /* ic_homeIntelligent_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeIntelligent_on@3x.png"; sourceTree = "<group>"; };
+		A50FC37E1D1E1706002A940D /* 网络台.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "网络台.png"; sourceTree = "<group>"; };
+		A50FC37F1D1E1706002A940D /* ic_homeinternet@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeinternet@3x.png"; sourceTree = "<group>"; };
+		A50FC3801D1E1706002A940D /* ic_homeinternet_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeinternet_on@2x.png"; sourceTree = "<group>"; };
+		A50FC3811D1E1706002A940D /* ic_homeinternet_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeinternet_on@3x.png"; sourceTree = "<group>"; };
+		A50FC3821D1E1706002A940D /* 省市台.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "省市台.png"; sourceTree = "<group>"; };
+		A50FC3831D1E1706002A940D /* ic_homeprovince@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeprovince@3x.png"; sourceTree = "<group>"; };
+		A50FC3841D1E1706002A940D /* ic_homeprovince_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeprovince_on@2x.png"; sourceTree = "<group>"; };
+		A50FC3851D1E1706002A940D /* ic_homeprovince_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_homeprovince_on@3x.png"; sourceTree = "<group>"; };
+		A50FC39A1D1E1ACF002A940D /* RadioTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTypeCell.h; sourceTree = "<group>"; };
+		A50FC39B1D1E1ACF002A940D /* RadioTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTypeCell.m; sourceTree = "<group>"; };
+		A50FC3A01D1E3886002A940D /* RadioContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioContentTableViewCell.h; sourceTree = "<group>"; };
+		A50FC3A11D1E3886002A940D /* RadioContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioContentTableViewCell.m; sourceTree = "<group>"; };
+		A50FC3A31D1E6734002A940D /* RadioTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTypeTableViewCell.h; sourceTree = "<group>"; };
+		A50FC3A41D1E6734002A940D /* RadioTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTypeTableViewCell.m; sourceTree = "<group>"; };
+		A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioPlayerListViewController.h; sourceTree = "<group>"; };
+		A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioPlayerListViewController.m; sourceTree = "<group>"; };
+		A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioPlayerListViewController.xib; sourceTree = "<group>"; };
 		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +151,10 @@
 		A52A923F1D1D25800005E26E /* RadioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioModel.m; sourceTree = "<group>"; };
 		A52A92411D1D2EB60005E26E /* RadioHeadReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioHeadReusableView.h; sourceTree = "<group>"; };
 		A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioHeadReusableView.m; sourceTree = "<group>"; };
+		A52A926B1D1D7CDC0005E26E /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
+		A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		A52A926E1D1D7D250005E26E /* RadioContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioContentCell.h; sourceTree = "<group>"; };
+		A52A926F1D1D7D250005E26E /* RadioContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioContentCell.m; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -178,6 +238,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A50FC3711D1E1706002A940D /* 图标 */ = {
+			isa = PBXGroup;
+			children = (
+				A50FC3721D1E1706002A940D /* chat_support_blue@2x.png */,
+				A50FC3731D1E1706002A940D /* chat_support_green@2x.png */,
+				A50FC3741D1E1706002A940D /* chat_support_yellow@2x.png */,
+				A50FC3751D1E1706002A940D /* 国家台.png */,
+				A50FC3761D1E1706002A940D /* ic_homecountry@3x.png */,
+				A50FC3771D1E1706002A940D /* ic_homecountry_on@2x.png */,
+				A50FC3781D1E1706002A940D /* ic_homecountry_on@3x.png */,
+				A50FC3791D1E1706002A940D /* ic_homehomeinternet@2x.png */,
+				A50FC37A1D1E1706002A940D /* ic_homeIntelligent@2x.png */,
+				A50FC37B1D1E1706002A940D /* ic_homeIntelligent@3x.png */,
+				A50FC37C1D1E1706002A940D /* ic_homeIntelligent_on@2x.png */,
+				A50FC37D1D1E1706002A940D /* ic_homeIntelligent_on@3x.png */,
+				A50FC37E1D1E1706002A940D /* 网络台.png */,
+				A50FC37F1D1E1706002A940D /* ic_homeinternet@3x.png */,
+				A50FC3801D1E1706002A940D /* ic_homeinternet_on@2x.png */,
+				A50FC3811D1E1706002A940D /* ic_homeinternet_on@3x.png */,
+				A50FC3821D1E1706002A940D /* 省市台.png */,
+				A50FC3831D1E1706002A940D /* ic_homeprovince@3x.png */,
+				A50FC3841D1E1706002A940D /* ic_homeprovince_on@2x.png */,
+				A50FC3851D1E1706002A940D /* ic_homeprovince_on@3x.png */,
+			);
+			path = "图标";
+			sourceTree = "<group>";
+		};
 		A52A920E1D1CDDCD0005E26E /* Classification(分类) */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +324,9 @@
 				A52A92271D1CE0890005E26E /* RadioViewController.h */,
 				A52A92281D1CE0890005E26E /* RadioViewController.m */,
 				A52A92291D1CE0890005E26E /* RadioViewController.xib */,
+				A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */,
+				A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */,
+				A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +338,14 @@
 				A52A923B1D1D24E60005E26E /* RadioView.m */,
 				A52A92411D1D2EB60005E26E /* RadioHeadReusableView.h */,
 				A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */,
+				A52A926E1D1D7D250005E26E /* RadioContentCell.h */,
+				A52A926F1D1D7D250005E26E /* RadioContentCell.m */,
+				A50FC39A1D1E1ACF002A940D /* RadioTypeCell.h */,
+				A50FC39B1D1E1ACF002A940D /* RadioTypeCell.m */,
+				A50FC3A01D1E3886002A940D /* RadioContentTableViewCell.h */,
+				A50FC3A11D1E3886002A940D /* RadioContentTableViewCell.m */,
+				A50FC3A31D1E6734002A940D /* RadioTypeTableViewCell.h */,
+				A50FC3A41D1E6734002A940D /* RadioTypeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +508,7 @@
 		D619228C1D1CD8A20008648A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A50FC3711D1E1706002A940D /* 图标 */,
 				D619228D1D1CD8A20008648A /* left_list.png */,
 				A52A92331D1D14D70005E26E /* user_photo.png */,
 				A52A92351D1D18110005E26E /* drawerView.jpg */,
@@ -431,8 +530,8 @@
 		D619228F1D1CD8A20008648A /* Bases（基础公共） */ = {
 			isa = PBXGroup;
 			children = (
-				D61922911D1CD8A20008648A /* BaseCell.m */,
 				D61922901D1CD8A20008648A /* BaseCell.h */,
+				D61922911D1CD8A20008648A /* BaseCell.m */,
 				D61922921D1CD8A20008648A /* BaseCell.xib */,
 				D61922931D1CD8A20008648A /* BaseModel.h */,
 				D61922941D1CD8A20008648A /* BaseModel.m */,
@@ -447,6 +546,8 @@
 				D619229D1D1CD8A20008648A /* PlayerDetail（播放详情） */,
 				D619229E1D1CD8A20008648A /* PlayerList（播放列表） */,
 				D619229F1D1CD8A20008648A /* RadioPlayerDetail（电台播放详情） */,
+				A52A926B1D1D7CDC0005E26E /* BaseCollectionViewCell.h */,
+				A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */,
 			);
 			path = "Bases（基础公共）";
 			sourceTree = "<group>";
@@ -651,21 +752,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50FC3881D1E1706002A940D /* chat_support_yellow@2x.png in Resources */,
+				A50FC38F1D1E1706002A940D /* ic_homeIntelligent@3x.png in Resources */,
+				A50FC38E1D1E1706002A940D /* ic_homeIntelligent@2x.png in Resources */,
+				A50FC38D1D1E1706002A940D /* ic_homehomeinternet@2x.png in Resources */,
 				A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */,
+				A50FC3891D1E1706002A940D /* 国家台.png in Resources */,
+				A50FC3981D1E1706002A940D /* ic_homeprovince_on@2x.png in Resources */,
+				A50FC3901D1E1706002A940D /* ic_homeIntelligent_on@2x.png in Resources */,
 				A52A92341D1D14D70005E26E /* user_photo.png in Resources */,
+				A50FC3871D1E1706002A940D /* chat_support_green@2x.png in Resources */,
 				A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */,
+				A50FC3971D1E1706002A940D /* ic_homeprovince@3x.png in Resources */,
 				A52A92361D1D18110005E26E /* drawerView.jpg in Resources */,
 				D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */,
 				D61922D31D1CD8A20008648A /* BaseCell.xib in Resources */,
+				A50FC3AD1D1E7144002A940D /* RadioPlayerListViewController.xib in Resources */,
+				A50FC3961D1E1706002A940D /* 省市台.png in Resources */,
 				D61922D11D1CD8A20008648A /* left_list.png in Resources */,
 				A52A921E1D1CDDCD0005E26E /* ClassificationCell.xib in Resources */,
+				A50FC3861D1E1706002A940D /* chat_support_blue@2x.png in Resources */,
+				A50FC3931D1E1706002A940D /* ic_homeinternet@3x.png in Resources */,
 				D61922FF1D1D52260008648A /* DetailClassificationController.xib in Resources */,
 				A52A92261D1CE0790005E26E /* AnchorViewController.xib in Resources */,
 				A52A92381D1D1E2A0005E26E /* audio-frequency.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
+				A50FC3941D1E1706002A940D /* ic_homeinternet_on@2x.png in Resources */,
+				A50FC3921D1E1706002A940D /* 网络台.png in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
+				A50FC38B1D1E1706002A940D /* ic_homecountry_on@2x.png in Resources */,
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
 				D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */,
+				A50FC3951D1E1706002A940D /* ic_homeinternet_on@3x.png in Resources */,
+				A50FC3991D1E1706002A940D /* ic_homeprovince_on@3x.png in Resources */,
+				A50FC38C1D1E1706002A940D /* ic_homecountry_on@3x.png in Resources */,
+				A50FC3911D1E1706002A940D /* ic_homeIntelligent_on@3x.png in Resources */,
+				A50FC38A1D1E1706002A940D /* ic_homecountry@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,8 +923,12 @@
 			files = (
 				A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */,
 				A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */,
+				A50FC39C1D1E1ACF002A940D /* RadioTypeCell.m in Sources */,
+				A50FC3A21D1E3886002A940D /* RadioContentTableViewCell.m in Sources */,
 				D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
+				A52A926D1D1D7CDC0005E26E /* BaseCollectionViewCell.m in Sources */,
+				A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
@@ -820,11 +946,13 @@
 				A52A92401D1D25800005E26E /* RadioModel.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D61922F71D1D4E7C0008648A /* SegmentView.m in Sources */,
+				A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
+				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
 				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
 				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
 				D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */,
