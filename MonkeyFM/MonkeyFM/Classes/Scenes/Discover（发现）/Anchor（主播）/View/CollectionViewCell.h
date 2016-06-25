@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TheHostShow.h"
+//#import "TheHostShow.h"
 @interface CollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong)TheHostShow *HostShow;
+//@property (nonatomic, strong)TheHostShow *HostShow;
 
 
 ///头像
@@ -21,5 +21,7 @@
 
 ///简介
 @property (nonatomic, strong)UILabel *introduction;
+
+@property (nonatomic, strong)UIView *myContentView;
 
 @end

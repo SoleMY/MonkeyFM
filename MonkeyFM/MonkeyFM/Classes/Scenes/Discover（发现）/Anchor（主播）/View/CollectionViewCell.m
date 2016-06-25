@@ -19,7 +19,26 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+//        self.restorationIdentifier = @"identifier_cell";
+//        self.backgroundColor = [UIColor clearColor];
+//        self.autoresizingMask = UIViewAutoresizingNone;
+//        
+//        CGFloat borderWidth = 0.5f;
+//        //        UIView *bgView = [[UIView alloc] initWithFrame:frame];
+//        //        bgView.layer.borderColor = [UIColor redColor].CGColor;
+//        //        bgView.layer.borderWidth = borderWidth;
+//        //        self.selectedBackgroundView = bgView;
+//        
+//        CGRect myContentRect = CGRectInset(self.contentView.bounds, borderWidth, borderWidth);
+//        
+//        self.myContentView = [[UIView alloc] initWithFrame:myContentRect];
+//        _myContentView.backgroundColor = [UIColor whiteColor];
+//        _myContentView.layer.borderColor = [UIColor colorWithWhite:0.1f alpha:0.2f].CGColor;
+//        _myContentView.layer.borderWidth = borderWidth;
+//        
+//        [self.contentView addSubview:_myContentView];
         [self initLayout];
+
     }
     return self;
 }
@@ -29,7 +48,7 @@
     self.headPortrait.frame = CGRectMake(10, 0, kHeadPortraitWidth, kHeadPortraitHeight);
     self.headPortrait.layer.cornerRadius = self.headPortrait.frame.size.width / 2;
     self.headPortrait.layer.masksToBounds = YES;
-    self.headPortrait.backgroundColor = [UIColor redColor];
+//    self.headPortrait.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.headPortrait];
     
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kNameLabelX, self.headPortrait.frame.size.height + 5, kNameLabelWidth, kNameLabelHeight)];
