@@ -23,9 +23,7 @@
     [self addSubview:self.titleLabel];
     self.more = [[UIButton alloc] init];
     self.more.frame = CGRectMake(self.frame.size.width - 80, 0, 60, 30);
-//    self.more.titleLabel.font = [UIFont systemFontOfSize:13];
-//    self.more.titleLabel.tintColor = [UIColor grayColor];
-    [self.more setTitle:@"更多  >" forState:UIControlStateNormal];
+    
     [self addSubview:self.more];
 }
 

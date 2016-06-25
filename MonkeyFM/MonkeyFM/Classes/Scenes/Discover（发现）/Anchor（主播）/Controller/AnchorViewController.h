@@ -10,4 +10,7 @@
 
 @interface AnchorViewController : BaseViewController
 
+@property (nonatomic, assign)NSInteger compent;
+@property (nonatomic, strong)NSString *appendingString;
+
 @end
