@@ -28,15 +28,15 @@
     self.myFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     //    设置属性
     //    给定item的大小
-    self.myFlowLayout.itemSize = CGSizeMake((self.bounds.size.width - 40.01) / 3, 80);
+    self.myFlowLayout.itemSize = CGSizeMake((self.bounds.size.width - 40.01) / 3, 120);
     //    每两个item的最小间隙（垂直滚动）
     self.myFlowLayout.minimumInteritemSpacing = 10;
     //    每两个item的最小间隙（水平滚动）
-    self.myFlowLayout.minimumLineSpacing = 50;
+    self.myFlowLayout.minimumLineSpacing = 30;
     //    设置滚动方向
     self.myFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//垂直方向
     //    设置视图的内边距（上左下右）
-    self.myFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 50, 10);
+    self.myFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     //    布局头视图尺寸
     self.myFlowLayout.headerReferenceSize = CGSizeMake(30, 80);

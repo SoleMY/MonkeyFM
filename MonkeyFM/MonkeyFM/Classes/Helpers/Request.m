@@ -30,6 +30,5 @@ NSMutableArray *arr = [[NSMutableArray alloc] init];
         [view addSubview:head];
     });
 }];
-    
 }
 @end

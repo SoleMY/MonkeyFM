@@ -52,7 +52,6 @@
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.rearTableView.frame.size.width, kHeadViewHeight)];
     headView.backgroundColor = [UIColor clearColor];
     self.rearTableView.tableHeaderView = headView;
-    NSLog(@"%f", self.rearTableView.bounds.size.width);
     // 用户头像
     UIImageView *userPhotoImageView = [[UIImageView alloc] init];
     userPhotoImageView.image = [UIImage imageNamed:@"user_photo"];
