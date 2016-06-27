@@ -55,6 +55,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     } else {
         self.segmentedStyle = Content;
     }
+
 }
 
 - (void)indexDidChangeForSegmentedControl:(id)sender
