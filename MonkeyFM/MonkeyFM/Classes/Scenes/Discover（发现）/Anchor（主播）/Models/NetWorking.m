@@ -27,7 +27,6 @@
     return _hostArray;
 }
 
-
 - (void)requestWithURL:(NSString *)URL Bolck:(Block)block {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:URL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -40,32 +39,5 @@
         
     }];
 }
-
-- (void)request {
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager GET:shuffing_host_URL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-//        
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary *resultDic = responseObject[@"result"];
-//        NSArray *dataListArray = [resultDic objectForKey:@"dataList"];
-//        for (NSDictionary *dict in dataListArray) {
-//            HostTitle *title = [[HostTitle alloc] init];
-//            [title setValuesForKeysWithDictionary:dict];
-//            [self.titleArray addObject:title];
-//            if (title.contentType == 4) {
-//                for (NSDictionary *dic in title.dataList) {
-//                    Host *host = [[Host alloc] init];
-//                    [host setValuesForKeysWithDictionary:dic];
-//                    [self.hostArray addObject:host];
-//                }
-//            }
-//        }
-//        NSLog(@"%@", self.titleArray);
-////        nsl
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    }];
-    
-}
-
 
 @end

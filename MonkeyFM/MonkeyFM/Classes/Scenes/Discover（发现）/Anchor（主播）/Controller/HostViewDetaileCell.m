@@ -26,7 +26,6 @@
 - (void)initLayout {
     __weak typeof(self) mySelf = self;
     self.headImage = [[UIImageView alloc] init];
-//    self.headImage.backgroundColor = [UIColor greenColor];
     self.headImage.layer.cornerRadius = kImageWidth / 2;
     self.headImage.layer.masksToBounds = YES;
     [self.contentView addSubview:self.headImage];
@@ -50,7 +49,6 @@
     
     self.decLabel = [[UILabel alloc] init];
     self.decLabel.font = [UIFont systemFontOfSize:15];
-//    self.decLabel.backgroundColor = [UIColor grayColor];
     [self.contentView addSubview:self.decLabel];
     [self.decLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(mySelf.nameLabel.mas_bottom).offset(1);
@@ -60,7 +58,6 @@
     }];
     
     self.fansNumber = [[UILabel alloc] init];
-//    self.fansNumber.text = @"123";
     self.fansNumber.font = [UIFont systemFontOfSize:12];
     self.fansNumber.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.fansNumber];
@@ -70,7 +67,6 @@
         make.width.mas_offset(150);
         make.height.mas_offset(kNameLabelHeight);
     }];
-    
     self.followButton = [[UIButton alloc] init];
     UIImage *image = [UIImage imageNamed:@"addAttention@3x"];
     image = [SmallTools scaleToSize:image size:CGSizeMake(30, 30)];

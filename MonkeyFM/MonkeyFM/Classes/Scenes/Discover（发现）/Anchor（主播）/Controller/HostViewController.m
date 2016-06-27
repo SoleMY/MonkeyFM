@@ -117,6 +117,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HostInfoViewController *hostInfoVC = [[HostInfoViewController alloc] init];
+//    传值 uid
+    More *more = self.allDataArray[indexPath.row];
+    hostInfoVC.uid = more.uid;
     [self.navigationController pushViewController:hostInfoVC animated:YES];
 }
 

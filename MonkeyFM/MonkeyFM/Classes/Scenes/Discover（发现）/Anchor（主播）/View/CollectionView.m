@@ -22,9 +22,6 @@
 
 //初始化布局
 - (void)initLayout {
-    
-    //    1.定义collectionView的样式
-    
     self.myFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     //    设置属性
     //    给定item的大小
@@ -44,12 +41,9 @@
     //    布局尾视图的尺寸
     self.myFlowLayout.footerReferenceSize = CGSizeMake(0, 0);
     
-    //    2.布局collectionView
-    
     //    创建对象并指定样式
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.myFlowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.collectionView];
-    
-    
-}@end
+}
+@end

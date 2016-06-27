@@ -14,5 +14,9 @@
 @property (nonatomic, strong)NSString *avatar;
 @property (nonatomic, strong)NSString *desc;
 @property (nonatomic, assign)NSInteger fansCount;
-
+@property (nonatomic, strong)NSString *uid;
+//主播详情界面
+@property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSString *pic
+;
 @end

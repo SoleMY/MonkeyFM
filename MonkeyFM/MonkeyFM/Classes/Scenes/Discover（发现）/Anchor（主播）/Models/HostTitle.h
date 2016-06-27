@@ -14,5 +14,7 @@
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSArray *dataList;
 @property (nonatomic, strong)NSString *relatedValue;
+@property (nonatomic, strong)NSString *pic;
+
 
 @end
