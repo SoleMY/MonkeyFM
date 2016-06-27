@@ -147,7 +147,7 @@
 {
     // Grab a handle to the reveal controller, as if you'd do with a navigtion controller via self.navigationController.
     SWRevealViewController *revealController = self.revealViewController;
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     // selecting row
     NSInteger row = indexPath.row;
     
@@ -188,7 +188,12 @@
     else if (row == 2)
     {
         RadioViewController *radioViewController = [[RadioViewController alloc] init];
+        
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:radioViewController];
+        
+        radioViewController.pushBack = ^() {
+            _presentedRow++;
+        };
     }
     else if (row == 3)
     {

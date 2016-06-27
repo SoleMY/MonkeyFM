@@ -1,5 +1,5 @@
 //
-//  RadioContentTableViewCell.h
+//  PopularItemTableViewCell.h
 //  MonkeyFM
 //
 //  Created by 彭柞淞 on 16/6/25.
@@ -7,14 +7,16 @@
 //
 
 #import "BaseCell.h"
+//@class CollectionView;
 
 typedef void(^pushNewControllerBlock)();
-@interface RadioContentTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PopularItemTableViewCell : BaseCell
 
-@property (nonatomic, strong) UICollectionView *radioContentView;
+//@property (nonatomic, strong) CollectionView *radioTypeView;
 // 接收数据
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
 @property (nonatomic, copy) pushNewControllerBlock pushBlock;
+
 
 @end

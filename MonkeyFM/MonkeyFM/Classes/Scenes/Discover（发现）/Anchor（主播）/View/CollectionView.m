@@ -39,10 +39,10 @@
     self.myFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     //    布局头视图尺寸
-    self.myFlowLayout.headerReferenceSize = CGSizeMake(30, 80);
+    self.myFlowLayout.headerReferenceSize = CGSizeMake(0, 30);
     
     //    布局尾视图的尺寸
-    self.myFlowLayout.footerReferenceSize = CGSizeMake(30, 40);
+    self.myFlowLayout.footerReferenceSize = CGSizeMake(0, 0);
     
     //    2.布局collectionView
     

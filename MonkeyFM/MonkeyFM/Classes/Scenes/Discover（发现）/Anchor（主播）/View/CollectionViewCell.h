@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "TheHostShow.h"
+@class RadioModel;
 @interface CollectionViewCell : UICollectionViewCell
 
 //@property (nonatomic, strong)TheHostShow *HostShow;
@@ -23,5 +24,11 @@
 @property (nonatomic, strong)UILabel *introduction;
 
 @property (nonatomic, strong)UIView *myContentView;
+
+// 电台页面使用，在cell页面设置数据
+// 两个页面两种绑定数据的方式
+- (void)bindRecommendModel:(RadioModel *)model indexPath:(NSIndexPath *)indexPath;
+
+- (void)bindPopularModel:(RadioModel *)model indexPath:(NSIndexPath *)indexPath;
 
 @end
