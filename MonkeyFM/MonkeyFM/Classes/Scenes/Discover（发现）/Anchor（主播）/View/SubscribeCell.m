@@ -27,6 +27,13 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
     return self;
 }
 
+- (void)setCollectionArr:(NSMutableArray *)collectionArr {
+    if (collectionArr != _collectionArr) {
+        _collectionArr = collectionArr;
+    }
+    [self.SubscribeView.collectionView dataSource];
+}
+
 - (void)initLayout {
     self.SubscribeView = [[CollectionView alloc] initWithFrame: CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)];
     self.SubscribeView.backgroundColor = [UIColor redColor];
@@ -52,6 +59,7 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [self.SubscribeView.collectionView dequeueReusableCellWithReuseIdentifier:identifier_SubscribeCell forIndexPath:indexPath];
     cell.headPortrait.backgroundColor = [UIColor blueColor];
+//    cell.headPortrait
     cell.headPortrait.layer.cornerRadius = 0;
     cell.nameLabel.text = @"空空";
     return cell;

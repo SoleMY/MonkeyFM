@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong)CollectionView *SubscribeView;
 
+@property (nonatomic, strong)NSMutableArray *collectionArr;
+
 @end

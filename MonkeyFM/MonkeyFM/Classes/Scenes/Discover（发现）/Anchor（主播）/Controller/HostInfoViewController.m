@@ -169,10 +169,10 @@
     }else if (indexPath.row == 3) {
         AlbumCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"AlbumCell" forIndexPath:indexPath];
         cell.albumArr = self.issueListArr;
-        NSLog(@"%@", self.issueListArr);
         return cell;
     }else if (indexPath.row == 4) {
         SubscribeCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"SubscribeCell" forIndexPath:indexPath];
+        cell.collectionArr = self.subscribeListArr;
         return cell;
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
@@ -195,7 +195,7 @@
     }else if (indexPath.row == 2){
         return 100;
     } else {
-        return 200;
+        return 150;
     }
 }
 

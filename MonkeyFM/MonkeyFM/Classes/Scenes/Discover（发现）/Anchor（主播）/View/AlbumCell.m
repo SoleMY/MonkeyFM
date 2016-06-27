@@ -68,7 +68,6 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"======%@", self.albumArr);
     return self.albumArr.count;
 }
 
