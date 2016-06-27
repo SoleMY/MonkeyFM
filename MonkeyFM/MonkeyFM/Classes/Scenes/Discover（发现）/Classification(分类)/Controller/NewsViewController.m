@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "NewsCell.h"
+
 @interface NewsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -23,6 +24,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[NewsCell class] forCellReuseIdentifier:@"cell"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,4 +43,8 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130;
+}
 @end
