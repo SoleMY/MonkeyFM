@@ -12,7 +12,7 @@
 
 @interface BaseNavigationViewController ()<UISearchBarDelegate>
 
-@property (nonatomic, strong) UISearchBar *customSearchBar;
+
 
 @end
 

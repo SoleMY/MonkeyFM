@@ -20,6 +20,9 @@
 #import "AnchorViewController.h"
 #import "DrawerViewController.h"
 #import "PopularItemTableViewCell.h"
+#import "PopularItemListViewController.h"
+#import "BaseNavigationViewController.h"
+
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
 #define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3
 
@@ -134,9 +137,9 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 
 - (void)setTableHeaderView
 {
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:kHeaderRect];
-    [[Request alloc] requestWithURL:shuffing_radio_URL view:tableHeaderView frame:kHeaderRect];
-    self.radioTableView.tableHeaderView = tableHeaderView;
+//    UIView *tableHeaderView = [[UIView alloc] initWithFrame:kHeaderRect];
+//    [[Request alloc] requestWithURL:shuffing_radio_URL view:tableHeaderView frame:kHeaderRect];
+//    self.radioTableView.tableHeaderView = tableHeaderView;
 }
 
 #pragma mark - UITableViewDataSource Delegate Method-----
@@ -161,6 +164,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^() {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
             return cell;
@@ -180,8 +184,12 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         case 2:{
             PopularItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_popularCell forIndexPath:indexPath];
             cell.allInfoDataArray = self.allInfoDataArray;
-            cell.pushBlock = ^() {
-                
+            cell.pushBlock = ^(NSString *relatedValue, NSString *titleName) {
+                PopularItemListViewController *popularListVC = [[PopularItemListViewController alloc] init];
+                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
+                popularListVC.relatedValue = relatedValue;
+                popularListVC.titleName = titleName;
+                [weakSelf.navigationController pushViewController:popularListVC animated:YES];
             };
             return cell;
 //            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell forIndexPath:indexPath];
@@ -194,7 +202,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^() {
                 AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
-                [self.navigationController pushViewController:anchorVC animated:YES];
+                [weakSelf.navigationController pushViewController:anchorVC animated:YES];
                 weakSelf.pushBack();
             };
             return cell;

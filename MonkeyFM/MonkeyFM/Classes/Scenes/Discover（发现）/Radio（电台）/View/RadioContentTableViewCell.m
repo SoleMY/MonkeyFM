@@ -34,7 +34,7 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
 -(void)createRadioHeaderView
 {
     
-    
+    __weak typeof(self)weakSelf = self;
     // 创建布局对象
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = kItemSize;
@@ -59,10 +59,10 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     self.backgroundColor = [UIColor whiteColor];
     
     [self.radioContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(20);
-        make.top.equalTo(self).with.offset(0);
-        make.right.equalTo(self).with.offset(-20);
-        make.bottom.equalTo(self).with.offset(-10);
+        make.left.equalTo(weakSelf).with.offset(20);
+        make.top.equalTo(weakSelf);
+        make.right.equalTo(weakSelf).with.offset(-20);
+        make.bottom.equalTo(weakSelf);
     }];
     [self.radioContentView registerClass:[RadioContentCell class] forCellWithReuseIdentifier:identifier_contentCell];
         [self.radioContentView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
