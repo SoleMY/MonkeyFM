@@ -1327,11 +1327,8 @@
 				D69356331D1F9F2E00938275 /* HostInfoViewController.m in Sources */,
 				D6562DA71D1E60F10035FAC7 /* MJRefreshBackFooter.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
-<<<<<<< HEAD
 				D61FCEC41D214125001A7D04 /* MryScrollPageCell.m in Sources */,
-=======
 				D60CCB6D1D20BFCA00A8EBF3 /* collectCell.m in Sources */,
->>>>>>> 21eab089c54e15ba044144df6b5cdd645072b2d0
 				A52A923C1D1D24E60005E26E /* RadioView.m in Sources */,
 				D6562DB51D1E60F10035FAC7 /* MJRefreshConst.m in Sources */,
 				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
