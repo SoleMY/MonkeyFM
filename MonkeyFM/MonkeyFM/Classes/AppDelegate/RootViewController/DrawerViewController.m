@@ -190,7 +190,6 @@
         RadioViewController *radioViewController = [[RadioViewController alloc] init];
         
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:radioViewController];
-        
         radioViewController.pushBack = ^() {
             _presentedRow++;
         };

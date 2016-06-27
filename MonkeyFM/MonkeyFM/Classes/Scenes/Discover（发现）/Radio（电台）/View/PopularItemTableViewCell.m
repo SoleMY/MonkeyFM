@@ -17,6 +17,7 @@
 @interface PopularItemTableViewCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) CollectionView *radioPopularCollectionView;
+@property (nonatomic, strong) NSString *relatedValue;
 
 @end
 
@@ -70,7 +71,10 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
         CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_popularCell forIndexPath:indexPath];
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[3];
+        self.relatedValue = model.relatedValue;
         [cell bindPopularModel:model indexPath:indexPath];
+        cell.headPortrait.layer.cornerRadius = 0;
+       
         return cell;
     } else {
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
@@ -85,7 +89,6 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
             HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
             RadioModel *model = self.allInfoDataArray[3];
-            //            HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = model.name;
             [otherHead.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
             [otherHead.more addTarget:self action:@selector(moreActionWithIndexPath:) forControlEvents:UIControlEventTouchUpInside];
@@ -102,7 +105,8 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
 }
 
 - (void)moreActionWithIndexPath:(NSIndexPath *)indexPath {
-    self.pushBlock();
+    RadioModel *model = self.allInfoDataArray[3];
+    self.pushBlock(self.relatedValue, model.name);
 }
 
 
