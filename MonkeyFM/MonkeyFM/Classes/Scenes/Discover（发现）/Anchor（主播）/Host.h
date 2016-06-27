@@ -17,4 +17,10 @@
 //图片
 @property (nonatomic, strong)NSString *avatar;
 
+/// 电台页面需要
+// 名称
+@property (nonatomic, strong) NSString *rname;
+// 图片地址
+@property (nonatomic, strong) NSString *pic;
+
 @end

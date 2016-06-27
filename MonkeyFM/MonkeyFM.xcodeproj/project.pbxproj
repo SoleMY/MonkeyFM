@@ -32,6 +32,8 @@
 		A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3A41D1E6734002A940D /* RadioTypeTableViewCell.m */; };
 		A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */; };
 		A50FC3AD1D1E7144002A940D /* RadioPlayerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */; };
+		A50FC3B01D1EA347002A940D /* PopularItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3AF1D1EA347002A940D /* PopularItemTableViewCell.m */; };
+		A50FC3B31D1EA4C2002A940D /* RecommendAnchorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */; };
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
@@ -108,6 +110,7 @@
 		D6562DB91D1E60F10035FAC7 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562DA51D1E60F10035FAC7 /* UIView+MJExtension.m */; };
 		D6562DBF1D1E68CB0035FAC7 /* HostViewDetaileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */; };
 		D6562DC11D1E733B0035FAC7 /* addAttention@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6562DC01D1E733B0035FAC7 /* addAttention@3x.png */; };
+		D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */ = {isa = PBXBuildFile; fileRef = D6562DC31D1E9E0D0035FAC7 /* More.m */; };
 		D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */; };
 		D6721BF21D1E7FF800CFF94A /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF11D1E7FF800CFF94A /* NewsViewController.m */; };
 		D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BF41D1E821500CFF94A /* NewsCell.m */; };
@@ -115,6 +118,12 @@
 		D6721BF91D1EA16D00CFF94A /* 评论数.png in Resources */ = {isa = PBXBuildFile; fileRef = D6721BF71D1EA16D00CFF94A /* 评论数.png */; };
 		D6721BFB1D1EA17200CFF94A /* 播放button.png in Resources */ = {isa = PBXBuildFile; fileRef = D6721BFA1D1EA17200CFF94A /* 播放button.png */; };
 		D6721BFE1D1EBF2600CFF94A /* DetailSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D6721BFD1D1EBF2600CFF94A /* DetailSegment.m */; };
+		D69356331D1F9F2E00938275 /* HostInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69356311D1F9F2E00938275 /* HostInfoViewController.m */; };
+		D69356341D1F9F2E00938275 /* HostInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69356321D1F9F2E00938275 /* HostInfoViewController.xib */; };
+		D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14A91D1FAE78008C7D3E /* HeadImage.m */; };
+		D6FD14AD1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */; };
+		D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14B11D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m */; };
+		D6FD14B51D1FCE59008C7D3E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14B41D1FCE59008C7D3E /* UIImage+ImageEffects.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +159,12 @@
 		A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioPlayerListViewController.h; sourceTree = "<group>"; };
 		A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioPlayerListViewController.m; sourceTree = "<group>"; };
 		A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioPlayerListViewController.xib; sourceTree = "<group>"; };
+		A50FC3AE1D1EA347002A940D /* PopularItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemTableViewCell.h; sourceTree = "<group>"; };
+		A50FC3AF1D1EA347002A940D /* PopularItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularItemTableViewCell.m; sourceTree = "<group>"; };
+		A50FC3B11D1EA4C2002A940D /* RecommendAnchorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendAnchorTableViewCell.h; sourceTree = "<group>"; };
+		A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendAnchorTableViewCell.m; sourceTree = "<group>"; };
+		A50FC3B41D2007DD002A940D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A50FC3B51D20B579002A940D /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
 		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,6 +305,8 @@
 		D6562DBD1D1E68CB0035FAC7 /* HostViewDetaileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HostViewDetaileCell.h; path = "MonkeyFM/Classes/Scenes/Discover（发现）/Anchor（主播）/Controller/HostViewDetaileCell.h"; sourceTree = SOURCE_ROOT; };
 		D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HostViewDetaileCell.m; path = "MonkeyFM/Classes/Scenes/Discover（发现）/Anchor（主播）/Controller/HostViewDetaileCell.m"; sourceTree = SOURCE_ROOT; };
 		D6562DC01D1E733B0035FAC7 /* addAttention@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addAttention@3x.png"; path = "MJRefresh/addAttention@3x.png"; sourceTree = "<group>"; };
+		D6562DC21D1E9E0D0035FAC7 /* More.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = More.h; sourceTree = "<group>"; };
+		D6562DC31D1E9E0D0035FAC7 /* More.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = More.m; sourceTree = "<group>"; };
 		D6721BE41D1E6C4600CFF94A /* DetailClassificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailClassificationController.h; sourceTree = "<group>"; };
 		D6721BE51D1E6C4600CFF94A /* DetailClassificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailClassificationController.m; sourceTree = "<group>"; };
 		D6721BF01D1E7FF800CFF94A /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -301,6 +318,17 @@
 		D6721BFA1D1EA17200CFF94A /* 播放button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放button.png"; sourceTree = "<group>"; };
 		D6721BFC1D1EBF2600CFF94A /* DetailSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSegment.h; sourceTree = "<group>"; };
 		D6721BFD1D1EBF2600CFF94A /* DetailSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSegment.m; sourceTree = "<group>"; };
+		D69356301D1F9F2E00938275 /* HostInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostInfoViewController.h; sourceTree = "<group>"; };
+		D69356311D1F9F2E00938275 /* HostInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostInfoViewController.m; sourceTree = "<group>"; };
+		D69356321D1F9F2E00938275 /* HostInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HostInfoViewController.xib; sourceTree = "<group>"; };
+		D6FD14A81D1FAE78008C7D3E /* HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadImage.h; sourceTree = "<group>"; };
+		D6FD14A91D1FAE78008C7D3E /* HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadImage.m; sourceTree = "<group>"; };
+		D6FD14AB1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScalableCover.h"; sourceTree = "<group>"; };
+		D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ScalableCover.m"; sourceTree = "<group>"; };
+		D6FD14B01D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		D6FD14B11D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		D6FD14B31D1FCE59008C7D3E /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D6FD14B41D1FCE59008C7D3E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +440,9 @@
 				A52A92241D1CE0790005E26E /* AnchorViewController.xib */,
 				D6562D721D1E599D0035FAC7 /* HostViewController.h */,
 				D6562D731D1E599D0035FAC7 /* HostViewController.m */,
+				D69356301D1F9F2E00938275 /* HostInfoViewController.h */,
+				D69356311D1F9F2E00938275 /* HostInfoViewController.m */,
+				D69356321D1F9F2E00938275 /* HostInfoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,6 +475,10 @@
 				A50FC3A11D1E3886002A940D /* RadioContentTableViewCell.m */,
 				A50FC3A31D1E6734002A940D /* RadioTypeTableViewCell.h */,
 				A50FC3A41D1E6734002A940D /* RadioTypeTableViewCell.m */,
+				A50FC3AE1D1EA347002A940D /* PopularItemTableViewCell.h */,
+				A50FC3AF1D1EA347002A940D /* PopularItemTableViewCell.m */,
+				A50FC3B11D1EA4C2002A940D /* RecommendAnchorTableViewCell.h */,
+				A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +548,8 @@
 				D6442DBE1D1D6A8B00EEE263 /* FooterCollectionReusableView.m */,
 				D6562DBD1D1E68CB0035FAC7 /* HostViewDetaileCell.h */,
 				D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */,
+				D6FD14A81D1FAE78008C7D3E /* HeadImage.h */,
+				D6FD14A91D1FAE78008C7D3E /* HeadImage.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -590,6 +627,8 @@
 				A52A92301D1CE71C0005E26E /* MFM_URL.h */,
 				A52A92311D1CE7610005E26E /* MFM_Tool_COLOR.h */,
 				A52A92321D1CE7930005E26E /* Sinleton.h */,
+				A50FC3B51D20B579002A940D /* EfficientDefine.h */,
+				A50FC3B41D2007DD002A940D /* PrefixHeader.pch */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -782,12 +821,20 @@
 		D6562D631D1E18400035FAC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D6FD14B01D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.h */,
+				D6FD14B11D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m */,
+				D6FD14B31D1FCE59008C7D3E /* UIImage+ImageEffects.h */,
+				D6FD14B41D1FCE59008C7D3E /* UIImage+ImageEffects.m */,
 				D6562D601D1E182D0035FAC7 /* Host.h */,
 				D6562D611D1E182D0035FAC7 /* Host.m */,
 				D6562D6A1D1E1CC60035FAC7 /* HostTitle.h */,
 				D6562D6B1D1E1CC60035FAC7 /* HostTitle.m */,
 				D6562D671D1E195F0035FAC7 /* NetWorking.h */,
 				D6562D681D1E195F0035FAC7 /* NetWorking.m */,
+				D6562DC21D1E9E0D0035FAC7 /* More.h */,
+				D6562DC31D1E9E0D0035FAC7 /* More.m */,
+				D6FD14AB1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.h */,
+				D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -974,6 +1021,7 @@
 				A50FC3901D1E1706002A940D /* ic_homeIntelligent_on@2x.png in Resources */,
 				A52A92341D1D14D70005E26E /* user_photo.png in Resources */,
 				A50FC3871D1E1706002A940D /* chat_support_green@2x.png in Resources */,
+				D69356341D1F9F2E00938275 /* HostInfoViewController.xib in Resources */,
 				A52A922B1D1CE0890005E26E /* RadioViewController.xib in Resources */,
 				A50FC3971D1E1706002A940D /* ic_homeprovince@3x.png in Resources */,
 				D6721BF81D1EA16D00CFF94A /* 时间.png in Resources */,
@@ -1142,6 +1190,7 @@
 				A50FC39C1D1E1ACF002A940D /* RadioTypeCell.m in Sources */,
 				A50FC3A21D1E3886002A940D /* RadioContentTableViewCell.m in Sources */,
 				D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */,
+				D6FD14AD1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
 				A52A926D1D1D7CDC0005E26E /* BaseCollectionViewCell.m in Sources */,
 				A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */,
@@ -1152,8 +1201,10 @@
 				D6562DBF1D1E68CB0035FAC7 /* HostViewDetaileCell.m in Sources */,
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
+				D6FD14B51D1FCE59008C7D3E /* UIImage+ImageEffects.m in Sources */,
 				D6562DB31D1E60F10035FAC7 /* MJRefreshStateHeader.m in Sources */,
 				D6562DA91D1E60F10035FAC7 /* MJRefreshFooter.m in Sources */,
+				A50FC3B01D1EA347002A940D /* PopularItemTableViewCell.m in Sources */,
 				D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */,
 				D6562DB11D1E60F10035FAC7 /* MJRefreshGifHeader.m in Sources */,
 				D6562D691D1E195F0035FAC7 /* NetWorking.m in Sources */,
@@ -1165,6 +1216,7 @@
 				D61922CE1D1CD8A20008648A /* Request.m in Sources */,
 				D6721BE61D1E6C4600CFF94A /* DetailClassificationController.m in Sources */,
 				D61922E91D1CD93F0008648A /* SWRevealViewController.m in Sources */,
+				D69356331D1F9F2E00938275 /* HostInfoViewController.m in Sources */,
 				D6562DA71D1E60F10035FAC7 /* MJRefreshBackFooter.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
 				A52A923C1D1D24E60005E26E /* RadioView.m in Sources */,
@@ -1182,9 +1234,13 @@
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
+				D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */,
+				D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */,
+				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
 				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
 				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
+				A50FC3B31D1EA4C2002A940D /* RecommendAnchorTableViewCell.m in Sources */,
 				D6562DB81D1E60F10035FAC7 /* UIScrollView+MJRefresh.m in Sources */,
 				D6562DB71D1E60F10035FAC7 /* UIScrollView+MJExtension.m in Sources */,
 				D6562DB61D1E60F10035FAC7 /* NSBundle+MJRefresh.m in Sources */,

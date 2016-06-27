@@ -7,6 +7,11 @@
 //
 
 #import "CollectionViewCell.h"
+
+#import "RadioModel.h"
+#import "Host.h"
+#import "UIImageView+WebCache.h"
+
 #define kHeadPortraitWidth 80
 #define kHeadPortraitHeight 80
 #define kNameLabelX 10
@@ -65,6 +70,25 @@
     [self.contentView addSubview:self.introduction];
 }
 
+- (void)bindRecommendModel:(RadioModel *)model indexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = model.dataList[indexPath.row];
+    Host *host = [[Host alloc] init];
+    [host setValuesForKeysWithDictionary:dic];
+    self.nameLabel.text = host.nickName;
+    self.introduction.text = host.recommendReson;
+    [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
+}
+
+- (void)bindPopularModel:(RadioModel *)model indexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = model.dataList[indexPath.row];
+    Host *host = [[Host alloc] init];
+    [host setValuesForKeysWithDictionary:dic];
+    self.nameLabel.text = host.rname;
+    self.introduction.text = host.recommendReson;
+    [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.pic]];
+}
 
 
 @end

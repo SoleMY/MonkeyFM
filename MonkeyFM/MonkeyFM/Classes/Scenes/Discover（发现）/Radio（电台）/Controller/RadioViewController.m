@@ -16,7 +16,10 @@
 #import "RadioContentTableViewCell.h"
 #import "RadioTypeTableViewCell.h"
 #import "RadioPlayerListViewController.h"
-
+#import "RecommendAnchorTableViewCell.h"
+#import "AnchorViewController.h"
+#import "DrawerViewController.h"
+#import "PopularItemTableViewCell.h"
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
 #define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3
 
@@ -34,6 +37,8 @@
 static NSString * const identifier_cell = @"identifier_cell";
 static NSString * const identifier_contentCell = @"identifier_contentCell";
 static NSString * const identifier_typeCell = @"identifier_typeCell";
+static NSString * const identifier_popularCell = @"identifier_popularCell";
+static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 - (NSMutableArray *)allInfoDataArray
 {
     if (!_allInfoDataArray) {
@@ -42,16 +47,10 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     return _allInfoDataArray;
 }
 
-//- (void)loadView
-//{
-//    self.radioView = [[RadioView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.view = self.radioView;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self createRadioTableView];
     
 //    self.radioView.collectionView.delegate = self;
@@ -94,6 +93,7 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
 - (void)createRadioTableView
 {
     self.radioTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    self.radioTableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.radioTableView];
     self.radioTableView.delegate = self;
     self.radioTableView.dataSource = self;
@@ -101,6 +101,7 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     self.radioTableView.bounces = NO;
     self.radioTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.radioTableView.sectionFooterHeight = 0;
+    self.radioTableView.sectionHeaderHeight = 0;
     
     
     [self.view addSubview:_radioTableView];
@@ -123,6 +124,8 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     [self.radioTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier_cell];
     [self.radioTableView registerClass:[RadioContentTableViewCell class] forCellReuseIdentifier:identifier_contentCell];
     [self.radioTableView registerClass:[RadioTypeTableViewCell class] forCellReuseIdentifier:identifier_typeCell];
+    [self.radioTableView registerClass:[PopularItemTableViewCell class] forCellReuseIdentifier:identifier_popularCell];
+    [self.radioTableView registerClass:[RecommendAnchorTableViewCell class] forCellReuseIdentifier:identifier_anchorCell];
     // 注册头视图
 //    [self.radioView.collectionView registerClass:[RadioHeadReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
 //    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
@@ -164,7 +167,6 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
         }
             break;
         case 1:{
-//            tableView.sectionHeaderHeight = 0;
             RadioTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_typeCell forIndexPath:indexPath];
             cell.radioTypeView.backgroundColor = [UIColor whiteColor];
             cell.pushBlock = ^() {
@@ -174,17 +176,38 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
             cell.allInfoDataArray = self.allInfoDataArray;
             return cell;
         }
-            
-        default:
-        {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell];
-            cell.backgroundColor = [UIColor redColor];
+            break;
+        case 2:{
+            PopularItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_popularCell forIndexPath:indexPath];
+            cell.allInfoDataArray = self.allInfoDataArray;
+            cell.pushBlock = ^() {
+                
+            };
+            return cell;
+//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell forIndexPath:indexPath];
+//            cell.backgroundColor = [UIColor redColor];
+//            return cell;
+        }
+            break;
+        case 3:{
+            RecommendAnchorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_anchorCell forIndexPath:indexPath];
+            cell.allInfoDataArray = self.allInfoDataArray;
+            cell.pushBlock = ^() {
+                AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
+                [self.navigationController pushViewController:anchorVC animated:YES];
+                weakSelf.pushBack();
+            };
             return cell;
         }
             break;
+            default:
+        {
+//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell forIndexPath:indexPath];
+//            cell.backgroundColor = [UIColor redColor];
+            return nil;
+        }
+            break;
     }
-    
-    
    
 }
 
@@ -193,9 +216,11 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     if (indexPath.section == 0) {
         return 100;
     } else if (indexPath.section == 1) {
-        return kTypeCellHeight;
+        return kTypeCellHeight + 20;
+    } else if (indexPath.section == 2) {
+        return 170;
     } else {
-        return 100;
+        return 170;
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

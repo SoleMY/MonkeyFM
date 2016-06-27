@@ -1,5 +1,5 @@
 //
-//  RadioContentTableViewCell.h
+//  RecommendAnchorTableViewCell.h
 //  MonkeyFM
 //
 //  Created by 彭柞淞 on 16/6/25.
@@ -9,12 +9,11 @@
 #import "BaseCell.h"
 
 typedef void(^pushNewControllerBlock)();
-@interface RadioContentTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface RecommendAnchorTableViewCell : BaseCell
 
-@property (nonatomic, strong) UICollectionView *radioContentView;
-// 接收数据
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
 @property (nonatomic, copy) pushNewControllerBlock pushBlock;
+
 
 @end

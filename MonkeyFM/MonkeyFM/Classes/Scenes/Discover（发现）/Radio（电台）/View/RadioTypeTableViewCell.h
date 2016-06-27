@@ -11,7 +11,8 @@
 typedef void(^pushNewControllerBlock)();
 
 @interface RadioTypeTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, retain) UICollectionView *radioTypeView;
+
+@property (nonatomic, strong) UICollectionView *radioTypeView;
 // 接收数据
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
