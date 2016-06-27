@@ -14,4 +14,6 @@ typedef void(^pushBackBlock)();
 
 @property (nonatomic, copy) pushBackBlock pushBack;
 
+@property (nonatomic, strong) UISearchBar *customSearchBar;
+
 @end

@@ -9,14 +9,15 @@
 #import "BaseCell.h"
 //@class CollectionView;
 
-typedef void(^pushNewControllerBlock)();
+typedef void(^pushNewControllerPopularBlock)(NSString *,NSString *);
 @interface PopularItemTableViewCell : BaseCell
 
 //@property (nonatomic, strong) CollectionView *radioTypeView;
 // 接收数据
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
-@property (nonatomic, copy) pushNewControllerBlock pushBlock;
+@property (nonatomic, copy) pushNewControllerPopularBlock pushBlock;
+
 
 
 @end

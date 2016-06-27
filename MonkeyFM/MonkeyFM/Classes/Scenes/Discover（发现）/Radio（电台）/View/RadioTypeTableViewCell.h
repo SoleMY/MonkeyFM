@@ -8,7 +8,7 @@
 
 #import "BaseCell.h"
 
-typedef void(^pushNewControllerBlock)();
+typedef void(^pushNewControllerBlockType)();
 
 @interface RadioTypeTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -16,6 +16,6 @@ typedef void(^pushNewControllerBlock)();
 // 接收数据
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
-@property (nonatomic, copy) pushNewControllerBlock pushBlock;
+@property (nonatomic, copy) pushNewControllerBlockType pushBlock;
 
 @end
