@@ -53,7 +53,6 @@
 /**默认选中的index=1，即第一个*/
 @property (nonatomic,assign) NSInteger defaultIndex;
 
-
 @property (nonatomic, strong) NSString * text;
 
 @property (nonatomic, weak) id<HZSigmentViewDelegate>  delegate;
