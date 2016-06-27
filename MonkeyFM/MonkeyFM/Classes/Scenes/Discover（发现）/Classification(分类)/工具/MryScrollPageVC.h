@@ -6,13 +6,14 @@
 //  Copyright © 2016年 mryun11. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 #import "MryScrollMenu.h"
 #import "MryScrollPageCell.h"
 #import "MryPageTable.h"
 
-@interface MryScrollPageVC : UIViewController
+
+@interface MryScrollPageVC : BaseViewController
 
 @property (nonatomic,strong) NSMutableArray *tableArray;
 @property (nonatomic,strong) NSMutableArray *menuArray;
