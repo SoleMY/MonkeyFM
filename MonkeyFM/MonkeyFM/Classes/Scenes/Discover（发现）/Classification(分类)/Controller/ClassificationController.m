@@ -11,7 +11,7 @@
 #import "ClassificationCell.h"
 #import "ClassificationModel.h"
 #import <UIImageView+WebCache.h>
-#import "DetailClassificationController.h"
+#import "DetailClassificationViewController.h"
 #import "MFM_URL.h"
 @interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong)ClassificationView *myView;
@@ -51,6 +51,7 @@ static  NSString *const identifile_cell = @"identifile_cell";
     self.myView.collectionView.dataSource = self;
     // 第一步：注册cell
     [self.myView.collectionView registerClass:[ClassificationCell class] forCellWithReuseIdentifier:identifile_cell];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,13 +80,13 @@ static  NSString *const identifile_cell = @"identifile_cell";
     ClassificationModel *model = self.allArray[indexPath.row];
         cell.label.text = model.title;
     [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.icon]];
-    
+   
     return cell;
 }
 
 // 点击item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    DetailClassificationController *detailVC = [DetailClassificationController new];
+    DetailClassificationViewController *detailVC = [DetailClassificationViewController new];
     
     [self.navigationController pushViewController:detailVC animated:YES];
 }
@@ -127,8 +128,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
     }];
     
     [task resume];
-    
-
     
 }
 
