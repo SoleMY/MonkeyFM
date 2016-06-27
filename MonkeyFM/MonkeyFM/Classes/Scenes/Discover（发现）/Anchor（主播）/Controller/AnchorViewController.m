@@ -71,8 +71,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     //    注册头视图
     [self.collection.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
     [self.collection.collectionView registerClass:[FirstCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
-    //    注册尾视图
-    [self.collection.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
     [self request];
 }
 - (void)request {
@@ -129,12 +127,16 @@ static NSString *const identifier_cell = @"identifier_cell";
             cell.nameLabel.text = host.nickName;
             cell.introduction.text = host.recommendReson;
             [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
+            
         }else {
             Host *host = self.hostArray[6 + (indexPath.section - 2) * 3 + indexPath.row ];
             cell.nameLabel.text = host.nickName;
             cell.introduction.text = host.recommendReson;
              [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
         }
+        
+        HostTitle *hostTitle = self.titleArray[indexPath.section];
+        self.appendString = hostTitle.relatedValue;
         
      return cell;
     }
@@ -145,29 +147,25 @@ static NSString *const identifier_cell = @"identifier_cell";
     if (indexPath.section == 0) {
         if ([kind isEqualToString: UICollectionElementKindSectionHeader]) {
             FirstCollectionReusableView *firstHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"firstHeaderView" forIndexPath:indexPath];
-            [[Request alloc] requestWithURL:shuffing_host_URL view:firstHeaderView frame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            [[Request alloc] requestWithURL:shuffing_host_URL view:firstHeaderView frame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
                return firstHeaderView;
         } else {
-        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView" forIndexPath:indexPath];
-    footerView.backgroundColor = [UIColor greenColor];
-    return footerView;
+            return nil;
     }
     } else {
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
             HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
+            self.compent = indexPath.section;
+            NSLog(@"%ld", self.compent);
             HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = title.name;
             [otherHead.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
-            self.compent = indexPath.section;
-            self.appendString = title.relatedValue;
+//            self.appendString = title.relatedValue;
+            otherHead.more.tag = indexPath.section + 1;
             [otherHead.more addTarget:self action:@selector(moreActionWithIndexPath:) forControlEvents:UIControlEventTouchUpInside];
-            
             return otherHead;
         }else {
-            UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView" forIndexPath:indexPath];
-            footerView.backgroundColor = [UIColor greenColor];
-            
-            return footerView;
+            return nil;
         }
     }
 }
@@ -176,7 +174,7 @@ static NSString *const identifier_cell = @"identifier_cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return CGSizeMake(self.view.bounds.size.width, 200);
+        return CGSizeMake(self.view.bounds.size.width, 150);
     } else {
         return CGSizeMake(self.view.bounds.size.width, 30);
     }
@@ -193,10 +191,13 @@ static NSString *const identifier_cell = @"identifier_cell";
 //    [self.navigationController pushViewController:secondVC animated:YES];
 //}
 
-- (void)moreActionWithIndexPath:(NSIndexPath *)indexPath {
+- (void)moreActionWithIndexPath:(UIButton *)sender {
+    HostTitle *title = self.titleArray[sender.tag];
+    self.appendString = title.relatedValue;
     HostViewController *hostVC = [[HostViewController alloc] init];
 //    hostVC.appendString = self.compent;
     hostVC.appendString = self.appendString;
+    NSLog(@"%@", self.appendString);
     [self.navigationController pushViewController:hostVC animated:YES];
 }
 

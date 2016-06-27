@@ -8,7 +8,9 @@
 
 #import "BaseViewController.h"
 
+//typedef void(^Block)(id objc);
 @interface HostViewController : BaseViewController
+//@property (nonatomic, copy)Block block;
 
 @property (nonatomic, strong) NSString *appendString;
 

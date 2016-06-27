@@ -2,7 +2,7 @@
 //  HostViewController.m
 //  MonkeyFM
 //
-//  Created by lanou3g on 16/6/25.
+//  Created by 郑淮予 on 16/6/25.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
@@ -10,6 +10,11 @@
 #import "MJRefresh.h"
 #import "HostViewDetaileCell.h"
 #import <AFNetworking.h>
+#import "MFM_URL.h"
+#import "NetWorking.h"
+#import "More.h"
+#import <UIImageView+WebCache.h>
+#import "HostInfoViewController.h"
 
 @interface HostViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -17,9 +22,18 @@
 
 @property (nonatomic, strong)NSMutableArray *allDataArray;
 
+@property (nonatomic, strong)NSArray *appandingArray;
+
 @end
 
 @implementation HostViewController
+
+- (NSMutableArray *)allDataArray {
+    if (!_allDataArray) {
+        _allDataArray = [NSMutableArray array];
+    }
+    return _allDataArray;
+}
 
 - (void)loadView {
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
@@ -29,35 +43,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self requestWithPage:@"1"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
     [self.tableView registerClass:[HostViewDetaileCell class] forCellReuseIdentifier:@"cell"];
-    [self request];
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [self.tableView.mj_header endRefreshing];
-        });
+        [self requestWithPage:@"1"];
+        [self.tableView.mj_header endRefreshing];
+
     }];
-   self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 结束刷新
-            [self.tableView.mj_footer endRefreshing];
+}
+
+- (void)requestWithPage:(NSString *)page  {
+    self.appandingArray = [self.appendString componentsSeparatedByString:@"&"];
+    NSString *URLStr = [NSString stringWithFormat:@"%@&%@&%@&pagenum=%@", self.appandingArray[0], self.appandingArray[1], self.appandingArray[2], page];
+    NSString *str = [NSString stringWithFormat:@"%@%@%@", Host_Base_URL, URLStr, Host_append_URL];
+    NetWorking *netWorking =[[NetWorking alloc] init];
+    [netWorking requestWithURL:str Bolck:^(id array) {
+        NSDictionary *resultDic = [array objectForKey:@"result"];
+        NSArray *dataList = [resultDic objectForKey:@"dataList"];
+        for (NSDictionary *dic in dataList) {
+            More *more=  [[More alloc] init];
+            [more setValuesForKeysWithDictionary:dic];
+            [self.allDataArray addObject:more];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
         });
     }];
 }
 
-- (void)request {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 
-//    NSString *str = [NSString stringWithFormat:@"%@%@%@", ]
-//    [manager GET:<#(nonnull NSString *)#> parameters:<#(nullable id)#> progress:<#^(NSProgress * _Nonnull downloadProgress)downloadProgress#> success:<#^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)success#> failure:<#^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)failure#>]
-}
+
 
 - (void)back:(UIBarButtonItem *)sender  {
     [self.navigationController popViewControllerAnimated:YES];
@@ -68,18 +88,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+//    NSLog(@"%ld", self.allDataArray.count);
+    return self.allDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    HostViewDetaileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    More *more = self.allDataArray[indexPath.row];
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:more.avatar]];
+    cell.nameLabel.text = more.nickName;
+    cell.decLabel.text = more.desc;
+    cell.fansNumber.text = [NSString stringWithFormat:@"粉丝数：%ld", more.fansCount];
+    if (indexPath.row == self.allDataArray.count - 1) {
+        self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            [self requestWithPage:[NSString stringWithFormat:@"%ld", indexPath.row / 20 + 2]];
+            self.tableView.mj_footer.hidden = YES;
+            [self.tableView.mj_footer endRefreshing];
+        }];
+        
+    }
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 115;
+    return 100;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HostInfoViewController *hostInfoVC = [[HostInfoViewController alloc] init];
+    [self.navigationController pushViewController:hostInfoVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
