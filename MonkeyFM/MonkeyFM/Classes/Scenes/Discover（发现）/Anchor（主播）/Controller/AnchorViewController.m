@@ -156,7 +156,6 @@ static NSString *const identifier_cell = @"identifier_cell";
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
             HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
             self.compent = indexPath.section;
-            NSLog(@"%ld", self.compent);
             HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = title.name;
             [otherHead.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];

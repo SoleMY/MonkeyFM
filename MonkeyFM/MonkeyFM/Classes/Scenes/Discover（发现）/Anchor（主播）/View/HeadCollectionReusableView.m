@@ -19,11 +19,11 @@
 }
 
 - (void)initLayout {
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 30)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 150, 30)];
+    self.titleLabel.text = @"TAde";
     [self addSubview:self.titleLabel];
     self.more = [[UIButton alloc] init];
     self.more.frame = CGRectMake(self.frame.size.width - 80, 0, 60, 30);
-    
     [self addSubview:self.more];
 }
 

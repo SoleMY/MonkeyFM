@@ -14,5 +14,6 @@
 @property (nonatomic, strong)UIScrollView *scrollView;
 @property (nonatomic, strong)UIPageControl *pageControl;
 @property (nonatomic, strong)NSTimer *timer;
+@property (nonatomic, assign)NSInteger number;
 
 @end

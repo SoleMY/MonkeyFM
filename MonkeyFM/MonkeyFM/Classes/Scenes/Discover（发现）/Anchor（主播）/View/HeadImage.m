@@ -56,6 +56,7 @@
     self.followNumber.text = @"2";
     self.followNumber.textColor = [UIColor grayColor];
     self.followNumber.font = [UIFont systemFontOfSize:15];
+//    self.followNumber.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.followNumber];
     [self.followNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followButton.mas_bottom).offset(5);
@@ -68,6 +69,7 @@
     self.fansNumber.text = @"13000";
     self.fansNumber.textColor = [UIColor grayColor];
     self.fansNumber.font = [UIFont systemFontOfSize:15];
+    self.fansNumber.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.fansNumber];
     [self.fansNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followButton.mas_bottom).offset(5);

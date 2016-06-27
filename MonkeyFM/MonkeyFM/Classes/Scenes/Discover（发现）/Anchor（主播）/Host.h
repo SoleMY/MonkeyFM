@@ -16,6 +16,18 @@
 @property (nonatomic, strong)NSString *nickName;
 //图片
 @property (nonatomic, strong)NSString *avatar;
+//uid
+@property (nonatomic, strong)NSString *uid;
+//简介
+@property (nonatomic, strong)NSString *intro;
+
+@property (nonatomic, assign)NSInteger followedNum;
+@property (nonatomic, assign)NSInteger fansNum;
+//@property (nonatomic, strong)NSString *intro;
+
+////社交网络
+//@property (nonatomic, strong)
+
 
 /// 电台页面需要
 // 名称

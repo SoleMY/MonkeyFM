@@ -10,4 +10,6 @@
 
 @interface HostInfoViewController : BaseViewController
 
+@property (nonatomic, strong)NSString *uid;
+
 @end

@@ -61,6 +61,12 @@
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */; };
+		D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */; };
+		D60CCB6A1D20BFA500A8EBF3 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */; };
+		D60CCB6D1D20BFCA00A8EBF3 /* collectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB6C1D20BFCA00A8EBF3 /* collectCell.m */; };
+		D60CCB701D20CB9100A8EBF3 /* SocialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB6F1D20CB9100A8EBF3 /* SocialNetWork.m */; };
+		D60CCB731D214A4000A8EBF3 /* Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB721D214A4000A8EBF3 /* Collection.m */; };
 		D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D61922791D1CD8A20008648A /* AppDelegate.m */; };
 		D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D619227C1D1CD8A20008648A /* DrawerViewController.m */; };
 		D61922CC1D1CD8A20008648A /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D619227D1D1CD8A20008648A /* DrawerViewController.xib */; };
@@ -229,6 +235,18 @@
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
+		D60CCB621D20BF5B00A8EBF3 /* SocialNetworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkCell.h; sourceTree = "<group>"; };
+		D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkCell.m; sourceTree = "<group>"; };
+		D60CCB651D20BF8000A8EBF3 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		D60CCB681D20BFA500A8EBF3 /* SubscribeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeCell.h; sourceTree = "<group>"; };
+		D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeCell.m; sourceTree = "<group>"; };
+		D60CCB6B1D20BFCA00A8EBF3 /* collectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectCell.h; sourceTree = "<group>"; };
+		D60CCB6C1D20BFCA00A8EBF3 /* collectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectCell.m; sourceTree = "<group>"; };
+		D60CCB6E1D20CB9100A8EBF3 /* SocialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetWork.h; sourceTree = "<group>"; };
+		D60CCB6F1D20CB9100A8EBF3 /* SocialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetWork.m; sourceTree = "<group>"; };
+		D60CCB711D214A4000A8EBF3 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collection.h; sourceTree = "<group>"; };
+		D60CCB721D214A4000A8EBF3 /* Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collection.m; sourceTree = "<group>"; };
 		D61922781D1CD8A20008648A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D61922791D1CD8A20008648A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D619227B1D1CD8A20008648A /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
@@ -587,6 +605,16 @@
 				D6562DBE1D1E68CB0035FAC7 /* HostViewDetaileCell.m */,
 				D6FD14A81D1FAE78008C7D3E /* HeadImage.h */,
 				D6FD14A91D1FAE78008C7D3E /* HeadImage.m */,
+				D60CCB621D20BF5B00A8EBF3 /* SocialNetworkCell.h */,
+				D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */,
+				D60CCB6E1D20CB9100A8EBF3 /* SocialNetWork.h */,
+				D60CCB6F1D20CB9100A8EBF3 /* SocialNetWork.m */,
+				D60CCB651D20BF8000A8EBF3 /* AlbumCell.h */,
+				D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */,
+				D60CCB681D20BFA500A8EBF3 /* SubscribeCell.h */,
+				D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */,
+				D60CCB6B1D20BFCA00A8EBF3 /* collectCell.h */,
+				D60CCB6C1D20BFCA00A8EBF3 /* collectCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -900,6 +928,8 @@
 				D6562DC31D1E9E0D0035FAC7 /* More.m */,
 				D6FD14AB1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.h */,
 				D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */,
+				D60CCB711D214A4000A8EBF3 /* Collection.h */,
+				D60CCB721D214A4000A8EBF3 /* Collection.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1278,6 +1308,7 @@
 				D61922CF1D1CD8A20008648A /* shuffingNetRequest.m in Sources */,
 				D61922D71D1CD8A20008648A /* BaseViewController.m in Sources */,
 				D6FD14B51D1FCE59008C7D3E /* UIImage+ImageEffects.m in Sources */,
+				D60CCB731D214A4000A8EBF3 /* Collection.m in Sources */,
 				D6562DB31D1E60F10035FAC7 /* MJRefreshStateHeader.m in Sources */,
 				D6562DA91D1E60F10035FAC7 /* MJRefreshFooter.m in Sources */,
 				D61FCEA91D210A80001A7D04 /* DetailClassificationViewController.m in Sources */,
@@ -1296,7 +1327,11 @@
 				D69356331D1F9F2E00938275 /* HostInfoViewController.m in Sources */,
 				D6562DA71D1E60F10035FAC7 /* MJRefreshBackFooter.m in Sources */,
 				D61922CB1D1CD8A20008648A /* DrawerViewController.m in Sources */,
+<<<<<<< HEAD
 				D61FCEC41D214125001A7D04 /* MryScrollPageCell.m in Sources */,
+=======
+				D60CCB6D1D20BFCA00A8EBF3 /* collectCell.m in Sources */,
+>>>>>>> 21eab089c54e15ba044144df6b5cdd645072b2d0
 				A52A923C1D1D24E60005E26E /* RadioView.m in Sources */,
 				D6562DB51D1E60F10035FAC7 /* MJRefreshConst.m in Sources */,
 				A52A92251D1CE0790005E26E /* AnchorViewController.m in Sources */,
@@ -1304,16 +1339,20 @@
 				A52A92401D1D25800005E26E /* RadioModel.m in Sources */,
 				A52A921D1D1CDDCD0005E26E /* ClassificationCell.m in Sources */,
 				D6562D741D1E599D0035FAC7 /* HostViewController.m in Sources */,
+				D60CCB6A1D20BFA500A8EBF3 /* SubscribeCell.m in Sources */,
 				A50FC3A51D1E6734002A940D /* RadioTypeTableViewCell.m in Sources */,
 				D6562DAE1D1E60F10035FAC7 /* MJRefreshBackGifFooter.m in Sources */,
 				D6562DA81D1E60F10035FAC7 /* MJRefreshComponent.m in Sources */,
+				D60CCB701D20CB9100A8EBF3 /* SocialNetWork.m in Sources */,
 				D6562D6C1D1E1CC60035FAC7 /* HostTitle.m in Sources */,
+				D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				A52A921C1D1CDDCD0005E26E /* ClassificationModel.m in Sources */,
 				D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */,
 				D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */,
+				D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */,
 				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
 				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
