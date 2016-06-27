@@ -12,18 +12,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        // 布局子视图
+
         
         self.restorationIdentifier = @"identifile_cell";
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingNone;
         
         CGFloat borderWidth = 0.5f;
-        //        UIView *bgView = [[UIView alloc] initWithFrame:frame];
-        //        bgView.layer.borderColor = [UIColor redColor].CGColor;
-        //        bgView.layer.borderWidth = borderWidth;
-        //        self.selectedBackgroundView = bgView;
-        
+    
         CGRect myContentRect = CGRectInset(self.contentView.bounds, borderWidth, borderWidth);
         
         UIView *myContentView = [[UIView alloc] initWithFrame:myContentRect];
@@ -42,21 +38,21 @@
     // 创建对象
     self.photoImage = [[UIImageView alloc] init];
     
-//    self.photoImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height / 4 * 3)];
-    
-//    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, self.bounds.size.height / 4 * 3, self.bounds.size.width, self.bounds.size.height / 4)];
-    
     self.label = [[UILabel alloc] init];
     self.label.textAlignment = NSTextAlignmentCenter;
 
     [self.contentView addSubview:self.photoImage];
+    
     [self.contentView addSubview:self.label];
+    
     __weak typeof(self)mySelf = self;
+    
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(mySelf);
         make.right.equalTo(mySelf);
         make.bottom.offset(-10);
     }];
+    
     [self.photoImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(mySelf.label.mas_centerX);
         make.bottom.equalTo(mySelf.label.mas_top).offset(-10);
