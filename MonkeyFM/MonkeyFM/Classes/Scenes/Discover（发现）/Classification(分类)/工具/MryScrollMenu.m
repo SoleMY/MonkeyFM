@@ -67,9 +67,18 @@
         }
         
         //计算按钮大小
-        CGRect btnRect = [self.menuArray[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:btnFont} context:nil];
-        
-        menuBtn.frame = CGRectMake(menuBtnX, 0, btnRect.size.width, self.scrollView.frame.size.height);
+        // 电台页面需要
+        if (self.menuArray.count == 3) {
+            CGRect btnRect = [self.menuArray[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:btnFont} context:nil];
+            btnRect.size.width = [UIScreen mainScreen].bounds.size.width / 4;
+            
+            menuBtn.frame = CGRectMake(menuBtnX, 0, btnRect.size.width, self.scrollView.frame.size.height);
+            
+        }else {
+            CGRect btnRect = [self.menuArray[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:btnFont} context:nil];
+            
+            menuBtn.frame = CGRectMake(menuBtnX, 0, btnRect.size.width, self.scrollView.frame.size.height);
+        }
         
         [self.scrollView addSubview:menuBtn];
         

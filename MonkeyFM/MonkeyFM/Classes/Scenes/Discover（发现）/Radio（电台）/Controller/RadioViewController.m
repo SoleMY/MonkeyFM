@@ -8,11 +8,7 @@
 
 #import "RadioViewController.h"
 #import "Request.h"
-#import "MFM_URL.h"
-#import <AFNetworking.h>
-#import <AFNetworkActivityIndicatorManager.h>
 #import "RadioModel.h"
-#import "Masonry.h"
 #import "RadioContentTableViewCell.h"
 #import "RadioTypeTableViewCell.h"
 #import "RadioPlayerListViewController.h"
@@ -137,9 +133,9 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 
 - (void)setTableHeaderView
 {
-//    UIView *tableHeaderView = [[UIView alloc] initWithFrame:kHeaderRect];
-//    [[Request alloc] requestWithURL:shuffing_radio_URL view:tableHeaderView frame:kHeaderRect];
-//    self.radioTableView.tableHeaderView = tableHeaderView;
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:kHeaderRect];
+    [[Request alloc] requestWithURL:shuffing_radio_URL view:tableHeaderView frame:kHeaderRect];
+    self.radioTableView.tableHeaderView = tableHeaderView;
 }
 
 #pragma mark - UITableViewDataSource Delegate Method-----

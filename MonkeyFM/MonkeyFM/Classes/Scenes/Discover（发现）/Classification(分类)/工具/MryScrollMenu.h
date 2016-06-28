@@ -6,7 +6,8 @@
 //  Copyright © 2016年 mryun11. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
+#import "BaseView.h"
 
 @protocol MryScrollMenuDelegate <NSObject>
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface MryScrollMenu : UIView
+@interface MryScrollMenu : BaseView
 
 @property (nonatomic,weak) id<MryScrollMenuDelegate> delegate;
 

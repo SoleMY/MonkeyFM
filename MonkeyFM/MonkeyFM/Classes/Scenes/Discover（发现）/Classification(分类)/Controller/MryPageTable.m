@@ -7,7 +7,7 @@
 //
 
 #import "MryPageTable.h"
-
+#import "NewsCell.h"
 @interface MryPageTable ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -18,6 +18,7 @@
     if (self = [super initWithFrame:frame style:style]) {
         self.delegate = self;
         self.dataSource = self;
+        [self registerClass:[NewsCell class] forCellReuseIdentifier:@"cell"];
     }
     return self;
 }
@@ -31,14 +32,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cellid"];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@-------%ld",self.title,(long)indexPath.row];
-    
+    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 140;
+}
 
 @end

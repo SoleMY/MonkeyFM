@@ -7,7 +7,7 @@
 //
 
 #import "ClassificationCell.h"
-#import <Masonry.h>
+
 @implementation ClassificationCell
 
 - (instancetype)initWithFrame:(CGRect)frame {

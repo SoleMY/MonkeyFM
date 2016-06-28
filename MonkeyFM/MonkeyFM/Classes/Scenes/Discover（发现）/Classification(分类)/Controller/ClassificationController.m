@@ -10,9 +10,8 @@
 #import "ClassificationView.h"
 #import "ClassificationCell.h"
 #import "ClassificationModel.h"
-#import <UIImageView+WebCache.h>
 #import "DetailClassificationViewController.h"
-#import "MFM_URL.h"
+
 @interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong)ClassificationView *myView;
 

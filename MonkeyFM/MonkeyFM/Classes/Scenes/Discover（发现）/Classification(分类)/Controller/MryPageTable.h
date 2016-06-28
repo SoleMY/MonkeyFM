@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseView.h"
 @interface MryPageTable : UITableView
 
 @property (nonatomic,copy) NSString *title;

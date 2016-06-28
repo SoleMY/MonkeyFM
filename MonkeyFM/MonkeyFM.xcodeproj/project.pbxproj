@@ -185,7 +185,7 @@
 		A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendAnchorTableViewCell.m; sourceTree = "<group>"; };
 		A50FC3B41D2007DD002A940D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A50FC3B51D20B579002A940D /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
-		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListViewController.h; sourceTree = "<group>"; };
+		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopularItemListViewController.h; path = ../Controller/PopularItemListViewController.h; sourceTree = "<group>"; };
 		A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularItemListViewController.m; sourceTree = "<group>"; };
 		A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularItemListViewController.xib; sourceTree = "<group>"; };
 		A50FC3BB1D20CD33002A940D /* PopularItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListCell.h; sourceTree = "<group>"; };
@@ -301,8 +301,7 @@
 		D62855DE1D1FDBBF003AABD2 /* HZSigmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZSigmentView.h; sourceTree = "<group>"; };
 		D62855DF1D1FDBBF003AABD2 /* HZSigmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZSigmentView.m; sourceTree = "<group>"; };
 		D63D50DC1D22045C0066EB20 /* Collect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collect.h; sourceTree = "<group>"; };
-		D63D50DD1D22045C0066EB20 /* Collect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collect.m; sourceTree = "<group>"; };
-		D6442DB11D1D328200EEE263 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
+		D63D50DD1D22045C0066EB20 /* Collect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collect.m; sourceTree = "<group>"; };		D6442DB11D1D328200EEE263 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
 		D6442DB21D1D328200EEE263 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
@@ -507,7 +506,6 @@
 				A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */,
 				A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */,
 				A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */,
-				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
 				A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */,
 				A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */,
 			);
@@ -535,6 +533,7 @@
 				A50FC3BC1D20CD33002A940D /* PopularItemListCell.m */,
 				A50FC3B11D1EA4C2002A940D /* RecommendAnchorTableViewCell.h */,
 				A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */,
+				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,8 +676,6 @@
 		D61922801D1CD8A20008648A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D62855DE1D1FDBBF003AABD2 /* HZSigmentView.h */,
-				D62855DF1D1FDBBF003AABD2 /* HZSigmentView.m */,
 				D61922811D1CD8A20008648A /* HeadView.h */,
 				D61922821D1CD8A20008648A /* HeadView.m */,
 				D61922831D1CD8A20008648A /* Request.h */,
@@ -1375,7 +1372,6 @@
 				D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */,
 				D6562DA61D1E60F10035FAC7 /* MJRefreshAutoFooter.m in Sources */,
 				D6562DAD1D1E60F10035FAC7 /* MJRefreshAutoStateFooter.m in Sources */,
-				D62855E01D1FDBBF003AABD2 /* HZSigmentView.m in Sources */,
 				D6562D621D1E182D0035FAC7 /* Host.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
