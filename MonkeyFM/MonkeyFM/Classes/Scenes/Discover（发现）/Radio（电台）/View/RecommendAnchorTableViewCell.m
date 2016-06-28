@@ -12,6 +12,7 @@
 #import "HeadCollectionReusableView.h"
 #import "RadioModel.h"
 #import "HostTitle.h"
+#import "Host.h"
 
 @interface RecommendAnchorTableViewCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -90,6 +91,42 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RadioModel *model = [[RadioModel alloc] init];
+    model = self.allInfoDataArray[4];
+    NSDictionary *dic = model.dataList[indexPath.row];
+    Host *host = [[Host alloc] init];
+    [host setValuesForKeysWithDictionary:dic];
+    self.pushBlock(host.uid);
+    //    switch (indexPath.item) {
+    //        case 0:
+    //        {
+    //            self.radioCommonBlock(210000, 2, @"本地台");
+    //        }
+    //            break;
+    //        case 1:
+    //        {
+    //            self.radioCommonBlock(0, 1, @"国家台");
+    //        }
+    //            break;
+    //        case 2:
+    //        {
+    //            self.provinceRadioBlock(2, @"省市台");
+    //        }
+    //            break;
+    //        case 3:
+    //        {
+    //            self.radioCommonBlock(0, 3, @"网络台");
+    //        }
+    //            break;
+    //            
+    //        default:
+    //            break;
+    //    }
+}
+
+
 //返回头视图和尾视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (self.allInfoDataArray.count > 0) {
@@ -113,7 +150,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 }
 
 - (void)moreActionWithIndexPath:(NSIndexPath *)indexPath {
-    self.pushBlock();
+    self.pushBlock(nil);
 }
 
 - (void)setAllInfoDataArray:(NSMutableArray *)allInfoDataArray

@@ -11,6 +11,7 @@
 #import "MryScrollMenu.h"
 #import "MryScrollPageCell.h"
 #import "MryPageTable.h"
+#import "RadioStyleListTableView.h"
 
 
 @interface MryScrollPageVC : BaseViewController

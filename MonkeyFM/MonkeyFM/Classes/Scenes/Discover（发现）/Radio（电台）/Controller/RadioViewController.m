@@ -160,6 +160,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^() {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                listVC.selectedSegmentIndex = 0;
                 ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
@@ -171,6 +172,8 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             cell.radioTypeView.backgroundColor = [UIColor whiteColor];
             cell.pushBlock = ^() {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                listVC.selectedSegmentIndex = 1;
+                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
             cell.allInfoDataArray = self.allInfoDataArray;
@@ -196,7 +199,10 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         case 3:{
             RecommendAnchorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_anchorCell forIndexPath:indexPath];
             cell.allInfoDataArray = self.allInfoDataArray;
-            cell.pushBlock = ^() {
+            cell.pushBlock = ^(NSString *uid) {
+                if (uid != nil) {
+                    
+                }
                 AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
                 [weakSelf.navigationController pushViewController:anchorVC animated:YES];
                 weakSelf.pushBack();
