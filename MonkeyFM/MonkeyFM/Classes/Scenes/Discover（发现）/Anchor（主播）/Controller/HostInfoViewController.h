@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong)NSString *uid;
 
+@property (nonatomic, assign)CGFloat height;
+
 @end

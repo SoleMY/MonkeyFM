@@ -7,7 +7,6 @@
 //
 
 #import "SocialNetWork.h"
-#import <Masonry.h>
 
 @implementation SocialNetWork
 

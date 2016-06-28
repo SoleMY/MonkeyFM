@@ -7,21 +7,19 @@
 //
 
 #import "HostInfoViewController.h"
-#import <Masonry.h>
 #import "UIScrollView+ScalableCover.h"
 #import "HeadImage.h"
-#import <UIImageView+WebCache.h>
 #import "UIImageView+LBBlurredImage.h"
 #import "SocialNetworkCell.h"
 #import "AlbumCell.h"
 #import "SubscribeCell.h"
 #import "collectCell.h"
 #import "NetWorking.h"
-#import "MFM_URL.h"
 #import "Host.h"
 #import "More.h"
 #import "HostTitle.h"
 #import "Collection.h"
+#import "SmallTools.h"
 
 @interface HostInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -87,6 +85,7 @@
     [self.bgTableView registerClass:[AlbumCell class] forCellReuseIdentifier:@"AlbumCell"];
     [self.bgTableView registerClass:[SubscribeCell class] forCellReuseIdentifier:@"SubscribeCell"];
     [self.bgTableView registerClass:[collectCell class] forCellReuseIdentifier:@"collectCell"];
+    self.bgTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self request];
 }
 
@@ -160,8 +159,10 @@
     if (indexPath.row == 0) {
         HeadImage *image = [self.bgTableView dequeueReusableCellWithIdentifier:@"headImage" forIndexPath:indexPath];
         Host *host = [self.infoListArr firstObject];
+        image.nameLabel.text= host.nickName;
         image.fansNumber.text = [NSString stringWithFormat:@"%ld", (long)host.fansNum];
         image.followNumber.text = [NSString stringWithFormat:@"%ld", (long)host.followedNum];
+        image.selectionStyle = UITableViewCellSelectionStyleNone;
         return image;
     }else if(indexPath.row == 2){
         SocialNetworkCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"netWorkCell" forIndexPath:indexPath];
@@ -169,49 +170,66 @@
     }else if (indexPath.row == 3) {
         AlbumCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"AlbumCell" forIndexPath:indexPath];
         cell.albumArr = self.issueListArr;
-        NSLog(@"%@", self.issueListArr);
         return cell;
     }else if (indexPath.row == 4) {
         SubscribeCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"SubscribeCell" forIndexPath:indexPath];
+        cell.collectionArr = self.subscribeListArr;
         return cell;
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
-        cell.titleLabel.text = @"隋唐帝王史话";
-        cell.decLabel.text = @"中国帝王史话";
-        cell.dateLabel.text = @"2016-03-21";
+        cell.collectArr = self.likedListArr;
         return cell;
     } else {
         UITableViewCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.textColor = [UIColor grayColor];
         Host *host = [self.infoListArr firstObject];
         cell.textLabel.text = host.intro;
+      self.height = [SmallTools textHeightWithText:cell.textLabel.text font:[UIFont systemFontOfSize:13]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 170;
+        if (self.infoListArr.count == 0) {
+            return 0;
+        }else {
+        return 150;
+        }
     }else if (indexPath.row == 2){
-        return 100;
-    } else {
-        return 200;
+            return 0;
+    
+    }else if (indexPath.row == 3){
+        if (self.issueListArr.count == 0) {
+            return 0;
+        }else {
+        return 150;
+        }
+    } else if (indexPath.row == 4) {
+        if (self.subscribeListArr.count == 0) {
+            return 0;
+        }else {
+            return 150;
+        }
+    }else if (indexPath.row == 5) {
+        if (self.likedListArr.count == 0) {
+            return 0;
+        }else {
+            return 250;
+        }
+    }else {
+        return self.height + 10;
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

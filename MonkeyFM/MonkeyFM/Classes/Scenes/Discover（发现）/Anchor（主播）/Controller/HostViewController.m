@@ -9,11 +9,9 @@
 #import "HostViewController.h"
 #import "MJRefresh.h"
 #import "HostViewDetaileCell.h"
-#import <AFNetworking.h>
 #import "MFM_URL.h"
 #import "NetWorking.h"
 #import "More.h"
-#import <UIImageView+WebCache.h>
 #import "HostInfoViewController.h"
 
 @interface HostViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -50,6 +48,7 @@
     [self.tableView registerClass:[HostViewDetaileCell class] forCellReuseIdentifier:@"cell"];
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self requestWithPage:@"1"];
         [self.tableView.mj_header endRefreshing];

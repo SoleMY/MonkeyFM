@@ -9,7 +9,6 @@
 #import "AnchorViewController.h"
 //#import "TheHostShow.h"
 #import "Request.h"
-#import "MFM_URL.h"
 #import "CollectionView.h"
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
@@ -17,9 +16,8 @@
 #import "NetWorking.h"
 #import "HostTitle.h"
 #import "Host.h"
-#import <UIImageView+WebCache.h>
 #import "HostViewController.h"
-
+#import "HostInfoViewController.h"
 
 #define kHeadViewHeight 200
 #define kHeadViewY 40
@@ -184,11 +182,13 @@ static NSString *const identifier_cell = @"identifier_cell";
     return CGSizeMake(self.view.bounds.size.width, 0);
 }
 
-////点击item
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    SecondViewController *secondVC = [[SecondViewController alloc] init];
-//    [self.navigationController pushViewController:secondVC animated:YES];
-//}
+//点击item
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    HostInfoViewController *hostInfoVC = [[HostInfoViewController alloc] init];
+    Host *host = self.hostArray[indexPath.row];
+    hostInfoVC.uid = host.uid;
+    [self.navigationController pushViewController:hostInfoVC animated:YES];
+}
 
 - (void)moreActionWithIndexPath:(UIButton *)sender {
     HostTitle *title = self.titleArray[sender.tag];
@@ -196,7 +196,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     HostViewController *hostVC = [[HostViewController alloc] init];
 //    hostVC.appendString = self.compent;
     hostVC.appendString = self.appendString;
-    NSLog(@"%@", self.appendString);
     [self.navigationController pushViewController:hostVC animated:YES];
 }
 

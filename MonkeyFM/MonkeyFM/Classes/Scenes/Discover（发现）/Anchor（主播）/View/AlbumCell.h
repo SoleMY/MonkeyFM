@@ -12,6 +12,5 @@
 
 @property (nonatomic, strong)CollectionView *AlbumView;
 @property (nonatomic, strong)NSMutableArray *albumArr;
-@property (nonatomic, strong)NSMutableArray *array;
 
 @end

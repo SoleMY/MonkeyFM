@@ -10,12 +10,10 @@
 
 @interface collectCell : BaseCell
 
-@property (nonatomic, strong)UIImageView *picture;
+@property (nonatomic, strong)UICollectionView *collectView;
 
-@property (nonatomic, strong)UILabel *titleLabel;
+@property (nonatomic, strong)UICollectionViewFlowLayout *layout;
 
-@property (nonatomic, strong)UILabel *decLabel;
-
-@property (nonatomic, strong)UILabel *dateLabel;
+@property (nonatomic, strong)NSMutableArray *collectArr;
 
 @end
