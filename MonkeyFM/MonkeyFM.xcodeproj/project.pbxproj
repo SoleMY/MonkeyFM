@@ -99,7 +99,6 @@
 		D61FCEC51D214125001A7D04 /* MryScrollPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCEC21D214125001A7D04 /* MryScrollPageVC.m */; };
 		D61FCEC81D214167001A7D04 /* MryPageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCEC71D214167001A7D04 /* MryPageTable.m */; };
 		D61FCECB1D214362001A7D04 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCECA1D214362001A7D04 /* NewsCell.m */; };
-		D62855E01D1FDBBF003AABD2 /* HZSigmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62855DF1D1FDBBF003AABD2 /* HZSigmentView.m */; };
 		D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB21D1D328200EEE263 /* CollectionView.m */; };
 		D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB51D1D35F900EEE263 /* CollectionViewCell.m */; };
 		D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6442DB81D1D4EB600EEE263 /* HeadCollectionReusableView.m */; };
@@ -297,8 +296,6 @@
 		D61FCEC71D214167001A7D04 /* MryPageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MryPageTable.m; sourceTree = "<group>"; };
 		D61FCEC91D214362001A7D04 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		D61FCECA1D214362001A7D04 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
-		D62855DE1D1FDBBF003AABD2 /* HZSigmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZSigmentView.h; sourceTree = "<group>"; };
-		D62855DF1D1FDBBF003AABD2 /* HZSigmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZSigmentView.m; sourceTree = "<group>"; };
 		D6442DB11D1D328200EEE263 /* CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
 		D6442DB21D1D328200EEE263 /* CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		D6442DB41D1D35F900EEE263 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -672,8 +669,6 @@
 		D61922801D1CD8A20008648A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D62855DE1D1FDBBF003AABD2 /* HZSigmentView.h */,
-				D62855DF1D1FDBBF003AABD2 /* HZSigmentView.m */,
 				D61922811D1CD8A20008648A /* HeadView.h */,
 				D61922821D1CD8A20008648A /* HeadView.m */,
 				D61922831D1CD8A20008648A /* Request.h */,
@@ -1300,7 +1295,6 @@
 				A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */,
 				A50FC3C41D2124A3002A940D /* RadioPopularItemModel.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
-				D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */,
 				A50FC3BD1D20CD33002A940D /* PopularItemListCell.m in Sources */,
 				D6562DAC1D1E60F10035FAC7 /* MJRefreshAutoNormalFooter.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,
@@ -1370,7 +1364,6 @@
 				D6442DB31D1D328200EEE263 /* CollectionView.m in Sources */,
 				D6562DA61D1E60F10035FAC7 /* MJRefreshAutoFooter.m in Sources */,
 				D6562DAD1D1E60F10035FAC7 /* MJRefreshAutoStateFooter.m in Sources */,
-				D62855E01D1FDBBF003AABD2 /* HZSigmentView.m in Sources */,
 				D6562D621D1E182D0035FAC7 /* Host.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

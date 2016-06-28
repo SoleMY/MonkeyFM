@@ -7,7 +7,7 @@
 //
 
 #import "NewsCell.h"
-#import <Masonry.h>
+
 @implementation NewsCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -21,6 +21,7 @@
 - (void)initLayout
 {
     self.pic = [[UIImageView alloc] init];
+    self.pic.image = [UIImage imageNamed:@"ic_homecountry@3x"];
     [self.contentView addSubview:self.pic];
     __weak typeof(self)mySelf = self;
     [self.pic mas_makeConstraints:^(MASConstraintMaker *make) {
