@@ -10,8 +10,7 @@
 
 @interface MryScrollPageVC ()<UITableViewDataSource,UITableViewDelegate,MryScrollMenuDelegate>
 
-@property (nonatomic,weak) UITableView *containerTable;
-@property (nonatomic,weak) MryScrollMenu *scrollMenu;
+
 
 @end
 
