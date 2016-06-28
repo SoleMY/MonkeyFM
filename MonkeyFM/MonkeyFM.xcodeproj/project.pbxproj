@@ -184,7 +184,7 @@
 		A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendAnchorTableViewCell.m; sourceTree = "<group>"; };
 		A50FC3B41D2007DD002A940D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A50FC3B51D20B579002A940D /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
-		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListViewController.h; sourceTree = "<group>"; };
+		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopularItemListViewController.h; path = ../Controller/PopularItemListViewController.h; sourceTree = "<group>"; };
 		A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularItemListViewController.m; sourceTree = "<group>"; };
 		A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularItemListViewController.xib; sourceTree = "<group>"; };
 		A50FC3BB1D20CD33002A940D /* PopularItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListCell.h; sourceTree = "<group>"; };
@@ -504,7 +504,6 @@
 				A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */,
 				A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */,
 				A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */,
-				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
 				A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */,
 				A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */,
 			);
@@ -532,6 +531,7 @@
 				A50FC3BC1D20CD33002A940D /* PopularItemListCell.m */,
 				A50FC3B11D1EA4C2002A940D /* RecommendAnchorTableViewCell.h */,
 				A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */,
+				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1300,7 +1300,6 @@
 				A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */,
 				A50FC3C41D2124A3002A940D /* RadioPopularItemModel.m in Sources */,
 				D61922E31D1CD8A20008648A /* RecommendViewController.m in Sources */,
-				D6721BF51D1E821500CFF94A /* NewsCell.m in Sources */,
 				A50FC3BD1D20CD33002A940D /* PopularItemListCell.m in Sources */,
 				D6562DAC1D1E60F10035FAC7 /* MJRefreshAutoNormalFooter.m in Sources */,
 				A52A921F1D1CDDCD0005E26E /* ClassificationView.m in Sources */,

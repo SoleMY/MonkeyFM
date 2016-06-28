@@ -7,7 +7,6 @@
 //
 
 #import "RadioContentCell.h"
-#import "MFM_Tool_COLOR.h"
 #import "RadioModel.h"
 
 @implementation RadioContentCell
