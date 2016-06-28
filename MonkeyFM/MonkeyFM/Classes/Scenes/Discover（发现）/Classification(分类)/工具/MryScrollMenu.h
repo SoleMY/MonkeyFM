@@ -26,6 +26,7 @@
 @property (nonatomic,assign) BOOL isShowBreakline;
 
 - (void)setbBreaklineColor:(UIColor *)color;
+
 - (void)setselectedIndex:(NSInteger)index;
 
 @end

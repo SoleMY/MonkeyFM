@@ -22,4 +22,8 @@
 @property (nonatomic,assign) CGRect menuframe;
 @property (nonatomic,assign) CGRect tableframe;
 
+// scrollMenu menu
+@property (nonatomic,weak) UITableView *containerTable;
+@property (nonatomic,weak) MryScrollMenu *scrollMenu;
+
 @end
