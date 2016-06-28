@@ -90,7 +90,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     [self removeAllSubViews];
     if (_segmentedStyle == Type) {
         //设置数据源
-                RadioStyleSegmentedModel *model = [self.allSegmentedInfoArray firstObject];
+        RadioStyleSegmentedModel *model = [self.allSegmentedInfoArray firstObject];
         NSArray *itemsArr = model.dataList;
         NSMutableArray *smallItemsArr = [NSMutableArray array];
         for (NSDictionary *dic in itemsArr) {
@@ -152,6 +152,13 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     self.navigationSegmented.layer.masksToBounds = YES;
     // 指定被选中的分段
     self.navigationSegmented.selectedSegmentIndex = self.selectedSegmentIndex;
+    if (self.selectedSegmentIndex == 0) {
+        self.segmentedStyle = Type;
+        [self setSmallSegmentedControl];
+    } else if (self.selectedSegmentIndex == 1) {
+        self.segmentedStyle = Content;
+        [self setSmallSegmentedControl];
+    }
     self.navigationSegmented.tintColor = kNavigationBarTintColor;
     [self.navigationSegmented addTarget:self  action:@selector(indexDidChangeForSegmentedControl:)
                        forControlEvents:UIControlEventValueChanged];
@@ -165,7 +172,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     if (index == 0) {
         self.segmentedStyle = Type;
         [self setSmallSegmentedControl];
-    } else {
+    } else if (index == 1) {
         self.segmentedStyle = Content;
         [self setSmallSegmentedControl];
     }
@@ -176,7 +183,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 /*

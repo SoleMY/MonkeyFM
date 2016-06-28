@@ -18,6 +18,7 @@
 #import "PopularItemTableViewCell.h"
 #import "PopularItemListViewController.h"
 #import "BaseNavigationViewController.h"
+#import "HostInfoViewController.h"
 
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
 #define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3
@@ -201,11 +202,14 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^(NSString *uid) {
                 if (uid != nil) {
-                    
+                    HostInfoViewController *hostVC = [[HostInfoViewController alloc] init];
+                    hostVC.uid = uid;
+                    [weakSelf.navigationController pushViewController:hostVC animated:YES];
+                } else {
+                    AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
+                    [weakSelf.navigationController pushViewController:anchorVC animated:YES];
+                    weakSelf.pushBack();
                 }
-                AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
-                [weakSelf.navigationController pushViewController:anchorVC animated:YES];
-                weakSelf.pushBack();
             };
             return cell;
         }

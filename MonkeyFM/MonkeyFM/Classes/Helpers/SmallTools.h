@@ -15,4 +15,10 @@
 // 根据输入尺寸修改图片大小，并返回UIImage
 + (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
 
+// 声明类方法用来计算文本高度
++ (CGFloat)textHeightWithText:(NSString *)text font:(UIFont *)font;
+
+// 声明类方法用来计算图片的高度
++ (CGFloat)imageHeightWithImage:(UIImage *)image;
+
 @end
