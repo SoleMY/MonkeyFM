@@ -10,10 +10,8 @@
 #import "CollectionView.h"
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
-#import "UIImageView+WebCache.h"
 #import "RadioModel.h"
 #import "HostTitle.h"
-#import "Masonry.h"
 @interface PopularItemTableViewCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) CollectionView *radioPopularCollectionView;

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "MryScrollPageVC.h"
 
-@interface RadioPlayerListViewController : BaseViewController
+@interface RadioPlayerListViewController : MryScrollPageVC
 
 @end

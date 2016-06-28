@@ -7,9 +7,7 @@
 //
 
 #import "PopularItemListCell.h"
-#import "Masonry.h"
 #import "RadioPopularItemModel.h"
-#import "UIImageView+WebCache.h"
 
 #define kLeftImageSize CGSizeMake(100, 100)
 #define kHeardImageSize CGSizeMake(24, 20)
