@@ -46,8 +46,8 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
     self.SubscribeView.collectionView.bounces = NO;
     [self.SubscribeView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_SubscribeCell];
     [self.SubscribeView.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier_HeaderCell];
+    [self.SubscribeView.collectionView reloadData];
 }
-
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -72,6 +72,10 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HeadCollectionReusableView *headView = [self.SubscribeView.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier_HeaderCell forIndexPath:indexPath];
         headView.titleLabel.text = @"TA的订阅";
+        NSLog(@"%ld", self.collectionArr.count);
+        if (self.collectionArr.count >= 3) {
+            [headView.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
+        }
         return headView;
     }else {
         return nil;

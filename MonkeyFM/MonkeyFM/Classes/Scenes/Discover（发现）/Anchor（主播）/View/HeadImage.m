@@ -32,7 +32,8 @@
     }];
     
     self.followButton = [[UIButton alloc] init];
-    self.followButton.backgroundColor = [UIColor redColor];
+//    self.followButton.backgroundColor = [UIColor redColor];
+    [self.followButton setImage:[UIImage imageNamed:@"ico_attention@2x"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.followButton];
     [self.followButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
@@ -42,7 +43,8 @@
     }];
     
     self.messageButton = [[UIButton alloc] init];
-    self.messageButton.backgroundColor = [UIColor redColor];
+//    self.messageButton.backgroundColor = [UIColor redColor];
+    [self.messageButton setImage:[UIImage imageNamed:@"ico_letter@2x"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.messageButton];
     [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5);

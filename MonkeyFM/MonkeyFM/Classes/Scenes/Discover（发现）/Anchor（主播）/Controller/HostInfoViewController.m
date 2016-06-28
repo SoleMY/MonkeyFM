@@ -19,6 +19,7 @@
 #import "More.h"
 #import "HostTitle.h"
 #import "Collection.h"
+#import "SmallTools.h"
 
 @interface HostInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -84,6 +85,7 @@
     [self.bgTableView registerClass:[AlbumCell class] forCellReuseIdentifier:@"AlbumCell"];
     [self.bgTableView registerClass:[SubscribeCell class] forCellReuseIdentifier:@"SubscribeCell"];
     [self.bgTableView registerClass:[collectCell class] forCellReuseIdentifier:@"collectCell"];
+    self.bgTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self request];
 }
 
@@ -160,6 +162,7 @@
         image.nameLabel.text= host.nickName;
         image.fansNumber.text = [NSString stringWithFormat:@"%ld", (long)host.fansNum];
         image.followNumber.text = [NSString stringWithFormat:@"%ld", (long)host.followedNum];
+        image.selectionStyle = UITableViewCellSelectionStyleNone;
         return image;
     }else if(indexPath.row == 2){
         SocialNetworkCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"netWorkCell" forIndexPath:indexPath];
@@ -179,8 +182,12 @@
     } else {
         UITableViewCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.textColor = [UIColor grayColor];
         Host *host = [self.infoListArr firstObject];
         cell.textLabel.text = host.intro;
+      self.height = [SmallTools textHeightWithText:cell.textLabel.text font:[UIFont systemFontOfSize:13]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -190,29 +197,31 @@
         if (self.infoListArr.count == 0) {
             return 0;
         }else {
-        return 170;
+        return 150;
         }
     }else if (indexPath.row == 2){
+            return 0;
+    
+    }else if (indexPath.row == 3){
         if (self.issueListArr.count == 0) {
             return 0;
         }else {
-        return 100;
+        return 150;
         }
-    }else if (indexPath.row == 5){
-        if (self.likedListArr.count == 0) {
-            return 0;
-        }else {
-        return 250;
-        }
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         if (self.subscribeListArr.count == 0) {
             return 0;
         }else {
             return 150;
         }
-    }
-    else {
-        return 150;
+    }else if (indexPath.row == 5) {
+        if (self.likedListArr.count == 0) {
+            return 0;
+        }else {
+            return 250;
+        }
+    }else {
+        return self.height + 10;
     }
 }
 
@@ -222,14 +231,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

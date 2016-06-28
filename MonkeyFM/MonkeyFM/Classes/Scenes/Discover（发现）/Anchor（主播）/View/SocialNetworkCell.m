@@ -54,6 +54,7 @@ static NSString * const identifier_SocialNetWork = @"identifier_SocialNetWork";
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.bounces = NO;
     [self.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headeView"];
+    [self.collectionView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
