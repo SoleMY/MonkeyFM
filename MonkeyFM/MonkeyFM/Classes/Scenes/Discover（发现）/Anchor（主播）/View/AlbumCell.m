@@ -9,7 +9,6 @@
 #import "AlbumCell.h"
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
-#import <UIImageView+WebCache.h>
 #import "More.h"
 @interface AlbumCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -28,12 +27,7 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     return self;
 }
 
-- (NSMutableArray *)array{
-    if (!_array) {
-        _array = [NSMutableArray array];
-    }
-    return _array;
-}
+
 
 - (void)setAlbumArr:(NSMutableArray *)albumArr {
     if (albumArr!=_albumArr) {

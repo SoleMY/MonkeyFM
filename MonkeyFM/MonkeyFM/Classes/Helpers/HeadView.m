@@ -8,7 +8,6 @@
 
 #import "HeadView.h"
 #import "shufflingModel.h"
-#import <UIImageView+WebCache.h>
 
 #define kScrolleViewWidth self.frame.size.width * 8
 #define kScrolleVieweHeight self.frame.size.height

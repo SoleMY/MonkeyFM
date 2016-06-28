@@ -10,7 +10,6 @@
 
 #import "RadioModel.h"
 #import "Host.h"
-#import "UIImageView+WebCache.h"
 
 #define kHeadPortraitWidth 80
 #define kHeadPortraitHeight 80

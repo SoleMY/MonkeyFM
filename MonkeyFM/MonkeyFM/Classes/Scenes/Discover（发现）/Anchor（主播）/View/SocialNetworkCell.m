@@ -8,7 +8,6 @@
 //
 
 #import "SocialNetworkCell.h"
-#import <Masonry.h>
 #import "SocialNetWork.h"
 #import "HeadCollectionReusableView.h"
 @interface SocialNetworkCell () <UICollectionViewDelegate, UICollectionViewDataSource>

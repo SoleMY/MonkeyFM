@@ -7,70 +7,77 @@
 //
 
 #import "collectCell.h"
-#import <Masonry.h>
+#import "Collect.h"
+#import "HeadCollectionReusableView.h"
+#import "Collection.h"
+@interface collectCell() <UICollectionViewDelegate, UICollectionViewDataSource>
 
-#define kPictureWidth 40
-#define kPictureHeight 40
-
-#define kTitleLabelWidth 200
-#define kTitleLabelHeight 15
+@end
 
 @implementation collectCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle: style reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initLayout];
     }
     return self;
 }
 
-- (void)initLayout {
-    self.picture = [[UIImageView alloc] init];
-    self.picture.backgroundColor = [UIColor redColor];
-    [self.contentView addSubview:self.picture];
-    __weak typeof(self)mySelf = self;
-    [self.picture mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(mySelf.contentView).offset(5);
-        make.left.equalTo(mySelf.contentView).offset(5);
-        make.width.mas_offset(kPictureWidth);
-        make.height.mas_offset(kPictureHeight);
-    }];
+- (void)initLayout  {
+    self.layout = [[UICollectionViewFlowLayout alloc] init];
+    self.layout.itemSize = CGSizeMake(self.frame.size.width, 60);
+    self.layout.minimumInteritemSpacing = 0;
+    self.layout.minimumLineSpacing = 0;
+    self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;//垂直方向
+    self.layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
-    self.titleLabel = [[UILabel alloc] init];
-    [self.contentView addSubview:self.titleLabel];
-    self.titleLabel.font = [UIFont systemFontOfSize:13];
-    self.titleLabel.backgroundColor = [UIColor grayColor];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(mySelf.contentView).offset(5);
-        make.left.equalTo(mySelf.picture.mas_right).offset(5);
-        make.height.mas_offset(kTitleLabelHeight);
-        make.width.mas_offset(kTitleLabelWidth);
-    }];
+    self.collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 220) collectionViewLayout:self.layout];
+    self.collectView.backgroundColor = [UIColor whiteColor];
+    [self.contentView addSubview:self.collectView];
+    self.collectView.delegate = self;
+    self.collectView.dataSource = self;
+    self.collectView.scrollEnabled = NO;
+    self.collectView.showsVerticalScrollIndicator = NO;
+    self.collectView.bounces = NO;
+    [self.collectView registerClass:[Collect class] forCellWithReuseIdentifier:@"collectCell"];
+    [self.collectView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headeView"];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.collectArr.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    Collect *cell = [self.collectView dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
+    Collection *collection = self.collectArr[indexPath.row];
+    [cell.picture sd_setImageWithURL:[NSURL URLWithString:collection.audioPic]];
+    cell.titleLabel.text = collection.audioName;
+    cell.decLabel.text = collection.albumName;
+    cell.dateLabel.text = collection.updateTime;
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath  {
     
-    self.decLabel = [[UILabel alloc] init];
-    [self.contentView addSubview:self.decLabel];
-    self.decLabel.font = [UIFont systemFontOfSize:13];
-    self.decLabel.textColor = [UIColor grayColor];
-    [self.decLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(mySelf.titleLabel.mas_bottom).offset(5);
-        make.left.equalTo(mySelf.picture.mas_right).offset(5);
-        make.height.mas_offset(kTitleLabelHeight);
-        make.width.mas_offset(kTitleLabelWidth);
-    }];
-    
-    self.dateLabel = [[UILabel alloc] init];
-    [self.contentView addSubview:self.dateLabel];
-    self.dateLabel.font = [UIFont systemFontOfSize:13];
-    self.dateLabel.textColor = [UIColor grayColor];
-    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(mySelf.titleLabel.mas_bottom).offset(0);
-        make.right.equalTo(mySelf.contentView).offset(-20);
-        make.width.mas_offset(80);
-        make.height.mas_offset(kTitleLabelHeight);
-    }];
-    
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
+        HeadCollectionReusableView *headView = [self.collectView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headeView" forIndexPath:indexPath];
+        headView.titleLabel.text = @"TA的收藏";
+        return headView;
+    } else {
+        return nil;
+    }
     
 }
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(self.bounds.size.width, 20);
+}
+
+
 
 @end

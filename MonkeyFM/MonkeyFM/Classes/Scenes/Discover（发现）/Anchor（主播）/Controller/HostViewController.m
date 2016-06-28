@@ -9,11 +9,9 @@
 #import "HostViewController.h"
 #import "MJRefresh.h"
 #import "HostViewDetaileCell.h"
-#import <AFNetworking.h>
 #import "MFM_URL.h"
 #import "NetWorking.h"
 #import "More.h"
-#import <UIImageView+WebCache.h>
 #import "HostInfoViewController.h"
 
 @interface HostViewController ()<UITableViewDelegate, UITableViewDataSource>

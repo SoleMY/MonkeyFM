@@ -7,7 +7,6 @@
 //
 
 #import "HeadImage.h"
-#import <Masonry.h>
 
 #define kBgImageViewHeight 150
 @implementation HeadImage

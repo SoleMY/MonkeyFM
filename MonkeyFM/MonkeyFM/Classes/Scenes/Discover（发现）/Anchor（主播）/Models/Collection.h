@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong)NSString *audioName;
 
-@property (nonatomic, strong)NSArray *updateTime;
+@property (nonatomic, strong)NSString *updateTime;
+
+@property (nonatomic, strong)NSString *albumName;
 
 @end

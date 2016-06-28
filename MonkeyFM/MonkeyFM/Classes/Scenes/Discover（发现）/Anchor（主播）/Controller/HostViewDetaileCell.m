@@ -7,8 +7,6 @@
 //
 
 #import "HostViewDetaileCell.h"
-#import <Masonry.h>
-#import "SmallTools.h"
 #define kImageHeight 80
 #define kImageWidth 80
 #define kNameLabelHeight 25

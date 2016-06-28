@@ -9,6 +9,7 @@
 #import "SubscribeCell.h"
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
+#import "HostTitle.h"
 
 @interface SubscribeCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -31,7 +32,7 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
     if (collectionArr != _collectionArr) {
         _collectionArr = collectionArr;
     }
-    [self.SubscribeView.collectionView dataSource];
+    [self.SubscribeView.collectionView reloadData];
 }
 
 - (void)initLayout {
@@ -53,15 +54,17 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return self.collectionArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [self.SubscribeView.collectionView dequeueReusableCellWithReuseIdentifier:identifier_SubscribeCell forIndexPath:indexPath];
-    cell.headPortrait.backgroundColor = [UIColor blueColor];
-//    cell.headPortrait
+    HostTitle *hostTitle = self.collectionArr[indexPath.row];
+    NSURL *url = [NSURL URLWithString:hostTitle.pic];
+    [cell.headPortrait sd_setImageWithURL:url];
+    cell.nameLabel.text = hostTitle.name;
     cell.headPortrait.layer.cornerRadius = 0;
-    cell.nameLabel.text = @"空空";
+    cell.introduction.text = @"";
     return cell;
 }
 

@@ -7,17 +7,14 @@
 //
 
 #import "HostInfoViewController.h"
-#import <Masonry.h>
 #import "UIScrollView+ScalableCover.h"
 #import "HeadImage.h"
-#import <UIImageView+WebCache.h>
 #import "UIImageView+LBBlurredImage.h"
 #import "SocialNetworkCell.h"
 #import "AlbumCell.h"
 #import "SubscribeCell.h"
 #import "collectCell.h"
 #import "NetWorking.h"
-#import "MFM_URL.h"
 #import "Host.h"
 #import "More.h"
 #import "HostTitle.h"
@@ -160,6 +157,7 @@
     if (indexPath.row == 0) {
         HeadImage *image = [self.bgTableView dequeueReusableCellWithIdentifier:@"headImage" forIndexPath:indexPath];
         Host *host = [self.infoListArr firstObject];
+        image.nameLabel.text= host.nickName;
         image.fansNumber.text = [NSString stringWithFormat:@"%ld", (long)host.fansNum];
         image.followNumber.text = [NSString stringWithFormat:@"%ld", (long)host.followedNum];
         return image;
@@ -176,9 +174,7 @@
         return cell;
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
-        cell.titleLabel.text = @"隋唐帝王史话";
-        cell.decLabel.text = @"中国帝王史话";
-        cell.dateLabel.text = @"2016-03-21";
+        cell.collectArr = self.likedListArr;
         return cell;
     } else {
         UITableViewCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -191,13 +187,35 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        if (self.infoListArr.count == 0) {
+            return 0;
+        }else {
         return 170;
+        }
     }else if (indexPath.row == 2){
+        if (self.issueListArr.count == 0) {
+            return 0;
+        }else {
         return 100;
-    } else {
+        }
+    }else if (indexPath.row == 5){
+        if (self.likedListArr.count == 0) {
+            return 0;
+        }else {
+        return 250;
+        }
+    } else if (indexPath.row == 3) {
+        if (self.subscribeListArr.count == 0) {
+            return 0;
+        }else {
+            return 150;
+        }
+    }
+    else {
         return 150;
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
