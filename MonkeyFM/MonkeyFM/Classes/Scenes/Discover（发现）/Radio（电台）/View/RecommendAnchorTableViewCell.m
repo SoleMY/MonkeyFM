@@ -39,7 +39,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioAnchorCollectionView.collectionView.delegate = self;
     self.radioAnchorCollectionView.collectionView.dataSource = self;
     [self.contentView addSubview:self.radioAnchorCollectionView];
-    
+//    self.radioAnchorCollectionView.collectionView.footerReferenceSize = CGSizeMake(0, 10);
     self.radioAnchorCollectionView.collectionView.scrollEnabled = NO;
     self.radioAnchorCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioAnchorCollectionView.collectionView.bounces = NO;
@@ -69,17 +69,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     if (self.allInfoDataArray.count > 0) {
         
         CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_anchorCell forIndexPath:indexPath];
-        //        if (indexPath.section == 1) {
-        //            Host *host = self.hostArray[indexPath.row];
-        //            cell.nameLabel.text = host.nickName;
-        //            cell.introduction.text = host.recommendReson;
-        //            [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
-        //        }else {
-        //            Host *host = self.hostArray[6 + (indexPath.section - 2) * 3 + indexPath.row ];
-        //            cell.nameLabel.text = host.nickName;
-        //            cell.introduction.text = host.recommendReson;
-        //            [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
-        //        }
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[4];
         [cell bindRecommendModel:model indexPath:indexPath];
@@ -119,7 +108,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         }
     }
     UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"view" forIndexPath:indexPath];
-    
     return headView;
     
 }
