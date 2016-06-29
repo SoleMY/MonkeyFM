@@ -11,6 +11,7 @@
 #import "MryScrollMenu.h"
 #import "MryScrollPageCell.h"
 #import "MryPageTable.h"
+#import "RadioStyleListTableView.h"
 
 
 @interface MryScrollPageVC : BaseViewController
@@ -24,5 +25,7 @@
 // scrollMenu menu
 @property (nonatomic,weak) UITableView *containerTable;
 @property (nonatomic,weak) MryScrollMenu *scrollMenu;
+
+- (void)setMenuAndScrollTableView;
 
 @end

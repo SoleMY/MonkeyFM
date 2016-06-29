@@ -12,7 +12,7 @@
 
 @interface MryScrollMenu ()
 
-@property (nonatomic,weak) UIScrollView *scrollView;
+
 @property (nonatomic,weak) UIView *breakline;
 
 @end
@@ -82,10 +82,10 @@
         
         [self.scrollView addSubview:menuBtn];
         
-        if (i == 0) {
-            //默认第一个选中
-            self.selectedBtn = menuBtn;
-        }
+            if (i == 0) {
+                //默认第一个选中
+                self.selectedBtn = menuBtn;
+            }
     }
     
     if (self.scrollView.subviews.count > 0) {
@@ -93,6 +93,8 @@
     }
     
 }
+
+
 
 //设置选中目录
 - (void)setSelectedBtn:(UIButton *)selectedBtn{

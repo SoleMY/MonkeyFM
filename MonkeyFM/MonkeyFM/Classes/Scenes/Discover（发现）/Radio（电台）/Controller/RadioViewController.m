@@ -18,13 +18,16 @@
 #import "PopularItemTableViewCell.h"
 #import "PopularItemListViewController.h"
 #import "BaseNavigationViewController.h"
+#import "HostInfoViewController.h"
+#import "SelecID.h"
 
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
-#define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3
+#define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3 + 20
+#define kContentCellHeight 100
+#define kNormalCellHeight 170
 
 @interface RadioViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-//@property (nonatomic, strong) RadioView *radioView;
 // 存放所有Model对象的数组
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 @property (nonatomic, strong) UITableView *radioTableView;
@@ -38,6 +41,7 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
 static NSString * const identifier_typeCell = @"identifier_typeCell";
 static NSString * const identifier_popularCell = @"identifier_popularCell";
 static NSString * const identifier_anchorCell = @"identifier_anchorCell";
+
 - (NSMutableArray *)allInfoDataArray
 {
     if (!_allInfoDataArray) {
@@ -51,12 +55,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
     [self createRadioTableView];
-    
-//    self.radioView.collectionView.delegate = self;
-//    self.radioView.collectionView.dataSource = self;
-//    // 注册collection相关cell 头尾视图
-//    [self registerClassWithCellAndHeaderFooter];
-    
     // 数据请求
     [self requestData];
     
@@ -94,6 +92,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     self.radioTableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.radioTableView];
+    
     self.radioTableView.delegate = self;
     self.radioTableView.dataSource = self;
     self.radioTableView.showsVerticalScrollIndicator = NO;
@@ -102,8 +101,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioTableView.sectionFooterHeight = 0;
     self.radioTableView.sectionHeaderHeight = 0;
     
-    
-    [self.view addSubview:_radioTableView];
     [self.radioTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(0);
         make.top.equalTo(self.view).with.offset(0);
@@ -118,17 +115,12 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 
 - (void)registerClassWithCell
 {
-
     // 注册系统cell
     [self.radioTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier_cell];
     [self.radioTableView registerClass:[RadioContentTableViewCell class] forCellReuseIdentifier:identifier_contentCell];
     [self.radioTableView registerClass:[RadioTypeTableViewCell class] forCellReuseIdentifier:identifier_typeCell];
     [self.radioTableView registerClass:[PopularItemTableViewCell class] forCellReuseIdentifier:identifier_popularCell];
     [self.radioTableView registerClass:[RecommendAnchorTableViewCell class] forCellReuseIdentifier:identifier_anchorCell];
-    // 注册头视图
-//    [self.radioView.collectionView registerClass:[RadioHeadReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
-//    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
-//    [self.radioView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"normalHeaderView"];
 }
 
 - (void)setTableHeaderView
@@ -155,11 +147,15 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     __weak typeof(self) weakSelf = self;
     switch (indexPath.section) {
         case 0:{
+            // 第0个分区 类型电台的 cell
             RadioContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_contentCell];
             cell.radioContentView.backgroundColor = [UIColor whiteColor];
             cell.allInfoDataArray = self.allInfoDataArray;
-            cell.pushBlock = ^() {
+            cell.pushBlock = ^(NSInteger selectID) {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                listVC.selectedSegmentIndex = 0;
+                listVC.selectID = selectID;
+                [SelecID shareSelecID].selectIndex = selectID;
                 ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
@@ -167,10 +163,15 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         }
             break;
         case 1:{
+            //  第1个分区 内容电台的 cell
             RadioTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_typeCell forIndexPath:indexPath];
             cell.radioTypeView.backgroundColor = [UIColor whiteColor];
-            cell.pushBlock = ^() {
+            cell.pushBlock = ^(NSInteger selectID) {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
+                listVC.selectedSegmentIndex = 1;
+                listVC.selectID = selectID;
+                [SelecID shareSelecID].selectIndex = selectID;
+                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
             cell.allInfoDataArray = self.allInfoDataArray;
@@ -178,6 +179,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         }
             break;
         case 2:{
+            // 第2个分区 热播栏目的 cell
             PopularItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_popularCell forIndexPath:indexPath];
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^(NSString *relatedValue, NSString *titleName) {
@@ -188,28 +190,28 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 [weakSelf.navigationController pushViewController:popularListVC animated:YES];
             };
             return cell;
-//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell forIndexPath:indexPath];
-//            cell.backgroundColor = [UIColor redColor];
-//            return cell;
         }
             break;
         case 3:{
+            // 第三个分区 推荐主播的 cell
             RecommendAnchorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_anchorCell forIndexPath:indexPath];
             cell.allInfoDataArray = self.allInfoDataArray;
-            cell.pushBlock = ^() {
-                AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
-                [weakSelf.navigationController pushViewController:anchorVC animated:YES];
-                weakSelf.pushBack();
+            cell.pushBlock = ^(NSString *uid) {
+                if (uid != nil) {
+                    HostInfoViewController *hostVC = [[HostInfoViewController alloc] init];
+                    hostVC.uid = uid;
+                    [weakSelf.navigationController pushViewController:hostVC animated:YES];
+                } else {
+                    AnchorViewController *anchorVC = [[AnchorViewController alloc] init];
+                    [weakSelf.navigationController pushViewController:anchorVC animated:YES];
+                    weakSelf.pushBack();
+                }
             };
             return cell;
         }
             break;
             default:
-        {
-//            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_cell forIndexPath:indexPath];
-//            cell.backgroundColor = [UIColor redColor];
             return nil;
-        }
             break;
     }
    
@@ -218,121 +220,19 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 100;
+        return kContentCellHeight;
     } else if (indexPath.section == 1) {
-        return kTypeCellHeight + 20;
+        return kTypeCellHeight;
     } else if (indexPath.section == 2) {
-        return 170;
+        return kNormalCellHeight;
     } else {
-        return 170;
+        return kNormalCellHeight;
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-// 每行的头视图
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    
-//}
 
-/*
-#pragma mark UICollectionViewDataSource Method------
-// 设置多少个分区
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 4;
-}
 
-// 设置每个分区里 有几个item
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return 0;
-    } else if (section == 1) {
-        return 3;
-    } else if (section == 2) {
-        return 15;
-    } else {
-        return 3;
-    }
-    
-}
-
-// 返回每一个item的cell对象那个
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (self.allInfoDataArray.count > 0) {
-        if (indexPath.section == 0) {
-            return nil;
-        } else if (indexPath.section == 1) {
-            
-                RadioContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_contentCell forIndexPath:indexPath];
-    //            cell.topImageView.backgroundColor = [UIColor cyanColor];
-                RadioModel *model = [[RadioModel alloc] init];
-                model = self.allInfoDataArray[indexPath.section];
-                NSDictionary *dic = [model.dataList firstObject];
-                NSArray *nameArray = [dic objectForKey:@"dataList"];
-                cell.bottomLabel.text = [nameArray[indexPath.row] objectForKey:@"name"];
-                cell.topImageView.image = [[UIImage imageNamed:[NSString stringWithFormat:@"%@", cell.bottomLabel.text]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-                return cell;
-            
-        } else if (indexPath.section == 2) {
-            RadioTypeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_typeCell forIndexPath:indexPath];
-            RadioModel *model = self.allInfoDataArray[1];
-            NSDictionary *dic = [model.dataList lastObject];
-            NSArray *nameArray = [dic objectForKey:@"dataList"];
-            cell.radioTypeLabel.text = [nameArray[indexPath.row] objectForKey:@"name"];
-            return cell;
-        }
-    }
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_cell forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    // 判断头视图还是尾视图
-    if (indexPath.section == 0) {
-        if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-            RadioHeadReusableView *firstHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"firstHeaderView" forIndexPath:indexPath];
-            [[Request alloc] requestWithURL:shuffing_radio_URL view:firstHeaderView frame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
-//        firstHeaderView.backgroundColor = [UIColor redColor];
-
-            return firstHeaderView;
-        } else {
-            UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"footerView" forIndexPath:indexPath];
-            footerView.backgroundColor = [UIColor greenColor];
-            return footerView;
-        }
-    }else {
-        
-        if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-            UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"normalHeaderView" forIndexPath:indexPath];
-            headView.backgroundColor = [UIColor redColor];
-            return headView;
-        } else {
-            UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"footerView" forIndexPath:indexPath];
-            footerView.backgroundColor = [UIColor greenColor];
-            return footerView;
-        }
-    }
-}
-
-#pragma mark 设置header和footer高度
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return CGSizeMake(self.view.bounds.size.width, 200);
-    } else {
-        return CGSizeMake(self.view.bounds.size.width, 70);
-    }
-}
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-{
-    return CGSizeMake(self.view.bounds.size.width, 20);
-}
-*/
 @end

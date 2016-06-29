@@ -7,10 +7,11 @@
 //
 
 #import "MryScrollPageVC.h"
+#import "SelecID.h"
 
 @interface MryScrollPageVC ()<UITableViewDataSource,UITableViewDelegate,MryScrollMenuDelegate>
 
-
+@property (nonatomic, assign) NSInteger index;
 
 @end
 
@@ -21,6 +22,8 @@
     
     //初始化滚动目录
     MryScrollMenu *scrollMenu = [[MryScrollMenu alloc]initWithFrame:self.menuframe];
+    
+//    scrollMenu.selectID = self.selectID;
     scrollMenu.delegate = self;
     scrollMenu.menuArray = self.menuArray;
     [self.view addSubview:scrollMenu];
@@ -38,6 +41,15 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     self.containerTable = tableView;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"btn_anchor_back@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(popBackController)];
+    
+    
+}
+
+- (void)popBackController
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -62,16 +74,40 @@
     return tableView.frame.size.width;
 }
 
+
+
+
 //拖动动画完成
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSIndexPath *indexPath = [self.containerTable indexPathForRowAtPoint:scrollView.contentOffset];
     [self.scrollMenu setselectedIndex: indexPath.row];
 }
 
+
 //点击目录
 - (void)menuBtnClickAtIndex:(NSInteger)index{
     [self.containerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
 }
+
+- (void)setMenuAndScrollTableView
+{
+
+    NSInteger index = [SelecID shareSelecID].selectIndex;
+    if (index <= 3) {
+        index--;
+    }  else {
+        index = index - 6;
+    }
+    if (self.tableArray.count != 0) {
+        [self.containerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+        
+        [self.scrollMenu setSelectedBtn:[self.scrollMenu.scrollView.subviews objectAtIndex:index]];
+    } else if (self.tableArray.count == 0) {
+        NSLog(@"加载失败 ")
+    }
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

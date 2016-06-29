@@ -1,13 +1,13 @@
 //
-//  PopularItemListCell.m
+//  RadioStyleCell.m
 //  MonkeyFM
 //
-//  Created by 彭柞淞 on 16/6/27.
+//  Created by 彭柞淞 on 16/6/28.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import "PopularItemListCell.h"
-#import "RadioPopularItemModel.h"
+#import "RadioStyleCell.h"
+#import "RadioStyleModel.h"
 
 #define kLeftImageSize CGSizeMake(100, 100)
 #define kHeardImageSize CGSizeMake(24, 20)
@@ -16,13 +16,14 @@
 #define kSmallSpace 5
 #define kPlayImageSize CGSizeMake(30, 30)
 
-@implementation PopularItemListCell
+
+@implementation RadioStyleCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        self
+        
         [self initLayout];
     }
     return self;
@@ -95,7 +96,7 @@
     
     self.attentionImageView = [[UIImageView alloc] init];
     self.attentionImageView.tintColor = [UIColor darkGrayColor];
-    self.attentionImageView.image = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.attentionImageView.image = [[UIImage imageNamed:@"like67"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self.contentView addSubview:self.attentionImageView];
     [self.attentionImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,20 +115,16 @@
         make.left.equalTo(weakSelf.attentionImageView.mas_right);
         make.width.mas_equalTo(kSpace * 5);
     }];
-
+    
 }
 
-- (void)bindModel:(RadioPopularItemModel *)model
+- (void)bindModel:(RadioStyleModel *)model
 {
     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
     self.titleLabel.text = model.name;
-    self.desLabel.text = model.desc;
-    if ([model.listenNum floatValue] > 10000) {
-        self.listenPeopleNum.text = [NSString stringWithFormat:@"%.1f万",[model.listenNum floatValue] / 10000];
-    } else {
-        self.listenPeopleNum.text = [NSString stringWithFormat:@"%@", model.listenNum];
-    }
-    self.attentionLabel.text = [NSString stringWithFormat:@"%@", model.followedNum];
+    self.desLabel.text = [NSString stringWithFormat:@"正在播放：%@", model.currentProgramTitle];
+    self.listenPeopleNum.text = [NSString stringWithFormat:@"%@", model.onLineNum];
+    self.attentionLabel.text = [NSString stringWithFormat:@"%@", model.likedNum];
 }
 
 @end

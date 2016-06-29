@@ -92,7 +92,12 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
 #warning 选中跳转
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.pushBlock();
+    RadioModel *model = [[RadioModel alloc] init];
+    model = self.allInfoDataArray[1];
+    NSDictionary *dic = [model.dataList firstObject];
+    NSArray *nameArray = [dic objectForKey:@"dataList"];
+    NSInteger selectID = [[nameArray[indexPath.row] objectForKey:@"id"] integerValue];
+    self.pushBlock(selectID);
 //    switch (indexPath.item) {
 //        case 0:
 //        {
