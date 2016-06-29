@@ -77,6 +77,7 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
         headView.titleLabel.text = @"TA发布的专辑";
         if (self.albumArr.count >= 3) {
             [headView.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
+            [headView.more addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
         }
         
         return headView;
@@ -84,6 +85,11 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
         return nil;
     }
 }
+
+- (void)moreAction{
+    self.block();
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeMake(self.bounds.size.width, 20);

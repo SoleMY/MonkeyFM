@@ -93,12 +93,18 @@
         headView.titleLabel.text = @"TA的收藏";
         if (self.collectArr.count >= 3) {
             [headView.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
+            [headView.more addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
         }
         return headView;
     } else {
         return nil;
     }
 }
+
+- (void)moreAction {
+    self.block();
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeMake(self.bounds.size.width, 20);

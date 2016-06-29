@@ -18,6 +18,7 @@
 #import "Host.h"
 #import "HostViewController.h"
 #import "HostInfoViewController.h"
+#import "BaseNavigationViewController.h"
 
 #define kHeadViewHeight 200
 #define kHeadViewY 40
@@ -70,6 +71,12 @@ static NSString *const identifier_cell = @"identifier_cell";
     [self.collection.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
     [self.collection.collectionView registerClass:[FirstCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
     [self request];
+    __weak typeof(self)weakSelf = self;
+    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
+    self.title = @"主播";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+//  [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil]];
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 - (void)request {
     NetWorking *networking = [[NetWorking alloc] init];

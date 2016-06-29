@@ -26,6 +26,10 @@ extern CGFloat const kLBBlurredImageDefaultBlurRadius;
                  blurRadius:(CGFloat)blurRadius;
 //       completionBlock:(LBBlurredImageCompletionBlock)completion;
 
+- (UIImage *)setImageToBlur:(UIImage *)image
+                 blurRadius:(CGFloat)blurRadius
+       completionBlock:(LBBlurredImageCompletionBlock)completion;
+
 /**
  Set the blurred version of the provided image to the UIImageView
  with the default blur radius
@@ -36,5 +40,8 @@ extern CGFloat const kLBBlurredImageDefaultBlurRadius;
  */
 - (void)setImageToBlur:(UIImage *)image;
 //       completionBlock:(LBBlurredImageCompletionBlock)completion;
+
+- (void)setImageToBlur:(UIImage *)image
+       completionBlock:(LBBlurredImageCompletionBlock)completion;
 
 @end

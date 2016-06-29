@@ -15,6 +15,10 @@
 @property (nonatomic, strong)NSString *desc;
 @property (nonatomic, assign)NSInteger fansCount;
 @property (nonatomic, strong)NSString *uid;
+@property (nonatomic, strong)NSString *audioName;
+@property (nonatomic, strong)NSString *audioPic;
+@property (nonatomic, strong)NSString *albumName;
+@property (nonatomic, strong)NSString *NewTitle;
 //主播详情界面
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSString *pic

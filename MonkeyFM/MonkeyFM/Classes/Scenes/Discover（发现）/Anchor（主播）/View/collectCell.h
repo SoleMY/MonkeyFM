@@ -8,7 +8,10 @@
 
 #import "BaseCell.h"
 
+typedef void(^CollectBlock)();
 @interface collectCell : BaseCell
+
+@property (nonatomic, copy)CollectBlock block;
 
 @property (nonatomic, strong)UICollectionView *collectView;
 

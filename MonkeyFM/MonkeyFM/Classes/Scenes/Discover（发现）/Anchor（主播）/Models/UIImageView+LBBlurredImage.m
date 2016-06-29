@@ -24,6 +24,16 @@ CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.8;
 //         completionBlock:completion];
 }
 
+
+- (void)setImageToBlur:(UIImage *)image
+       completionBlock:(LBBlurredImageCompletionBlock)completion
+{
+        [self setImageToBlur:image
+                  blurRadius:kLBBlurredImageDefaultBlurRadius
+             completionBlock:completion];
+}
+
+
 - (UIImage *)setImageToBlur:(UIImage *)image
             blurRadius:(CGFloat)blurRadius
 //       completionBlock:(LBBlurredImageCompletionBlock) completion
@@ -47,5 +57,30 @@ CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.8;
 //    });
     return blurredImage;
 }
+
+- (UIImage *)setImageToBlur:(UIImage *)image
+                 blurRadius:(CGFloat)blurRadius
+       completionBlock:(LBBlurredImageCompletionBlock) completion
+{
+        NSParameterAssert(image);
+        NSParameterAssert(blurRadius >= 0);
+    
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    UIImage *blurredImage = [image applyBlurWithRadius:blurRadius
+                                             tintColor:nil
+                                 saturationDeltaFactor:kLBBlurredImageDefaultSaturationDeltaFactor
+                                             maskImage:nil];
+    
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.image = blurredImage;
+                if (completion) {
+                    completion();
+                }
+            });
+        });
+    return self.image;
+}
+
 
 @end

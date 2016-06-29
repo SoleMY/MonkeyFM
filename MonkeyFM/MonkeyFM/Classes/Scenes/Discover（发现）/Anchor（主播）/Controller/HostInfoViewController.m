@@ -20,6 +20,9 @@
 #import "HostTitle.h"
 #import "Collection.h"
 #import "SmallTools.h"
+#import "MoreViewController.h"
+#import "MJRefresh.h"
+
 
 @interface HostInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -87,9 +90,15 @@
     [self.bgTableView registerClass:[collectCell class] forCellReuseIdentifier:@"collectCell"];
     self.bgTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self request];
+    [self.bgTableView reloadData];
+    self.title = @"主播详情";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
 
 - (void)request {
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.bgTableView animated:YES];
+    HUD.backgroundColor = [UIColor whiteColor];
+    
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *URLStr = [NSString stringWithFormat:@"%@%@%@", Host_detailed_Base_URL, self.uid, Host_detailed_append_URL];
     [netWorking requestWithURL:URLStr Bolck:^(id array) {
@@ -129,13 +138,13 @@
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.bgTableView reloadData];
 
             UIImageView *imageView = [[UIImageView alloc] init];
             [imageView sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
-            UIImage * image =  [imageView setImageToBlur:imageView.image blurRadius:21 ];
+            UIImage * image = [imageView setImageToBlur:imageView.image blurRadius:21 ];
             [self.bgTableView addScalableCoverWithImage: image smallImageURL:host.avatar];
-            
+            [self.bgTableView reloadData];
+            [MBProgressHUD hideHUDForView:self.bgTableView animated:YES];
         });
         
         
@@ -170,14 +179,31 @@
     }else if (indexPath.row == 3) {
         AlbumCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"AlbumCell" forIndexPath:indexPath];
         cell.albumArr = self.issueListArr;
+        cell.block = ^(){
+            MoreViewController *moreVC = [[MoreViewController alloc] init];
+            moreVC.appendStr = @"issue/list";
+            moreVC.uid = self.uid;
+            [self.navigationController pushViewController:moreVC animated:YES];
+        };
         return cell;
     }else if (indexPath.row == 4) {
         SubscribeCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"SubscribeCell" forIndexPath:indexPath];
         cell.collectionArr = self.subscribeListArr;
+        cell.block =^(){
+            MoreViewController *moreVC = [[MoreViewController alloc] init];
+            moreVC.appendStr = @"subscribe";
+            moreVC.uid = self.uid;
+            [self.navigationController pushViewController:moreVC animated:YES];        };
+
         return cell;
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
         cell.collectArr = self.likedListArr;
+        cell.block =^(){
+            MoreViewController *moreVC = [[MoreViewController alloc] init];
+            moreVC.appendStr = @"like";
+            moreVC.uid = self.uid;
+            [self.navigationController pushViewController:moreVC animated:YES];        };
         return cell;
     } else {
         UITableViewCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

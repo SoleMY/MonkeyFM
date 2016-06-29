@@ -27,6 +27,8 @@ static const CGFloat MaxHeight = 200;
 
 - (void)addScalableCoverWithImage:(UIImage *)image smallImageURL:(NSString *)imageviewURL;
 - (void)removeScalableCover;
+- (void)addScalableCoverWithImage:(UIImage *)image ;
+
 
 @end
 

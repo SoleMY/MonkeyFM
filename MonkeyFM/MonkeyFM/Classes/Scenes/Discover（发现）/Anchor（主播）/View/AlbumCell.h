@@ -8,8 +8,11 @@
 
 #import "BaseCell.h"
 #import "CollectionView.h"
+
+typedef void(^BaseBlock)();
 @interface AlbumCell : BaseCell
 
+@property (nonatomic, copy)BaseBlock block;
 @property (nonatomic, strong)CollectionView *AlbumView;
 @property (nonatomic, strong)NSMutableArray *albumArr;
 

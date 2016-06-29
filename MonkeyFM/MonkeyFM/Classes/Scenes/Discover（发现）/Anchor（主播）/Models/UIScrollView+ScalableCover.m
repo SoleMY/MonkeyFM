@@ -58,6 +58,18 @@ static NSString * const kScalableCover = @"scalableCover";
     self.scalableCover = cover;
 }
 
+- (void)addScalableCoverWithImage:(UIImage *)image {
+    ScalableCover *cover = [[ScalableCover alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, MaxHeight)];
+   
+    cover.backgroundColor = [UIColor clearColor];
+    cover.image = image;
+    cover.scrollView = self;
+    [self addSubview:cover];
+    [self sendSubviewToBack:cover];
+    
+    self.scalableCover = cover;
+}
+
 - (void)removeScalableCover
 {
     [self.scalableCover removeFromSuperview];

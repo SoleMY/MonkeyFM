@@ -9,7 +9,10 @@
 #import "BaseCell.h"
 #import "CollectionView.h"
 
+typedef void(^SubBlock)();
 @interface SubscribeCell : BaseCell
+
+@property (nonatomic, copy)SubBlock block;
 
 @property (nonatomic, strong)CollectionView *SubscribeView;
 

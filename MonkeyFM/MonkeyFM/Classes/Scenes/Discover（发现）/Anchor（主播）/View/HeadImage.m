@@ -82,7 +82,7 @@
     self.followText = [[UILabel alloc] init];
     self.followText.textColor = [UIColor grayColor];
     self.followText.text = @"关注";
-    self.followText.font = [UIFont systemFontOfSize:15];
+    self.followText.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.followText];
     [self.followText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followNumber.mas_bottom).offset(0);
@@ -94,7 +94,7 @@
     self.fansText = [[UILabel alloc] init];
     self.fansText.textColor = [UIColor grayColor];
     self.fansText.text = @"粉丝";
-    self.fansText.font = [UIFont systemFontOfSize:15];
+    self.fansText.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.fansText];
     [self.fansText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.fansNumber.mas_bottom).offset(0);
