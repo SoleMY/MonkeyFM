@@ -91,33 +91,13 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
 #warning 选中跳转
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.pushBlock();
-    //    switch (indexPath.item) {
-    //        case 0:
-    //        {
-    //            self.radioCommonBlock(210000, 2, @"本地台");
-    //        }
-    //            break;
-    //        case 1:
-    //        {
-    //            self.radioCommonBlock(0, 1, @"国家台");
-    //        }
-    //            break;
-    //        case 2:
-    //        {
-    //            self.provinceRadioBlock(2, @"省市台");
-    //        }
-    //            break;
-    //        case 3:
-    //        {
-    //            self.radioCommonBlock(0, 3, @"网络台");
-    //        }
-    //            break;
-    //
-    //        default:
-    //            break;
-    //    }
-    
+    RadioModel *model = [[RadioModel alloc] init];
+    model = self.allInfoDataArray[1];
+    NSDictionary *dic = [model.dataList lastObject];
+    NSArray *nameArray = [dic objectForKey:@"dataList"];
+    NSInteger selectID = [[nameArray[indexPath.row] objectForKey:@"id"] integerValue];
+    self.pushBlock(selectID);
+        
 }
 
 - (void)setAllInfoDataArray:(NSMutableArray *)allInfoDataArray

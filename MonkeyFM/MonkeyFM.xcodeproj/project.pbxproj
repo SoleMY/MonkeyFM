@@ -62,6 +62,7 @@
 		A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2541D221E5500BC00F0 /* RadioStyleCell.m */; };
 		A555D2581D22259A00BC00F0 /* RadioStyleSegmentedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */; };
 		A555D25B1D2225AD00BC00F0 /* RadioStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D25A1D2225AD00BC00F0 /* RadioStyleModel.m */; };
+		A555D2611D22A92D00BC00F0 /* SelecID.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2601D22A92D00BC00F0 /* SelecID.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
@@ -241,6 +242,8 @@
 		A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleSegmentedModel.m; sourceTree = "<group>"; };
 		A555D2591D2225AD00BC00F0 /* RadioStyleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleModel.h; sourceTree = "<group>"; };
 		A555D25A1D2225AD00BC00F0 /* RadioStyleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleModel.m; sourceTree = "<group>"; };
+		A555D25F1D22A92D00BC00F0 /* SelecID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelecID.h; sourceTree = "<group>"; };
+		A555D2601D22A92D00BC00F0 /* SelecID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelecID.m; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -938,6 +941,8 @@
 				D61FCEC01D214125001A7D04 /* MryScrollPageCell.m */,
 				D61FCEC11D214125001A7D04 /* MryScrollPageVC.h */,
 				D61FCEC21D214125001A7D04 /* MryScrollPageVC.m */,
+				A555D25F1D22A92D00BC00F0 /* SelecID.h */,
+				A555D2601D22A92D00BC00F0 /* SelecID.m */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -1387,6 +1392,7 @@
 				D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */,
 				D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */,
 				A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */,
+				A555D2611D22A92D00BC00F0 /* SelecID.m in Sources */,
 				D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */,
 				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,

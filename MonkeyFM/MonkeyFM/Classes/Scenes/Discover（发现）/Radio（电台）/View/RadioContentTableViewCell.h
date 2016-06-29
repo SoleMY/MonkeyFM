@@ -8,7 +8,7 @@
 
 #import "BaseCell.h"
 
-typedef void(^pushNewControllerBlockContent)();
+typedef void(^pushNewControllerBlockContent)(NSInteger);
 @interface RadioContentTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *radioContentView;

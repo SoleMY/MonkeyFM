@@ -26,4 +26,6 @@
 @property (nonatomic,weak) UITableView *containerTable;
 @property (nonatomic,weak) MryScrollMenu *scrollMenu;
 
+- (void)setMenuAndScrollTableView;
+
 @end

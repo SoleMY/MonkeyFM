@@ -8,7 +8,7 @@
 
 #import "BaseCell.h"
 
-typedef void(^pushNewControllerBlockType)();
+typedef void(^pushNewControllerBlockType)(NSInteger);
 
 @interface RadioTypeTableViewCell : BaseCell<UICollectionViewDelegate, UICollectionViewDataSource>
 

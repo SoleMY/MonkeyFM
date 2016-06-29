@@ -7,6 +7,7 @@
 //
 
 #import "BaseCell.h"
+@class RadioStyleModel;
 
 @interface RadioStyleCell : BaseCell
 
@@ -20,5 +21,6 @@
 
 @property (nonatomic, strong) UIImageView *playImageView;
 
+- (void)bindModel:(RadioStyleModel *)model;
 
 @end

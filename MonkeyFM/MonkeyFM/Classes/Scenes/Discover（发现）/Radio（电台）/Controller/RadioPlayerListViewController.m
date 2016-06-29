@@ -27,6 +27,8 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 
 @property (nonatomic, strong) NSMutableArray *allSegmentedInfoArray;
 
+
+
 @end
 
 @implementation RadioPlayerListViewController
@@ -39,17 +41,16 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     return _allSegmentedInfoArray;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    
     [self setSegmented];
     [self setSmallSegmentedControl];
     // 请求数据
     [self requestData];
-    
-    
-    
-    
+
 }
 
 - (void)requestData
@@ -59,17 +60,18 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dict = responseObject[@"result"];
-        NSArray *listArray = [dict objectForKey:@"dataList"];
-        for (NSDictionary *dic in listArray) {
-            RadioStyleSegmentedModel *model = [[RadioStyleSegmentedModel alloc] init];
-            [model setValuesForKeysWithDictionary:dic];
-            [weakSelf.allSegmentedInfoArray addObject:model];
+        if (dict != nil) {
+            NSArray *listArray = [dict objectForKey:@"dataList"];
+            for (NSDictionary *dic in listArray) {
+                RadioStyleSegmentedModel *model = [[RadioStyleSegmentedModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [weakSelf.allSegmentedInfoArray addObject:model];
+            }
+            // 数据解析成功，返回主线程刷新UI
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf reloadDataAndShowUI];
+            });
         }
-        // 数据解析成功，返回主线程刷新UI
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf reloadDataAndShowUI];
-        });
-
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -80,6 +82,9 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 {
     [self setSegmented];
     [self setSmallSegmentedControl];
+    [super setMenuAndScrollTableView];
+
+    
 }
 
 - (void)setSmallSegmentedControl
@@ -88,46 +93,52 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     [self.menuArray removeAllObjects];
     [self.tableArray removeAllObjects];
     [self removeAllSubViews];
+    
     if (_segmentedStyle == Type) {
         //设置数据源
         RadioStyleSegmentedModel *model = [self.allSegmentedInfoArray firstObject];
-        NSArray *itemsArr = model.dataList;
-        NSMutableArray *smallItemsArr = [NSMutableArray array];
-        for (NSDictionary *dic in itemsArr) {
-            [smallItemsArr addObject:dic[@"name"]];
-        }
-        [smallItemsArr removeLastObject];
-        self.menuArray = [NSMutableArray arrayWithArray:smallItemsArr];
-        self.tableArray = [NSMutableArray arrayWithCapacity:self.menuArray.count];
-        for (NSString *title in self.menuArray) {
-            RadioStyleListTableView *table = [[RadioStyleListTableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-            table.title = title;
-            [self.tableArray addObject:table];
-        }
-        
+        [self setSegmentedAndTableViewArray:model];
     } else if (_segmentedStyle == Content) {
         RadioStyleSegmentedModel *model = [self.allSegmentedInfoArray lastObject];
-        NSArray *itemsArr = model.dataList;
-        NSMutableArray *smallItemsArr = [NSMutableArray array];
-        for (NSDictionary *dic in itemsArr) {
-            [smallItemsArr addObject:dic[@"name"]];
-        }
-        //设置数据源
-        self.menuArray = [NSMutableArray arrayWithArray:smallItemsArr];
-        self.tableArray = [NSMutableArray arrayWithCapacity:self.menuArray.count];
-        for (NSString *title in self.menuArray) {
-            RadioStyleListTableView *table = [[RadioStyleListTableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-            table.title = title;
-            [self.tableArray addObject:table];
-        }
+        [self setSegmentedAndTableViewArray:model];
     }
     //设置控件位置
     self.menuframe = CGRectMake(0, 10, ScreenW, 20);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
-    
     //调用父类方法加载控件
     [super viewDidLoad]; //最后执行
+    
 }
+- (void)setSegmentedAndTableViewArray:(RadioStyleSegmentedModel *)model
+{
+    
+    NSArray *itemsArr = model.dataList;
+    NSMutableArray *smallItemsArr = [NSMutableArray array];
+    for (NSDictionary *dic in itemsArr) {
+        [smallItemsArr addObject:dic[@"name"]];
+    }
+    //设置数据源
+    if (smallItemsArr.count == 4) {
+        [smallItemsArr removeLastObject];
+    }
+    self.menuArray = [NSMutableArray arrayWithArray:smallItemsArr];
+    self.tableArray = [NSMutableArray arrayWithCapacity:self.menuArray.count];
+    for (int i = 0; i < self.menuArray.count; i++) {
+        RadioStyleListTableView *table = [[RadioStyleListTableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        
+        if (self.selectedSegmentIndex == 0) {
+            NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i + 1), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
+            table.emptyURL = emptyURL;
+        } else  {
+            NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i+ 6), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
+            table.emptyURL = emptyURL;
+        }
+        [self.tableArray addObject:table];
+    }
+}
+
+
+
 - (void)removeAllSubViews
 {
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -171,29 +182,15 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     NSInteger index = self.navigationSegmented.selectedSegmentIndex;
     if (index == 0) {
         self.segmentedStyle = Type;
+        self.selectedSegmentIndex = 0;
         [self setSmallSegmentedControl];
     } else if (index == 1) {
         self.segmentedStyle = Content;
+        self.selectedSegmentIndex = 1;
         [self setSmallSegmentedControl];
     }
 
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

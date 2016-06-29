@@ -7,6 +7,7 @@
 //
 
 #import "RadioStyleCell.h"
+#import "RadioStyleModel.h"
 
 #define kLeftImageSize CGSizeMake(100, 100)
 #define kHeardImageSize CGSizeMake(24, 20)
@@ -115,6 +116,15 @@
         make.width.mas_equalTo(kSpace * 5);
     }];
     
+}
+
+- (void)bindModel:(RadioStyleModel *)model
+{
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+    self.titleLabel.text = model.name;
+    self.desLabel.text = [NSString stringWithFormat:@"正在播放：%@", model.currentProgramTitle];
+    self.listenPeopleNum.text = [NSString stringWithFormat:@"%@", model.onLineNum];
+    self.attentionLabel.text = [NSString stringWithFormat:@"%@", model.likedNum];
 }
 
 @end

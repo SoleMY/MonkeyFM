@@ -99,31 +99,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     Host *host = [[Host alloc] init];
     [host setValuesForKeysWithDictionary:dic];
     self.pushBlock(host.uid);
-    //    switch (indexPath.item) {
-    //        case 0:
-    //        {
-    //            self.radioCommonBlock(210000, 2, @"本地台");
-    //        }
-    //            break;
-    //        case 1:
-    //        {
-    //            self.radioCommonBlock(0, 1, @"国家台");
-    //        }
-    //            break;
-    //        case 2:
-    //        {
-    //            self.provinceRadioBlock(2, @"省市台");
-    //        }
-    //            break;
-    //        case 3:
-    //        {
-    //            self.radioCommonBlock(0, 3, @"网络台");
-    //        }
-    //            break;
-    //            
-    //        default:
-    //            break;
-    //    }
 }
 
 

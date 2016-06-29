@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) NSString *title;
 
+@property (nonatomic, strong) NSMutableArray *allTableViewInfoArray;
+
+@property (nonatomic, copy) NSString *emptyURL;
+
 @end
