@@ -78,8 +78,10 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
     ClassificationModel *model = self.allArray[indexPath.row];
         cell.label.text = model.title;
-    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+//    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.backgroundPic]];
    
+     cell.photoImage.image = [UIImage imageNamed:model.title];
+    
     return cell;
 }
 
@@ -121,7 +123,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
                 [self.allArray addObject:model];
                 
             }
-//            NSLog(@"%@", self.allArray);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [mySelf.myView.collectionView reloadData];
             });

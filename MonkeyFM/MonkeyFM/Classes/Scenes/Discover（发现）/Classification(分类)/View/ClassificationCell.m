@@ -12,9 +12,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-
         
-        self.restorationIdentifier = @"identifile_cell";
+       /* self.restorationIdentifier = @"identifile_cell";
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingNone;
         
@@ -28,7 +27,8 @@
         myContentView.layer.borderWidth = borderWidth;
         
         [self.contentView addSubview:myContentView];
-         
+        */
+        
         [self initLayout];
     }
     return self;
@@ -39,27 +39,36 @@
     self.photoImage = [[UIImageView alloc] init];
     
     self.label = [[UILabel alloc] init];
+    
     self.label.textAlignment = NSTextAlignmentCenter;
 
+    self.label.textColor = [UIColor darkGrayColor];
+    
+    self.label.font = [UIFont systemFontOfSize:15];
+    
     [self.contentView addSubview:self.photoImage];
     
     [self.contentView addSubview:self.label];
     
     __weak typeof(self)mySelf = self;
     
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(mySelf);
-        make.right.equalTo(mySelf);
-        make.bottom.offset(-10);
-    }];
-    
     [self.photoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(mySelf.label.mas_centerX);
+
+        make.top.equalTo(mySelf.contentView).offset(20);
+        
+        make.left.equalTo(mySelf.contentView).offset(20);
+        
         make.bottom.equalTo(mySelf.label.mas_top).offset(-10);
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(40);
+        
+        make.right.equalTo(mySelf.contentView).offset(-25);
+        
     }];
     
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(mySelf).offset(10);
+        make.right.equalTo(mySelf).offset(-10);
+        make.bottom.equalTo(mySelf);
+    }];
     
 }
 @end
