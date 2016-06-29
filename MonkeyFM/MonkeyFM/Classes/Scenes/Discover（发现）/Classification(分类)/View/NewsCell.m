@@ -94,7 +94,7 @@
         make.width.mas_equalTo(80);
         
     }];
-    
+    /////////
     // 时间
     self.utimeLabel = [[UILabel alloc] init];
     self.utimeLabel.text = @"10小时前更新";
