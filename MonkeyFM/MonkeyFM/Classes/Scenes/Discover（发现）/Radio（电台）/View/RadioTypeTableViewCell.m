@@ -12,7 +12,7 @@
 #import "RadioPlayerListViewController.h"
 
 
-#define kItemSize CGSizeMake(([UIScreen mainScreen].bounds.size.width) / 5, [UIScreen mainScreen].bounds.size.width / 10)
+#define kItemSize CGSizeMake(([UIScreen mainScreen].bounds.size.width) / 4, [UIScreen mainScreen].bounds.size.width / 8)
 
 @implementation RadioTypeTableViewCell
 
@@ -58,9 +58,9 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     
     [self.radioTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf).with.offset(0);
-        make.top.equalTo(weakSelf).with.offset(0);
+        make.top.equalTo(weakSelf).with.offset(5);
         make.right.equalTo(weakSelf).with.offset(0);
-        make.bottom.equalTo(weakSelf).with.offset(-10);
+        make.bottom.equalTo(weakSelf).with.offset(-5);
     }];
     [self.radioTypeView registerClass:[RadioTypeCell class] forCellWithReuseIdentifier:identifier_typeCell];
     [self.radioTypeView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
@@ -91,33 +91,13 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
 #warning 选中跳转
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.pushBlock();
-    //    switch (indexPath.item) {
-    //        case 0:
-    //        {
-    //            self.radioCommonBlock(210000, 2, @"本地台");
-    //        }
-    //            break;
-    //        case 1:
-    //        {
-    //            self.radioCommonBlock(0, 1, @"国家台");
-    //        }
-    //            break;
-    //        case 2:
-    //        {
-    //            self.provinceRadioBlock(2, @"省市台");
-    //        }
-    //            break;
-    //        case 3:
-    //        {
-    //            self.radioCommonBlock(0, 3, @"网络台");
-    //        }
-    //            break;
-    //
-    //        default:
-    //            break;
-    //    }
-    
+    RadioModel *model = [[RadioModel alloc] init];
+    model = self.allInfoDataArray[1];
+    NSDictionary *dic = [model.dataList lastObject];
+    NSArray *nameArray = [dic objectForKey:@"dataList"];
+    NSInteger selectID = [[nameArray[indexPath.row] objectForKey:@"id"] integerValue];
+    self.pushBlock(selectID);
+        
 }
 
 - (void)setAllInfoDataArray:(NSMutableArray *)allInfoDataArray

@@ -8,7 +8,7 @@
 
 #import "BaseCell.h"
 
-typedef void(^pushNewControllerBlock)();
+typedef void(^pushNewControllerBlock)(NSString *);
 @interface RecommendAnchorTableViewCell : BaseCell
 
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;

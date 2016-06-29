@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseView.h"
+#import "NewsAllModel.h"
+#import "DetailSegment.h"
 @interface MryPageTable : UITableView
 
 @property (nonatomic,copy) NSString *title;
+
+@property (nonatomic, strong) NewsAllModel *model;
+
+@property (nonatomic, strong) DetailSegment *segmentModel;
+
+@property (nonatomic, strong)NSString *categroyId;
+
+@property (nonatomic, strong) NSString *string;
 
 @end

@@ -13,6 +13,7 @@
 #import "ClassificationController.h"
 #import "AnchorViewController.h"
 #import "RadioViewController.h"
+#import "PlayerDetailViewController.h"
 #import "Masonry.h"
 #import "MFM_Tool_COLOR.h"
 
@@ -94,7 +95,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,6 +137,10 @@
     else if (row == 6)
     {
         text = @"关于我们";
+    }
+    else if (row == 7)
+    {
+        text = @"我的";
     }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
@@ -199,6 +204,11 @@
         
         AnchorViewController *anchorViewController = [[AnchorViewController alloc] init];
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:anchorViewController];
+    }
+    else if (row == 7)
+    {
+        PlayerDetailViewController *playerVC = [[PlayerDetailViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:playerVC];
     }
     else {
         return;

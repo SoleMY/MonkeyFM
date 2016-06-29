@@ -64,7 +64,7 @@
         // 左对齐
         make.leading.equalTo(mySelf.nameLabel.mas_leading);
         // 右对齐
-        make.trailing.equalTo(mySelf.nameLabel.mas_trailing);
+        make.width.mas_equalTo(250);
         
     }];
     
@@ -103,7 +103,7 @@
     [self.utimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(mySelf.hotLabel);
-        make.right.equalTo(mySelf.contentView).offset(-10);
+        make.right.equalTo(mySelf.hotLabel.mas_right).offset(180);
         make.width.mas_equalTo(150);
         
     }];

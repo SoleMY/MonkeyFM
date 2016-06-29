@@ -58,9 +58,16 @@
 		A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A92421D1D2EB60005E26E /* RadioHeadReusableView.m */; };
 		A52A926D1D1D7CDC0005E26E /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */; };
 		A52A92701D1D7D250005E26E /* RadioContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52A926F1D1D7D250005E26E /* RadioContentCell.m */; };
+		A555D2521D221CED00BC00F0 /* RadioStyleListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2511D221CED00BC00F0 /* RadioStyleListTableView.m */; };
+		A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2541D221E5500BC00F0 /* RadioStyleCell.m */; };
+		A555D2581D22259A00BC00F0 /* RadioStyleSegmentedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */; };
+		A555D25B1D2225AD00BC00F0 /* RadioStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D25A1D2225AD00BC00F0 /* RadioStyleModel.m */; };
+		A555D2611D22A92D00BC00F0 /* SelecID.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2601D22A92D00BC00F0 /* SelecID.m */; };
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		A5E4B7CF1D2411410010F893 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */; };
+		A5E4B7D01D2411410010F893 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */; };
 		D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */; };
 		D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */; };
 		D60CCB6A1D20BFA500A8EBF3 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */; };
@@ -158,6 +165,8 @@
 		D6A1A5F81D23F591001DAF39 /* DetaileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A1A5F71D23F591001DAF39 /* DetaileViewController.m */; };
 		D6A1A5FB1D23FD47001DAF39 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A1A5FA1D23FD47001DAF39 /* CommentCell.m */; };
 		D6A1A5FE1D240DB2001DAF39 /* DetaileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A1A5FD1D240DB2001DAF39 /* DetaileCell.m */; };
+		D6F60C791D224EC300583C8F /* DetailSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F60C781D224EC300583C8F /* DetailSegment.m */; };
+		D6F60C7C1D226E6900583C8F /* NewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F60C7B1D226E6900583C8F /* NewsAllModel.m */; };
 		D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14A91D1FAE78008C7D3E /* HeadImage.m */; };
 		D6FD14AD1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */; };
 		D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14B11D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m */; };
@@ -203,7 +212,7 @@
 		A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendAnchorTableViewCell.m; sourceTree = "<group>"; };
 		A50FC3B41D2007DD002A940D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A50FC3B51D20B579002A940D /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
-		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopularItemListViewController.h; path = ../Controller/PopularItemListViewController.h; sourceTree = "<group>"; };
+		A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListViewController.h; sourceTree = "<group>"; };
 		A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularItemListViewController.m; sourceTree = "<group>"; };
 		A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularItemListViewController.xib; sourceTree = "<group>"; };
 		A50FC3BB1D20CD33002A940D /* PopularItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularItemListCell.h; sourceTree = "<group>"; };
@@ -245,6 +254,16 @@
 		A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		A52A926E1D1D7D250005E26E /* RadioContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioContentCell.h; sourceTree = "<group>"; };
 		A52A926F1D1D7D250005E26E /* RadioContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioContentCell.m; sourceTree = "<group>"; };
+		A555D2501D221CED00BC00F0 /* RadioStyleListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleListTableView.h; sourceTree = "<group>"; };
+		A555D2511D221CED00BC00F0 /* RadioStyleListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleListTableView.m; sourceTree = "<group>"; };
+		A555D2531D221E5500BC00F0 /* RadioStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleCell.h; sourceTree = "<group>"; };
+		A555D2541D221E5500BC00F0 /* RadioStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleCell.m; sourceTree = "<group>"; };
+		A555D2561D22259A00BC00F0 /* RadioStyleSegmentedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleSegmentedModel.h; sourceTree = "<group>"; };
+		A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleSegmentedModel.m; sourceTree = "<group>"; };
+		A555D2591D2225AD00BC00F0 /* RadioStyleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleModel.h; sourceTree = "<group>"; };
+		A555D25A1D2225AD00BC00F0 /* RadioStyleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleModel.m; sourceTree = "<group>"; };
+		A555D25F1D22A92D00BC00F0 /* SelecID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelecID.h; sourceTree = "<group>"; };
+		A555D2601D22A92D00BC00F0 /* SelecID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelecID.m; sourceTree = "<group>"; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57E607A1D1BE159007EF7F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57E607F1D1BE159007EF7F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -253,6 +272,9 @@
 		A57E60851D1BE159007EF7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5E4B7CC1D2411410010F893 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
 		D60CCB621D20BF5B00A8EBF3 /* SocialNetworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkCell.h; sourceTree = "<group>"; };
 		D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkCell.m; sourceTree = "<group>"; };
@@ -418,6 +440,10 @@
 		D6A1A5FA1D23FD47001DAF39 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		D6A1A5FC1D240DB2001DAF39 /* DetaileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaileCell.h; sourceTree = "<group>"; };
 		D6A1A5FD1D240DB2001DAF39 /* DetaileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetaileCell.m; sourceTree = "<group>"; };
+		D6F60C771D224EC300583C8F /* DetailSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSegment.h; sourceTree = "<group>"; };
+		D6F60C781D224EC300583C8F /* DetailSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSegment.m; sourceTree = "<group>"; };
+		D6F60C7A1D226E6900583C8F /* NewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsAllModel.h; sourceTree = "<group>"; };
+		D6F60C7B1D226E6900583C8F /* NewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsAllModel.m; sourceTree = "<group>"; };
 		D6FD14A81D1FAE78008C7D3E /* HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadImage.h; sourceTree = "<group>"; };
 		D6FD14A91D1FAE78008C7D3E /* HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadImage.m; sourceTree = "<group>"; };
 		D6FD14AB1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScalableCover.h"; sourceTree = "<group>"; };
@@ -515,8 +541,12 @@
 		A52A92121D1CDDCD0005E26E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D6F60C771D224EC300583C8F /* DetailSegment.h */,
+				D6F60C781D224EC300583C8F /* DetailSegment.m */,
 				A52A92131D1CDDCD0005E26E /* ClassificationModel.h */,
 				A52A92141D1CDDCD0005E26E /* ClassificationModel.m */,
+				D6F60C7A1D226E6900583C8F /* NewsAllModel.h */,
+				D6F60C7B1D226E6900583C8F /* NewsAllModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +590,7 @@
 				A50FC3A91D1E7144002A940D /* RadioPlayerListViewController.h */,
 				A50FC3AA1D1E7144002A940D /* RadioPlayerListViewController.m */,
 				A50FC3AB1D1E7144002A940D /* RadioPlayerListViewController.xib */,
+				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
 				A50FC3B71D20CCC9002A940D /* PopularItemListViewController.m */,
 				A50FC3B81D20CCC9002A940D /* PopularItemListViewController.xib */,
 			);
@@ -587,7 +618,10 @@
 				A50FC3BC1D20CD33002A940D /* PopularItemListCell.m */,
 				A50FC3B11D1EA4C2002A940D /* RecommendAnchorTableViewCell.h */,
 				A50FC3B21D1EA4C2002A940D /* RecommendAnchorTableViewCell.m */,
-				A50FC3B61D20CCC9002A940D /* PopularItemListViewController.h */,
+				A555D2501D221CED00BC00F0 /* RadioStyleListTableView.h */,
+				A555D2511D221CED00BC00F0 /* RadioStyleListTableView.m */,
+				A555D2531D221E5500BC00F0 /* RadioStyleCell.h */,
+				A555D2541D221E5500BC00F0 /* RadioStyleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,6 +633,10 @@
 				A52A923F1D1D25800005E26E /* RadioModel.m */,
 				A50FC3C21D2124A3002A940D /* RadioPopularItemModel.h */,
 				A50FC3C31D2124A3002A940D /* RadioPopularItemModel.m */,
+				A555D2561D22259A00BC00F0 /* RadioStyleSegmentedModel.h */,
+				A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */,
+				A555D2591D2225AD00BC00F0 /* RadioStyleModel.h */,
+				A555D25A1D2225AD00BC00F0 /* RadioStyleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -642,6 +680,16 @@
 				A57E607A1D1BE159007EF7F1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5E4B7CB1D2411280010F893 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5E4B7CC1D2411410010F893 /* PlayerDetailViewController.h */,
+				A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */,
+				A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D609EBEE1D1D0D540042B23F /* View */ = {
@@ -829,6 +877,7 @@
 		D619229D1D1CD8A20008648A /* PlayerDetail（播放详情） */ = {
 			isa = PBXGroup;
 			children = (
+				A5E4B7CB1D2411280010F893 /* Controller */,
 			);
 			path = "PlayerDetail（播放详情）";
 			sourceTree = "<group>";
@@ -970,6 +1019,8 @@
 				D61FCEC01D214125001A7D04 /* MryScrollPageCell.m */,
 				D61FCEC11D214125001A7D04 /* MryScrollPageVC.h */,
 				D61FCEC21D214125001A7D04 /* MryScrollPageVC.m */,
+				A555D25F1D22A92D00BC00F0 /* SelecID.h */,
+				A555D2601D22A92D00BC00F0 /* SelecID.m */,
 			);
 			path = "工具";
 			sourceTree = "<group>";
@@ -1252,6 +1303,7 @@
 				D61FCEB61D210F7E001A7D04 /* 科技.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				A50FC3941D1E1706002A940D /* ic_homeinternet_on@2x.png in Resources */,
+				A5E4B7D01D2411410010F893 /* PlayerDetailViewController.xib in Resources */,
 				A50FC3921D1E1706002A940D /* 网络台.png in Resources */,
 				D6721BFB1D1EA17200CFF94A /* 播放button.png in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
@@ -1400,11 +1452,13 @@
 			files = (
 				A52A922E1D1CE3600005E26E /* SmallTools.m in Sources */,
 				A52A92431D1D2EB60005E26E /* RadioHeadReusableView.m in Sources */,
+				A555D25B1D2225AD00BC00F0 /* RadioStyleModel.m in Sources */,
 				A50FC39C1D1E1ACF002A940D /* RadioTypeCell.m in Sources */,
 				A50FC3A21D1E3886002A940D /* RadioContentTableViewCell.m in Sources */,
 				D6442DBF1D1D6A8B00EEE263 /* FooterCollectionReusableView.m in Sources */,
 				D6FD14AD1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m in Sources */,
 				D61922CA1D1CD8A20008648A /* AppDelegate.m in Sources */,
+				A555D2521D221CED00BC00F0 /* RadioStyleListTableView.m in Sources */,
 				A50FC3B91D20CCC9002A940D /* PopularItemListViewController.m in Sources */,
 				A52A926D1D1D7CDC0005E26E /* BaseCollectionViewCell.m in Sources */,
 				D61755DD1D22771B00364B58 /* MoreViewController.m in Sources */,
@@ -1425,6 +1479,7 @@
 				D6562DA91D1E60F10035FAC7 /* MJRefreshFooter.m in Sources */,
 				D6A1A5F51D23F585001DAF39 /* CommentViewController.m in Sources */,
 				D61FCEA91D210A80001A7D04 /* DetailClassificationViewController.m in Sources */,
+				D6F60C7C1D226E6900583C8F /* NewsAllModel.m in Sources */,
 				D61FCEC81D214167001A7D04 /* MryPageTable.m in Sources */,
 				A50FC3B01D1EA347002A940D /* PopularItemTableViewCell.m in Sources */,
 				D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */,
@@ -1459,7 +1514,9 @@
 				D6562D6C1D1E1CC60035FAC7 /* HostTitle.m in Sources */,
 				D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */,
 				D61755DA1D2276F100364B58 /* MoreCell.m in Sources */,
+				D6F60C791D224EC300583C8F /* DetailSegment.m in Sources */,
 				D61922D21D1CD8A20008648A /* BaseCell.m in Sources */,
+				A555D2581D22259A00BC00F0 /* RadioStyleSegmentedModel.m in Sources */,
 				D61922D01D1CD8A20008648A /* shufflingModel.m in Sources */,
 				D61922D61D1CD8A20008648A /* BaseView.m in Sources */,
 				D6A1A5FB1D23FD47001DAF39 /* CommentCell.m in Sources */,
@@ -1467,10 +1524,13 @@
 				D63D50DE1D22045C0066EB20 /* Collect.m in Sources */,
 				D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */,
 				D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */,
+				A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */,
+				A555D2611D22A92D00BC00F0 /* SelecID.m in Sources */,
 				D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */,
 				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
 				D6A1A5F21D23F56D001DAF39 /* ProgramViewController.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
+				A5E4B7CF1D2411410010F893 /* PlayerDetailViewController.m in Sources */,
 				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
 				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
 				A50FC3B31D1EA4C2002A940D /* RecommendAnchorTableViewCell.m in Sources */,

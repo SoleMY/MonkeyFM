@@ -20,12 +20,16 @@
 @interface MryScrollMenu : BaseView
 
 @property (nonatomic,weak) id<MryScrollMenuDelegate> delegate;
-
+@property (nonatomic,weak) UIScrollView *scrollView;
 @property (nonatomic,weak) UIButton *selectedBtn;
 @property (nonatomic,strong) NSMutableArray *menuArray;
 @property (nonatomic,assign) BOOL isShowBreakline;
+// 电台页面需要的修改
+
+
 
 - (void)setbBreaklineColor:(UIColor *)color;
+
 - (void)setselectedIndex:(NSInteger)index;
 
 @end

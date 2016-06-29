@@ -17,6 +17,12 @@
 #import "SmallTools.h"
 #import "MFM_Tool_COLOR.h"
 #import <MBProgressHUD.h>
+#import "Sinleton.h"
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

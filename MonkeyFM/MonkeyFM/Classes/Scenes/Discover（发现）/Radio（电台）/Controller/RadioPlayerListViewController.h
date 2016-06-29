@@ -10,4 +10,7 @@
 
 @interface RadioPlayerListViewController : MryScrollPageVC
 
+@property (nonatomic, assign) NSInteger selectedSegmentIndex;
+@property (nonatomic, assign) NSInteger selectID;
+
 @end

@@ -12,6 +12,7 @@
 #import "HeadCollectionReusableView.h"
 #import "RadioModel.h"
 #import "HostTitle.h"
+#import "Host.h"
 
 @interface RecommendAnchorTableViewCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -38,7 +39,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioAnchorCollectionView.collectionView.delegate = self;
     self.radioAnchorCollectionView.collectionView.dataSource = self;
     [self.contentView addSubview:self.radioAnchorCollectionView];
-    
+//    self.radioAnchorCollectionView.collectionView.footerReferenceSize = CGSizeMake(0, 10);
     self.radioAnchorCollectionView.collectionView.scrollEnabled = NO;
     self.radioAnchorCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioAnchorCollectionView.collectionView.bounces = NO;
@@ -68,17 +69,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     if (self.allInfoDataArray.count > 0) {
         
         CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_anchorCell forIndexPath:indexPath];
-        //        if (indexPath.section == 1) {
-        //            Host *host = self.hostArray[indexPath.row];
-        //            cell.nameLabel.text = host.nickName;
-        //            cell.introduction.text = host.recommendReson;
-        //            [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
-        //        }else {
-        //            Host *host = self.hostArray[6 + (indexPath.section - 2) * 3 + indexPath.row ];
-        //            cell.nameLabel.text = host.nickName;
-        //            cell.introduction.text = host.recommendReson;
-        //            [cell.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
-        //        }
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[4];
         [cell bindRecommendModel:model indexPath:indexPath];
@@ -89,6 +79,17 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     }
     
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RadioModel *model = [[RadioModel alloc] init];
+    model = self.allInfoDataArray[4];
+    NSDictionary *dic = model.dataList[indexPath.row];
+    Host *host = [[Host alloc] init];
+    [host setValuesForKeysWithDictionary:dic];
+    self.pushBlock(host.uid);
+}
+
 
 //返回头视图和尾视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -107,13 +108,12 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         }
     }
     UICollectionReusableView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"view" forIndexPath:indexPath];
-    
     return headView;
     
 }
 
 - (void)moreActionWithIndexPath:(NSIndexPath *)indexPath {
-    self.pushBlock();
+    self.pushBlock(nil);
 }
 
 - (void)setAllInfoDataArray:(NSMutableArray *)allInfoDataArray
