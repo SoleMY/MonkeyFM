@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 #import "MryScrollPageVC.h"
+#import "ClassificationModel.h"
 @interface DetailClassificationViewController : MryScrollPageVC
+
+@property (nonatomic, strong) ClassificationModel *classificationModel;
 
 @end

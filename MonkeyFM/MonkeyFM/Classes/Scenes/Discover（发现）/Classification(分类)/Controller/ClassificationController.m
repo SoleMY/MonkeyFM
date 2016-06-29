@@ -85,7 +85,12 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
 // 点击item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ClassificationModel *model = self.allArray[indexPath.row];
+    
     DetailClassificationViewController *detailVC = [DetailClassificationViewController new];
+    
+    detailVC.classificationModel = model;
     
     [self.navigationController pushViewController:detailVC animated:YES];
 }

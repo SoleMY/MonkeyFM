@@ -104,14 +104,19 @@
     }
     
     //计算scrollview偏移量
-    CGFloat originX = selectedBtn.center.x - CGRectGetMidX(self.scrollView.frame);
-    CGFloat maxOffsetX = self.scrollView.contentSize.width - self.scrollView.frame.size.width;
-    if (originX < 0) {
-        originX = 0;
-    }else if (originX > maxOffsetX){
-        originX = maxOffsetX;
+    UIButton *lastBtn = (UIButton *)[self.scrollView.subviews lastObject];
+    if (CGRectGetMaxX(lastBtn.frame) > [UIScreen mainScreen].bounds.size.width) {
+    
+        CGFloat originX = selectedBtn.center.x - CGRectGetMidX(self.scrollView.frame);
+    
+        CGFloat maxOffsetX = self.scrollView.contentSize.width - self.scrollView.frame.size.width;
+        if (originX < 0) {
+            originX = 0;
+        }else if (originX > maxOffsetX){
+            originX = maxOffsetX;
+        }
+        [self.scrollView setContentOffset:CGPointMake(originX, 0) animated:YES];
     }
-    [self.scrollView setContentOffset:CGPointMake(originX, 0) animated:YES];
     
     //改变按钮颜色
     [self.selectedBtn setTitleColor:[UIColor colorWithRed:104/255.0 green:104/255.0 blue:124/255.0 alpha:1.f] forState:UIControlStateNormal];
@@ -135,7 +140,7 @@
     animation2.repeatCount = 1;
     animation2.fillMode = kCAFillModeForwards;
     animation2.removedOnCompletion = NO;
-    animation2.autoreverses = NO;
+    animation2.autoreverses = YES;
     [selectedBtn.titleLabel.layer addAnimation:animation2 forKey:@"animation2"];
     
     _selectedBtn = selectedBtn;
