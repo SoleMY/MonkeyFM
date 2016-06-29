@@ -129,6 +129,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
         if (self.selectedSegmentIndex == 0) {
             NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i + 1), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
             table.emptyURL = emptyURL;
+            table.title = self.menuArray[i];
         } else  {
             NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i+ 6), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
             table.emptyURL = emptyURL;

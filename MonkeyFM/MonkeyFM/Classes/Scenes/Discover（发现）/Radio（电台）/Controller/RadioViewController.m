@@ -22,9 +22,9 @@
 #import "SelecID.h"
 
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
-#define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 3 + 20
+#define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 2 + 10
 #define kContentCellHeight 100
-#define kNormalCellHeight 170
+#define kNormalCellHeight 150
 
 @interface RadioViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -96,7 +96,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioTableView.delegate = self;
     self.radioTableView.dataSource = self;
     self.radioTableView.showsVerticalScrollIndicator = NO;
-    self.radioTableView.bounces = NO;
+    self.radioTableView.bounces = YES;
     self.radioTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.radioTableView.sectionFooterHeight = 0;
     self.radioTableView.sectionHeaderHeight = 0;
@@ -111,6 +111,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     [self registerClassWithCell];
     // 设置头视图
     [self setTableHeaderView];
+
 }
 
 - (void)registerClassWithCell
@@ -217,6 +218,13 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
    
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
+//    footerView.backgroundColor = [UIColor colorWithRed:0.91 green:0.90 blue:0.89 alpha:1.00];
+//    return footerView;
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
@@ -226,7 +234,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     } else if (indexPath.section == 2) {
         return kNormalCellHeight;
     } else {
-        return kNormalCellHeight;
+        return kNormalCellHeight+ 10;
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

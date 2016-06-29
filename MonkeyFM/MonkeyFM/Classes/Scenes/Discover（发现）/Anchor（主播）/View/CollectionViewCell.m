@@ -84,7 +84,10 @@
     Host *host = [[Host alloc] init];
     [host setValuesForKeysWithDictionary:dic];
     self.nameLabel.text = host.rname;
-    self.introduction.text = host.recommendReson;
+    self.nameLabel.frame = CGRectMake(10, 0, kNameLabelWidth, kNameLabelHeight);
+    self.nameLabel.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+    self.nameLabel.font = [UIFont systemFontOfSize:10];
+    self.introduction.text = nil;
     [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.pic]];
 }
 

@@ -66,6 +66,8 @@
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		A5E4B7CF1D2411410010F893 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */; };
+		A5E4B7D01D2411410010F893 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */; };
 		D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */; };
 		D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */; };
 		D60CCB6A1D20BFA500A8EBF3 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */; };
@@ -252,6 +254,9 @@
 		A57E60851D1BE159007EF7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5E4B7CC1D2411410010F893 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
 		D60CCB621D20BF5B00A8EBF3 /* SocialNetworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkCell.h; sourceTree = "<group>"; };
 		D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkCell.m; sourceTree = "<group>"; };
@@ -620,6 +625,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A5E4B7CB1D2411280010F893 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5E4B7CC1D2411410010F893 /* PlayerDetailViewController.h */,
+				A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */,
+				A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D609EBEE1D1D0D540042B23F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +818,7 @@
 		D619229D1D1CD8A20008648A /* PlayerDetail（播放详情） */ = {
 			isa = PBXGroup;
 			children = (
+				A5E4B7CB1D2411280010F893 /* Controller */,
 			);
 			path = "PlayerDetail（播放详情）";
 			sourceTree = "<group>";
@@ -1181,6 +1197,7 @@
 				D61FCEB61D210F7E001A7D04 /* 科技.png in Resources */,
 				A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */,
 				A50FC3941D1E1706002A940D /* ic_homeinternet_on@2x.png in Resources */,
+				A5E4B7D01D2411410010F893 /* PlayerDetailViewController.xib in Resources */,
 				A50FC3921D1E1706002A940D /* 网络台.png in Resources */,
 				D6721BFB1D1EA17200CFF94A /* 播放button.png in Resources */,
 				D61922D81D1CD8A20008648A /* BaseViewController.xib in Resources */,
@@ -1396,6 +1413,7 @@
 				D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */,
 				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
 				D61922D51D1CD8A20008648A /* BaseNavigationViewController.m in Sources */,
+				A5E4B7CF1D2411410010F893 /* PlayerDetailViewController.m in Sources */,
 				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
 				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
 				A50FC3B31D1EA4C2002A940D /* RecommendAnchorTableViewCell.m in Sources */,

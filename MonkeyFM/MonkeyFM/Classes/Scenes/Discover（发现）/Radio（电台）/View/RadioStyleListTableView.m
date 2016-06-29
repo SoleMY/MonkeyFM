@@ -12,6 +12,8 @@
 
 @interface RadioStyleListTableView ()<UITableViewDelegate,UITableViewDataSource>
 
+
+
 @end
 
 
@@ -71,6 +73,21 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
     [self requestData];
 }
 
+- (void)setTableViewHeaderView
+{
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 150, 30)];
+    titleLabel.text = @"北京市";
+    [tableHeaderView addSubview:titleLabel];
+    UIButton *more = [UIButton buttonWithType:UIButtonTypeSystem];
+    more.backgroundColor = [UIColor blackColor];
+    [tableHeaderView addSubview:more];
+    
+    self.tableHeaderView = tableHeaderView;
+
+}
+
 - (void)requestData
 {
     __weak typeof(self) weakSelf = ((RadioStyleListTableView *)self);
@@ -93,7 +110,11 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
             }
             // 数据解析成功，返回主线程刷新UI
             dispatch_async(dispatch_get_main_queue(), ^{
+                if ([weakSelf.title isEqualToString:@"省市台"]) {
+                    [weakSelf setTableViewHeaderView];
+                }
                 [weakSelf reloadData];
+                
             });
         }
         
