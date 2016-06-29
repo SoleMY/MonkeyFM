@@ -142,6 +142,7 @@
 		D69356331D1F9F2E00938275 /* HostInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69356311D1F9F2E00938275 /* HostInfoViewController.m */; };
 		D69356341D1F9F2E00938275 /* HostInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69356321D1F9F2E00938275 /* HostInfoViewController.xib */; };
 		D6F60C791D224EC300583C8F /* DetailSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F60C781D224EC300583C8F /* DetailSegment.m */; };
+		D6F60C7C1D226E6900583C8F /* NewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F60C7B1D226E6900583C8F /* NewsAllModel.m */; };
 		D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14A91D1FAE78008C7D3E /* HeadImage.m */; };
 		D6FD14AD1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14AC1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.m */; };
 		D6FD14B21D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FD14B11D1FCD2B008C7D3E /* UIImageView+LBBlurredImage.m */; };
@@ -377,6 +378,8 @@
 		D69356321D1F9F2E00938275 /* HostInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HostInfoViewController.xib; sourceTree = "<group>"; };
 		D6F60C771D224EC300583C8F /* DetailSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSegment.h; sourceTree = "<group>"; };
 		D6F60C781D224EC300583C8F /* DetailSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSegment.m; sourceTree = "<group>"; };
+		D6F60C7A1D226E6900583C8F /* NewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsAllModel.h; sourceTree = "<group>"; };
+		D6F60C7B1D226E6900583C8F /* NewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsAllModel.m; sourceTree = "<group>"; };
 		D6FD14A81D1FAE78008C7D3E /* HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadImage.h; sourceTree = "<group>"; };
 		D6FD14A91D1FAE78008C7D3E /* HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadImage.m; sourceTree = "<group>"; };
 		D6FD14AB1D1FB5CB008C7D3E /* UIScrollView+ScalableCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScalableCover.h"; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				D6F60C781D224EC300583C8F /* DetailSegment.m */,
 				A52A92131D1CDDCD0005E26E /* ClassificationModel.h */,
 				A52A92141D1CDDCD0005E26E /* ClassificationModel.m */,
+				D6F60C7A1D226E6900583C8F /* NewsAllModel.h */,
+				D6F60C7B1D226E6900583C8F /* NewsAllModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1324,6 +1329,7 @@
 				D6562DB31D1E60F10035FAC7 /* MJRefreshStateHeader.m in Sources */,
 				D6562DA91D1E60F10035FAC7 /* MJRefreshFooter.m in Sources */,
 				D61FCEA91D210A80001A7D04 /* DetailClassificationViewController.m in Sources */,
+				D6F60C7C1D226E6900583C8F /* NewsAllModel.m in Sources */,
 				D61FCEC81D214167001A7D04 /* MryPageTable.m in Sources */,
 				A50FC3B01D1EA347002A940D /* PopularItemTableViewCell.m in Sources */,
 				D6442DB61D1D35F900EEE263 /* CollectionViewCell.m in Sources */,

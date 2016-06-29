@@ -64,7 +64,7 @@
         // 左对齐
         make.leading.equalTo(mySelf.nameLabel.mas_leading);
         // 右对齐
-        make.trailing.equalTo(mySelf.nameLabel.mas_trailing);
+        make.width.mas_equalTo(250);
         
     }];
     
