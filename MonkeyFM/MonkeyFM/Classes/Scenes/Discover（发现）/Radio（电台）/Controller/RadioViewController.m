@@ -21,9 +21,9 @@
 #import "HostInfoViewController.h"
 #import "SelecID.h"
 
-#define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)
+#define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)
 #define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 2 + 10
-#define kContentCellHeight 100
+#define kContentCellHeight 80
 #define kNormalCellHeight 150
 
 @interface RadioViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -57,6 +57,9 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     [self createRadioTableView];
     // 数据请求
     [self requestData];
+    ((BaseNavigationViewController *)self.navigationController).customSearchBar.hidden = YES;
+    self.title = @"电台";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
     
 }
 

@@ -9,10 +9,20 @@
 #import "RadioStyleListTableView.h"
 #import "RadioStyleCell.h"
 #import "RadioStyleModel.h"
+#import "ChooseAreaViewController.h"
+#import "BaseNavigationViewController.h"
+
+#define kButtonSize CGSizeMake(30, 20)
+
+#define kHeaderWidth [UIScreen mainScreen].bounds.size.width
+
+#define kHeaderHeight 30
 
 @interface RadioStyleListTableView ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, assign) NSInteger count;
 
+@property (nonatomic, assign) NSInteger length;
 
 @end
 
@@ -35,6 +45,8 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         self.delegate = self;
         self.dataSource = self;
         [self registerClass:[RadioStyleCell class] forCellReuseIdentifier:identifier_styleCell];
+        self.count = 0;
+        self.length = 0;
         
     }
     return self;
@@ -61,6 +73,15 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.01;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 120;
 }
@@ -70,22 +91,91 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
     if (_emptyURL != emptyURL) {
         _emptyURL = emptyURL;
     }
-    [self requestData];
+    if (self.count == 0) {
+        [self requestData];
+    }
+    
 }
 
-- (void)setTableViewHeaderView
+- (void)setAreaName:(NSString *)areaName
 {
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 150, 30)];
-    titleLabel.text = @"北京市";
+    if (_areaName != areaName) {
+        _areaName = areaName;
+    }
+    [self setTableViewHeaderView:_areaName];
+}
+
+- (void)setTableViewHeaderView:(NSString *)name
+{
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
+    tableHeaderView.backgroundColor = [UIColor whiteColor];
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = name;
+    titleLabel.textColor = kNavigationBarTintColor;
+    titleLabel.font = [UIFont systemFontOfSize:13];
     [tableHeaderView addSubview:titleLabel];
-    UIButton *more = [UIButton buttonWithType:UIButtonTypeSystem];
-    more.backgroundColor = [UIColor blackColor];
+        UIButton *more = [UIButton buttonWithType:UIButtonTypeSystem];
+    [more setImage:[[UIImage imageNamed:@"btn_anchor_more@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [more addTarget:self action:@selector(chooseArea:) forControlEvents:UIControlEventTouchUpInside];
     [tableHeaderView addSubview:more];
-    
+    [more mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(tableHeaderView).offset(5);
+        make.right.equalTo(tableHeaderView).offset(-5);
+        make.size.mas_equalTo(kButtonSize);
+    }];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(more.mas_centerY);
+        make.left.equalTo(tableHeaderView).offset(15);
+        make.width.mas_equalTo(150);
+    }];
+//    UIView *lineView = [[UIView alloc] init];
+//    lineView.backgroundColor = [UIColor lightGrayColor];
+//    [tableHeaderView addSubview:lineView];
+//    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(tableHeaderView);
+//        make.right.equalTo(tableHeaderView);
+//        make.bottom.equalTo(tableHeaderView).offset(-0.5);
+//        make.height.mas_equalTo(0.5);
+//    }];
+
     self.tableHeaderView = tableHeaderView;
 
+    [tableHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(kHeaderWidth);
+        make.height.mas_equalTo(kHeaderHeight);
+        make.left.equalTo(self.tableHeaderView);
+    }];
+}
+
+- (void)chooseArea:(id)sender
+{
+    if (self.chooseBlock) {
+        self.chooseBlock();
+    }
+    // 记录点击次数
+    self.count++;
+    
+}
+
+- (void)setArea:(NSInteger)area
+{
+    if (_area != area) {
+        _area = area;
+    }
+    NSRange range = [self.emptyURL rangeOfString:@"&area="];
+    NSString *str = [self.emptyURL substringToIndex:(range.location + range.length)];
+    NSInteger index = 1;
+    if (self.count > 1) {
+        if (self.length > 10) {
+            index++;
+        }
+    }
+    NSString *str2 = [self.emptyURL substringFromIndex:(range.location + range.length + index)];
+    self.emptyURL = [NSString stringWithFormat:@"%@%ld%@", str, self.area, str2];
+    [self.allTableViewInfoArray removeAllObjects];
+    [self requestData];
+    self.length = _area;
+    
 }
 
 - (void)requestData
@@ -111,7 +201,11 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
             // 数据解析成功，返回主线程刷新UI
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([weakSelf.title isEqualToString:@"省市台"]) {
-                    [weakSelf setTableViewHeaderView];
+                    if (_areaName.length == 0) {
+                        [weakSelf setTableViewHeaderView:@"北京"];
+                    } else {
+                    [weakSelf setTableViewHeaderView:_areaName];
+                    }
                 }
                 [weakSelf reloadData];
                 
@@ -122,6 +216,32 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         
     }];
 
+}
+
+//获取当前屏幕显示的viewcontroller
+- (UIViewController *)getCurrentVC {
+    UIViewController *result = nil;
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow *tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        result = nextResponder;
+    }
+    else {
+        result = window.rootViewController;
+    }
+    return result;
 }
 
 @end

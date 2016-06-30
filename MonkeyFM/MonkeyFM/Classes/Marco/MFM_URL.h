@@ -56,4 +56,47 @@
 #define kAppendingURL @"&installid=00034w5l&appid=0&operator=2&playid=85C6753E388745BBADB885EFC5C8076F&suppermode=0&devicetype=1&devicename=iPhone%206&lon=116.337453&channel=appstore&action=2060&resolution=750*1334&version=4.8.1&udid=f2f2d9eed2fb9ba3702e22fef2c25836&usertype=1&sign=0a53d25f552ae99314f7617ae507be7f&mac=020000000000&uid=2950963&timestamp=1466598913&sessionid=8D99FABB8D0143E98446C34BC9D24688&idfv=EE9AD43F-BE4B-46D9-93EF-618ADCF8F3FC&network=1&timezone=28800&osversion=9.3.2&lat=40.029254&page=200009&token=tokene9b05f44360811c43e95983b2d5c47a2&producer=apple&screensize=375*667&idfa=93C34B9A-7617-440C-A463-B4D59B6B3689"
 
 
+#define RADIO_AREA_URL @"http://api.kaolafm.com/api/v4/broadcast/arealist?timezone=28800&resolution=640*1136&osversion=9.1&devicename=iPod%20touch%205G&screensize=320*568&version=4.8.1&udid=66f5ad1f7920c28abea929c92fb35b66&channel=appstore&lon=116.337449&playid=&sessionid=F5FAFA7A14814F408AAA7F368F80111B&action=701&sign=cb39865d48a5df9bb515bf5235dd5e0d&operator=0&idfv=AAF4BDEA-DC14-40C3-8CA9-965A5EE4E58E&installid=00035BDN&suppermode=0&mac=020000000000&uid=&appid=0&timestamp=1467269334&devicetype=1&usertype=0&idfa=3FF1EDAA-41A4-4EF5-9A6B-2B1C34FDE52A&producer=apple&page=200041&lat=40.029193&network=1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+
 #endif /* MFM_URL_h */

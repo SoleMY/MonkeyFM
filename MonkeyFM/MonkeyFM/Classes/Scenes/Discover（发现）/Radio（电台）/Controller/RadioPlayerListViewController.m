@@ -10,7 +10,8 @@
 #import "RadioStyleListTableView.h"
 #import "RadioStyleSegmentedModel.h"
 #import "RadioStyleModel.h"
-
+#import "ChooseAreaViewController.h"
+#import "BaseNavigationViewController.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 
 @property (nonatomic, strong) NSMutableArray *allSegmentedInfoArray;
 
-
+@property (nonatomic, assign) NSInteger area;
 
 @end
 
@@ -44,7 +45,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
     
     [self setSegmented];
     [self setSmallSegmentedControl];
@@ -56,6 +57,8 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 - (void)requestData
 {
     __weak typeof(self) weakSelf = self;
+    
+    
     [[AFHTTPSessionManager manager] GET:RADIO_CLASSIFY_SEGMENTED_URL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -103,7 +106,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
         [self setSegmentedAndTableViewArray:model];
     }
     //设置控件位置
-    self.menuframe = CGRectMake(0, 10, ScreenW, 20);
+    self.menuframe = CGRectMake(0, 64, ScreenW, 20);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
     //调用父类方法加载控件
     [super viewDidLoad]; //最后执行
@@ -121,19 +124,30 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     if (smallItemsArr.count == 4) {
         [smallItemsArr removeLastObject];
     }
+    self.area = 1;
     self.menuArray = [NSMutableArray arrayWithArray:smallItemsArr];
     self.tableArray = [NSMutableArray arrayWithCapacity:self.menuArray.count];
     for (int i = 0; i < self.menuArray.count; i++) {
-        RadioStyleListTableView *table = [[RadioStyleListTableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        RadioStyleListTableView *table = [[RadioStyleListTableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
         if (self.selectedSegmentIndex == 0) {
-            NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i + 1), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
+            NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i + 1), self.area, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
             table.emptyURL = emptyURL;
             table.title = self.menuArray[i];
+            ChooseAreaViewController *chooseVC = [[ChooseAreaViewController alloc] init];
+            chooseVC.block = ^(NSInteger area, NSString *name) {
+                table.area = area;
+                table.areaName = name;
+            };
+            table.chooseBlock = ^() {
+                [self.navigationController pushViewController:chooseVC animated:YES];
+            };
         } else  {
             NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i+ 6), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
             table.emptyURL = emptyURL;
         }
+        table.sectionHeaderHeight = 0;
+        table.sectionFooterHeight = 0;
         [self.tableArray addObject:table];
     }
 }
