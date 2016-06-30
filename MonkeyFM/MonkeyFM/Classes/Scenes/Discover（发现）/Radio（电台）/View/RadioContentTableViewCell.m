@@ -12,7 +12,7 @@
 
 
 
-#define kItemSize CGSizeMake((self.bounds.size.width - 60) / 3, (self.bounds.size.width - 60) / 3)
+#define kItemSize CGSizeMake(([UIScreen mainScreen].bounds.size.width - 60) / 4, ([UIScreen mainScreen].bounds.size.width - 60) / 4)
 
 
 @implementation RadioContentTableViewCell
