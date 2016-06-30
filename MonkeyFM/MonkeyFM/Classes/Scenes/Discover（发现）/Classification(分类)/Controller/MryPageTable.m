@@ -35,9 +35,11 @@
 - (void)setString:(NSString *)string
 {
     if (_string != string) {
+        
         _string = string;
+        
+        [self requstTableViewData];
     }
-    [self requstTableViewData];
 }
 
 
@@ -103,7 +105,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 140;
+    return 120;
 }
 
 @end

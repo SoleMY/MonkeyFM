@@ -11,7 +11,7 @@
 #import "ClassificationCell.h"
 #import "ClassificationModel.h"
 #import "DetailClassificationViewController.h"
-
+#import "BaseNavigationViewController.h"
 @interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong)ClassificationView *myView;
 
@@ -50,7 +50,9 @@ static  NSString *const identifile_cell = @"identifile_cell";
     self.myView.collectionView.dataSource = self;
     // 第一步：注册cell
     [self.myView.collectionView registerClass:[ClassificationCell class] forCellWithReuseIdentifier:identifile_cell];
-    
+    __weak typeof(self)weakSelf = self;
+    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
+    self.title = @"分类";
 }
 
 - (void)didReceiveMemoryWarning {
