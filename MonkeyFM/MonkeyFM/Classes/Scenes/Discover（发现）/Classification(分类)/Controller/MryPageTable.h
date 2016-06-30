@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) DetailSegment *segmentModel;
 
-@property (nonatomic, strong)NSString *categroyId;
+
 
 @property (nonatomic, strong) NSString *string;
 

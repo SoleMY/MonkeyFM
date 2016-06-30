@@ -41,7 +41,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 请求数据
     [self requstData];
-    
+    self.title = @"详情";
 }
 
 - (void)addDemo

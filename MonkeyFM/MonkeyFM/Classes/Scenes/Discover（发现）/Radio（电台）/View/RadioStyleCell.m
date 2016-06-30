@@ -15,6 +15,7 @@
 #define kSpace 10
 #define kSmallSpace 5
 #define kPlayImageSize CGSizeMake(30, 30)
+#define kDesLabelWidth [UIScreen mainScreen].bounds.size.width - kSpace * 2 - kLeftImageSize.width
 
 
 @implementation RadioStyleCell
@@ -70,8 +71,9 @@
     [self.desLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(kSmallSpace);
         make.left.equalTo(weakSelf.leftImageView.mas_right).offset(kSpace);
-        make.right.equalTo(weakSelf.contentView).offset(-kSpace);
+        make.width.mas_equalTo(kDesLabelWidth);
     }];
+    
     
     self.heardImageView = [[UIImageView alloc] init];
     self.heardImageView.tintColor = [UIColor darkGrayColor];
