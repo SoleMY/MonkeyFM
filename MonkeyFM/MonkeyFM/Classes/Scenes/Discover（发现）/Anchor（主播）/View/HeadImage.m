@@ -23,10 +23,11 @@
     self.nameLabel = [[UILabel alloc] init];
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.nameLabel];
+//    self.nameLabel.backgroundColor = [UIColor grayColor];
     self.nameLabel.text = @"空空道人厚黑堂";
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(55);
-        make.left.equalTo(self.contentView).offset(self.bounds.size.width / 2 - 20);
+        make.left.equalTo(self.contentView).offset([UIScreen mainScreen].bounds.size.width / 2 - 75);
         make.width.mas_offset(150);
         make.height.mas_offset(25);
     }];
@@ -37,7 +38,7 @@
     [self.contentView addSubview:self.followButton];
     [self.followButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
-        make.left.equalTo(self.contentView).offset(80);
+        make.left.equalTo(self.nameLabel.mas_left).offset(-40);
         make.width.mas_offset(80);
         make.height.mas_offset(25);
     }];
@@ -48,7 +49,7 @@
     [self.contentView addSubview:self.messageButton];
     [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
-        make.left.equalTo(self.followButton.mas_right).offset(100);
+        make.left.equalTo(self.nameLabel.mas_right).offset(-40);
         make.width.mas_offset(80);
         make.height.mas_offset(25);
     }];

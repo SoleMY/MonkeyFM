@@ -21,4 +21,7 @@
 // 声明类方法用来计算图片的高度
 + (CGFloat)imageHeightWithImage:(UIImage *)image;
 
+// 声明类方法用来计算文本宽度
++ (CGFloat)textWidthWithText:(NSString *)text font:(UIFont *)font;
+
 @end

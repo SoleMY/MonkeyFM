@@ -138,7 +138,6 @@
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-
             UIImageView *imageView = [[UIImageView alloc] init];
             [imageView sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
             UIImage * image = [imageView setImageToBlur:imageView.image blurRadius:21 ];
@@ -146,8 +145,6 @@
             [self.bgTableView reloadData];
             [MBProgressHUD hideHUDForView:self.bgTableView animated:YES];
         });
-        
-        
     }];
 }
 

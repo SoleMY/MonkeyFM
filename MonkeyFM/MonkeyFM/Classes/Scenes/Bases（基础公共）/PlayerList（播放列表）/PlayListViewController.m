@@ -35,16 +35,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)touchLabelWithIndex:(NSInteger)index{
-    if (index == 0) {
-//        self.view.backgroundColor = [UIColor redColor];
-    } if (index ==1) {
-        [self.tableView removeFromSuperview];
-//        self.view.backgroundColor = [UIColor redColor];
-    }
-}
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
