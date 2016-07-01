@@ -22,7 +22,7 @@
 #import "SmallTools.h"
 #import "MoreViewController.h"
 #import "MJRefresh.h"
-
+#import "PlayListViewController.h"
 
 @interface HostInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -182,6 +182,11 @@
             moreVC.uid = self.uid;
             [self.navigationController pushViewController:moreVC animated:YES];
         };
+        cell.albumBlock = ^(){
+            PlayListViewController *playList = [[PlayListViewController alloc] init];
+            
+            [self.navigationController pushViewController:playList animated:YES];
+        };
         return cell;
     }else if (indexPath.row == 4) {
         SubscribeCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"SubscribeCell" forIndexPath:indexPath];
@@ -190,8 +195,13 @@
             MoreViewController *moreVC = [[MoreViewController alloc] init];
             moreVC.appendStr = @"subscribe";
             moreVC.uid = self.uid;
-            [self.navigationController pushViewController:moreVC animated:YES];        };
-
+            [self.navigationController pushViewController:moreVC animated:YES];
+        };
+//        cell
+        cell.subsribeblock = ^(){
+            PlayListViewController *playList = [[PlayListViewController alloc] init];
+            [self.navigationController pushViewController:playList animated:YES];
+        };
         return cell;
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
@@ -200,7 +210,12 @@
             MoreViewController *moreVC = [[MoreViewController alloc] init];
             moreVC.appendStr = @"like";
             moreVC.uid = self.uid;
-            [self.navigationController pushViewController:moreVC animated:YES];        };
+            [self.navigationController pushViewController:moreVC animated:YES];
+        };
+        cell.collectBlock = ^(){
+//            PlayListViewController *playList = [[PlayListViewController alloc] init];
+//            [self.navigationController pushViewController:playList animated:YES];
+        };
         return cell;
     } else {
         UITableViewCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

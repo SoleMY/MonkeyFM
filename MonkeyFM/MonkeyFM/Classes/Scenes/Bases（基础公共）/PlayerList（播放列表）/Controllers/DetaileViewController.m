@@ -11,6 +11,10 @@
 #import "KeywordsCell.h"
 #import "IntroductionCell.h"
 #import "AlbumDetailCell.h"
+#import "NetWorking.h"
+#import "SingleList.h"
+#import "PlayList.h"
+//#import "<#header#>"
 
 @interface DetaileViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -20,13 +24,37 @@
 
 @property (nonatomic, assign)NSInteger heightForCellText;
 
+@property (nonatomic, strong)NSMutableArray *allDataArray;
+
+@property (nonatomic, strong)NSMutableArray *albumArray;
+
+//@property 
+
 @end
 
 @implementation DetaileViewController
 
+- (NSMutableArray *)allDataArray {
+    if (!_allDataArray) {
+        _allDataArray = [NSMutableArray array];
+    }
+    return _allDataArray;
+}
+
+- (NSMutableArray *)albumArray {
+    if (!_albumArray) {
+        _albumArray = [NSMutableArray array];
+    }
+    return _albumArray;
+}
+
 - (void)loadView {
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.view = self.tableView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -38,8 +66,43 @@
     [self.tableView registerClass:[AlbumDetailCell class] forCellReuseIdentifier:@"albumCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    self.albumId = [[SingleList shareSingleList].dict objectForKey:@"ID"];
+    [self request];
+//    [self.tableView reloadData];
 }
+
+- (void)request {
+    NetWorking *networking = [[NetWorking alloc] init];
+    NSString *URLString = [NSString stringWithFormat:@"%@%@%@", PLAY_LIST_DETAILE_BASEURL, self.albumId, PLAY_LIST_DETAILE_APPENDURL];
+//    NSLog(@"%@", URLString);
+    [networking requestWithURL:URLString Bolck:^(id array) {
+        NSDictionary *dict = array[@"result"];
+        PlayList *playlist = [[PlayList alloc] init];
+//        NSLog(@"%@", dict);
+        [playlist setValuesForKeysWithDictionary:dict];
+        [self.allDataArray addObject:playlist];
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            playlist.keyWords;
+            [self.tableView reloadData];
+        });
+    }];
+    
+   NSString *URL = [NSString stringWithFormat:@"%@%@%@", PLAY_LIST_ABOUT_BASEURL, self.albumId, PLAY_LIST_DETAILE_APPENDURL];
+    [networking requestWithURL:URL Bolck:^(id array) {
+        NSDictionary *result = array[@"result"];
+        
+        NSArray *dataList = result[@"dataList"];
+        for (NSDictionary *dic in dataList) {
+            PlayList *playList =[[PlayList alloc] init];
+            [playList setValuesForKeysWithDictionary:dic];
+            [self.albumArray addObject:playList];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -51,19 +114,27 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PlayList *playList = [self.allDataArray firstObject];
     if (indexPath.row == 0) {
         DetaileCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"detaileCell" forIndexPath:indexPath];
+        cell.hostText.text = [playList.host[0] objectForKey:@"name"];
+        cell.uploadingText.text = playList.uploadUserName;
+        cell.accreditText.text = playList.copyrightLabel;
+        cell.statusText.text = [NSString stringWithFormat:@"%@%@",playList.status,playList.updateDay];
         return cell;
     }else if (indexPath.row == 1) {
         KeywordsCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"keyWordCell" forIndexPath:indexPath];
+            cell.buttonArray = playList.keyWords.mutableCopy;
         self.heightForCellButton = cell.numberOfButton;
         return cell;
     }else if (indexPath.row == 2) {
         IntroductionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"introductionCell" forIndexPath:indexPath];
+        cell.introductionText.text = playList.radioDesc;
        self.heightForCellText = [SmallTools textHeightWithText:cell.introductionText.text font:[UIFont systemFontOfSize:13]];
         return cell;
     }else if (indexPath.row == 3) {
         AlbumDetailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"albumCell" forIndexPath:indexPath];
+        [cell bindWithArray:self.albumArray];
         return cell;
     } else {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

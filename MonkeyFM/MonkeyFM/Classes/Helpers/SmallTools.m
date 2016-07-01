@@ -18,14 +18,27 @@
     return scaledImage;
 }
 
-
-// 计算文本高度
 + (CGFloat)textHeightWithText:(NSString *)text font:(UIFont *)font {
     
     // iOS7.0中求文本高度的方法，返回一个CGRect的高度
     
     // 第一个参数
     CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width, 10000);
+    
+    // 第二个参数：设置以行高为单位
+    CGRect rect = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
+    
+    return rect.size.height;
+}
+
+
+// 计算文本高度
++ (CGFloat)FramWithtextHeightWithText:(NSString *)text font:(UIFont *)font {
+    
+    // iOS7.0中求文本高度的方法，返回一个CGRect的高度
+    
+    // 第一个参数
+    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 70, 10000);
     
     // 第二个参数：设置以行高为单位
     CGRect rect = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];

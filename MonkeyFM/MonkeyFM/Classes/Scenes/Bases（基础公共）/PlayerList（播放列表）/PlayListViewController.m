@@ -10,8 +10,9 @@
 #import "ProgramCell.h"
 #import <UIParameter.h>
 #import <NinaPagerView.h>
-
-@interface PlayListViewController ()<UITableViewDelegate, UITableViewDataSource>
+#import "ProgramViewController.h"
+#import "DetaileViewController.h"
+@interface PlayListViewController ()
 
 @property (nonatomic, strong)UITableView *tableView;
 
@@ -28,6 +29,7 @@
     NSArray *VCArray = @[@"ProgramViewController", @"CommentViewController", @"DetaileViewController"];
     NSArray *colorArray = @[[UIColor greenColor], [UIColor grayColor], [UIColor greenColor]];
     NinaPagerView *ninaPagerView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleBottomLine WithTitles:titleArray WithVCs:VCArray WithColorArrays:colorArray];
+
     [self.view addSubview:ninaPagerView];
 }
 
@@ -35,36 +37,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    return 50;
-
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-        ProgramCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-        return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-        return 60;
-}
-
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//   ProgressHeadView *view = [[ProgressHeadView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
-//    return view;
-//}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 30;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

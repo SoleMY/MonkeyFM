@@ -110,6 +110,9 @@
     return CGSizeMake(self.bounds.size.width, 20);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.collectBlock();
+}
 
 
 @end

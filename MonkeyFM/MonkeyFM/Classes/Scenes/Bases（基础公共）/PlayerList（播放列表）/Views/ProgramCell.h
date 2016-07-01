@@ -7,7 +7,7 @@
 //
 
 #import "BaseCell.h"
-
+#import "PlayList.h"
 @interface ProgramCell : BaseCell
 
 @property (nonatomic, strong)UILabel *titleLabel;
@@ -19,5 +19,7 @@
 @property (nonatomic, strong)UIImageView *listen;
 @property (nonatomic, strong)UIImageView *like;
 @property (nonatomic, strong)UIImageView *comment;
+
+- (void)bindWithModel:(PlayList *)playList;
 
 @end

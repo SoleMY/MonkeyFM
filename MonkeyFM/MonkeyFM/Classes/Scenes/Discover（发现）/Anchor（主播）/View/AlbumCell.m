@@ -10,6 +10,8 @@
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
 #import "More.h"
+#import "PlayListViewController.h"
+#import "SingleList.h"
 @interface AlbumCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
@@ -95,5 +97,13 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     return CGSizeMake(self.bounds.size.width, 20);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    More *model = self.albumArr[indexPath.row];
+    NSString *str= [NSString stringWithFormat:@"%ld", model.Id];
+    [[SingleList shareSingleList].dict setObject:str forKey:@"ID"];
+
+    self.albumBlock();
+}
 
 @end

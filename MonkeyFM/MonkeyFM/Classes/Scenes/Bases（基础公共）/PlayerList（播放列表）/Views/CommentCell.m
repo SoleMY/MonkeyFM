@@ -7,7 +7,7 @@
 //
 
 #import "CommentCell.h"
-
+#import "SmallTools.h"
 @implementation CommentCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -82,7 +82,8 @@
     
     self.commentLabel = [[UILabel alloc] init];
     self.commentLabel.text = @"我是主播";
-    self.commentLabel.backgroundColor = [UIColor grayColor];
+    self.commentLabel.font = [UIFont systemFontOfSize:17];
+//    self.commentLabel.backgroundColor = [UIColor grayColor];
     self.commentLabel.numberOfLines = 0;
     [self.contentView addSubview:self.commentLabel];
     [self.commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,6 +92,14 @@
         make.right.equalTo(weakSelf.contentView).offset(-20);
     }];
 
+}
+
+- (void)bindWithModel:(PlayList *)playList {
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:playList.userImg]];
+    self.nameLabel.text = playList.userName;
+    self.commentLabel.text = playList.content;
+    NSString *str = [NSString stringWithFormat:@"%ld", playList.praiseNum];
+    self.zanNumber.text = str;
 }
 
 

@@ -24,4 +24,6 @@
 
 @property (nonatomic, strong)UILabel *thiredLabel;
 
+- (void)bindWithArray:(NSMutableArray *)array;
+
 @end

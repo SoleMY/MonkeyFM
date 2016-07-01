@@ -7,7 +7,7 @@
 //
 
 #import "BaseCell.h"
-
+#import "PlayList.h"
 @interface CommentCell : BaseCell
 
 @property (nonatomic, strong)UIImageView *headImage;
@@ -21,5 +21,7 @@
 @property (nonatomic, strong)UILabel *zanNumber;
 
 @property (nonatomic, strong)UIButton *zanButton;
+
+- (void)bindWithModel:(PlayList *)playList;
 
 @end

@@ -19,6 +19,7 @@
 @property (nonatomic, strong)NSString *audioPic;
 @property (nonatomic, strong)NSString *albumName;
 @property (nonatomic, strong)NSString *NewTitle;
+@property (nonatomic, assign)NSInteger Id;
 //主播详情界面
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSString *pic

@@ -106,9 +106,11 @@
 		D61FCEC51D214125001A7D04 /* MryScrollPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCEC21D214125001A7D04 /* MryScrollPageVC.m */; };
 		D61FCEC81D214167001A7D04 /* MryPageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCEC71D214167001A7D04 /* MryPageTable.m */; };
 		D61FCECB1D214362001A7D04 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61FCECA1D214362001A7D04 /* NewsCell.m */; };
+		D6242E5F1D25FF7F00EE5E3A /* SingleList.m in Sources */ = {isa = PBXBuildFile; fileRef = D6242E5E1D25FF7F00EE5E3A /* SingleList.m */; };
 		D62562DD1D24B8D500DA8DA3 /* KeywordsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62562DC1D24B8D400DA8DA3 /* KeywordsCell.m */; };
 		D62562E01D2522A100DA8DA3 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62562DF1D2522A100DA8DA3 /* IntroductionCell.m */; };
 		D62562E61D2549D800DA8DA3 /* AlbumDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62562E51D2549D800DA8DA3 /* AlbumDetailCell.m */; };
+		D62562E91D255BFA00DA8DA3 /* PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = D62562E81D255BFA00DA8DA3 /* PlayList.m */; };
 		D63AD04A1D22506700E8CC19 /* ico_attention@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AD0491D22506700E8CC19 /* ico_attention@2x.png */; };
 		D63AD04C1D22507000E8CC19 /* ico_letter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AD04B1D22507000E8CC19 /* ico_letter@2x.png */; };
 		D63D50DE1D22045C0066EB20 /* Collect.m in Sources */ = {isa = PBXBuildFile; fileRef = D63D50DD1D22045C0066EB20 /* Collect.m */; };
@@ -360,12 +362,16 @@
 		D61FCEC71D214167001A7D04 /* MryPageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MryPageTable.m; sourceTree = "<group>"; };
 		D61FCEC91D214362001A7D04 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		D61FCECA1D214362001A7D04 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		D6242E5D1D25FF7F00EE5E3A /* SingleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleList.h; sourceTree = "<group>"; };
+		D6242E5E1D25FF7F00EE5E3A /* SingleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleList.m; sourceTree = "<group>"; };
 		D62562DB1D24B8D400DA8DA3 /* KeywordsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordsCell.h; sourceTree = "<group>"; };
 		D62562DC1D24B8D400DA8DA3 /* KeywordsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordsCell.m; sourceTree = "<group>"; };
 		D62562DE1D2522A100DA8DA3 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D62562DF1D2522A100DA8DA3 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D62562E41D2549D800DA8DA3 /* AlbumDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDetailCell.h; sourceTree = "<group>"; };
 		D62562E51D2549D800DA8DA3 /* AlbumDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDetailCell.m; sourceTree = "<group>"; };
+		D62562E71D255BFA00DA8DA3 /* PlayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
+		D62562E81D255BFA00DA8DA3 /* PlayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayList.m; sourceTree = "<group>"; };
 		D63AD0491D22506700E8CC19 /* ico_attention@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_attention@2x.png"; sourceTree = "<group>"; };
 		D63AD04B1D22507000E8CC19 /* ico_letter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_letter@2x.png"; sourceTree = "<group>"; };
 		D63D50DC1D22045C0066EB20 /* Collect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collect.h; sourceTree = "<group>"; };
@@ -905,12 +911,12 @@
 				D61922991D1CD8A20008648A /* BaseViewController.h */,
 				D619229A1D1CD8A20008648A /* BaseViewController.m */,
 				D619229B1D1CD8A20008648A /* BaseViewController.xib */,
+				A52A926B1D1D7CDC0005E26E /* BaseCollectionViewCell.h */,
+				A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */,
 				D619229C1D1CD8A20008648A /* DisPlayList（展示列表） */,
 				D619229D1D1CD8A20008648A /* PlayerDetail（播放详情） */,
 				D619229E1D1CD8A20008648A /* PlayerList（播放列表） */,
 				D619229F1D1CD8A20008648A /* RadioPlayerDetail（电台播放详情） */,
-				A52A926B1D1D7CDC0005E26E /* BaseCollectionViewCell.h */,
-				A52A926C1D1D7CDC0005E26E /* BaseCollectionViewCell.m */,
 			);
 			path = "Bases（基础公共）";
 			sourceTree = "<group>";
@@ -1076,6 +1082,8 @@
 		D62562DA1D24A90000DA8DA3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D62562E71D255BFA00DA8DA3 /* PlayList.h */,
+				D62562E81D255BFA00DA8DA3 /* PlayList.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1261,6 +1269,8 @@
 				D62562DF1D2522A100DA8DA3 /* IntroductionCell.m */,
 				D62562E41D2549D800DA8DA3 /* AlbumDetailCell.h */,
 				D62562E51D2549D800DA8DA3 /* AlbumDetailCell.m */,
+				D6242E5D1D25FF7F00EE5E3A /* SingleList.h */,
+				D6242E5E1D25FF7F00EE5E3A /* SingleList.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1616,6 +1626,7 @@
 				D6562DAE1D1E60F10035FAC7 /* MJRefreshBackGifFooter.m in Sources */,
 				D6562DA81D1E60F10035FAC7 /* MJRefreshComponent.m in Sources */,
 				D60CCB701D20CB9100A8EBF3 /* SocialNetWork.m in Sources */,
+				D6242E5F1D25FF7F00EE5E3A /* SingleList.m in Sources */,
 				D6562D6C1D1E1CC60035FAC7 /* HostTitle.m in Sources */,
 				D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */,
 				D6F60C791D224EC300583C8F /* DetailSegment.m in Sources */,
@@ -1640,6 +1651,7 @@
 				A50FC3AC1D1E7144002A940D /* RadioPlayerListViewController.m in Sources */,
 				D6442DB91D1D4EB600EEE263 /* HeadCollectionReusableView.m in Sources */,
 				A50FC3B31D1EA4C2002A940D /* RecommendAnchorTableViewCell.m in Sources */,
+				D62562E91D255BFA00DA8DA3 /* PlayList.m in Sources */,
 				D6562DB81D1E60F10035FAC7 /* UIScrollView+MJRefresh.m in Sources */,
 				D61FCEC51D214125001A7D04 /* MryScrollPageVC.m in Sources */,
 				D6562DB71D1E60F10035FAC7 /* UIScrollView+MJExtension.m in Sources */,

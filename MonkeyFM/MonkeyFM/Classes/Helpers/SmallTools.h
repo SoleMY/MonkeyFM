@@ -24,4 +24,6 @@
 // 声明类方法用来计算文本宽度
 + (CGFloat)textWidthWithText:(NSString *)text font:(UIFont *)font;
 
++ (CGFloat)FramWithtextHeightWithText:(NSString *)text font:(UIFont *)font;
+
 @end
