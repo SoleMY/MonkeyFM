@@ -10,9 +10,15 @@
 #import "CollectionView.h"
 
 typedef void(^SubBlock)();
+typedef void(^SubsribeBlock)();
+//typedef void(^Sub)(NSIndexPath *);
 @interface SubscribeCell : BaseCell
 
 @property (nonatomic, copy)SubBlock block;
+
+@property (nonatomic, copy)SubsribeBlock subsribeblock;
+
+//@property (nonatomic, copy)Sub subBlock;
 
 @property (nonatomic, strong)CollectionView *SubscribeView;
 

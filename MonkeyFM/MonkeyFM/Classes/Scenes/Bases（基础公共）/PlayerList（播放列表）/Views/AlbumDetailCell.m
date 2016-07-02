@@ -8,7 +8,7 @@
 //
 
 #import "AlbumDetailCell.h"
-
+#import "PlayList.h"
 @implementation AlbumDetailCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -95,6 +95,21 @@
         make.right.equalTo(weakSelf.thiredImageView).offset(0);
         make.left.equalTo(weakSelf.thiredImageView).offset(0);
     }];
+}
+
+- (void)bindWithArray:(NSMutableArray *)array {
+    if (array.count == 3) {
+        PlayList *playList1 = array[0];
+         PlayList *playList2 = array[1];
+         PlayList *playList3 = array[2];
+        self.firstLabel.text = playList1.name;
+        self.secondLabel.text = playList2.name;
+        self.thiredLabel.text = playList3.name;
+        [self.firstImageView sd_setImageWithURL:[NSURL URLWithString:playList1.img]];
+        [self.secondImageView sd_setImageWithURL:[NSURL URLWithString:playList2.img]];
+        [self.thiredImageView sd_setImageWithURL:[NSURL URLWithString:playList3.img]];
+
+    }
 }
 
 @end

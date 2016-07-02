@@ -10,4 +10,6 @@
 
 @interface DetaileViewController : BaseViewController
 
+@property (nonatomic, strong)NSString *albumId;
+
 @end

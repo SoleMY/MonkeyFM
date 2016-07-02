@@ -77,9 +77,6 @@
     }];
 }
 
-
-
-
 - (void)back:(UIBarButtonItem *)sender  {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -89,7 +86,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSLog(@"%ld", self.allDataArray.count);
     return self.allDataArray.count;
 }
 

@@ -164,7 +164,6 @@ static NSString *const identifier_cell = @"identifier_cell";
             HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = title.name;
             [otherHead.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
-//            self.appendString = title.relatedValue;
             otherHead.more.tag = indexPath.section + 1;
             [otherHead.more addTarget:self action:@selector(moreActionWithIndexPath:) forControlEvents:UIControlEventTouchUpInside];
             return otherHead;
@@ -192,8 +191,14 @@ static NSString *const identifier_cell = @"identifier_cell";
 //点击item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HostInfoViewController *hostInfoVC = [[HostInfoViewController alloc] init];
-    Host *host = self.hostArray[indexPath.row];
-    hostInfoVC.uid = host.uid;
+    if (indexPath.section == 1) {
+        Host *host = self.hostArray[indexPath.row];
+        hostInfoVC.uid = host.uid;
+    } else {
+        Host *host = self.hostArray[6 + (indexPath.section - 2) * 3 + indexPath.row];
+        hostInfoVC.uid = host.uid;
+
+    }
     [self.navigationController pushViewController:hostInfoVC animated:YES];
 }
 
@@ -201,7 +206,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     HostTitle *title = self.titleArray[sender.tag];
     self.appendString = title.relatedValue;
     HostViewController *hostVC = [[HostViewController alloc] init];
-//    hostVC.appendString = self.compent;
     hostVC.appendString = self.appendString;
     [self.navigationController pushViewController:hostVC animated:YES];
 }

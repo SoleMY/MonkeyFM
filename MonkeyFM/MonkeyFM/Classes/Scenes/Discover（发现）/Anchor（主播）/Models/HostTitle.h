@@ -2,7 +2,7 @@
 //  HostTitle.h
 //  MonkeyFM
 //
-//  Created by lanou3g on 16/6/25.
+//  Created by 郑淮予  on 16/6/25.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
@@ -15,6 +15,6 @@
 @property (nonatomic, strong)NSArray *dataList;
 @property (nonatomic, strong)NSString *relatedValue;
 @property (nonatomic, strong)NSString *pic;
-
+@property (nonatomic, assign)NSInteger Id;
 
 @end

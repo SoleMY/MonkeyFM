@@ -10,6 +10,8 @@
 
 typedef void(^chooseAreaBlock)();
 
+typedef void(^DisplayDetailBlock)();
+
 @interface RadioStyleListTableView : UITableView
 
 @property (nonatomic, strong) NSString *title;
@@ -19,6 +21,8 @@ typedef void(^chooseAreaBlock)();
 @property (nonatomic, copy) NSString *emptyURL;
 
 @property (nonatomic, copy) chooseAreaBlock chooseBlock;
+
+@property (nonatomic, copy) DisplayDetailBlock displayBlock;
 
 @property (nonatomic, assign) NSInteger area;
 

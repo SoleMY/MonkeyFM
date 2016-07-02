@@ -1,14 +1,14 @@
 //
-//  HostTitle.m
+//  PlayList.m
 //  MonkeyFM
 //
-//  Created by 郑淮予  on 16/6/25.
+//  Created by lanou3g on 16/6/30.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import "HostTitle.h"
+#import "PlayList.h"
 
-@implementation HostTitle
+@implementation PlayList
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     

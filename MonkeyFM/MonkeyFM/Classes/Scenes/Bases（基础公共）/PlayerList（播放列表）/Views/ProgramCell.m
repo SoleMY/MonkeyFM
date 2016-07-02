@@ -110,5 +110,17 @@
     
 }
 
+- (void)bindWithModel:(PlayList *)playList {
+    NSString *str = [NSString stringWithFormat:@"%ld期：%@", playList.orderNum, playList.audioName];
+    self.titleLabel.text = str;
+    NSString *listenNum = [NSString stringWithFormat:@"%ld", playList.listenNum];
+    self.listenNumber.text = listenNum;
+    NSString *likeNum = [NSString stringWithFormat:@"%ld",playList.likedNum];
+    self.likeNumber.text = likeNum;
+    NSString *commentNum = [NSString stringWithFormat:@"%ld", playList.commentNum];
+    self.commentNumber.text = commentNum;
+    self.dateLabel.text = playList.updateTime;
+}
+
 
 @end

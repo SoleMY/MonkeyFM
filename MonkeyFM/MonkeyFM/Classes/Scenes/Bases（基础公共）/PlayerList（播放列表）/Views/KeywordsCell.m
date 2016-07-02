@@ -8,7 +8,9 @@
 
 #import "KeywordsCell.h"
 #import "SmallTools.h"
+#import "PlayList.h"
 @implementation KeywordsCell
+@synthesize buttonArray = _buttonArray;
 
 - (NSMutableArray *)buttonArray {
     if (!_buttonArray) {
@@ -39,6 +41,14 @@
     return self;
 }
 
+- (void)setButtonArray:(NSMutableArray *)buttonArray
+{
+    if (_buttonArray != buttonArray) {
+        _buttonArray = buttonArray;
+    }
+    [self initLayout];
+}
+
 - (void)initLayout {
     self.keywordLabel = [[UILabel alloc] init];
     self.keywordLabel.textColor = [UIColor grayColor];
@@ -50,8 +60,6 @@
         make.left.equalTo(self.contentView).offset(10);
         make.width.mas_offset(70);
     }];
-    
-    self.buttonArray = @[@"111", @"123", @"12466788", @"35346", @"111", @"123", @"12466788", @"35346",@"111", @"123", @"12466788", @"35346", @"111", @"123", @"12466788", @"35346"].mutableCopy;
     int j = 1;
     for (int i = 0; i < self.buttonArray.count; i++) {
 //        创建button

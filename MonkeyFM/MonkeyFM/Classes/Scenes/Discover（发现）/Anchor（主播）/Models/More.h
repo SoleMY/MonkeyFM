@@ -2,7 +2,7 @@
 //  More.h
 //  MonkeyFM
 //
-//  Created by lanou3g on 16/6/25.
+//  Created by 郑淮予  on 16/6/25.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, strong)NSString *audioPic;
 @property (nonatomic, strong)NSString *albumName;
 @property (nonatomic, strong)NSString *NewTitle;
+@property (nonatomic, assign)NSInteger Id;
 //主播详情界面
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSString *pic

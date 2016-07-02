@@ -23,7 +23,7 @@
 
 #define kHeaderRect CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)
 #define kTypeCellHeight [UIScreen mainScreen].bounds.size.width / 2 + 10
-#define kContentCellHeight 80
+#define kContentCellHeight [UIScreen mainScreen].bounds.size.width / 4
 #define kNormalCellHeight 150
 
 @interface RadioViewController ()<UITableViewDelegate, UITableViewDataSource>

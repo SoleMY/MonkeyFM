@@ -14,4 +14,6 @@
 
 @property (nonatomic, assign)CGFloat height;
 
+@property (nonatomic, assign)NSInteger Id;
+
 @end

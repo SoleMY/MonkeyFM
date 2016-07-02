@@ -10,7 +10,7 @@
 #import "CollectionViewCell.h"
 #import "HeadCollectionReusableView.h"
 #import "HostTitle.h"
-
+#import "SingleList.h"
 @interface SubscribeCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
@@ -83,6 +83,7 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (void)moreAction{
+//    NSLog(@"----");
     self.block();
 }
 
@@ -91,5 +92,13 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
     return CGSizeMake(self.bounds.size.width, 20);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    HostTitle *model = self.collectionArr[indexPath.row];
+    NSString *str= [NSString stringWithFormat:@"%ld", model.Id];
+    NSLog(@"%@", str);
+    [[SingleList shareSingleList].dict setObject:str forKey:@"ID"];
+    self.subsribeblock();
+//    self.subsribeblock(indexPath);
+}
 
 @end

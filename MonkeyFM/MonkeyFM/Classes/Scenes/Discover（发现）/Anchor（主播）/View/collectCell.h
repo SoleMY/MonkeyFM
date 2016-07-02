@@ -9,9 +9,13 @@
 #import "BaseCell.h"
 
 typedef void(^CollectBlock)();
+typedef void(^SmallCollect)();
+
 @interface collectCell : BaseCell
 
 @property (nonatomic, copy)CollectBlock block;
+
+@property (nonatomic, copy)SmallCollect collectBlock;
 
 @property (nonatomic, strong)UICollectionView *collectView;
 

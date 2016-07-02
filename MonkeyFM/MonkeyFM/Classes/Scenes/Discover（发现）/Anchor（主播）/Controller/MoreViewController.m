@@ -11,7 +11,7 @@
 #import "NetWorking.h"
 #import "More.h"
 #import "PlayListViewController.h"
-
+#import "SingleList.h"
 @interface MoreViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)UITableView *tableView;
@@ -81,6 +81,7 @@
         [cell.picture sd_setImageWithURL:[NSURL URLWithString: more.pic]];
         cell.titleLabel.text = more.name;
         cell.subLabel.text = more.desc;
+        self.Id = more.Id;
     } else if ([self.appendStr isEqualToString:@"like"]) {
         [cell.picture sd_setImageWithURL:[NSURL URLWithString:more.audioPic]];
         cell.titleLabel.text = more.audioName;
@@ -100,6 +101,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PlayListViewController *PlayListVC = [[PlayListViewController alloc] init];
+    NSString *str = [NSString stringWithFormat:@"%ld", self.Id];
+    NSLog(@"%ld", self.Id);
+    NSLog(@"%@", str);
     [self.navigationController pushViewController:PlayListVC animated:YES];
 }
 
