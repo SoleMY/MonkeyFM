@@ -10,7 +10,7 @@
 #import "RadioStyleCell.h"
 #import "RadioStyleModel.h"
 #import "ChooseAreaViewController.h"
-#import "BaseNavigationViewController.h"
+#import "RadioDisPlayDetailViewController.h"
 
 #define kButtonSize CGSizeMake(30, 20)
 
@@ -52,7 +52,7 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
     return self;
 }
 
-
+#pragma mark - UITableViewDataSourceMethod ---
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -71,6 +71,14 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         [cell bindModel:model];
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
+    if (self.displayBlock) {
+        self.displayBlock();
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -218,30 +226,6 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
 
 }
 
-//获取当前屏幕显示的viewcontroller
-- (UIViewController *)getCurrentVC {
-    UIViewController *result = nil;
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal) {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow *tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
-    UIView *frontView = [[window subviews] objectAtIndex:0];
-    id nextResponder = [frontView nextResponder];
-    if ([nextResponder isKindOfClass:[UIViewController class]]) {
-        result = nextResponder;
-    }
-    else {
-        result = window.rootViewController;
-    }
-    return result;
-}
+
 
 @end

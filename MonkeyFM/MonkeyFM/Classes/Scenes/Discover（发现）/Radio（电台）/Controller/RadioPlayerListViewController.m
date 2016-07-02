@@ -12,6 +12,7 @@
 #import "RadioStyleModel.h"
 #import "ChooseAreaViewController.h"
 #import "BaseNavigationViewController.h"
+#import "RadioDisPlayDetailViewController.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -46,11 +47,12 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = YES;
-    
+    self.navigationController.navigationBarHidden = NO;
     [self setSegmented];
     [self setSmallSegmentedControl];
     // 请求数据
     [self requestData];
+    
 
 }
 
@@ -115,6 +117,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 - (void)setSegmentedAndTableViewArray:(RadioStyleSegmentedModel *)model
 {
     
+    __weak typeof(self) weakSelf = self;
     NSArray *itemsArr = model.dataList;
     NSMutableArray *smallItemsArr = [NSMutableArray array];
     for (NSDictionary *dic in itemsArr) {
@@ -140,12 +143,16 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
                 table.areaName = name;
             };
             table.chooseBlock = ^() {
-                [self.navigationController pushViewController:chooseVC animated:YES];
+                [weakSelf.navigationController pushViewController:chooseVC animated:YES];
             };
         } else  {
             NSString *emptyURL = RADIO_CLASSIFY_LIST_URL(RADIO_CLASSIFY_BASE_URL, (long)(i+ 6), (long)1, (self.selectedSegmentIndex + 1), RADIO_CLASSIFY_TAIL_URL);
             table.emptyURL = emptyURL;
         }
+        RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
+        table.displayBlock = ^() {
+            [weakSelf.navigationController pushViewController:displayVC animated:YES];
+        };
         table.sectionHeaderHeight = 0;
         table.sectionFooterHeight = 0;
         [self.tableArray addObject:table];
