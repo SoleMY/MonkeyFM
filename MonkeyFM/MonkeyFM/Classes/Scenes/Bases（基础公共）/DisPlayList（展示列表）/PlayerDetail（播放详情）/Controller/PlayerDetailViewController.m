@@ -10,8 +10,9 @@
 #import "SegmentView.h"
 #import "MineTableViewCell.h"
 #import "BaseNavigationViewController.h"
+#import "SubscriberDataViewController.h"
 #define kCell @"cell"
-@interface PlayerDetailViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate>
+@interface PlayerDetailViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -53,8 +54,11 @@
         //        smallImageView.layer.borderWidth=1.0f; //边框宽度
         //        smallImageView.layer.borderColor=[[UIColor greenColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
-        
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(45, 5, 200, 30)];
+        label.text = @"唐宋元明清丶";
+        label.textColor = [UIColor whiteColor];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 180, 40)];
+        [view addSubview:label];
         [view addSubview:smallImageView];
         [self.navigationItem setTitleView:view];
         
@@ -66,14 +70,19 @@
 
 - (void)addNavBar
 {
-    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
-    UIImage *image = [UIImage imageNamed:@"设置小"];
-
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:nil];
-
-    self.navigationItem.leftBarButtonItems = @[item1, item2];
+    
+//    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(back:)];
+//    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
+//
+//    self.navigationItem.leftBarButtonItems = @[item1, item2];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:nil];
     
+}
+
+- (void)back:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)addTableViewMethod
@@ -85,7 +94,15 @@
     self.myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4-140R1102943.jpg"]];
     self.myImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 220);
     
+    // 添加手势
+    //图像添加点击事件（手势方法）
     self.myImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer * PrivateLetterTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAvatarView:)];
+    PrivateLetterTap.numberOfTouchesRequired = 1; //手指数
+    PrivateLetterTap.numberOfTapsRequired = 1; //tap次数
+    PrivateLetterTap.delegate= self;
+    self.myImageView.contentMode = UIViewContentModeScaleToFill;
+    [self.myImageView addGestureRecognizer:PrivateLetterTap];
     
     [self setBackImageGlass];
     
@@ -109,6 +126,13 @@
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:kCell];
 }
 
+// 手势事件
+- (void)tapAvatarView:(UITapGestureRecognizer *)gesture
+{
+    SubscriberDataViewController *subscriber = [[SubscriberDataViewController alloc] init];
+    [self.navigationController pushViewController:subscriber animated:YES];
+    
+}
 //设置毛玻璃效果
 - (void)setBackImageGlass {
     //给背景图添加毛玻璃
@@ -269,10 +293,15 @@
             [self.tableView reloadData];
             break;
         case 2:
-            [self.tableView setEditing:YES animated:YES];
+            if (self.tableView.editing == YES) {
+                 [self.tableView setEditing:NO animated:YES];
+            } else
+            {
+                [self.tableView setEditing:YES animated:YES];
+            }
             break;
         case 3:
-            [self.tableView setEditing:NO animated:YES];
+            [self.tableView removeFromSuperview];
             break;
         default:
             break;

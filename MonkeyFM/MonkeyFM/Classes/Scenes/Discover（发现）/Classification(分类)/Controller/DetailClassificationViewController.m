@@ -66,13 +66,11 @@
 {
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", classification_Base_URL, self.classificationModel.categoryId, classification_Appending_URL];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         // 请求成功，解析数据
         
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
-        
-        NSDictionary *resultDict = dictionary[@"result"];
+        NSDictionary *resultDict = responseObject[@"result"];
         
         NSArray *dataListArray = resultDict[@"dataList"];
         
