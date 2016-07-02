@@ -25,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     
     __weak typeof(self)weakSelf = self;
     ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
@@ -239,14 +238,12 @@
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
     
     return cell;
-=======
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton)];
 }
 
 - (void)backButton{
     [self.navigationController popViewControllerAnimated:YES];
->>>>>>> f4d9bef671049ad43b156084ec7c7e599e5ad976
 }
 
 // 分区标题
