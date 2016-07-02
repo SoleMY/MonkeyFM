@@ -93,8 +93,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlayerDetailViewController *playerDetaileVC = [[PlayerDetailViewController alloc] init];
-    [self.navigationController pushViewController:playerDetaileVC animated:YES];
+//    PlayerDetailViewController *playerDetaileVC = [[PlayerDetailViewController alloc] init];
+//    [self.navigationController pushViewController:playerDetaileVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
