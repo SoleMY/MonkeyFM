@@ -13,7 +13,7 @@
 #import "ClassificationController.h"
 #import "AnchorViewController.h"
 #import "RadioViewController.h"
-#import "PlayerDetailViewController.h"
+#import "MineViewController.h"
 #import "Masonry.h"
 #import "MFM_Tool_COLOR.h"
 
@@ -207,8 +207,8 @@
     }
     else if (row == 7)
     {
-        PlayerDetailViewController *playerVC = [[PlayerDetailViewController alloc] init];
-        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:playerVC];
+        MineViewController *mineVC = [[MineViewController alloc] init];
+        newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:mineVC];
     }
     else {
         return;

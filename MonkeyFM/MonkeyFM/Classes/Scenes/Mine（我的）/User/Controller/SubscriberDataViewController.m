@@ -1,26 +1,31 @@
 //
-//  PlayerDetailViewController.m
+//  SubscriberDataViewController.m
 //  MonkeyFM
 //
-//  Created by 彭柞淞 on 16/6/29.
+//  Created by lanou3g on 16/7/1.
 //  Copyright © 2016年 FGProject. All rights reserved.
 //
 
-#import "PlayerDetailViewController.h"
+#import "SubscriberDataViewController.h"
 
-@interface PlayerDetailViewController ()
-
+@interface SubscriberDataViewController ()
 
 @end
 
-@implementation PlayerDetailViewController
+@implementation SubscriberDataViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton)];
+    // 添加返回按钮
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    // title
+    self.title = @"用户资料";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor whiteColor]};
+    
 }
 
-- (void)backButton{
+- (void)back:(UIBarButtonItem *)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
