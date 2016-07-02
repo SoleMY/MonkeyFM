@@ -127,8 +127,6 @@
 		D6C0A5721D27509F00BA5E65 /* RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4321D27509F00BA5E65 /* RFLayout.m */; };
 		D6C0A5731D27509F00BA5E65 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4361D27509F00BA5E65 /* PlayerDetailViewController.m */; };
 		D6C0A5741D27509F00BA5E65 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A4371D27509F00BA5E65 /* PlayerDetailViewController.xib */; };
-		D6C0A5751D27509F00BA5E65 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A43B1D27509F00BA5E65 /* MineTableViewCell.m */; };
-		D6C0A5761D27509F00BA5E65 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A43D1D27509F00BA5E65 /* SegmentView.m */; };
 		D6C0A5771D27509F00BA5E65 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4411D27509F00BA5E65 /* CommentViewController.m */; };
 		D6C0A5781D27509F00BA5E65 /* DetaileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4431D27509F00BA5E65 /* DetaileViewController.m */; };
 		D6C0A5791D27509F00BA5E65 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4451D27509F00BA5E65 /* ProgramViewController.m */; };
@@ -209,12 +207,14 @@
 		D6C0A5C41D27509F00BA5E65 /* RecommendAnchorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4E61D27509F00BA5E65 /* RecommendAnchorTableViewCell.m */; };
 		D6C0A5C51D27509F00BA5E65 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4EA1D27509F00BA5E65 /* RecommendViewController.m */; };
 		D6C0A5C61D27509F00BA5E65 /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A4EB1D27509F00BA5E65 /* RecommendViewController.xib */; };
-		D6C0A5C71D27509F00BA5E65 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4F11D27509F00BA5E65 /* MineViewController.m */; };
-		D6C0A5C81D27509F00BA5E65 /* SubscriberDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4F31D27509F00BA5E65 /* SubscriberDataViewController.m */; };
 		D6C0A5C91D27509F00BA5E65 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4F71D27509F00BA5E65 /* SWRevealViewController.m */; };
 		D6C0A5CA1D27509F00BA5E65 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A4F81D27509F00BA5E65 /* Info.plist */; };
 		D6C0A5CB1D27509F00BA5E65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4F91D27509F00BA5E65 /* main.m */; };
 		D6C0A5CC1D27509F00BA5E65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4FB1D27509F00BA5E65 /* ViewController.m */; };
+		D6C0A5D31D2756F400BA5E65 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5CF1D2756F400BA5E65 /* MineViewController.m */; };
+		D6C0A5D41D2756F400BA5E65 /* SubscriberDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D11D2756F400BA5E65 /* SubscriberDataViewController.m */; };
+		D6C0A5D91D27573E00BA5E65 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */; };
+		D6C0A5DA1D27573E00BA5E65 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D81D27573E00BA5E65 /* SegmentView.m */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -392,10 +392,6 @@
 		D6C0A4351D27509F00BA5E65 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		D6C0A4361D27509F00BA5E65 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		D6C0A4371D27509F00BA5E65 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
-		D6C0A43A1D27509F00BA5E65 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
-		D6C0A43B1D27509F00BA5E65 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
-		D6C0A43C1D27509F00BA5E65 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
-		D6C0A43D1D27509F00BA5E65 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
 		D6C0A4401D27509F00BA5E65 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		D6C0A4411D27509F00BA5E65 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		D6C0A4421D27509F00BA5E65 /* DetaileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaileViewController.h; sourceTree = "<group>"; };
@@ -549,16 +545,20 @@
 		D6C0A4E91D27509F00BA5E65 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		D6C0A4EA1D27509F00BA5E65 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		D6C0A4EB1D27509F00BA5E65 /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
-		D6C0A4F01D27509F00BA5E65 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
-		D6C0A4F11D27509F00BA5E65 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		D6C0A4F21D27509F00BA5E65 /* SubscriberDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriberDataViewController.h; sourceTree = "<group>"; };
-		D6C0A4F31D27509F00BA5E65 /* SubscriberDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriberDataViewController.m; sourceTree = "<group>"; };
 		D6C0A4F61D27509F00BA5E65 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D6C0A4F71D27509F00BA5E65 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D6C0A4F81D27509F00BA5E65 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C0A4F91D27509F00BA5E65 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6C0A4FA1D27509F00BA5E65 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D6C0A4FB1D27509F00BA5E65 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D6C0A5CE1D2756F400BA5E65 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		D6C0A5CF1D2756F400BA5E65 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		D6C0A5D01D2756F400BA5E65 /* SubscriberDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriberDataViewController.h; sourceTree = "<group>"; };
+		D6C0A5D11D2756F400BA5E65 /* SubscriberDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriberDataViewController.m; sourceTree = "<group>"; };
+		D6C0A5D51D27573E00BA5E65 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		D6C0A5D71D27573E00BA5E65 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
+		D6C0A5D81D27573E00BA5E65 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1037,10 +1037,6 @@
 		D6C0A4391D27509F00BA5E65 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D6C0A43A1D27509F00BA5E65 /* MineTableViewCell.h */,
-				D6C0A43B1D27509F00BA5E65 /* MineTableViewCell.m */,
-				D6C0A43C1D27509F00BA5E65 /* SegmentView.h */,
-				D6C0A43D1D27509F00BA5E65 /* SegmentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1390,10 +1386,8 @@
 		D6C0A4EF1D27509F00BA5E65 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D6C0A4F01D27509F00BA5E65 /* MineViewController.h */,
-				D6C0A4F11D27509F00BA5E65 /* MineViewController.m */,
-				D6C0A4F21D27509F00BA5E65 /* SubscriberDataViewController.h */,
-				D6C0A4F31D27509F00BA5E65 /* SubscriberDataViewController.m */,
+				D6C0A5CD1D2756F400BA5E65 /* Controller */,
+				D6C0A5D21D2756F400BA5E65 /* View */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1413,6 +1407,28 @@
 				D6C0A4F71D27509F00BA5E65 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		D6C0A5CD1D2756F400BA5E65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6C0A5CE1D2756F400BA5E65 /* MineViewController.h */,
+				D6C0A5CF1D2756F400BA5E65 /* MineViewController.m */,
+				D6C0A5D01D2756F400BA5E65 /* SubscriberDataViewController.h */,
+				D6C0A5D11D2756F400BA5E65 /* SubscriberDataViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6C0A5D21D2756F400BA5E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C0A5D51D27573E00BA5E65 /* MineTableViewCell.h */,
+				D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */,
+				D6C0A5D71D27573E00BA5E65 /* SegmentView.h */,
+				D6C0A5D81D27573E00BA5E65 /* SegmentView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DA675FF270CCF4B89ECD1891 /* Frameworks */ = {
@@ -1720,7 +1736,6 @@
 				D6C0A59C1D27509F00BA5E65 /* HeadImage.m in Sources */,
 				D6C0A5661D27509F00BA5E65 /* BaseNavigationViewController.m in Sources */,
 				D6C0A5A41D27509F00BA5E65 /* ClassificationModel.m in Sources */,
-				D6C0A5751D27509F00BA5E65 /* MineTableViewCell.m in Sources */,
 				D6C0A5C11D27509F00BA5E65 /* RadioTypeCell.m in Sources */,
 				D6C0A59B1D27509F00BA5E65 /* HeadCollectionReusableView.m in Sources */,
 				D6C0A5191D27509F00BA5E65 /* MJRefreshFooter.m in Sources */,
@@ -1745,8 +1760,8 @@
 				D6C0A5281D27509F00BA5E65 /* MJRefreshNormalHeader.m in Sources */,
 				D6C0A5A31D27509F00BA5E65 /* MryPageTable.m in Sources */,
 				D6C0A5941D27509F00BA5E65 /* AlbumCell.m in Sources */,
+				D6C0A5D31D2756F400BA5E65 /* MineViewController.m in Sources */,
 				D6C0A58E1D27509F00BA5E65 /* HostTitle.m in Sources */,
-				D6C0A5C71D27509F00BA5E65 /* MineViewController.m in Sources */,
 				D6C0A5251D27509F00BA5E65 /* MJRefreshBackNormalFooter.m in Sources */,
 				D6C0A56A1D27509F00BA5E65 /* RadioDisPlayDetailViewController.m in Sources */,
 				D6C0A5BD1D27509F00BA5E65 /* RadioContentTableViewCell.m in Sources */,
@@ -1763,7 +1778,6 @@
 				D6C0A5981D27509F00BA5E65 /* CollectionViewCell.m in Sources */,
 				D6C0A5221D27509F00BA5E65 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D6C0A5721D27509F00BA5E65 /* RFLayout.m in Sources */,
-				D6C0A5761D27509F00BA5E65 /* SegmentView.m in Sources */,
 				D6C0A5C31D27509F00BA5E65 /* RadioView.m in Sources */,
 				D6C0A5261D27509F00BA5E65 /* MJRefreshBackStateFooter.m in Sources */,
 				D6C0A57D1D27509F00BA5E65 /* AlbumDetailCell.m in Sources */,
@@ -1775,12 +1789,13 @@
 				D6C0A5031D27509F00BA5E65 /* Request.m in Sources */,
 				D6C0A59E1D27509F00BA5E65 /* SocialNetWork.m in Sources */,
 				D6C0A52D1D27509F00BA5E65 /* UIScrollView+MJExtension.m in Sources */,
-				D6C0A5C81D27509F00BA5E65 /* SubscriberDataViewController.m in Sources */,
+				D6C0A5D41D2756F400BA5E65 /* SubscriberDataViewController.m in Sources */,
 				D6C0A5851D27509F00BA5E65 /* AnchorViewController.m in Sources */,
 				D6C0A5B51D27509F00BA5E65 /* RadioAreaModel.m in Sources */,
 				D6C0A58C1D27509F00BA5E65 /* Host.m in Sources */,
 				D6C0A5971D27509F00BA5E65 /* CollectionView.m in Sources */,
 				D6C0A52E1D27509F00BA5E65 /* UIScrollView+MJRefresh.m in Sources */,
+				D6C0A5DA1D27573E00BA5E65 /* SegmentView.m in Sources */,
 				D6C0A5051D27509F00BA5E65 /* SmallTools.m in Sources */,
 				D6C0A5B71D27509F00BA5E65 /* RadioPopularItemModel.m in Sources */,
 				D6C0A5BA1D27509F00BA5E65 /* PopularItemListCell.m in Sources */,
@@ -1807,6 +1822,7 @@
 				D6C0A5021D27509F00BA5E65 /* HeadView.m in Sources */,
 				D6C0A5651D27509F00BA5E65 /* BaseModel.m in Sources */,
 				D6C0A5A71D27509F00BA5E65 /* ClassificationCell.m in Sources */,
+				D6C0A5D91D27573E00BA5E65 /* MineTableViewCell.m in Sources */,
 				D6C0A5291D27509F00BA5E65 /* MJRefreshStateHeader.m in Sources */,
 				D6C0A5171D27509F00BA5E65 /* MJRefreshBackFooter.m in Sources */,
 				D6C0A5781D27509F00BA5E65 /* DetaileViewController.m in Sources */,
