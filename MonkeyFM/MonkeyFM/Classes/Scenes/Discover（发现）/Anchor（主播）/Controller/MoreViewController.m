@@ -101,8 +101,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PlayListViewController *PlayListVC = [[PlayListViewController alloc] init];
-    NSString *str = [NSString stringWithFormat:@"%ld", self.Id];
-    NSLog(@"%ld", self.Id);
+    NSString *str = [NSString stringWithFormat:@"%d", self.Id];
+    NSLog(@"%d", self.Id);
     NSLog(@"%@", str);
     [self.navigationController pushViewController:PlayListVC animated:YES];
 }

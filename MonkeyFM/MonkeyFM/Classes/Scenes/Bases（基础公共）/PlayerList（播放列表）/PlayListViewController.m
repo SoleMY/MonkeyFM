@@ -12,6 +12,7 @@
 #import <NinaPagerView.h>
 #import "ProgramViewController.h"
 #import "DetaileViewController.h"
+#import "PlayerDetailViewController.h"
 @interface PlayListViewController ()
 
 @property (nonatomic, strong)UITableView *tableView;
@@ -31,11 +32,15 @@
     NinaPagerView *ninaPagerView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleBottomLine WithTitles:titleArray WithVCs:VCArray WithColorArrays:colorArray];
 
     [self.view addSubview:ninaPagerView];
+    ninaPagerView.pushEnabled = YES;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)leftButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {

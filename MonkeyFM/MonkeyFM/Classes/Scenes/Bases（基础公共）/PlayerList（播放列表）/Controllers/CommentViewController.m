@@ -52,7 +52,7 @@
 
 - (void)request {
     NSString *uid = [[SingleList shareSingleList].dict objectForKey:@"ID"];
-    NSString *URLStr =[NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_COMMENT_BASEURL, uid, PLAY_LIST_COMMENT_APPENDONE, self.number, PLAY_LIST_COMMENT_APPENDTWO];
+    NSString *URLStr =[NSString stringWithFormat:@"%@%@%@%d%@", PLAY_LIST_COMMENT_BASEURL, uid, PLAY_LIST_COMMENT_APPENDONE, self.number, PLAY_LIST_COMMENT_APPENDTWO];
     NetWorking *netWork = [[NetWorking alloc] init];
     [netWork requestWithURL:URLStr Bolck:^(id array) {
         NSDictionary *dict = array[@"result"];
