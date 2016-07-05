@@ -215,7 +215,6 @@
 		D6C0A5D41D2756F400BA5E65 /* SubscriberDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D11D2756F400BA5E65 /* SubscriberDataViewController.m */; };
 		D6C0A5D91D27573E00BA5E65 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */; };
 		D6C0A5DA1D27573E00BA5E65 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D81D27573E00BA5E65 /* SegmentView.m */; };
-<<<<<<< HEAD
 		D6C0A5DE1D27AB3600BA5E65 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5DC1D27AB3600BA5E65 /* LoginViewController.m */; };
 		D6C0A5DF1D27AB3600BA5E65 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A5DD1D27AB3600BA5E65 /* LoginViewController.xib */; };
 		D6C0A5E11D27AEDB00BA5E65 /* 背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A5E01D27AEDB00BA5E65 /* 背景图.png */; };
@@ -233,10 +232,8 @@
 		D6E37DD81D2A4D6D00E1DF77 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E37DD61D2A4D6D00E1DF77 /* RegistViewController.xib */; };
 		D6E37DDC1D2A822500E1DF77 /* LastRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E37DDA1D2A822500E1DF77 /* LastRegistViewController.m */; };
 		D6E37DDD1D2A822500E1DF77 /* LastRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E37DDB1D2A822500E1DF77 /* LastRegistViewController.xib */; };
-=======
 		D6CA26CA1D2A7E9E00803148 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */; };
 		D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */; };
->>>>>>> e525db7a7096d14c82b32c55efd02f7a1174d2b4
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -579,7 +576,6 @@
 		D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		D6C0A5D71D27573E00BA5E65 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
 		D6C0A5D81D27573E00BA5E65 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		D6C0A5DB1D27AB3600BA5E65 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D6C0A5DC1D27AB3600BA5E65 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D6C0A5DD1D27AB3600BA5E65 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -600,11 +596,9 @@
 		D6E37DD91D2A822500E1DF77 /* LastRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastRegistViewController.h; sourceTree = "<group>"; };
 		D6E37DDA1D2A822500E1DF77 /* LastRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastRegistViewController.m; sourceTree = "<group>"; };
 		D6E37DDB1D2A822500E1DF77 /* LastRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastRegistViewController.xib; sourceTree = "<group>"; };
-=======
 		D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		D6CA26CC1D2A7EF700803148 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
->>>>>>> e525db7a7096d14c82b32c55efd02f7a1174d2b4
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1891,11 +1885,8 @@
 				D6C0A59D1D27509F00BA5E65 /* MoreCell.m in Sources */,
 				D6C0A5001D27509F00BA5E65 /* DrawerViewController.m in Sources */,
 				D6C0A5AA1D27509F00BA5E65 /* MryScrollMenu.m in Sources */,
-<<<<<<< HEAD
 				D6E37DD71D2A4D6D00E1DF77 /* RegistViewController.m in Sources */,
-=======
 				D625C41B1D2A9860005C2A6E /* ListViewController.m in Sources */,
->>>>>>> e525db7a7096d14c82b32c55efd02f7a1174d2b4
 				D6C0A5771D27509F00BA5E65 /* CommentViewController.m in Sources */,
 				D6C0A51A1D27509F00BA5E65 /* MJRefreshHeader.m in Sources */,
 				D6C0A5B91D27509F00BA5E65 /* RadioStyleSegmentedModel.m in Sources */,
