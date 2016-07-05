@@ -8,6 +8,11 @@
 
 #import "BaseViewController.h"
 
+typedef void(^ProgramBlock)();
 @interface ProgramViewController : BaseViewController
+
+@property (nonatomic, strong)ProgramBlock blcok;
+
+@property (nonatomic, strong)NSString *URLString;
 
 @end

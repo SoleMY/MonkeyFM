@@ -67,6 +67,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.albumId = [[SingleList shareSingleList].dict objectForKey:@"ID"];
+    NSLog(@"%@", self.albumId);
     [self request];
 //    [self.tableView reloadData];
 }
@@ -74,7 +75,7 @@
 - (void)request {
     NetWorking *networking = [[NetWorking alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@%@%@", PLAY_LIST_DETAILE_BASEURL, self.albumId, PLAY_LIST_DETAILE_APPENDURL];
-//    NSLog(@"%@", URLString);
+    NSLog(@"%@", URLString);
     [networking requestWithURL:URLString Bolck:^(id array) {
         NSDictionary *dict = array[@"result"];
         PlayList *playlist = [[PlayList alloc] init];

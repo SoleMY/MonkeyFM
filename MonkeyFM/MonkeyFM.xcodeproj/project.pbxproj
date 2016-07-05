@@ -10,6 +10,8 @@
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
+		D625C4181D2A8218005C2A6E /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C4171D2A8218005C2A6E /* AVPlayerManager.m */; };
+		D625C41B1D2A9860005C2A6E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C41A1D2A9860005C2A6E /* ListViewController.m */; };
 		D6C0A4FC1D27509F00BA5E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A3721D27509F00BA5E65 /* Assets.xcassets */; };
 		D6C0A4FD1D27509F00BA5E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A3731D27509F00BA5E65 /* LaunchScreen.storyboard */; };
 		D6C0A4FE1D27509F00BA5E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A3751D27509F00BA5E65 /* Main.storyboard */; };
@@ -125,8 +127,6 @@
 		D6C0A5701D27509F00BA5E65 /* RadioDisPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A42F1D27509F00BA5E65 /* RadioDisPlayCollectionViewCell.m */; };
 		D6C0A5711D27509F00BA5E65 /* RadioDisPlayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A4301D27509F00BA5E65 /* RadioDisPlayCollectionViewCell.xib */; };
 		D6C0A5721D27509F00BA5E65 /* RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4321D27509F00BA5E65 /* RFLayout.m */; };
-		D6C0A5731D27509F00BA5E65 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4361D27509F00BA5E65 /* PlayerDetailViewController.m */; };
-		D6C0A5741D27509F00BA5E65 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A4371D27509F00BA5E65 /* PlayerDetailViewController.xib */; };
 		D6C0A5771D27509F00BA5E65 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4411D27509F00BA5E65 /* CommentViewController.m */; };
 		D6C0A5781D27509F00BA5E65 /* DetaileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4431D27509F00BA5E65 /* DetaileViewController.m */; };
 		D6C0A5791D27509F00BA5E65 /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A4451D27509F00BA5E65 /* ProgramViewController.m */; };
@@ -215,6 +215,8 @@
 		D6C0A5D41D2756F400BA5E65 /* SubscriberDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D11D2756F400BA5E65 /* SubscriberDataViewController.m */; };
 		D6C0A5D91D27573E00BA5E65 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */; };
 		D6C0A5DA1D27573E00BA5E65 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0A5D81D27573E00BA5E65 /* SegmentView.m */; };
+		D6CA26CA1D2A7E9E00803148 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */; };
+		D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */; };
 		FE77B93FB716BC7ECDC6A2B6 /* libPods-MonkeyFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +228,10 @@
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A57E60761D1BE159007EF7F1 /* MonkeyFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
+		D625C4161D2A8218005C2A6E /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVPlayerManager.h; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.h"; sourceTree = SOURCE_ROOT; };
+		D625C4171D2A8218005C2A6E /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVPlayerManager.m; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.m"; sourceTree = SOURCE_ROOT; };
+		D625C4191D2A9860005C2A6E /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		D625C41A1D2A9860005C2A6E /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		D6C0A3721D27509F00BA5E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6C0A3741D27509F00BA5E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6C0A3761D27509F00BA5E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -377,9 +383,6 @@
 		D6C0A41F1D27509F00BA5E65 /* RadioDisPlayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDisPlayDetailViewController.h; sourceTree = "<group>"; };
 		D6C0A4201D27509F00BA5E65 /* RadioDisPlayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDisPlayDetailViewController.m; sourceTree = "<group>"; };
 		D6C0A4211D27509F00BA5E65 /* RadioDisPlayDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDisPlayDetailViewController.xib; sourceTree = "<group>"; };
-		D6C0A4241D27509F00BA5E65 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
-		D6C0A4251D27509F00BA5E65 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
-		D6C0A4261D27509F00BA5E65 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		D6C0A4291D27509F00BA5E65 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		D6C0A42A1D27509F00BA5E65 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		D6C0A42B1D27509F00BA5E65 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
@@ -389,9 +392,6 @@
 		D6C0A4301D27509F00BA5E65 /* RadioDisPlayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDisPlayCollectionViewCell.xib; sourceTree = "<group>"; };
 		D6C0A4311D27509F00BA5E65 /* RFLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLayout.h; sourceTree = "<group>"; };
 		D6C0A4321D27509F00BA5E65 /* RFLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLayout.m; sourceTree = "<group>"; };
-		D6C0A4351D27509F00BA5E65 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
-		D6C0A4361D27509F00BA5E65 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
-		D6C0A4371D27509F00BA5E65 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		D6C0A4401D27509F00BA5E65 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		D6C0A4411D27509F00BA5E65 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		D6C0A4421D27509F00BA5E65 /* DetaileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaileViewController.h; sourceTree = "<group>"; };
@@ -400,9 +400,9 @@
 		D6C0A4451D27509F00BA5E65 /* ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramViewController.m; sourceTree = "<group>"; };
 		D6C0A4471D27509F00BA5E65 /* PlayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
 		D6C0A4481D27509F00BA5E65 /* PlayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayList.m; sourceTree = "<group>"; };
-		D6C0A4491D27509F00BA5E65 /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListViewController.h; sourceTree = "<group>"; };
-		D6C0A44A1D27509F00BA5E65 /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
-		D6C0A44B1D27509F00BA5E65 /* PlayListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListViewController.xib; sourceTree = "<group>"; };
+		D6C0A4491D27509F00BA5E65 /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayListViewController.h; path = ../PlayListViewController.h; sourceTree = "<group>"; };
+		D6C0A44A1D27509F00BA5E65 /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayListViewController.m; path = ../PlayListViewController.m; sourceTree = "<group>"; };
+		D6C0A44B1D27509F00BA5E65 /* PlayListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayListViewController.xib; path = ../PlayListViewController.xib; sourceTree = "<group>"; };
 		D6C0A44D1D27509F00BA5E65 /* AlbumDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDetailCell.h; sourceTree = "<group>"; };
 		D6C0A44E1D27509F00BA5E65 /* AlbumDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDetailCell.m; sourceTree = "<group>"; };
 		D6C0A44F1D27509F00BA5E65 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
@@ -559,6 +559,9 @@
 		D6C0A5D61D27573E00BA5E65 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		D6C0A5D71D27573E00BA5E65 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
 		D6C0A5D81D27573E00BA5E65 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
+		D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
+		D6CA26CC1D2A7EF700803148 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -970,9 +973,6 @@
 		D6C0A4231D27509F00BA5E65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6C0A4241D27509F00BA5E65 /* PlayerDetailViewController.h */,
-				D6C0A4251D27509F00BA5E65 /* PlayerDetailViewController.m */,
-				D6C0A4261D27509F00BA5E65 /* PlayerDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1011,7 +1011,6 @@
 			isa = PBXGroup;
 			children = (
 				D6C0A4341D27509F00BA5E65 /* Controller */,
-				D6C0A4381D27509F00BA5E65 /* Model */,
 				D6C0A4391D27509F00BA5E65 /* View */,
 			);
 			path = "PlayerDetail（播放详情）";
@@ -1020,23 +1019,20 @@
 		D6C0A4341D27509F00BA5E65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D6C0A4351D27509F00BA5E65 /* PlayerDetailViewController.h */,
-				D6C0A4361D27509F00BA5E65 /* PlayerDetailViewController.m */,
-				D6C0A4371D27509F00BA5E65 /* PlayerDetailViewController.xib */,
+				D6CA26CC1D2A7EF700803148 /* PlayerDetailViewController.h */,
+				D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */,
+				D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */,
+				D625C4191D2A9860005C2A6E /* ListViewController.h */,
+				D625C41A1D2A9860005C2A6E /* ListViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D6C0A4381D27509F00BA5E65 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D6C0A4391D27509F00BA5E65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D625C4161D2A8218005C2A6E /* AVPlayerManager.h */,
+				D625C4171D2A8218005C2A6E /* AVPlayerManager.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1046,9 +1042,6 @@
 			children = (
 				D6C0A43F1D27509F00BA5E65 /* Controllers */,
 				D6C0A4461D27509F00BA5E65 /* Models */,
-				D6C0A4491D27509F00BA5E65 /* PlayListViewController.h */,
-				D6C0A44A1D27509F00BA5E65 /* PlayListViewController.m */,
-				D6C0A44B1D27509F00BA5E65 /* PlayListViewController.xib */,
 				D6C0A44C1D27509F00BA5E65 /* Views */,
 			);
 			path = "PlayerList（播放列表）";
@@ -1057,6 +1050,9 @@
 		D6C0A43F1D27509F00BA5E65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6C0A4491D27509F00BA5E65 /* PlayListViewController.h */,
+				D6C0A44A1D27509F00BA5E65 /* PlayListViewController.m */,
+				D6C0A44B1D27509F00BA5E65 /* PlayListViewController.xib */,
 				D6C0A4401D27509F00BA5E65 /* CommentViewController.h */,
 				D6C0A4411D27509F00BA5E65 /* CommentViewController.m */,
 				D6C0A4421D27509F00BA5E65 /* DetaileViewController.h */,
@@ -1552,7 +1548,6 @@
 				D6C0A55B1D27509F00BA5E65 /* ic_homeprovince_on@3x.png in Resources */,
 				D6C0A5461D27509F00BA5E65 /* 讲座讲坛.png in Resources */,
 				D6C0A5581D27509F00BA5E65 /* ic_homeinternet_on@3x.png in Resources */,
-				D6C0A5741D27509F00BA5E65 /* PlayerDetailViewController.xib in Resources */,
 				D6C0A55E1D27509F00BA5E65 /* 时间.png in Resources */,
 				D6C0A5361D27509F00BA5E65 /* 动漫游戏.png in Resources */,
 				D6C0A54B1D27509F00BA5E65 /* chat_support_blue@2x.png in Resources */,
@@ -1580,6 +1575,7 @@
 				D6C0A5591D27509F00BA5E65 /* ic_homeprovince@3x.png in Resources */,
 				D6C0A57C1D27509F00BA5E65 /* PlayListViewController.xib in Resources */,
 				D6C0A5B01D27509F00BA5E65 /* PopularItemListViewController.xib in Resources */,
+				D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */,
 				D6C0A4FC1D27509F00BA5E65 /* Assets.xcassets in Resources */,
 				D6C0A50E1D27509F00BA5E65 /* audio-frequency.png in Resources */,
 				D6C0A52A1D27509F00BA5E65 /* MJRefresh.bundle in Resources */,
@@ -1738,6 +1734,7 @@
 				D6C0A5A41D27509F00BA5E65 /* ClassificationModel.m in Sources */,
 				D6C0A5C11D27509F00BA5E65 /* RadioTypeCell.m in Sources */,
 				D6C0A59B1D27509F00BA5E65 /* HeadCollectionReusableView.m in Sources */,
+				D625C4181D2A8218005C2A6E /* AVPlayerManager.m in Sources */,
 				D6C0A5191D27509F00BA5E65 /* MJRefreshFooter.m in Sources */,
 				D6C0A58D1D27509F00BA5E65 /* Collection.m in Sources */,
 				D6C0A5231D27509F00BA5E65 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1768,7 +1765,6 @@
 				D6C0A5A21D27509F00BA5E65 /* DetailClassificationViewController.m in Sources */,
 				D6C0A5BB1D27509F00BA5E65 /* PopularItemTableViewCell.m in Sources */,
 				D6C0A5821D27509F00BA5E65 /* ProgramCell.m in Sources */,
-				D6C0A5731D27509F00BA5E65 /* PlayerDetailViewController.m in Sources */,
 				D6C0A5641D27509F00BA5E65 /* BaseCollectionViewCell.m in Sources */,
 				D6C0A5BF1D27509F00BA5E65 /* RadioStyleCell.m in Sources */,
 				D6C0A5C51D27509F00BA5E65 /* RecommendViewController.m in Sources */,
@@ -1796,6 +1792,7 @@
 				D6C0A5971D27509F00BA5E65 /* CollectionView.m in Sources */,
 				D6C0A52E1D27509F00BA5E65 /* UIScrollView+MJRefresh.m in Sources */,
 				D6C0A5DA1D27573E00BA5E65 /* SegmentView.m in Sources */,
+				D6CA26CA1D2A7E9E00803148 /* PlayerDetailViewController.m in Sources */,
 				D6C0A5051D27509F00BA5E65 /* SmallTools.m in Sources */,
 				D6C0A5B71D27509F00BA5E65 /* RadioPopularItemModel.m in Sources */,
 				D6C0A5BA1D27509F00BA5E65 /* PopularItemListCell.m in Sources */,
@@ -1816,6 +1813,7 @@
 				D6C0A59D1D27509F00BA5E65 /* MoreCell.m in Sources */,
 				D6C0A5001D27509F00BA5E65 /* DrawerViewController.m in Sources */,
 				D6C0A5AA1D27509F00BA5E65 /* MryScrollMenu.m in Sources */,
+				D625C41B1D2A9860005C2A6E /* ListViewController.m in Sources */,
 				D6C0A5771D27509F00BA5E65 /* CommentViewController.m in Sources */,
 				D6C0A51A1D27509F00BA5E65 /* MJRefreshHeader.m in Sources */,
 				D6C0A5B91D27509F00BA5E65 /* RadioStyleSegmentedModel.m in Sources */,
