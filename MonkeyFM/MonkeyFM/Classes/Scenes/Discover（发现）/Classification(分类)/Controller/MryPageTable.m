@@ -9,9 +9,7 @@
 #import "MryPageTable.h"
 #import "NewsCell.h"
 #import "PlayListViewController.h"
-
-
-
+#import "SingleList.h"
 @interface MryPageTable ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *newsAllArray;
 @end
@@ -48,6 +46,7 @@
 
 - (void)requstTableViewData
 {
+   NSLog(@" = = = = = = = %@", self.string);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:self.string parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -112,7 +111,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PlayListViewController *playList = [[PlayListViewController alloc] init];
     
+    NewsAllModel *new = self.newsAllArray[indexPath.row];
+    NSString *str = [NSString stringWithFormat:@"%ld", new.Id];
+//    NSLog(@"++++%ld", new.Id);
+    [[SingleList shareSingleList].dict setValue:str forKey:@"ID"];
+    self.block();
+    
+   
+//    
 }
 @end

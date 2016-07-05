@@ -10,7 +10,13 @@
 #import "BaseView.h"
 #import "NewsAllModel.h"
 #import "DetailSegment.h"
+
+typedef void(^MryPageBlock)();
 @interface MryPageTable : UITableView
+
+@property (nonatomic, strong)NSString *ID;
+
+@property (nonatomic, copy)MryPageBlock block;
 
 @property (nonatomic,copy) NSString *title;
 

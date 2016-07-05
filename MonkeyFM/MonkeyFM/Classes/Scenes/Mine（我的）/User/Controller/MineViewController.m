@@ -10,8 +10,9 @@
 #import "SegmentView.h"
 #import "MineTableViewCell.h"
 #import "BaseNavigationViewController.h"
+#import "LoginViewController.h"
 #define kCell @"cell"
-@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate>
+@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) UIImageView *myImageView;
@@ -48,11 +49,18 @@
         // 设置圆角
         smallImageView.layer.masksToBounds=YES;
         smallImageView.layer.cornerRadius=40/2.0f; //设置为图片宽度的一半出来为圆形
-        //        smallImageView.layer.borderWidth=1.0f; //边框宽度
-        //        smallImageView.layer.borderColor=[[UIColor greenColor] CGColor];//边框颜色
+                smallImageView.layer.borderWidth=1.0f; //边框宽度
+                smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
         
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        UILabel *nameLabel = [[UILabel alloc] init];
+        nameLabel.frame = CGRectMake(45, 5, 150, 30);
+        nameLabel.text = @"唐宋元明清丶";
+        nameLabel.textColor = [UIColor whiteColor];
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
+        [view addSubview:nameLabel];
+        
         [view addSubview:smallImageView];
         [self.navigationItem setTitleView:view];
         
@@ -64,12 +72,15 @@
 
 - (void)addNavBar
 {
-    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
+    
+   /* UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
     UIImage *image = [UIImage imageNamed:@"设置小"];
     
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:nil];
+   */
     
-    self.navigationItem.leftBarButtonItems = @[item1, item2];
+//    self.navigationItem.leftBarButtonItems = @[item1, item2];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:nil];
     
 }
@@ -107,6 +118,15 @@
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:kCell];
 }
 
+// 手势
+- (void)tapAvatarView:(UIGestureRecognizer *)sender
+{
+    LoginViewController *login = [[LoginViewController alloc] init];
+    login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:login animated:YES completion:^{
+        
+    }];
+}
 //设置毛玻璃效果
 - (void)setBackImageGlass {
     //给背景图添加毛玻璃
@@ -133,6 +153,16 @@
     smallImageView.layer.cornerRadius=100/2.0f; //设置为图片宽度的一半出来为圆形
     smallImageView.layer.borderWidth=1.0f; //边框宽度
     smallImageView.layer.borderColor=[[UIColor greenColor] CGColor];//边框颜色
+    
+    // 添加手势
+    smallImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer * PrivateLetterTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAvatarView:)];
+    PrivateLetterTap.numberOfTouchesRequired = 1; //手指数
+    PrivateLetterTap.numberOfTapsRequired = 1; //tap次数
+    PrivateLetterTap.delegate= self;
+    smallImageView.contentMode = UIViewContentModeScaleToFill;
+    [smallImageView addGestureRecognizer:PrivateLetterTap];
+    
     
     UILabel *nameLabel = [[UILabel alloc] init];
     [self.myImageView addSubview:nameLabel];
@@ -270,10 +300,14 @@
             [self.tableView reloadData];
             break;
         case 2:
+            if (self.tableView.editing == YES) {
+            [self.tableView setEditing:NO animated:YES];
+            } else {
             [self.tableView setEditing:YES animated:YES];
+            }
             break;
         case 3:
-            [self.tableView setEditing:NO animated:YES];
+            
             break;
         default:
             break;

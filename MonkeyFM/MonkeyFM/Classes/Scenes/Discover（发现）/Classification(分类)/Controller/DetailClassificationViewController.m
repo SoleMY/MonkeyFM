@@ -10,7 +10,7 @@
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 #import "DetailSegment.h"
-
+#import "PlayListViewController.h"
 
 
 @interface DetailClassificationViewController ()
@@ -36,11 +36,18 @@
     return _allTitleArray;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+//    self.menuframe = CGRectMake(0, 0, ScreenW, 40);
+    self.navigationController.navigationBar.translucent = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // 请求数据
     [self requstData];
+//    self.menuframe = CGRectMake(0, 64, ScreenW, 40);
+
     self.title = @"详情";
 }
 
@@ -51,16 +58,25 @@
     for (DetailSegment *model in self.allArray) {
         MryPageTable *table = [[MryPageTable alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         table.string = [NSString stringWithFormat:@"%@%@%@", kBaseURL, model.categoryId, kAppendingURL];
+        
+        table.block = ^(){
+            PlayListViewController *playList = [[PlayListViewController alloc] init];
+            [self.navigationController pushViewController:playList animated:YES];
+        };
         [self.menuArray addObject:model.categoryName];
         [self.tableArray addObject:table];
     }
+    
     //设置控件位置y
-    self.menuframe = CGRectMake(0, 64, ScreenW, 40);
+    
+    self.menuframe = CGRectMake(0, 0, ScreenW, 40);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
     
     //调用父类方法加载控件
     [super viewDidLoad]; //最后执行
 }
+
+
 
 - (void)requstData
 {
