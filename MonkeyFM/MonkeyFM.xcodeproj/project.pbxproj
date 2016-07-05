@@ -63,6 +63,8 @@
 		A535D20D1D2664D2002158AB /* RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A535D20C1D2664D2002158AB /* RFLayout.m */; };
 		A535D2111D266926002158AB /* RadioDisPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A535D20F1D266926002158AB /* RadioDisPlayCollectionViewCell.m */; };
 		A535D2121D266926002158AB /* RadioDisPlayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A535D2101D266926002158AB /* RadioDisPlayCollectionViewCell.xib */; };
+		A535D2161D276CFD002158AB /* RadioDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A535D2151D276CFD002158AB /* RadioDisplayModel.m */; };
+		A535D2191D27F756002158AB /* RadioDisplayPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A535D2181D27F756002158AB /* RadioDisplayPlayModel.m */; };
 		A555D2521D221CED00BC00F0 /* RadioStyleListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2511D221CED00BC00F0 /* RadioStyleListTableView.m */; };
 		A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2541D221E5500BC00F0 /* RadioStyleCell.m */; };
 		A555D2581D22259A00BC00F0 /* RadioStyleSegmentedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A555D2571D22259A00BC00F0 /* RadioStyleSegmentedModel.m */; };
@@ -71,8 +73,10 @@
 		A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60821D1BE159007EF7F1 /* Main.storyboard */; };
 		A57E60861D1BE159007EF7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57E60851D1BE159007EF7F1 /* Assets.xcassets */; };
 		A57E60891D1BE159007EF7F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57E60871D1BE159007EF7F1 /* LaunchScreen.storyboard */; };
+		A5CDEDD21D2A5EE900E905DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CDEDD11D2A5EE900E905DA /* MediaPlayer.framework */; };
 		A5E4B7CF1D2411410010F893 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */; };
 		A5E4B7D01D2411410010F893 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */; };
+		A5E760EE1D2B5BE800FF58A1 /* 暂停button.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E760ED1D2B5BE800FF58A1 /* 暂停button.png */; };
 		D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */; };
 		D60CCB671D20BF8000A8EBF3 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB661D20BF8000A8EBF3 /* AlbumCell.m */; };
 		D60CCB6A1D20BFA500A8EBF3 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D60CCB691D20BFA500A8EBF3 /* SubscribeCell.m */; };
@@ -291,6 +295,10 @@
 		A535D20E1D266926002158AB /* RadioDisPlayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDisPlayCollectionViewCell.h; sourceTree = "<group>"; };
 		A535D20F1D266926002158AB /* RadioDisPlayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDisPlayCollectionViewCell.m; sourceTree = "<group>"; };
 		A535D2101D266926002158AB /* RadioDisPlayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDisPlayCollectionViewCell.xib; sourceTree = "<group>"; };
+		A535D2141D276CFD002158AB /* RadioDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDisplayModel.h; sourceTree = "<group>"; };
+		A535D2151D276CFD002158AB /* RadioDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDisplayModel.m; sourceTree = "<group>"; };
+		A535D2171D27F756002158AB /* RadioDisplayPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDisplayPlayModel.h; sourceTree = "<group>"; };
+		A535D2181D27F756002158AB /* RadioDisplayPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDisplayPlayModel.m; sourceTree = "<group>"; };
 		A555D2501D221CED00BC00F0 /* RadioStyleListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleListTableView.h; sourceTree = "<group>"; };
 		A555D2511D221CED00BC00F0 /* RadioStyleListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStyleListTableView.m; sourceTree = "<group>"; };
 		A555D2531D221E5500BC00F0 /* RadioStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStyleCell.h; sourceTree = "<group>"; };
@@ -309,9 +317,11 @@
 		A57E60851D1BE159007EF7F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57E60881D1BE159007EF7F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57E608A1D1BE159007EF7F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5CDEDD11D2A5EE900E905DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A5E4B7CC1D2411410010F893 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		A5E4B7CD1D2411410010F893 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		A5E4B7CE1D2411410010F893 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
+		A5E760ED1D2B5BE800FF58A1 /* 暂停button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停button.png"; sourceTree = "<group>"; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
 		D60CCB621D20BF5B00A8EBF3 /* SocialNetworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkCell.h; sourceTree = "<group>"; };
 		D60CCB631D20BF5B00A8EBF3 /* SocialNetworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkCell.m; sourceTree = "<group>"; };
@@ -527,6 +537,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CDEDD21D2A5EE900E905DA /* MediaPlayer.framework in Frameworks */,
 				A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */,
 				A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */,
 				A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */,
@@ -550,6 +561,7 @@
 			isa = PBXGroup;
 			children = (
 				D6721BFA1D1EA17200CFF94A /* 播放button.png */,
+				A5E760ED1D2B5BE800FF58A1 /* 暂停button.png */,
 				D6721BF61D1EA16D00CFF94A /* 时间.png */,
 				D6721BF71D1EA16D00CFF94A /* 评论数.png */,
 				A50FC3721D1E1706002A940D /* chat_support_blue@2x.png */,
@@ -727,6 +739,17 @@
 				A535D2101D266926002158AB /* RadioDisPlayCollectionViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A535D2131D276CE9002158AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A535D2141D276CFD002158AB /* RadioDisplayModel.h */,
+				A535D2151D276CFD002158AB /* RadioDisplayModel.m */,
+				A535D2171D27F756002158AB /* RadioDisplayPlayModel.h */,
+				A535D2181D27F756002158AB /* RadioDisplayPlayModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A57E606D1D1BE159007EF7F1 = {
@@ -959,6 +982,7 @@
 		D619229C1D1CD8A20008648A /* DisPlayList（展示列表） */ = {
 			isa = PBXGroup;
 			children = (
+				A535D2131D276CE9002158AB /* Model */,
 				A535D20A1D2664BC002158AB /* View */,
 				A535D1F31D255CAD002158AB /* Controller */,
 			);
@@ -1315,6 +1339,7 @@
 		DA675FF270CCF4B89ECD1891 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5CDEDD11D2A5EE900E905DA /* MediaPlayer.framework */,
 				A52A920C1D1CC5990005E26E /* Foundation.framework */,
 				A52A920A1D1CC5900005E26E /* CoreGraphics.framework */,
 				A52A92081D1CC5880005E26E /* UIKit.framework */,
@@ -1460,6 +1485,7 @@
 				A57E60841D1BE159007EF7F1 /* Main.storyboard in Resources */,
 				D61922E41D1CD8A20008648A /* RecommendViewController.xib in Resources */,
 				A50FC3951D1E1706002A940D /* ic_homeinternet_on@3x.png in Resources */,
+				A5E760EE1D2B5BE800FF58A1 /* 暂停button.png in Resources */,
 				D63AD04A1D22506700E8CC19 /* ico_attention@2x.png in Resources */,
 				A50FC3991D1E1706002A940D /* ic_homeprovince_on@3x.png in Resources */,
 				A50FC38C1D1E1706002A940D /* ic_homecountry_on@3x.png in Resources */,
@@ -1684,6 +1710,7 @@
 				D6562DC41D1E9E0D0035FAC7 /* More.m in Sources */,
 				D6E25D9F1D241A990011FAE6 /* ProgressHeadView.m in Sources */,
 				A555D2551D221E5500BC00F0 /* RadioStyleCell.m in Sources */,
+				A535D2161D276CFD002158AB /* RadioDisplayModel.m in Sources */,
 				A555D2611D22A92D00BC00F0 /* SelecID.m in Sources */,
 				D60CCB641D20BF5B00A8EBF3 /* SocialNetworkCell.m in Sources */,
 				D6FD14AA1D1FAE78008C7D3E /* HeadImage.m in Sources */,
@@ -1700,6 +1727,7 @@
 				D6562DB61D1E60F10035FAC7 /* NSBundle+MJRefresh.m in Sources */,
 				A52A922A1D1CE0890005E26E /* RadioViewController.m in Sources */,
 				D6442DBC1D1D582800EEE263 /* FirstCollectionReusableView.m in Sources */,
+				A535D2191D27F756002158AB /* RadioDisplayPlayModel.m in Sources */,
 				D6562DAA1D1E60F10035FAC7 /* MJRefreshHeader.m in Sources */,
 				D61FCECB1D214362001A7D04 /* NewsCell.m in Sources */,
 				D6562DB01D1E60F10035FAC7 /* MJRefreshBackStateFooter.m in Sources */,

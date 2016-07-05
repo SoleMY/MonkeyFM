@@ -75,9 +75,14 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
+    RadioStyleModel *model = self.allTableViewInfoArray[indexPath.row];
+    
     if (self.displayBlock) {
-        self.displayBlock();
+        if (!_area) {
+            _area = 1;
+        }
+        self.displayBlock([model.ID integerValue], [model.classifyid integerValue], _area, indexPath);
+        
     }
 }
 
@@ -136,16 +141,6 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         make.left.equalTo(tableHeaderView).offset(15);
         make.width.mas_equalTo(150);
     }];
-//    UIView *lineView = [[UIView alloc] init];
-//    lineView.backgroundColor = [UIColor lightGrayColor];
-//    [tableHeaderView addSubview:lineView];
-//    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(tableHeaderView);
-//        make.right.equalTo(tableHeaderView);
-//        make.bottom.equalTo(tableHeaderView).offset(-0.5);
-//        make.height.mas_equalTo(0.5);
-//    }];
-
     self.tableHeaderView = tableHeaderView;
 
     [tableHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
