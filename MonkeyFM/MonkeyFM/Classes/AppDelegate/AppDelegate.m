@@ -11,6 +11,7 @@
 #import "BaseNavigationViewController.h"
 #import "SWRevealViewController.h"
 #import "DrawerViewController.h"
+#import "AVOSCloud/AVOSCloud.h"
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -34,8 +35,21 @@
     self.window.rootViewController = mainRevealController;
     
     
+    // leanCloud
+    [AVOSCloud setApplicationId:@"DU8A6QciEbo7IlkJccidr2Ko-gzGzoHsz"
+                      clientKey:@"BYJ3oaaNNK0C6W6v9JtWdwjs"];
+    // 跟踪统计应用的打开情况
+    
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     return YES;
 }
+
+
+
+
+
+
 
 //- (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position
 //{

@@ -56,13 +56,14 @@
     
     self.followNumber = [[UILabel alloc] init];
     self.followNumber.text = @"2";
+    self.followNumber.textAlignment = NSTextAlignmentCenter;
     self.followNumber.textColor = [UIColor grayColor];
     self.followNumber.font = [UIFont systemFontOfSize:15];
-//    self.followNumber.textAlignment = NSTextAlignmentCenter;
+    self.followNumber.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.followNumber];
     [self.followNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followButton.mas_bottom).offset(5);
-        make.left.equalTo(self.contentView).offset(120);
+        make.left.equalTo(self.followButton).offset(15);
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
@@ -75,7 +76,7 @@
     [self.contentView addSubview:self.fansNumber];
     [self.fansNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followButton.mas_bottom).offset(5);
-        make.left.equalTo(self.followNumber).offset(150);
+        make.left.equalTo(self.messageButton).offset(15);
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
@@ -87,7 +88,7 @@
     [self.contentView addSubview:self.followText];
     [self.followText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.followNumber.mas_bottom).offset(0);
-        make.left.equalTo(self.followNumber.mas_left).offset(-10);
+        make.left.equalTo(self.followNumber.mas_left).offset(10);
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];

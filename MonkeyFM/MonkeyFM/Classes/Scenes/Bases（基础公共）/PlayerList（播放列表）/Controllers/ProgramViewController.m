@@ -50,12 +50,13 @@
 - (void)request {
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *str = [[SingleList shareSingleList].dict objectForKey:@"ID"];
-    NSString *URLStr = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND, (long)self.number, PLAY_LIST_PROGRAM_APPENDTWO];
-    [netWorking requestWithURL:URLStr Bolck:^(id array) {
+    self.URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND, (long)self.number, PLAY_LIST_PROGRAM_APPENDTWO];
+    NSLog( @"%@", self.URLString);
+    [netWorking requestWithURL:self.URLString Bolck:^(id array) {
         NSDictionary *resultDic = array[@"result"];
         NSArray *dataList = resultDic[@"dataList"];
         for (NSDictionary *dict in dataList) {
-            PlayList *playList = [[PlayList alloc] init];
+            PlayList *playList =  [[PlayList alloc] init];
             [playList setValuesForKeysWithDictionary:dict];
             [self.allDataArray addObject:playList];
         }
@@ -93,7 +94,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PlayList *playList = self.allDataArray[indexPath.row];
     PlayerDetailViewController *playerDetaileVC = [[PlayerDetailViewController alloc] init];
+//    playerDetaileVC.playList = playList;
+    playerDetaileVC.allDataArray = self.allDataArray;
+    playerDetaileVC.row = indexPath.row;
     [self.navigationController pushViewController:playerDetaileVC animated:YES];
 }
 

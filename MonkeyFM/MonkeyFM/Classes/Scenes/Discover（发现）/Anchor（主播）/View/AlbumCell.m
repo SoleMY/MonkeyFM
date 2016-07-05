@@ -100,8 +100,8 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     More *model = self.albumArr[indexPath.row];
-    NSString *str= [NSString stringWithFormat:@"%ld", model.Id];
-    [[SingleList shareSingleList].dict setObject:str forKey:@"ID"];
+//    NSString *str= [NSString stringWithFormat:@"%d", model.Id];
+    [[SingleList shareSingleList].dict setObject:model.Id forKey:@"ID"];
 
     self.albumBlock();
 }

@@ -34,4 +34,10 @@
 @property (nonatomic, strong)NSString *utime;
 @property (nonatomic, assign)NSInteger praiseNum;
 
+@property (nonatomic, strong)NSString *albumPic;
+@property (nonatomic, strong)NSString *mp3PlayUrl;
+@property (nonatomic, assign)NSInteger mp3Duration;
+
+
+//@property (nonatomic, strong)NSString *audioName;
 @end

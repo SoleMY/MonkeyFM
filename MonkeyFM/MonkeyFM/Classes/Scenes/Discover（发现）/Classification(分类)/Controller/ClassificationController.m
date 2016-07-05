@@ -53,6 +53,7 @@ static  NSString *const identifile_cell = @"identifile_cell";
     __weak typeof(self)weakSelf = self;
     ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     self.title = @"分类";
+    
 }
 
 - (void)didReceiveMemoryWarning {

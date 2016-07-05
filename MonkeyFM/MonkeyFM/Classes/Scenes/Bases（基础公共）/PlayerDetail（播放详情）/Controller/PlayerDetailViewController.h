@@ -7,7 +7,13 @@
 //
 
 #import "BaseViewController.h"
-
+#import "PlayList.h"
 @interface PlayerDetailViewController : BaseViewController
+
+@property (nonatomic, strong)PlayList *playList;
+
+@property (nonatomic, strong)NSMutableArray *allDataArray;
+
+@property (nonatomic, assign)NSInteger row;
 
 @end

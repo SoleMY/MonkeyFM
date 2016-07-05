@@ -25,6 +25,7 @@
 /// 时间
 @property (nonatomic, strong) NSString *utime;
 
-
+/// id
+@property (nonatomic, assign) NSInteger Id;
 
 @end

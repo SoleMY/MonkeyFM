@@ -15,6 +15,6 @@
 @property (nonatomic, strong)NSArray *dataList;
 @property (nonatomic, strong)NSString *relatedValue;
 @property (nonatomic, strong)NSString *pic;
-@property (nonatomic, assign)NSInteger Id;
+@property (nonatomic, strong)NSString *Id;
 
 @end

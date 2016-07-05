@@ -8,7 +8,8 @@
 
 #import "MryPageTable.h"
 #import "NewsCell.h"
-
+#import "PlayListViewController.h"
+#import "SingleList.h"
 @interface MryPageTable ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *newsAllArray;
 @end
@@ -45,14 +46,14 @@
 
 - (void)requstTableViewData
 {
+   NSLog(@" = = = = = = = %@", self.string);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:self.string parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        NSDictionary *dict = dictionary[@"result"];
+
+        NSDictionary *dict = responseObject[@"result"];
         
         NSArray *dataListArray = dict[@"dataList"];
         
@@ -108,4 +109,16 @@
     return 120;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NewsAllModel *new = self.newsAllArray[indexPath.row];
+    NSString *str = [NSString stringWithFormat:@"%ld", new.Id];
+//    NSLog(@"++++%ld", new.Id);
+    [[SingleList shareSingleList].dict setValue:str forKey:@"ID"];
+    self.block();
+    
+   
+//    
+}
 @end
