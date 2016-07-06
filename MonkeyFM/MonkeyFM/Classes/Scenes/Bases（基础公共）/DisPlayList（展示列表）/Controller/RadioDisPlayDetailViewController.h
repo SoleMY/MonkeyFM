@@ -10,4 +10,14 @@
 
 @interface RadioDisPlayDetailViewController : BaseViewController
 
+@property (nonatomic, assign) NSInteger ID;
+
+@property (nonatomic, assign) NSInteger classifyid;
+
+@property (nonatomic, assign) NSInteger type;
+
+@property (nonatomic, assign) NSInteger area;
+
+@property (nonatomic, strong) NSIndexPath *scrollIndexPath;
+
 @end

@@ -81,13 +81,22 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSIndexPath *indexPath = [self.containerTable indexPathForRowAtPoint:scrollView.contentOffset];
     [self.scrollMenu setselectedIndex: indexPath.row];
+    if (self.sendBlock) {
+        self.sendBlock(indexPath.row);
+    }
 }
 
 
 //点击目录
 - (void)menuBtnClickAtIndex:(NSInteger)index{
     [self.containerTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    if (self.sendBlock) {
+        self.sendBlock(index);
+    }
+    
 }
+
+
 
 - (void)setMenuAndScrollTableView
 {

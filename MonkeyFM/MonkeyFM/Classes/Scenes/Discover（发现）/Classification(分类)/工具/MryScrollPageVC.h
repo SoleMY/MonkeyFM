@@ -13,7 +13,7 @@
 #import "MryPageTable.h"
 #import "RadioStyleListTableView.h"
 
-
+typedef void(^sendIndexBlock)(NSInteger);
 @interface MryScrollPageVC : BaseViewController
 
 @property (nonatomic,strong) NSMutableArray *tableArray;
@@ -25,6 +25,7 @@
 // scrollMenu menu
 @property (nonatomic,weak) UITableView *containerTable;
 @property (nonatomic,weak) MryScrollMenu *scrollMenu;
+@property (nonatomic, copy) sendIndexBlock sendBlock;
 
 - (void)setMenuAndScrollTableView;
 

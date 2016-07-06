@@ -27,7 +27,8 @@
 }
 
 // 抽屉的大背景图片
-@property (nonatomic, strong) UIImageView *backImageView;
+//@property (nonatomic, strong) UIImageView *backImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
 @end
 
@@ -36,8 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-    self.backImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.view.backgroundColor = kNavigationBarTintColor;
+    self.rearTableView.backgroundColor = kDrawerBackgroundColor;
     [self.view addSubview:self.backImageView];
     
     // 设置头视图
@@ -93,6 +94,10 @@
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = YES;
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 8;
@@ -102,6 +107,7 @@
 {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.backgroundColor = [UIColor clearColor];
     NSInteger row = indexPath.row;
     
     if (nil == cell)
