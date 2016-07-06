@@ -311,7 +311,7 @@
     [numFansLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_nameLabel.mas_bottom).offset(5);
-        make.left.equalTo(_nameLabel.mas_right).offset(- 10);
+        make.left.equalTo(_nameLabel.mas_right).offset(10);
         
     }];
     
