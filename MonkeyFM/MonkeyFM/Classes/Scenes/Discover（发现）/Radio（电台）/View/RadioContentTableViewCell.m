@@ -25,6 +25,7 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     {
         //初始化按钮集合视图
         [self createRadioHeaderView];
+        [self.radioContentView NightWithType:UIViewColorTypeNormal];
     }
     return self;
 }
@@ -55,8 +56,14 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     self.radioContentView.showsVerticalScrollIndicator = NO;
     self.radioContentView.bounces = NO;
     [self.contentView addSubview:self.radioContentView];
+<<<<<<< HEAD
     self.backgroundColor = [UIColor whiteColor];
     
+=======
+#warning 夜间模式改动
+//    [self NightWithType:UIViewColorTypeNormal];
+//    [self.radioContentView NightWithType:UIViewColorTypeNormal];
+>>>>>>> 02faa9059cd5d15312daf0bef7776af47fa467c3
     [self.radioContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf).with.offset(20);
         make.top.equalTo(weakSelf);
@@ -81,6 +88,11 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[1];
         [cell bindModel:model indexPath:indexPath];
+<<<<<<< HEAD
+=======
+        [cell NightWithType:UIViewColorTypeNormal];
+//        cell.backgroundColor = [UIColor clearColor];
+>>>>>>> 02faa9059cd5d15312daf0bef7776af47fa467c3
         
         return cell;
     } else {

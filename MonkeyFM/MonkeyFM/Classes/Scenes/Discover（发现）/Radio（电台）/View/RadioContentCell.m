@@ -17,6 +17,11 @@
     if (self) {
         // 布局视图
         [self initLayout];
+<<<<<<< HEAD
+=======
+#warning 
+//        [self NightWithType:UIViewColorTypeNormal];
+>>>>>>> 02faa9059cd5d15312daf0bef7776af47fa467c3
     }
     return self;
 }
@@ -30,6 +35,12 @@
     [self.contentView addSubview:self.topImageView];
     self.bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.bounds.size.height * 2 / 3, self.bounds.size.width, self.bounds.size.height / 3)];
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
+<<<<<<< HEAD
+=======
+#warning 夜间模式改动
+    [self.bottomLabel NightWithType:UIViewColorTypeNormal];
+    [self.bottomLabel NightTextType:LabelColorBlack];
+>>>>>>> 02faa9059cd5d15312daf0bef7776af47fa467c3
     [self.contentView addSubview:self.bottomLabel];
 }
 
