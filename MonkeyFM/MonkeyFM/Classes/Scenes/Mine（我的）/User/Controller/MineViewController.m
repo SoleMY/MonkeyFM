@@ -12,7 +12,7 @@
 #import "BaseNavigationViewController.h"
 #import "LoginViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
-
+#import "SettingViewController.h"
 #define kCell @"cell"
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -53,7 +53,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
+    
     AVUser *currentUser = [AVUser currentUser];
+    
+    NSData *data = [currentUser objectForKey:@"headImage"];
+    self.myImageView.image = [UIImage imageWithData:data];
     
     if (currentUser != nil) {
         NSString *currentUsername = [AVUser currentUser].username;// 当前用户名
@@ -61,8 +65,10 @@
         self.smallImageView.image = self.myImageView.image;
         [self.tableView reloadData];
     } else {
+        self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
+        self.myImageView.image = [UIImage imageNamed:@"user_photo"];
         self.nameLabel.text = @"你还未登陆";
-        self.smallImageView.image = self.myImageView.image;
+        
         [self.tableView reloadData];
     }
     [self.tableView reloadData];
@@ -79,22 +85,9 @@
         smallImageView.layer.borderWidth=1.0f; //边框宽度
         smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
-        
-        UILabel *nameLabel = [[UILabel alloc] init];
-        nameLabel.frame = CGRectMake(45, 5, 150, 30);
-        //        nameLabel.text = @"唐宋元明清丶";
-        AVUser *currentUser = [AVUser currentUser];
-        if (currentUser != nil) {
-            NSString *currentUsername = [AVUser currentUser].username;// 当前用户名
-            
-            nameLabel.text = currentUsername;
-            [self.tableView reloadData];
-        }
-        
-        nameLabel.textColor = [UIColor whiteColor];
-        
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
-        [view addSubview:nameLabel];
+
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+//        [view addSubview:nameLabel];
         
         [view addSubview:smallImageView];
         [self.navigationItem setTitleView:view];
@@ -118,6 +111,8 @@
 {
     [AVUser logOut];
     self.nameLabel.text = @"您还未登录";
+    self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
+    self.myImageView.image = [UIImage imageNamed:@"user_photo"];
     [self.tableView reloadData];
 }
 - (void)addTableViewMethod
@@ -219,10 +214,32 @@
 
 - (void)addControls
 {
+     __weak typeof(self)mySelf = self;
+    UIImageView *settingImageView = [[UIImageView alloc] init];
+    settingImageView.image = [UIImage imageNamed:@"settings"];
+    [self.myImageView addSubview:settingImageView];
+    settingImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSettingImageView:)];
+    // 设置轻拍次数
+    aTapGR.numberOfTapsRequired = 1;
+    
+    aTapGR.delegate = self;
+    
+    // 添加手势
+    [settingImageView addGestureRecognizer:aTapGR];
+
+    [settingImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(mySelf.myImageView.mas_top).offset(20);
+        make.left.equalTo(mySelf.myImageView.mas_left).offset(20);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(40);
+    }];
+    
     self.smallImageView = [[UIImageView alloc] initWithImage:self.myImageView.image];
     [self.myImageView addSubview:_smallImageView];
     
-    __weak typeof(self)mySelf = self;
+   
     [_smallImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(mySelf.myImageView);
         make.top.equalTo(mySelf.myImageView.mas_top).offset(10);
@@ -319,6 +336,16 @@
     // 赋值头像
     _myImageView.image = image;
     
+    // ==== //
+    // AVUser 存储
+    NSData *data = UIImageJPEGRepresentation(image,1.0);
+    [[AVUser currentUser] setObject:data forKeyedSubscript:@"headImage"];
+    [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"##########%@", error);
+    }];
+    
+    // ==== //
+    
     // 如果是相机
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(saveImage), nil);
@@ -410,6 +437,11 @@
 }
 
 
+- (void)tapSettingImageView:(UIGestureRecognizer *)sender
+{
+    SettingViewController *setting = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:setting animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
