@@ -46,6 +46,7 @@
 
 - (void)requstTableViewData
 {
+   NSLog(@" = = = = = = = %@", self.string);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:self.string parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         

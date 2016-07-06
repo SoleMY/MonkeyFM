@@ -48,6 +48,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBarHidden = NO;
+    
     [self setSegmented];
     [self setSmallSegmentedControl];
     // 请求数据
@@ -82,6 +83,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
         
     }];
 }
+
 
 - (void)reloadDataAndShowUI
 {
@@ -150,7 +152,21 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
             table.emptyURL = emptyURL;
         }
         RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
-        table.displayBlock = ^() {
+        table.displayBlock = ^(NSInteger ID, NSInteger classifyid, NSInteger area, NSIndexPath *scroll) {
+            displayVC.ID = ID;
+            weakSelf.sendBlock = ^(NSInteger index) {
+                if (_segmentedStyle == 0) {
+                    index++;
+                } else {
+                    index = index + 6;
+                }
+                _selectID = index;
+                
+            };
+            displayVC.classifyid = weakSelf.selectID;
+            displayVC.area = area;
+            displayVC.type = weakSelf.selectedSegmentIndex + 1;
+            displayVC.scrollIndexPath = scroll;
             [weakSelf.navigationController pushViewController:displayVC animated:YES];
         };
         table.sectionHeaderHeight = 0;
@@ -164,10 +180,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
 - (void)removeAllSubViews
 {
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    //    for(UIView *view in [self.view subviews])
-    //    {
-    //        [view removeFromSuperview];
-    //    }
+    
 }
 
 - (void)setSegmented
@@ -205,11 +218,14 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     if (index == 0) {
         self.segmentedStyle = Type;
         self.selectedSegmentIndex = 0;
+        _selectID = 1;
         [self setSmallSegmentedControl];
     } else if (index == 1) {
         self.segmentedStyle = Content;
         self.selectedSegmentIndex = 1;
+        _selectID = 6;
         [self setSmallSegmentedControl];
+        
     }
 
 }

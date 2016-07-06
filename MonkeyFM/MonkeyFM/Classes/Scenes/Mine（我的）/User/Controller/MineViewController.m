@@ -38,7 +38,7 @@
     
     // 设置tableView
     [self addTableViewMethod];
-   
+    
     
     // 添加左右navigationbar
     [self addNavBar];
@@ -76,14 +76,14 @@
         // 设置圆角
         smallImageView.layer.masksToBounds=YES;
         smallImageView.layer.cornerRadius=40/2.0f; //设置为图片宽度的一半出来为圆形
-                smallImageView.layer.borderWidth=1.0f; //边框宽度
-                smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
+        smallImageView.layer.borderWidth=1.0f; //边框宽度
+        smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
         
         UILabel *nameLabel = [[UILabel alloc] init];
         nameLabel.frame = CGRectMake(45, 5, 150, 30);
-//        nameLabel.text = @"唐宋元明清丶";
-          AVUser *currentUser = [AVUser currentUser];
+        //        nameLabel.text = @"唐宋元明清丶";
+        AVUser *currentUser = [AVUser currentUser];
         if (currentUser != nil) {
             NSString *currentUsername = [AVUser currentUser].username;// 当前用户名
             
@@ -160,7 +160,7 @@
     
     // 添加图片上的各种控件
     [self addControls];
-
+    
 }
 
 // 手势
@@ -219,7 +219,7 @@
 
 - (void)addControls
 {
-   self.smallImageView = [[UIImageView alloc] initWithImage:self.myImageView.image];
+    self.smallImageView = [[UIImageView alloc] initWithImage:self.myImageView.image];
     [self.myImageView addSubview:_smallImageView];
     
     __weak typeof(self)mySelf = self;
@@ -396,9 +396,9 @@
             break;
         case 2:
             if (self.tableView.editing == YES) {
-            [self.tableView setEditing:NO animated:YES];
+                [self.tableView setEditing:NO animated:YES];
             } else {
-            [self.tableView setEditing:YES animated:YES];
+                [self.tableView setEditing:YES animated:YES];
             }
             break;
         case 3:

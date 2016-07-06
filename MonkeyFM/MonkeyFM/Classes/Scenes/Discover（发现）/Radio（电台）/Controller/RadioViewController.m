@@ -53,7 +53,8 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor whiteColor];
+#warning 夜间模式改动
+//    self.view.backgroundColor = [UIColor whiteColor];
     [self createRadioTableView];
     // 数据请求
     [self requestData];
@@ -93,7 +94,8 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
 - (void)createRadioTableView
 {
     self.radioTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
-    self.radioTableView.backgroundColor = [UIColor whiteColor];
+    #warning 夜间模式改动
+    self.radioTableView.backgroundColor = [UIColor  clearColor];
     [self.view addSubview:self.radioTableView];
     
     self.radioTableView.delegate = self;
@@ -163,6 +165,9 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
+            #warning 夜间模式改动
+            [cell NightWithType:UIViewColorTypeNormal];
+//            cell.backgroundColor = [UIColor clearColor];
             return cell;
         }
             break;

@@ -22,12 +22,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
-
+    //获取夜间模式状态
+    [ThemeManage shareThemeManage].isNight = [[NSUserDefaults standardUserDefaults] boolForKey:@"night"];
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     BaseNavigationViewController *recommendNav = [[BaseNavigationViewController alloc] initWithRootViewController:[[RecommendViewController alloc] init]];
+    [recommendNav.navigationBar NightWithType:UIViewColorTypeNormal];
     DrawerViewController *drawerVC = [[DrawerViewController alloc] init];
     SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
                                                     initWithRearViewController:drawerVC frontViewController:recommendNav];

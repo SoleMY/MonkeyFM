@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class RadioDisplayModel;
+@class RadioDisplayPlayModel;
 @interface RadioDisPlayCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) NSTimer *timer;
+
+- (void)bindModel:(RadioDisplayModel *)model;
+
+- (void)bindPlayModel:(RadioDisplayPlayModel *)playModel;
+
+
 
 @end

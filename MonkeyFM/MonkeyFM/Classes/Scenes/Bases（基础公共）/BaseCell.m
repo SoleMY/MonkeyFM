@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+#warning 夜间模式改动
+    [self.contentView NightWithType:UIViewColorTypeNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

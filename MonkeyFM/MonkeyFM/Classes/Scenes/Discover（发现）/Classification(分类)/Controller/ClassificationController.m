@@ -56,11 +56,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBar.translucent = YES;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -87,7 +82,7 @@ static  NSString *const identifile_cell = @"identifile_cell";
     ClassificationModel *model = self.allArray[indexPath.row];
         cell.label.text = model.title;
 //    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.backgroundPic]];
-    
+   
      cell.photoImage.image = [UIImage imageNamed:model.title];
     
     return cell;

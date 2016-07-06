@@ -10,4 +10,6 @@
 
 @implementation BaseCollectionViewCell
 
+
+
 @end

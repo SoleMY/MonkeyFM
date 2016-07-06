@@ -7,7 +7,6 @@
 //
 
 #import "BaseNavigationViewController.h"
-#define kNavigationBarTintColor [UIColor colorWithRed:(46/255.0) green:(196 / 255.0) blue:(96 / 255.0) alpha:1]
 #define kNavigationTintColor [UIColor whiteColor]
 
 @interface BaseNavigationViewController ()<UISearchBarDelegate>
