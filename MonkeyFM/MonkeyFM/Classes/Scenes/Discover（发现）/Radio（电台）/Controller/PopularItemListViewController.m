@@ -9,6 +9,8 @@
 #import "PopularItemListViewController.h"
 #import "PopularItemListCell.h"
 #import "RadioPopularItemModel.h"
+#import "PlayListViewController.h"
+#import "SingleList.h"
 @interface PopularItemListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *popularTableView;
@@ -98,6 +100,16 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
     [cell bindModel:model];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RadioPopularItemModel *model = self.allListInfoArray[indexPath.row];
+    if ([model.type integerValue] == 0) {
+        [[SingleList shareSingleList].dict setValue:model.ID forKey:@"ID"];
+        PlayListViewController *playListVC = [[PlayListViewController alloc] init];
+        [self.navigationController pushViewController:playListVC animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

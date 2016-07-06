@@ -43,7 +43,8 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioAnchorCollectionView.collectionView.scrollEnabled = NO;
     self.radioAnchorCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioAnchorCollectionView.collectionView.bounces = NO;
-    
+#warning 夜间模式改动
+    [self.radioAnchorCollectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
     [self.radioAnchorCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_anchorCell];
     [self.radioAnchorCollectionView.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
@@ -72,9 +73,13 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[4];
         [cell bindRecommendModel:model indexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     } else {
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }
     

@@ -12,6 +12,7 @@
 #import "HeadCollectionReusableView.h"
 #import "RadioModel.h"
 #import "HostTitle.h"
+#import "Host.h"
 @interface PopularItemTableViewCell ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) CollectionView *radioPopularCollectionView;
@@ -43,6 +44,8 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
     self.radioPopularCollectionView.collectionView.scrollEnabled = NO;
     self.radioPopularCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioPopularCollectionView.collectionView.bounces = NO;
+#warning 夜间模式改动
+    [self.radioPopularCollectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
     [self.radioPopularCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_popularCell];
     [self.radioPopularCollectionView.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
@@ -72,6 +75,8 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
         self.relatedValue = model.relatedValue;
         [cell bindPopularModel:model indexPath:indexPath];
         cell.headPortrait.layer.cornerRadius = 0;
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
        
         return cell;
     } else {
@@ -79,6 +84,25 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
         return cell;
     }
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.allInfoDataArray.count > 0) {
+        RadioModel *model = self.allInfoDataArray[3];
+        NSDictionary *dic = model.dataList[indexPath.row];
+        Host *host = [[Host alloc] init];
+        [host setValuesForKeysWithDictionary:dic];
+        if ([host.rtype integerValue] == 0) {
+            if (self.block) {
+                self.block(host.rvalue);
+            }
+        } else {
+            if (self.radioBlock) {
+                self.radioBlock([host.rvalue integerValue]);
+            }
+        }
+    }
 }
 
 //返回头视图和尾视图
