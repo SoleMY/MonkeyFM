@@ -15,12 +15,12 @@
 @implementation SegmentView
 
 #pragma mark getter方法 懒加载
-- (UIColor *)titleColor{
-    if (!_titleColor) {
-        _titleColor = [UIColor blackColor];
-    }
-    return _titleColor;
-}
+//- (UIColor *)titleColor{
+//    if (!_titleColor) {
+//        _titleColor = [UIColor blackColor];
+//    }
+//    return _titleColor;
+//}
 
 - (CGFloat)titleFont{
     if (!_titleFont) {
@@ -116,7 +116,11 @@
     for (int i = 0;  i < self.titleArray.count; i++) {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(i * ItemWidth, 0, ItemWidth, ItemHeight)];
         titleLabel.text = [self.titleArray objectAtIndex:i];
-        titleLabel.textColor =  self.titleColor;
+        
+#warning 夜间模式改动
+        [titleLabel NightWithType:UIViewColorTypeNormal];
+        [titleLabel NightTextType:LabelColorBlack];
+//        titleLabel.textColor =  self.titleColor;
         titleLabel.font = [UIFont systemFontOfSize:self.titleFont];
         titleLabel.textAlignment = NSTextAlignmentCenter;
                 titleLabel.tag = 100+i;
@@ -161,7 +165,7 @@
         if ([label isEqual:selectedLabel]) {
             label.textColor = self.titleSelectedColor;
         }else{
-            label.textColor = self.titleColor;
+//            label.textColor = self.titleColor;
         }
     }
     CGRect scrollLineFrame = _scrollLine.frame;

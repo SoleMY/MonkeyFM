@@ -11,6 +11,7 @@
 #import "RegistViewController.h"
 #import "MineViewController.h"
 #import "RetrievePassword.h"
+
 @interface LoginViewController ()<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
@@ -33,7 +34,7 @@
     
     // 失败的渲染
 //    [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.backImageView.backgroundColor = [UIColor colorWithRed:46/255.0 green:196/255.0 blue:96/255.0 alpha:1];
+    self.backImageView.backgroundColor = kNavigationBarTintColor;
     
     [self addGesture];
     
@@ -42,6 +43,15 @@
 
 - (void)finishWrite:(UITextField *)sender
 {
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)addGesture
@@ -105,11 +115,11 @@
 // 找回密码
 - (IBAction)retrievePassword:(UIButton *)sender {
     RetrievePassword *retrieve = [[RetrievePassword alloc] init];
-    [self presentViewController:retrieve animated:YES completion:nil];
+    [self.navigationController pushViewController:retrieve animated:YES];
 }
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -120,14 +130,31 @@
     [AVUser logInWithUsernameInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (user != nil) {
             [self setHUDWithTitle:@"登陆成功"];
-            [mySelf dismissViewControllerAnimated:YES completion:nil];
+            MineViewController *mine = [[MineViewController alloc] init];
+            [mySelf.navigationController pushViewController:mine animated:YES];
             
         } else {
-            [self setHUDWithTitle:@"用户名或密码不正确"];
+            [AVUser logInWithMobilePhoneNumberInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
+                
+                if (user != nil) {
+                    [self setHUDWithTitle:@"登陆成功"];
+                    MineViewController *mine = [[MineViewController alloc] init];
+                    [mySelf.navigationController pushViewController:mine animated:YES];
+                } else {
+                    NSLog(@"error = %@", error);
+                    if (error.code == 1) {
+                        [self setHUDWithTitle:@"登录失败次数超过限制，请稍候再试"];
+                    } else if (error.code == 201) {
+                        [self setHUDWithTitle:@"用户名或密码错误"];
+                    } else if (error.code == 211 || error.code == 213) {
+                        [self setHUDWithTitle:@"用户名或手机号不存在"];
+                    }
+                }
+                
+            }];
         }
     }];
     
-
 }
 
 - (void)setHUDWithTitle:(NSString *)title {
@@ -145,7 +172,7 @@
     
     RegistViewController *regist = [[RegistViewController alloc] init];
     
-    [self presentViewController:regist animated:YES completion:nil];
+    [self.navigationController pushViewController:regist animated:YES];
     
 }
 

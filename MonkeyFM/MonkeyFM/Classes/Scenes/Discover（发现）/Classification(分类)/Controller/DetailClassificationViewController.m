@@ -38,7 +38,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 //    self.menuframe = CGRectMake(0, 0, ScreenW, 40);
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)viewDidLoad {

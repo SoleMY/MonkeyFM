@@ -25,18 +25,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-MA-SpV">
-                    <rect key="frame" x="62" y="176" width="336" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="BvK-75-pQw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3q-x9-qWq">
-                    <rect key="frame" x="14" y="341" width="384" height="30"/>
-                    <color key="backgroundColor" red="0.54534935979791543" green="1" blue="0.13151554951631217" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="手机注册"/>
+                    <rect key="frame" x="14" y="334" width="384" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="手机注册">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="NextButton:" destination="-1" eventType="touchUpInside" id="Rge-FP-YBB"/>
                     </connections>
@@ -56,10 +50,9 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击后发送你将收到一条带有验证码的短信，请在上方输入验证码" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJL-CH-Kwt">
-                    <rect key="frame" x="14" y="252" width="384" height="41"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="0.39853771989999998" blue="0.4778181541" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="14" y="252" width="384" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-Ji-C7t">
@@ -82,14 +75,23 @@
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="ERe-IU-2jh"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-MA-SpV">
+                    <rect key="frame" x="62" y="176" width="336" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BvK-75-pQw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32c-Fy-avm">
                     <rect key="frame" x="313" y="175" width="85" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="85" id="oSv-YM-TGr"/>
                         <constraint firstAttribute="height" constant="40" id="zIY-eM-yY1"/>
                     </constraints>
                     <state key="normal" title="发送验证码">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="VerificationButton:" destination="-1" eventType="touchUpInside" id="HaQ-Ye-PyU"/>

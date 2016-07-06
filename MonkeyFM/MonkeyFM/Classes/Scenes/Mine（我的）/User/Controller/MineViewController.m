@@ -66,8 +66,8 @@
         [self.tableView reloadData];
     } else {
         self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
-        self.myImageView.image = [UIImage imageNamed:@"user_photo"];
-        self.nameLabel.text = @"你还未登陆";
+        self.myImageView.backgroundColor = kNavigationBarTintColor;
+        self.nameLabel.text = @"您还未登录";
         
         [self.tableView reloadData];
     }
@@ -82,8 +82,8 @@
         // 设置圆角
         smallImageView.layer.masksToBounds=YES;
         smallImageView.layer.cornerRadius=40/2.0f; //设置为图片宽度的一半出来为圆形
-        smallImageView.layer.borderWidth=1.0f; //边框宽度
-        smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
+//        smallImageView.layer.borderWidth=1.0f; //边框宽度
+//        smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
 
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
@@ -112,7 +112,8 @@
     [AVUser logOut];
     self.nameLabel.text = @"您还未登录";
     self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
-    self.myImageView.image = [UIImage imageNamed:@"user_photo"];
+    self.myImageView.image = [UIImage imageNamed:@""];
+    self.myImageView.backgroundColor = kNavigationBarTintColor;
     [self.tableView reloadData];
 }
 - (void)addTableViewMethod
@@ -128,6 +129,9 @@
     
     // segment
     self.segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 50)];
+#warning 夜间模式改动
+    [self.segmentView NightWithType:UIViewColorTypeNormal];
+
     self.segmentView.titleArray = @[@"订阅",@"收藏", @"离线"];
     [self.segmentView.scrollLine setBackgroundColor:[UIColor greenColor]];
     self.segmentView.titleSelectedColor = [UIColor brownColor];
@@ -136,7 +140,7 @@
     
     [self.view addSubview:self.segmentView];
     
-    self.tableView.bounces = NO;
+//    self.tableView.bounces = NO;
     
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:kCell];
 }
@@ -190,10 +194,8 @@
     } else {
         //缓存用户对象为空时，可打开用户注册界面…
         LoginViewController *login = [[LoginViewController alloc] init];
-        login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:login animated:YES completion:^{
-            
-        }];
+//        login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController pushViewController:login animated:YES];
     }
     
 }
@@ -309,7 +311,7 @@
     [numFansLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_nameLabel.mas_bottom).offset(5);
-        make.left.equalTo(_nameLabel.mas_right).offset(- 10);
+        make.left.equalTo(_nameLabel.mas_right).offset(10);
         
     }];
     
@@ -392,7 +394,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
-    
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     return cell;
     
 }

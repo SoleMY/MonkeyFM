@@ -26,12 +26,21 @@
     
     // 电话号输入完成时候方法
     [self.phoneNum addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
-    
+    self.view.backgroundColor = kNavigationBarTintColor;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)finishWrite:(UITextField *)sender
 {
-    self.verificationButton.titleLabel.textColor = [UIColor redColor];
+    self.verificationButton.titleLabel.textColor = [UIColor cyanColor];
 }
 
 - (IBAction)VerificationButton:(UIButton *)sender {
@@ -43,14 +52,14 @@
             if (succeeded) {
                 [self setHUDWithTitle:@"发送成功"];
             } else {
-                if (error) {
-                    NSLog(@"%@", error);
+               
+                NSLog(@"%@", error);
+                if (error.code == 1) {
                     [self setHUDWithTitle:@"手机号输入有误"];
-                    
+                } else if (error.code == 601) {
+                    [self setHUDWithTitle:@"发送短信每天超出五条"];
                 }
             }
-
-            
         }];
     
     
@@ -63,7 +72,7 @@
     [AVUser signUpOrLoginWithMobilePhoneNumberInBackground:self.phoneNum.text smsCode:self.verification.text block:^(AVUser *user, NSError *error) {
        [myself setHUDWithTitle:@"注册成功"];
         LastRegistViewController *last = [[LastRegistViewController alloc] init];
-        [myself presentViewController:last animated:YES completion:nil];
+        [myself.navigationController pushViewController:last animated:YES];
        
         
         
@@ -91,9 +100,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 - (IBAction)backButton:(id)sender {
     
-     [self dismissViewControllerAnimated:YES completion:nil];
+     [self.navigationController popViewControllerAnimated:YES];
 }
 
 

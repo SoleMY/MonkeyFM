@@ -22,8 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = kNavigationBarTintColor;
     // Do any additional setup after loading the view from its nib.
 }
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,7 +62,7 @@
         [AVUser resetPasswordWithSmsCode:self.VerificationCode.text newPassword:self.mima.text block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self.navigationController popViewControllerAnimated:YES];
             } else {
                 
             }
@@ -62,7 +74,7 @@
 }
 - (IBAction)back:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

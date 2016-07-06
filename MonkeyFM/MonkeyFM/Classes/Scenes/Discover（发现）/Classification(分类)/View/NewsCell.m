@@ -47,7 +47,10 @@
     
     // title
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.text = @"123456667890-";
+#warning 夜间模式改动
+    [self.nameLabel NightWithType:UIViewColorTypeNormal];
+    [self.nameLabel NightTextType:LabelColorBlack];
+    
     [self.contentView addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -58,7 +61,8 @@
     
     // 内容
     self.descLabel = [[UILabel alloc] init];
-    self.descLabel.text = @"1234567890-1234567890-1234567890-1234567890-";
+    [self.descLabel NightWithType:UIViewColorTypeNormal];
+    [self.descLabel NightTextType:LabelColorBlack];
     self.descLabel.textColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.descLabel];
     [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,6 +91,8 @@
     
     // 评论数
     self.hotLabel = [[UILabel alloc] init];
+    [self.hotLabel NightWithType:UIViewColorTypeNormal];
+    [self.hotLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.hotLabel];
     self.hotLabel.text = @"4.3万";
 //    [self.hotLabel sizeToFit];
@@ -114,7 +120,8 @@
     
     // 时间
     self.utimeLabel = [[UILabel alloc] init];
-    self.utimeLabel.text = @"10小时前更新";
+    [self.utimeLabel NightWithType:UIViewColorTypeNormal];
+    [self.utimeLabel NightTextType:LabelColorBlack];
     self.utimeLabel.textColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.utimeLabel];
     [self.utimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
