@@ -9,7 +9,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "EfficientDefine.h"
 #import <AFNetworking.h>
 #import "MFM_URL.h"
 #import "UIImageView+WebCache.h"
@@ -18,6 +17,7 @@
 #import "MFM_Tool_COLOR.h"
 #import <MBProgressHUD.h>
 #import "Sinleton.h"
+#import "EfficientDefine.h"
 
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height

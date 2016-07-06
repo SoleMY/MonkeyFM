@@ -30,7 +30,13 @@
         
         [AVOSCloud requestSmsCodeWithPhoneNumber:self.phoneNum.text callback:^(BOOL succeeded, NSError *error) {
             // 发送失败可以查看 error 里面提供的信息
-            NSLog(@"%@", error);
+          
+            if (succeeded) {
+                 [self setHUDWithTitle:@"发送成功"];
+            } else {
+                 [self setHUDWithTitle:@"手机号输入有误"];
+                  NSLog(@"%@", error);
+            }
             
         }];
     
@@ -43,17 +49,30 @@
       if (self.phoneNum.text.length == 11 && self.verification.text.length > 1) {
     [AVUser signUpOrLoginWithMobilePhoneNumberInBackground:self.phoneNum.text smsCode:self.verification.text block:^(AVUser *user, NSError *error) {
        
-        [myself dismissViewControllerAnimated:YES completion:nil];
         
+        [self setHUDWithTitle:@"注册成功"];
+        [myself dismissViewControllerAnimated:YES completion:nil];
         
     }];
           
       } else {
-          NSLog(@"手机号输入有误");
+           
+          [self setHUDWithTitle:@"手机号输入有误"];
+
       }
 
 }
 
+
+- (void)setHUDWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = title;
+    hud.margin = 5.f;
+    hud.yOffset = 0.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

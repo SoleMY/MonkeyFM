@@ -10,6 +10,7 @@
 #import "AVOSCloud/AVOSCloud.h"
 #import "RegistViewController.h"
 #import "MineViewController.h"
+#import "RetrievePassword.h"
 @interface LoginViewController ()<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
@@ -39,24 +40,61 @@
 
 - (void)addGesture
 {
+    
+    self.qq.userInteractionEnabled = YES;
     UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQQ:)];
     // 设置轻拍次数
     aTapGR.numberOfTapsRequired = 1;
     
     aTapGR.delegate = self;
-    // 设置手指触摸的个数
-//    aTapGR.numberOfTouchesRequired = 2;
     
     // 添加手势
     [self.qq addGestureRecognizer:aTapGR];
     
+    // 微信
+    self.wechat.userInteractionEnabled = YES;
+    UITapGestureRecognizer *aTapWechat = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWechat:)];
+    // 设置轻拍次数
+    aTapWechat.numberOfTapsRequired = 1;
+    
+    aTapWechat.delegate = self;
+    
+    // 添加手势
+    [self.wechat addGestureRecognizer:aTapWechat];
+
+    // 微信
+    self.weibo.userInteractionEnabled = YES;
+    UITapGestureRecognizer *aTapWeiBo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWeibo:)];
+    // 设置轻拍次数
+    aTapWeiBo.numberOfTapsRequired = 1;
+    
+    aTapWeiBo.delegate = self;
+    
+    // 添加手势
+    [self.weibo addGestureRecognizer:aTapWeiBo];
+
 }
 
-
+// qq
 - (void)tapQQ:(UIGestureRecognizer *)sender
 {
-    NSLog(@"点我");
+    NSLog(@"qq");
 }
+
+
+// 微信
+- (void)tapWechat:(UIGestureRecognizer *)sender
+{
+    NSLog(@"weChat");
+}
+
+// 微博
+- (void)tapWeibo:(UIGestureRecognizer *)sender
+{
+    NSLog(@"微博");
+
+}
+
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -67,7 +105,6 @@
 - (IBAction)loginButton:(UIButton *)sender {
     
     // 用户查询
-//    AVQuery *userQuery = [AVQuery queryWithClassName:self.nickName.text];
     
     __weak typeof(self) mySelf = self;
     [AVUser logInWithUsernameInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
@@ -80,10 +117,7 @@
         }
     }];
     
-    // 手机号登录
-//    [AVUser logInWithMobilePhoneNumberInBackground:@"13577778888" password:@"cat!@#123" block:^(AVUser *user, NSError *error) {
-//        
-//    }];
+
     
 }
 
@@ -93,6 +127,11 @@
     RegistViewController *regist = [[RegistViewController alloc] init];
     
     [self presentViewController:regist animated:YES completion:nil];
+    
+}
+- (IBAction)findPassword:(UIButton *)sender {
+    RetrievePassword *retrieve = [[RetrievePassword alloc] init];
+    [self presentViewController:retrieve animated:YES completion:nil];
     
 }
 

@@ -46,11 +46,21 @@
             
             
         } else {
-            // 失败的原因可能有多种，常见的是用户名已经存在。
+            [self setHUDWithTitle:@"请检查邮箱或昵称"];
         }
     }];
     
     
+}
+
+- (void)setHUDWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = title;
+    hud.margin = 10.f;
+    hud.yOffset = 0.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
 }
 - (IBAction)backButton:(id)sender {
     
