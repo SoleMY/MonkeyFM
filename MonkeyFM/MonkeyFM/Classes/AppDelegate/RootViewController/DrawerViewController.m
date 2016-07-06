@@ -16,6 +16,9 @@
 #import "MineViewController.h"
 #import "Masonry.h"
 #import "MFM_Tool_COLOR.h"
+#import "FileHandleManager.h"
+#import "LoginViewController.h"
+#import "AVOSCloud/AVOSCloud.h"
 
 #define kCellColor [UIColor clearColor]
 #define kHeadViewHeight self.rearTableView.frame.size.height / 4
@@ -53,6 +56,9 @@
     // tableView头视图
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.rearTableView.frame.size.width, kHeadViewHeight)];
     headView.backgroundColor = [UIColor clearColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    
+    [headView addGestureRecognizer:tap];
     self.rearTableView.tableHeaderView = headView;
     // 用户头像
     UIImageView *userPhotoImageView = [[UIImageView alloc] init];
@@ -79,6 +85,23 @@
 
 }
 
+// 头视图手势
+- (void)tapGestureAction:(UITapGestureRecognizer *)tap
+{
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser != nil) {
+                
+    } else {
+        //缓存用户对象为空时，可打开用户注册界面…
+        LoginViewController *login = [[LoginViewController alloc] init];
+        login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:login animated:YES completion:^{
+            
+        }];
+    }
+
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -100,7 +123,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +135,7 @@
     
     if (nil == cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     NSString *text = nil;
@@ -134,20 +157,23 @@
     }
     else if (row == 4)
     {
-        text = @"夜间模式";
-    }
-    else if (row == 5)
-    {
-        text = @"清除缓存";
-    }
-    else if (row == 6)
-    {
-        text = @"关于我们";
-    }
-    else if (row == 7)
-    {
         text = @"我的";
     }
+//    else if (row == 5)
+//    {
+//        text = @"清除缓存";
+//        NSString *str = [[FileHandleManager shareFileHandleManager] cachesPath];
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2lfM",[[FileHandleManager shareFileHandleManager] folderSizeAtPath:str]];
+//        
+//    }
+//    else if (row == 6)
+//    {
+//        text = @"关于我们";
+//    }
+//    else if (row == 7)
+//    {
+//        text = @"我的";
+//    }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
     cell.backgroundColor = kCellColor;
@@ -211,7 +237,13 @@
         AnchorViewController *anchorViewController = [[AnchorViewController alloc] init];
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:anchorViewController];
     }
-    else if (row == 7)
+//    else if (row == 5)
+//    {
+//        // 清楚缓存
+//        [[FileHandleManager shareFileHandleManager] cleanDownloadImages];
+////        [self.rearTableView reloadData];
+//    }
+    else if (row == 4)
     {
         MineViewController *mineVC = [[MineViewController alloc] init];
         newFrontController = [[BaseNavigationViewController alloc] initWithRootViewController:mineVC];

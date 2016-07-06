@@ -9,6 +9,8 @@
 #import "BaseCell.h"
 //@class CollectionView;
 
+typedef void(^block)(NSString *);
+typedef void(^Block)(NSInteger);
 typedef void(^pushNewControllerPopularBlock)(NSString *,NSString *);
 @interface PopularItemTableViewCell : BaseCell
 
@@ -17,7 +19,8 @@ typedef void(^pushNewControllerPopularBlock)(NSString *,NSString *);
 @property (nonatomic, strong) NSMutableArray *allInfoDataArray;
 
 @property (nonatomic, copy) pushNewControllerPopularBlock pushBlock;
-
+@property (nonatomic, copy) block block;
+@property (nonatomic, copy) Block radioBlock;
 
 
 @end

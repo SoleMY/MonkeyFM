@@ -34,5 +34,9 @@
 @property (nonatomic, strong) NSString *rname;
 // 图片地址
 @property (nonatomic, strong) NSString *pic;
+// id
+@property (nonatomic, strong) NSString *rvalue;
+// type
+@property (nonatomic, strong) NSString *rtype;
 
 @end

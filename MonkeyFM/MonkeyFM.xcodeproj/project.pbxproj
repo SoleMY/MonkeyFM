@@ -10,6 +10,7 @@
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
+		A531713F1D2CAE65007E1425 /* FileHandleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A531713E1D2CAE65007E1425 /* FileHandleManager.m */; };
 		A55DD7231D2BFFC5009A28A3 /* ThemeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD7161D2BFFC5009A28A3 /* ThemeManage.m */; };
 		A55DD7241D2BFFC5009A28A3 /* UIButton+ThemeChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD7181D2BFFC5009A28A3 /* UIButton+ThemeChange.m */; };
 		A55DD7251D2BFFC5009A28A3 /* UILabel+ThemeChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD71A1D2BFFC5009A28A3 /* UILabel+ThemeChange.m */; };
@@ -268,6 +269,8 @@
 		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A531713D1D2CAE65007E1425 /* FileHandleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHandleManager.h; sourceTree = "<group>"; };
+		A531713E1D2CAE65007E1425 /* FileHandleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHandleManager.m; sourceTree = "<group>"; };
 		A55DD7151D2BFFC5009A28A3 /* ThemeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManage.h; sourceTree = "<group>"; };
 		A55DD7161D2BFFC5009A28A3 /* ThemeManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManage.m; sourceTree = "<group>"; };
 		A55DD7171D2BFFC5009A28A3 /* UIButton+ThemeChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ThemeChange.h"; sourceTree = "<group>"; };
@@ -954,6 +957,8 @@
 			children = (
 				D6C0A3911D27509F00BA5E65 /* shufflingModel.h */,
 				D6C0A3921D27509F00BA5E65 /* shufflingModel.m */,
+				A531713D1D2CAE65007E1425 /* FileHandleManager.h */,
+				A531713E1D2CAE65007E1425 /* FileHandleManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1927,6 +1932,7 @@
 				D6C0A58A1D27509F00BA5E65 /* HostViewDetaileCell.m in Sources */,
 				D6C0A5181D27509F00BA5E65 /* MJRefreshComponent.m in Sources */,
 				D6C0A5B61D27509F00BA5E65 /* RadioModel.m in Sources */,
+				A531713F1D2CAE65007E1425 /* FileHandleManager.m in Sources */,
 				D6C0A5621D27509F00BA5E65 /* BaseCell.m in Sources */,
 				D6C0A57B1D27509F00BA5E65 /* PlayListViewController.m in Sources */,
 				D6C0A5B81D27509F00BA5E65 /* RadioStyleModel.m in Sources */,
