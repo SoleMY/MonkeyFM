@@ -11,6 +11,7 @@
 #import "RadioPopularItemModel.h"
 #import "PlayListViewController.h"
 #import "SingleList.h"
+#import "MJRefresh.h"
 @interface PopularItemListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *popularTableView;
@@ -48,7 +49,11 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
         make.top.equalTo(weakSelf.view).offset(64);
         make.bottom.equalTo(weakSelf.view);
     }];
-    
+    self.popularTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.popularTableView reloadData];
+        [weakSelf.popularTableView.mj_header endRefreshing];
+        
+    }];
     // 请求数据
     [self requestData];
 }

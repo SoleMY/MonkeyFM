@@ -110,7 +110,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
         [self setSegmentedAndTableViewArray:model];
     }
     //设置控件位置
-    self.menuframe = CGRectMake(0, 64, ScreenW, 20);
+    self.menuframe = CGRectMake(0, 74, ScreenW, 20);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
     //调用父类方法加载控件
     [super viewDidLoad]; //最后执行

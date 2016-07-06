@@ -11,6 +11,7 @@
 #import "RadioStyleModel.h"
 #import "ChooseAreaViewController.h"
 #import "RadioDisPlayDetailViewController.h"
+#import "MJRefresh.h"
 
 #define kButtonSize CGSizeMake(30, 20)
 
@@ -47,7 +48,14 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         [self registerClass:[RadioStyleCell class] forCellReuseIdentifier:identifier_styleCell];
         self.count = 0;
         self.length = 0;
-        
+        __weak typeof(self) weakSelf = self;
+        self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf reloadData];
+            [weakSelf.mj_header endRefreshing];
+            
+        }];
+        [self NightWithType:UIViewColorTypeNormal];
+
     }
     return self;
 }
@@ -69,6 +77,8 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         
         RadioStyleModel *model = self.allTableViewInfoArray[indexPath.row];
         [cell bindModel:model];
+        [cell NightWithType:UIViewColorTypeNormal];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
@@ -121,11 +131,13 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
 - (void)setTableViewHeaderView:(NSString *)name
 {
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
-    tableHeaderView.backgroundColor = [UIColor whiteColor];
+//    tableHeaderView.backgroundColor = [UIColor whiteColor];
+    [tableHeaderView NightWithType:UIViewColorTypeNormal];
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = name;
     titleLabel.textColor = kNavigationBarTintColor;
     titleLabel.font = [UIFont systemFontOfSize:13];
+    
     [tableHeaderView addSubview:titleLabel];
         UIButton *more = [UIButton buttonWithType:UIButtonTypeSystem];
     [more setImage:[[UIImage imageNamed:@"btn_anchor_more@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];

@@ -120,7 +120,7 @@
     
     //改变按钮颜色
     [self.selectedBtn setTitleColor:[UIColor colorWithRed:104/255.0 green:104/255.0 blue:124/255.0 alpha:1.f] forState:UIControlStateNormal];
-    [selectedBtn setTitleColor:[UIColor colorWithRed:49/255.0 green:195/255.0 blue:124/255.0 alpha:1.f] forState:UIControlStateNormal];
+    [selectedBtn setTitleColor:[UIColor colorWithRed:46/255.0 green:196/255.0 blue:196/255.0 alpha:1.f] forState:UIControlStateNormal];
     
     //缩放动画
     CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];

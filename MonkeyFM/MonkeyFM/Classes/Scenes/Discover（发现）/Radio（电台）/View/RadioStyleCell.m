@@ -54,7 +54,9 @@
     
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.text = @"这是标题";
-    self.titleLabel.textColor = [UIColor darkGrayColor];
+//    self.titleLabel.textColor = [UIColor darkGrayColor];
+    [self.titleLabel NightWithType:UIViewColorTypeNormal];
+    [self.titleLabel NightTextType:LabelColorGray];
     self.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [self.contentView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,7 +67,9 @@
     
     self.desLabel = [[UILabel alloc] init];
     self.desLabel.text = @"这是详细介绍";
-    self.desLabel.textColor = [UIColor darkGrayColor];
+//    self.desLabel.textColor = [UIColor darkGrayColor];
+    [self.desLabel NightTextType:LabelColorGray];
+    [self.desLabel NightWithType:UIViewColorTypeNormal];
     self.desLabel.font = [UIFont systemFontOfSize:13.0f];
     [self.contentView addSubview:self.desLabel];
     [self.desLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,7 +91,9 @@
     
     self.listenPeopleNum = [[UILabel alloc] init];
     self.listenPeopleNum.text = @"10.0万";
-    self.listenPeopleNum.textColor = [UIColor darkGrayColor];
+//    self.listenPeopleNum.textColor = [UIColor darkGrayColor];
+    [self.listenPeopleNum NightTextType:LabelColorGray];
+    [self.listenPeopleNum NightWithType:UIViewColorTypeNormal];
     self.listenPeopleNum.font = [UIFont systemFontOfSize:13.0f];
     [self.contentView addSubview:self.listenPeopleNum];
     [self.listenPeopleNum mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,7 +115,9 @@
     
     self.attentionLabel = [[UILabel alloc] init];
     self.attentionLabel.text = @"45";
-    self.attentionLabel.textColor = [UIColor darkGrayColor];
+//    self.attentionLabel.textColor = [UIColor darkGrayColor];
+    [self.attentionLabel NightTextType:LabelColorGray];
+    [self.attentionLabel NightWithType:UIViewColorTypeNormal];
     self.attentionLabel.font = [UIFont systemFontOfSize:13.0f];
     [self.contentView addSubview:self.attentionLabel];
     [self.attentionLabel mas_makeConstraints:^(MASConstraintMaker *make) {

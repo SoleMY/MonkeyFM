@@ -11,6 +11,10 @@
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
 		A531713F1D2CAE65007E1425 /* FileHandleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A531713E1D2CAE65007E1425 /* FileHandleManager.m */; };
+		A53171421D2D2B36007E1425 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A53171411D2D2B36007E1425 /* SettingTableViewCell.m */; };
+		A53171461D2D3F5E007E1425 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53171441D2D3F5E007E1425 /* AboutUsViewController.m */; };
+		A53171471D2D3F5E007E1425 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53171451D2D3F5E007E1425 /* AboutUsViewController.xib */; };
+		A531714A1D2D43D3007E1425 /* NetworkMonitoringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53171491D2D43D3007E1425 /* NetworkMonitoringManager.m */; };
 		A55DD7231D2BFFC5009A28A3 /* ThemeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD7161D2BFFC5009A28A3 /* ThemeManage.m */; };
 		A55DD7241D2BFFC5009A28A3 /* UIButton+ThemeChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD7181D2BFFC5009A28A3 /* UIButton+ThemeChange.m */; };
 		A55DD7251D2BFFC5009A28A3 /* UILabel+ThemeChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD71A1D2BFFC5009A28A3 /* UILabel+ThemeChange.m */; };
@@ -271,6 +275,13 @@
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A531713D1D2CAE65007E1425 /* FileHandleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHandleManager.h; sourceTree = "<group>"; };
 		A531713E1D2CAE65007E1425 /* FileHandleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHandleManager.m; sourceTree = "<group>"; };
+		A53171401D2D2B36007E1425 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
+		A53171411D2D2B36007E1425 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
+		A53171431D2D3F5E007E1425 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		A53171441D2D3F5E007E1425 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		A53171451D2D3F5E007E1425 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
+		A53171481D2D43D3007E1425 /* NetworkMonitoringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkMonitoringManager.h; sourceTree = "<group>"; };
+		A53171491D2D43D3007E1425 /* NetworkMonitoringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkMonitoringManager.m; sourceTree = "<group>"; };
 		A55DD7151D2BFFC5009A28A3 /* ThemeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManage.h; sourceTree = "<group>"; };
 		A55DD7161D2BFFC5009A28A3 /* ThemeManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManage.m; sourceTree = "<group>"; };
 		A55DD7171D2BFFC5009A28A3 /* UIButton+ThemeChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ThemeChange.h"; sourceTree = "<group>"; };
@@ -845,6 +856,9 @@
 				D6746F501D2CF3C00012D208 /* SettingViewController.h */,
 				D6746F511D2CF3C00012D208 /* SettingViewController.m */,
 				D6746F521D2CF3C00012D208 /* SettingViewController.xib */,
+				A53171431D2D3F5E007E1425 /* AboutUsViewController.h */,
+				A53171441D2D3F5E007E1425 /* AboutUsViewController.m */,
+				A53171451D2D3F5E007E1425 /* AboutUsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -856,6 +870,8 @@
 				D6746F2C1D2CA4690012D208 /* MineTableViewCell.m */,
 				D6746F2D1D2CA4690012D208 /* SegmentView.h */,
 				D6746F2E1D2CA4690012D208 /* SegmentView.m */,
+				A53171401D2D2B36007E1425 /* SettingTableViewCell.h */,
+				A53171411D2D2B36007E1425 /* SettingTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -959,6 +975,8 @@
 				D6C0A3921D27509F00BA5E65 /* shufflingModel.m */,
 				A531713D1D2CAE65007E1425 /* FileHandleManager.h */,
 				A531713E1D2CAE65007E1425 /* FileHandleManager.m */,
+				A53171481D2D43D3007E1425 /* NetworkMonitoringManager.h */,
+				A53171491D2D43D3007E1425 /* NetworkMonitoringManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1755,6 +1773,7 @@
 				D6C0A52A1D27509F00BA5E65 /* MJRefresh.bundle in Resources */,
 				A5ABEE421D2B953600205DBA /* RadioDisPlayCollectionViewCell.xib in Resources */,
 				D6746F301D2CA4690012D208 /* LoginViewController.xib in Resources */,
+				A53171471D2D3F5E007E1425 /* AboutUsViewController.xib in Resources */,
 				D6746F491D2CE29E0012D208 /* login_username_icon@2x.png in Resources */,
 				D6C0A5381D27509F00BA5E65 /* 名人演讲.png in Resources */,
 				D6746F3F1D2CD8C60012D208 /* phone.png in Resources */,
@@ -1931,6 +1950,7 @@
 				A55DD7281D2BFFC5009A28A3 /* UIView+RemoveNotifition.m in Sources */,
 				D6C0A58A1D27509F00BA5E65 /* HostViewDetaileCell.m in Sources */,
 				D6C0A5181D27509F00BA5E65 /* MJRefreshComponent.m in Sources */,
+				A531714A1D2D43D3007E1425 /* NetworkMonitoringManager.m in Sources */,
 				D6C0A5B61D27509F00BA5E65 /* RadioModel.m in Sources */,
 				A531713F1D2CAE65007E1425 /* FileHandleManager.m in Sources */,
 				D6C0A5621D27509F00BA5E65 /* BaseCell.m in Sources */,
@@ -1987,6 +2007,7 @@
 				A55DD7251D2BFFC5009A28A3 /* UILabel+ThemeChange.m in Sources */,
 				D6C0A5801D27509F00BA5E65 /* IntroductionCell.m in Sources */,
 				D6C0A57A1D27509F00BA5E65 /* PlayList.m in Sources */,
+				A53171461D2D3F5E007E1425 /* AboutUsViewController.m in Sources */,
 				D6C0A5CB1D27509F00BA5E65 /* main.m in Sources */,
 				A55DD7271D2BFFC5009A28A3 /* UITabBar+ThemeChange.m in Sources */,
 				D6746F2F1D2CA4690012D208 /* LoginViewController.m in Sources */,
@@ -2027,6 +2048,7 @@
 				D6C0A5C01D27509F00BA5E65 /* RadioStyleListTableView.m in Sources */,
 				D6C0A5C91D27509F00BA5E65 /* SWRevealViewController.m in Sources */,
 				D6C0A5C21D27509F00BA5E65 /* RadioTypeTableViewCell.m in Sources */,
+				A53171421D2D2B36007E1425 /* SettingTableViewCell.m in Sources */,
 				D6746F531D2CF3C00012D208 /* SettingViewController.m in Sources */,
 				D6C0A5AE1D27509F00BA5E65 /* ChooseAreaViewController.m in Sources */,
 				D6C0A5061D27509F00BA5E65 /* shufflingModel.m in Sources */,
