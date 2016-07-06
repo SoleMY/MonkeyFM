@@ -34,9 +34,6 @@
         
         [self.contentView addSubview:myContentView];
         self.radioTypeLabel = [[UILabel alloc] initWithFrame:self.bounds];
-#warning 夜间模式改动
-        [self.radioTypeLabel NightWithType:UIViewColorTypeNormal];
-        [self.radioTypeLabel NightTextType:LabelColorBlack];
         [myContentView addSubview:self.radioTypeLabel];
     }
     return self;
@@ -50,7 +47,6 @@
     NSArray *nameArray = [dic objectForKey:@"dataList"];
     self.radioTypeLabel.text = [nameArray[indexPath.row] objectForKey:@"name"];
     self.radioTypeLabel.textAlignment = NSTextAlignmentCenter;
-    
 }
 
 @end

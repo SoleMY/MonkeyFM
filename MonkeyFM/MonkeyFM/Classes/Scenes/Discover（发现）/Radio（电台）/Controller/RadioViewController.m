@@ -153,7 +153,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         case 0:{
             // 第0个分区 类型电台的 cell
             RadioContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_contentCell];
-//            cell.radioContentView.backgroundColor = [UIColor whiteColor];
+            cell.radioContentView.backgroundColor = [UIColor whiteColor];
             cell.allInfoDataArray = self.allInfoDataArray;
             cell.pushBlock = ^(NSInteger selectID) {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
@@ -163,19 +163,13 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
-<<<<<<< HEAD
-=======
-            #warning 夜间模式改动
-            [cell NightWithType:UIViewColorTypeNormal];
-//            cell.backgroundColor = [UIColor clearColor];
->>>>>>> 02faa9059cd5d15312daf0bef7776af47fa467c3
             return cell;
         }
             break;
         case 1:{
             //  第1个分区 内容电台的 cell
             RadioTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_typeCell forIndexPath:indexPath];
-//            cell.radioTypeView.backgroundColor = [UIColor whiteColor];
+            cell.radioTypeView.backgroundColor = [UIColor whiteColor];
             cell.pushBlock = ^(NSInteger selectID) {
                 RadioPlayerListViewController *listVC = [[RadioPlayerListViewController alloc] init];
                 listVC.selectedSegmentIndex = 1;
@@ -184,8 +178,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
-#warning 夜间模式改动
-            [cell NightWithType:UIViewColorTypeNormal];
             cell.allInfoDataArray = self.allInfoDataArray;
             return cell;
         }
@@ -201,8 +193,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 popularListVC.titleName = titleName;
                 [weakSelf.navigationController pushViewController:popularListVC animated:YES];
             };
-#warning 夜间模式改动
-            [cell NightWithType:UIViewColorTypeNormal];
             return cell;
         }
             break;
