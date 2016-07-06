@@ -29,6 +29,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rB0-Tm-xgG">
                     <rect key="frame" x="307" y="379" width="60" height="30"/>
                     <state key="normal" title="找回密码"/>
+                    <connections>
+                        <action selector="retrievePassword:" destination="-1" eventType="touchUpInside" id="qYf-n9-YtK"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tQI-h7-dxG">
                     <rect key="frame" x="47" y="273" width="320" height="30"/>

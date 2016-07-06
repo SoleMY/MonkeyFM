@@ -10,12 +10,14 @@
 #import "AVOSCloud/AVOSCloud.h"
 #import "RegistViewController.h"
 #import "MineViewController.h"
+#import "RetrievePassword.h"
 @interface LoginViewController ()<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *wechat;
 @property (weak, nonatomic) IBOutlet UIImageView *qq;
 @property (weak, nonatomic) IBOutlet UIImageView *weibo;
+
 
 @end
 
@@ -35,27 +37,75 @@
     
     [self addGesture];
     
+    [self.nickName addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
+}
+
+- (void)finishWrite:(UITextField *)sender
+{
 }
 
 - (void)addGesture
 {
+    
+    self.qq.userInteractionEnabled = YES;
     UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQQ:)];
     // 设置轻拍次数
     aTapGR.numberOfTapsRequired = 1;
     
     aTapGR.delegate = self;
-    // 设置手指触摸的个数
-//    aTapGR.numberOfTouchesRequired = 2;
     
     // 添加手势
     [self.qq addGestureRecognizer:aTapGR];
     
+    // 微信
+    self.wechat.userInteractionEnabled = YES;
+    UITapGestureRecognizer *aTapWechat = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWechat:)];
+    // 设置轻拍次数
+    aTapWechat.numberOfTapsRequired = 1;
+    
+    aTapWechat.delegate = self;
+    
+    // 添加手势
+    [self.wechat addGestureRecognizer:aTapWechat];
+    
+    // 微信
+    self.weibo.userInteractionEnabled = YES;
+    UITapGestureRecognizer *aTapWeiBo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWeibo:)];
+    // 设置轻拍次数
+    aTapWeiBo.numberOfTapsRequired = 1;
+    
+    aTapWeiBo.delegate = self;
+    
+    // 添加手势
+    [self.weibo addGestureRecognizer:aTapWeiBo];
+    
+}
+
+// qq
+- (void)tapQQ:(UIGestureRecognizer *)sender
+{
+    NSLog(@"qq");
 }
 
 
-- (void)tapQQ:(UIGestureRecognizer *)sender
+// 微信
+- (void)tapWechat:(UIGestureRecognizer *)sender
 {
-    NSLog(@"点我");
+    NSLog(@"weChat");
+}
+
+// 微博
+- (void)tapWeibo:(UIGestureRecognizer *)sender
+{
+    NSLog(@"微博");
+    
+}
+
+
+// 找回密码
+- (IBAction)retrievePassword:(UIButton *)sender {
+    RetrievePassword *retrieve = [[RetrievePassword alloc] init];
+    [self presentViewController:retrieve animated:YES completion:nil];
 }
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
@@ -65,26 +115,29 @@
 
 // 登录button
 - (IBAction)loginButton:(UIButton *)sender {
-    
-    // 用户查询
-//    AVQuery *userQuery = [AVQuery queryWithClassName:self.nickName.text];
-    
+
     __weak typeof(self) mySelf = self;
     [AVUser logInWithUsernameInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (user != nil) {
-            NSLog(@"登陆成功");
+            [self setHUDWithTitle:@"登陆成功"];
             [mySelf dismissViewControllerAnimated:YES completion:nil];
             
         } else {
-            NSLog(@"%@", error);
+            [self setHUDWithTitle:@"用户名或密码不正确"];
         }
     }];
     
-    // 手机号登录
-//    [AVUser logInWithMobilePhoneNumberInBackground:@"13577778888" password:@"cat!@#123" block:^(AVUser *user, NSError *error) {
-//        
-//    }];
-    
+
+}
+
+- (void)setHUDWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = title;
+    hud.margin = 5.f;
+    hud.yOffset = 0.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
 }
 
 // 注册按钮的点击事件

@@ -15,6 +15,7 @@
 
 /// 验证码
 @property (weak, nonatomic) IBOutlet UITextField *verification;
+@property (weak, nonatomic) IBOutlet UIButton *verificationButton;
 
 @end
 
@@ -22,15 +23,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // 电话号输入完成时候方法
+    [self.phoneNum addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
+    
 }
+
+- (void)finishWrite:(UITextField *)sender
+{
+    self.verificationButton.titleLabel.textColor = [UIColor redColor];
+}
+
 - (IBAction)VerificationButton:(UIButton *)sender {
     
   
         
         [AVOSCloud requestSmsCodeWithPhoneNumber:self.phoneNum.text callback:^(BOOL succeeded, NSError *error) {
             // 发送失败可以查看 error 里面提供的信息
-            NSLog(@"%@", error);
+            if (succeeded) {
+                [self setHUDWithTitle:@"发送成功"];
+            } else {
+                if (error) {
+                    NSLog(@"%@", error);
+                    [self setHUDWithTitle:@"手机号输入有误"];
+                    
+                }
+            }
+
             
         }];
     
@@ -42,18 +61,32 @@
     __weak typeof(self) myself = self;
       if (self.phoneNum.text.length == 11 && self.verification.text.length > 1) {
     [AVUser signUpOrLoginWithMobilePhoneNumberInBackground:self.phoneNum.text smsCode:self.verification.text block:^(AVUser *user, NSError *error) {
+       [myself setHUDWithTitle:@"注册成功"];
+        LastRegistViewController *last = [[LastRegistViewController alloc] init];
+        [myself presentViewController:last animated:YES completion:nil];
        
-        [myself dismissViewControllerAnimated:YES completion:nil];
         
         
     }];
           
       } else {
-          NSLog(@"手机号输入有误");
+//          LastRegistViewController *last = [[LastRegistViewController alloc] init];
+//          [myself presentViewController:last animated:YES completion:nil];
+          [self setHUDWithTitle:@"请输入手机号"];
       }
 
 }
 
+
+- (void)setHUDWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = title;
+    hud.margin = 5.f;
+    hud.yOffset = 0.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -62,11 +95,7 @@
     
      [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)emailPushButton:(UIButton *)sender {
-    LastRegistViewController *last = [[LastRegistViewController alloc] init];
-    [self presentViewController:last animated:YES completion:nil];
-    
-}
+
 
 /*
 #pragma mark - Navigation
