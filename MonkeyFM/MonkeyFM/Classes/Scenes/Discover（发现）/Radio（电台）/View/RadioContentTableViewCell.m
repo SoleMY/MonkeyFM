@@ -55,8 +55,11 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     self.radioContentView.showsVerticalScrollIndicator = NO;
     self.radioContentView.bounces = NO;
     [self.contentView addSubview:self.radioContentView];
-    self.backgroundColor = [UIColor whiteColor];
-    
+#warning 夜间模式改动
+    self.backgroundColor = [UIColor clearColor];
+    [self NightWithType:UIViewColorTypeNormal];
+    self.radioContentView.backgroundColor = [UIColor clearColor];
+    [self.radioContentView NightWithType:UIViewColorTypeNormal];
     [self.radioContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf).with.offset(20);
         make.top.equalTo(weakSelf);
@@ -81,6 +84,8 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[1];
         [cell bindModel:model indexPath:indexPath];
+//        [cell NightWithType:UIViewColorTypeNormal];
+        cell.backgroundColor = [UIColor clearColor];
         
         return cell;
     } else {

@@ -17,6 +17,8 @@
     if (self) {
         // 布局视图
         [self initLayout];
+#warning 
+        [self NightWithType:UIViewColorTypeNormal];
     }
     return self;
 }
@@ -30,6 +32,9 @@
     [self.contentView addSubview:self.topImageView];
     self.bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.bounds.size.height * 2 / 3, self.bounds.size.width, self.bounds.size.height / 3)];
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
+#warning 夜间模式改动
+    [self.bottomLabel NightWithType:UIViewColorTypeNormal];
+    [self.bottomLabel NightTextType:LabelColorGray];
     [self.contentView addSubview:self.bottomLabel];
 }
 

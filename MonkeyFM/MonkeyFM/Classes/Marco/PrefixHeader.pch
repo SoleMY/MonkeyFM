@@ -19,6 +19,15 @@
 #import <MBProgressHUD.h>
 #import "Sinleton.h"
 
+// 夜间模式
+#import "ThemeManage.h"
+#import "UIView+ThemeChange.h"
+#import "UILabel+ThemeChange.h"
+#import "UIButton+ThemeChange.h"
+#import "UITabBar+ThemeChange.h"
+#import "UINavigationBar+ThemeChange.h"
+#import "UIView+RemoveNotifition.h"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 

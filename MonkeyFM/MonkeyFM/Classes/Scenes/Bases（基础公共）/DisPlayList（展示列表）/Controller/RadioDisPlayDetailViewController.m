@@ -17,11 +17,11 @@
 
 @interface RadioDisPlayDetailViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
-//@property (nonatomic, strong) UICollectionView *myCollectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (nonatomic, strong) UIToolbar *toolBar;
 
 @property (nonatomic, strong) NSMutableArray *allDisplayListInfoArray;
 @property (nonatomic, strong) NSMutableArray *allDisplayPlayInfoArray;
@@ -104,9 +104,10 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
             RadioDisplayModel *model = [[RadioDisplayModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [weakSelf.allDisplayListInfoArray addObject:model];
-            }
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf reloadUI];
+
         });
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -118,7 +119,7 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
 {
     __weak typeof(self) weakSelf = self;
     [self.allDisplayPlayInfoArray removeAllObjects];
-    [[AFHTTPSessionManager manager] GET:RADIO_DISPLAY_PLAY_EMPTY_URL(RADIO_DISPLAY_PLAY_BASE_URL, Id, RADIO_DISPLAY_PLAY_TAIL_URL) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:RADIO_DISPLAY_PLAY_EMPTY_URL(RADIO_DISPLAY_PLAY_BASE_URL, (long)Id, RADIO_DISPLAY_PLAY_TAIL_URL) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
             NSDictionary *dic = responseObject[@"result"];
             RadioDisplayPlayModel *model = [[RadioDisplayPlayModel alloc] init];
@@ -138,6 +139,7 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
     
     [self.myCollectionView reloadData];
     [self.myCollectionView scrollToItemAtIndexPath:_scrollIndexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    [self setBlurBackImageView];
     
 
 }
@@ -157,10 +159,7 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
     [cell bindModel:model];
     if (self.allDisplayPlayInfoArray.count == 1) {
         [cell bindPlayModel:self.allDisplayPlayInfoArray[0]];
-//        [cell.timer setFireDate:[NSDate distantPast]];
-    }
-    if (indexPath.row == _scrollIndexPath.row) {
-        [self setBlurBackImageView];
+        [cell.timer setFireDate:[NSDate distantPast]];
     }
     return cell;
 }
@@ -169,7 +168,7 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
 {
     NSInteger offset;
     // 根据屏幕判断偏移量，不同尺寸偏移量占比不同
-    
+    [self.toolBar removeFromSuperview];
     if (kScreenWidth == 320) {
         offset = kScreenWidth * 0.875;
     } else {
@@ -178,14 +177,17 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
     NSInteger index = self.myCollectionView.contentOffset.x / offset;
     RadioDisplayModel *model = self.allDisplayListInfoArray[index];
     [self requestPlayDataWithId:[model.ID integerValue]];
-    [UIView animateWithDuration:1 animations:^{
-        [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
-        self.titleNameLabel.text = model.name;
-        UIImageView *imageView = [[UIImageView alloc] init];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
-        UIImage * image = [self.backImageView setImageToBlur:imageView.image blurRadius:21];
-        self.backImageView.image = image;
-    }];
+    
+    [self.backImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+    //给背景图添加毛玻璃
+    self.toolBar = [[UIToolbar alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //设置toolBar的样式
+    _toolBar.barStyle = UIBarStyleBlackTranslucent;
+    _toolBar.alpha = 0.6;
+    [self.backImageView addSubview:_toolBar];
+    self.titleNameLabel.text = model.name;
+        
+    
     
 
 }

@@ -81,6 +81,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSIndexPath *indexPath = [self.containerTable indexPathForRowAtPoint:scrollView.contentOffset];
     [self.scrollMenu setselectedIndex: indexPath.row];
+    if (self.sendBlock) {
+        self.sendBlock(indexPath.row);
+    }
 }
 
 
