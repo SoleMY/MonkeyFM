@@ -18,7 +18,7 @@
         // 布局视图
         [self initLayout];
 #warning 
-        [self NightWithType:UIViewColorTypeNormal];
+//        [self NightWithType:UIViewColorTypeNormal];
     }
     return self;
 }
@@ -34,7 +34,7 @@
     self.bottomLabel.textAlignment = NSTextAlignmentCenter;
 #warning 夜间模式改动
     [self.bottomLabel NightWithType:UIViewColorTypeNormal];
-    [self.bottomLabel NightTextType:LabelColorGray];
+    [self.bottomLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.bottomLabel];
 }
 
