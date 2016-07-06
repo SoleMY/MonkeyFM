@@ -49,13 +49,13 @@
                         <action selector="BackButtonAction:" destination="-1" eventType="touchUpInside" id="sXU-F3-Lsh"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="猴子.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ubm-Lm-9pg">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ubm-Lm-9pg">
                     <rect key="frame" x="138" y="65" width="138" height="138"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ubm-Lm-9pg" secondAttribute="height" multiplier="1:1" id="cSi-lP-rad"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8H-yw-9Do">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入昵称或手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8H-yw-9Do">
                     <rect key="frame" x="47" y="223" width="320" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -127,7 +127,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="TRb-OB-VwJ" firstAttribute="width" secondItem="tQI-h7-dxG" secondAttribute="width" id="1Hs-Jw-lbB"/>
@@ -191,14 +190,14 @@
                     <exclude reference="Ys4-Kg-LHX"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="619" y="360"/>
+            <point key="canvasLocation" x="690" y="355"/>
         </view>
     </objects>
     <resources>
         <image name="QQ.png" width="74" height="74"/>
         <image name="btn_anchor_back" width="12" height="17"/>
+        <image name="user_photo.png" width="128" height="128"/>
         <image name="微信镂空.png" width="74" height="74"/>
         <image name="微博.png" width="74" height="74"/>
-        <image name="猴子.png" width="750" height="750"/>
     </resources>
 </document>

@@ -48,7 +48,12 @@
     
     // title
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.text = @"aaa";
+    self.nameLabel.text = @"qr";
+#warning 夜间模式改动
+    [self.nameLabel NightWithType:UIViewColorTypeNormal];
+    [self.nameLabel NightTextType:LabelColorBlack];
+    
+
     [self.contentView addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -59,8 +64,11 @@
     
     // 内容
     self.descLabel = [[UILabel alloc] init];
-    self.descLabel.text = @"这是内容的显示";
-    self.descLabel.textColor = [UIColor lightGrayColor];
+    self.descLabel.text = @"werwer";
+#warning 夜间模式改动
+    [self.descLabel NightWithType:UIViewColorTypeNormal];
+    [self.descLabel NightTextType:LabelColorBlack];
+    
     [self.contentView addSubview:self.descLabel];
     [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -73,8 +81,10 @@
     }];
     
     self.utimeLabel = [[UILabel alloc] init];
-    self.utimeLabel.text = @"19分钟前";
-    self.utimeLabel.textColor = [UIColor lightGrayColor];
+    self.utimeLabel.text = @"3434234";
+#warning 夜间模式改动
+    [self.utimeLabel NightWithType:UIViewColorTypeNormal];
+    [self.utimeLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.utimeLabel];
     [self.utimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        

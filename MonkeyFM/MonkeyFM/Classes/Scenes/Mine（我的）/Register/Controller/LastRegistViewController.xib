@@ -18,17 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-gl-EvX">
-                    <rect key="frame" x="132" y="64" width="150" height="128"/>
-                    <color key="backgroundColor" red="0.50518972424034403" green="1" blue="0.10639115258418863" alpha="1" colorSpace="calibratedRGB"/>
-                    <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="Tr3-3O-ULx"/>
-                        <constraint firstAttribute="height" constant="128" id="soK-Hk-j2L"/>
-                    </constraints>
-                </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入昵称（2 - 20个字符）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xnJ-gQ-SV1">
-                    <rect key="frame" x="63" y="245" width="343" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入昵称（2 - 12个字符）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xnJ-gQ-SV1">
+                    <rect key="frame" x="63" y="267" width="343" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="mP3-NS-vZf"/>
                     </constraints>
@@ -36,12 +27,12 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码 （6 - 16位）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fro-iU-Cde">
-                    <rect key="frame" x="63" y="295" width="343" height="30"/>
+                    <rect key="frame" x="63" y="317" width="343" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邮箱(选填)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Exu-BV-Q5t">
-                    <rect key="frame" x="63" y="345" width="343" height="30"/>
+                    <rect key="frame" x="63" y="367" width="343" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -57,26 +48,34 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password.png" translatesAutoresizingMaskIntoConstraints="NO" id="1HZ-tP-m2f">
-                    <rect key="frame" x="20" y="295" width="33" height="33"/>
+                    <rect key="frame" x="20" y="317" width="33" height="33"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vis-f6-hI5">
-                    <rect key="frame" x="20" y="348" width="33" height="33"/>
+                    <rect key="frame" x="20" y="370" width="33" height="33"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_icon_me_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-Pd-oiy">
-                    <rect key="frame" x="20" y="242" width="33" height="33"/>
+                    <rect key="frame" x="20" y="264" width="33" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="O84-Iy-L1I"/>
                         <constraint firstAttribute="width" constant="33" id="h0J-2s-meD"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="721-II-AKt">
-                    <rect key="frame" x="20" y="421" width="383" height="30"/>
+                    <rect key="frame" x="20" y="443" width="383" height="30"/>
                     <color key="backgroundColor" red="0.51336835400000003" green="1" blue="0.46644900350000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="提交注册"/>
                     <connections>
                         <action selector="registeButton:" destination="-1" eventType="touchUpInside" id="SU1-2Q-Fnb"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-gl-EvX">
+                    <rect key="frame" x="132" y="64" width="150" height="150"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Tr3-3O-ULx"/>
+                        <constraint firstAttribute="height" constant="150" id="soK-Hk-j2L"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -118,5 +117,6 @@
         <image name="email.png" width="30" height="30"/>
         <image name="password.png" width="30" height="30"/>
         <image name="tabbar_icon_me_normal.png" width="19" height="19"/>
+        <image name="user_photo.png" width="128" height="128"/>
     </resources>
 </document>

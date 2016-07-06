@@ -83,7 +83,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
+ 
     NewsAllModel *model = self.newsAllArray[indexPath.row];
 
     NSURL *url = [NSURL URLWithString:model.pic];

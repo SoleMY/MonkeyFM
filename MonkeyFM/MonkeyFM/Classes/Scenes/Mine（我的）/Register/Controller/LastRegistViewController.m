@@ -22,7 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 设置圆角
+    self.headerImage.layer.masksToBounds=YES;
+    self.headerImage.layer.cornerRadius=150/2.0f; //设置为图片宽度的一半出来为圆形
+//    self.headerImage.layer.borderWidth=1.0f; //边框宽度
+//    self.headerImage.layer.borderColor=[[UIColor greenColor] CGColor];//边框颜色
+
     // 图片添加手势
     self.headerImage.userInteractionEnabled = YES;
     UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapheaderImage:)];
@@ -37,9 +42,47 @@
     // 图片管理器
     self.imagePicker = [[UIImagePickerController alloc] init];
     _imagePicker.delegate = self;
+    
+    // 写完之后判断
+    [self addFinishWrite];
 
+    self.view.backgroundColor = kNavigationBarTintColor;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
+}
+
+
+- (void)addFinishWrite
+{
+    [self.nickname addTarget:self action:@selector(nicknameAction:) forControlEvents:UIControlEventEditingDidEnd];
+    [self.password addTarget:self action:@selector(passwordAction:) forControlEvents:UIControlEventEditingDidEnd];
+}
+
+- (void)nicknameAction:(UITextField *)sender
+{
+    if (self.nickname.text.length <= 2 || self.nickname.text.length > 12) {
+        [self setHUDWithTitle:@"您输入的昵称不合格"];
+    }
+  }
+
+- (void)passwordAction:(UITextField *)sender
+{
+    if (self.password.text.length < 6) {
+        [self setHUDWithTitle:@"您的密码过于简单"];
+    }
+    if (self.password.text.length > 16) {
+        [self setHUDWithTitle:@"您的密码过长"];
+    }
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,21 +91,24 @@
 
 - (IBAction)registeButton:(id)sender {
     
-    [[AVUser currentUser] setObject:self.nickname.text forKey:@"username"];
-    [[AVUser currentUser] setObject:self.password.text forKey:@"password"];
-    NSData *data = UIImageJPEGRepresentation(self.headerImage.image,1.0);
-    [[AVUser currentUser] setObject:data forKeyedSubscript:@"headImage"];
-    [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            LoginViewController *login = [[LoginViewController alloc] init];
-            login.nickName.text = self.nickname.text;
-            login.headerImage = self.headerImage;
-            [self presentViewController:login animated:YES completion:nil];
-        } else {
-            [self setHUDWithTitle:@"未知错误"];
-        }
-    }];
-  
+    if (self.nickname.text.length > 2 && self.nickname.text.length <= 12 && self.password.text.length >= 6 && self.password.text.length <= 16) {
+        
+        
+        [[AVUser currentUser] setObject:self.nickname.text forKey:@"username"];
+        [[AVUser currentUser] setObject:self.password.text forKey:@"password"];
+        NSData *data = UIImageJPEGRepresentation(self.headerImage.image,1.0);
+        [[AVUser currentUser] setObject:data forKeyedSubscript:@"headImage"];
+        [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                LoginViewController *login = [[LoginViewController alloc] init];
+                login.nickName.text = self.nickname.text;
+                login.headerImage = self.headerImage;
+                [self.navigationController pushViewController:login animated:YES];
+            } else {
+                [self setHUDWithTitle:@"未知错误"];
+            }
+        }];
+    }
     
 }
 
@@ -78,7 +124,7 @@
 
 - (IBAction)backButton:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
