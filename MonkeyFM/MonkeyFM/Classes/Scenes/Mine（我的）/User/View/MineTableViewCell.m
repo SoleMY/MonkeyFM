@@ -96,7 +96,7 @@
 //        make.trailing.equalTo(mySelf.descLabel);
         make.right.equalTo(mySelf.contentView.mas_right).offset(-5);
         make.width.mas_equalTo(130);
-        
+        NSLog(@"111");
     }];
     
 }
