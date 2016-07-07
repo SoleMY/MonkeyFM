@@ -9,13 +9,14 @@
 #import "RegistViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
 #import "LastRegistViewController.h"
-@interface RegistViewController ()
+@interface RegistViewController ()<UITextFieldDelegate>
 /// 电话号
 @property (weak, nonatomic) IBOutlet UITextField *phoneNum;
 
 /// 验证码
 @property (weak, nonatomic) IBOutlet UITextField *verification;
 @property (weak, nonatomic) IBOutlet UIButton *verificationButton;
+@property (weak, nonatomic) IBOutlet UIButton *registButton;
 
 @end
 
@@ -26,12 +27,63 @@
     
     // 电话号输入完成时候方法
     [self.phoneNum addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
-    self.view.backgroundColor = kNavigationBarTintColor;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = @"注册";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton:)];
+    
+    // 设置颜色和圆角
+    [self setShape];
+    
+    self.phoneNum.delegate = self;
+    self.phoneNum.keyboardType = UIKeyboardTypeNumberPad;
+    [self.phoneNum becomeFirstResponder];
+    
+    self.verification.delegate = self;
+    self.verification.keyboardType = UIKeyboardTypeNumberPad;
+    [self.phoneNum becomeFirstResponder];
+    
+}
+
+// 当点击键盘return的时候
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.phoneNum resignFirstResponder]; // 释放第一响应者
+    [self.verification resignFirstResponder];
+    return YES;
+}
+//  触摸屏幕回收键盘
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (void)setShape {
+    self.phoneNum.layer.cornerRadius = 10;
+    self.phoneNum.layer.borderWidth = 1;
+    self.phoneNum.layer.borderColor = kNavigationBarTintColor.CGColor;
+//    self.phoneNum.layer.opacity = 0.5;
+    self.verification.layer.cornerRadius = 10;
+    self.verification.layer.borderWidth = 1;
+    self.verification.layer.borderColor = kNavigationBarTintColor.CGColor;
+    //
+    self.verificationButton.layer.cornerRadius = 10;
+    self.verificationButton.layer.borderWidth = 1;
+    self.verificationButton.layer.borderColor = kNavigationBarTintColor.CGColor;
+    self.verificationButton.backgroundColor = kNavigationBarTintColor;
+    [self.verificationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    //
+    self.registButton.layer.cornerRadius = 10;
+    self.registButton.layer.borderWidth = 1;
+    self.registButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.registButton.backgroundColor = kNavigationBarTintColor;
+    [self.registButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -103,7 +155,7 @@
 
 
 
-- (IBAction)backButton:(id)sender {
+- (void)backButton:(UIBarButtonItem *)sender {
     
      [self.navigationController popViewControllerAnimated:YES];
 }

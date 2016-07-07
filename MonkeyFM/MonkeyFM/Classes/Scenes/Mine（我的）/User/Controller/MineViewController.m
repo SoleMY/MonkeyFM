@@ -433,6 +433,8 @@
     if (self.index == 1) {
     
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     //    AVObject *object = self.allCollectionArray[indexPath.row];
     [cell cellBindWithObject:self.allCollectionArray[indexPath.row]];
     NSLog(@"%ld", _allCollectionArray.count);
@@ -449,8 +451,8 @@
         return subCell;
     }
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
-#warning 夜间模式改动
-    [cell NightWithType:UIViewColorTypeNormal];
+
+    
     return cell;
     
 }
