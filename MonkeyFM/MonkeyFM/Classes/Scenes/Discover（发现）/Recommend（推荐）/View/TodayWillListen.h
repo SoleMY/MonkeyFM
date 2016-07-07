@@ -9,6 +9,5 @@
 #import "BaseCell.h"
 
 @interface TodayWillListen : BaseCell
-// 接收数据
-@property (nonatomic, strong) NSMutableArray *allInfoDataArray;
+
 @end
