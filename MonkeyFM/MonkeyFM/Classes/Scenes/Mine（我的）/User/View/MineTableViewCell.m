@@ -12,6 +12,7 @@
 #define imageWidth 30
 #define cellHeightAndSpace [UIScreen mainScreen].bounds.size.width - 130
 
+
 @implementation MineTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -57,7 +58,7 @@
     [self.contentView addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(mySelf.pic.mas_top).offset(2*kSpace);
+        make.top.equalTo(mySelf.pic.mas_top).offset(1.5*kSpace);
         make.left.equalTo(mySelf.pic.mas_right).offset(kSpace);
         make.width.mas_equalTo(cellHeightAndSpace);
     }];
@@ -81,6 +82,9 @@
     }];
     
     self.utimeLabel = [[UILabel alloc] init];
+    self.utimeLabel.text = @"19分钟前";
+    self.utimeLabel.textColor = [UIColor lightGrayColor];
+    self.utimeLabel.textAlignment = NSTextAlignmentRight;
     self.utimeLabel.text = @"3434234";
 #warning 夜间模式改动
     [self.utimeLabel NightWithType:UIViewColorTypeNormal];
@@ -89,11 +93,21 @@
     [self.utimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.bottom.equalTo(mySelf.contentView).offset(-10);
-        make.trailing.equalTo(mySelf.descLabel);
-        make.width.mas_equalTo(100);
+//        make.trailing.equalTo(mySelf.descLabel);
+        make.right.equalTo(mySelf.contentView.mas_right).offset(-5);
+        make.width.mas_equalTo(130);
         
     }];
     
+}
+
+
+- (void)cellBindWithObject:(AVObject *)object {
+    self.nameLabel.text = [object objectForKey:@"name"];
+    self.descLabel.text = @"";
+    self.utimeLabel.text = [object objectForKey:@"updateDay"];
+    NSString *picURL = [object objectForKey:@"pic"];
+    [self.pic sd_setImageWithURL:[NSURL URLWithString:picURL]];
 }
 
 @end

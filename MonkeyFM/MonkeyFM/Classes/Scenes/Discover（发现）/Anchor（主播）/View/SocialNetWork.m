@@ -22,9 +22,10 @@
     self.iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
     self.iconImage.backgroundColor = [UIColor cyanColor];
     [self.contentView addSubview:self.iconImage];
+    __weak typeof(self)weakSelf = self;
     [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10);
-        make.left.equalTo(self.contentView).offset(10);
+        make.top.equalTo(weakSelf.contentView).offset(10);
+        make.left.equalTo(weakSelf.contentView).offset(10);
         make.height.mas_offset(30);
         make.width.mas_offset(30);
     }];

@@ -20,7 +20,7 @@
 - (void)initLayout {
     self.hostLabel = [[UILabel alloc] init];
     self.hostLabel.text = @"主播:";
-    self.hostLabel.textColor = [UIColor grayColor];
+//    self.hostLabel.textColor = [UIColor grayColor];
     self.hostLabel.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:self.hostLabel];
     __weak typeof(self) weakSelf = self;
@@ -30,6 +30,10 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
+#warning 夜间模式改动
+    [self.hostLabel NightWithType:UIViewColorTypeNormal];
+    [self.hostLabel NightTextType:LabelColorGray];
+    
     
     self.hostText = [[UILabel alloc] init];
     self.hostText.text = @"小毛炉";
@@ -41,11 +45,14 @@
         make.height.mas_offset(20);
         make.width.mas_offset(weakSelf.frame.size.width - 60);
     }];
+#warning 夜间模式改动
+    [self.hostText NightWithType:UIViewColorTypeNormal];
+    [self.hostText NightTextType:LabelColorBlack];
     
     self.sourceLabel = [[UILabel alloc] init];
     self.sourceLabel.text = @"来源";
     self.sourceLabel.font = [UIFont systemFontOfSize:15];
-    self.sourceLabel.textColor = [UIColor grayColor];
+//    self.sourceLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.sourceLabel];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.hostLabel.mas_bottom).offset(10);
@@ -53,6 +60,10 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
+#warning 夜间模式改动
+    [self.sourceLabel NightWithType:UIViewColorTypeNormal];
+    [self.sourceText NightTextType:LabelColorGray];
+    
     
     self.sourceText = [[UILabel alloc] init];
     self.sourceText.text = @"MonkeyFM";
@@ -64,6 +75,10 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
+#warning 夜间模式改动
+    [self.sourceText NightWithType:UIViewColorTypeNormal];
+    [self.sourceText NightTextType:LabelColorBlack];
+    
     
     self.uploadingLabel = [[UILabel alloc] init];
     self.uploadingLabel.text = @"上传";
@@ -77,6 +92,10 @@
         make.height.mas_offset(17);
     }];
     
+#warning 夜间模式改动
+    [self.uploadingLabel NightWithType:UIViewColorTypeNormal];
+    [self.uploadingLabel NightTextType:LabelColorGray];
+    
     self.uploadingText = [[UILabel alloc]init];
     self.uploadingText.text =@"王钢蛋";
     self.uploadingText.font = [UIFont systemFontOfSize:15];
@@ -87,6 +106,10 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
+#warning 夜间模式改动
+    [self.uploadingText NightWithType:UIViewColorTypeNormal];
+    [self.uploadingText NightTextType:LabelColorBlack];
+    
     
     self.accreditLabel = [[UILabel alloc] init];
     self.accreditLabel.text = @"授权方式";
@@ -99,7 +122,10 @@
         make.width.mas_offset(70);
         make.height.mas_offset(17);
     }];
-
+#warning 夜间模式改动
+    [self.accreditLabel NightWithType:UIViewColorTypeNormal];
+    [self.accreditLabel NightTextType:LabelColorGray];
+    
     self.accreditText = [[UILabel alloc] init];
     self.accreditText.text = @"原创";
     self.accreditText.font = [UIFont systemFontOfSize:15];
@@ -110,6 +136,9 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
+#warning 夜间模式改动
+    [self.accreditText NightWithType:UIViewColorTypeNormal];
+    [self.accreditText NightTextType:LabelColorBlack];
     
     self.statuLabel = [[UILabel alloc] init];
     self.statuLabel.text = @"状态";
@@ -122,6 +151,10 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
+#warning 夜间模式改动
+    [self.statuLabel NightWithType:UIViewColorTypeNormal];
+    [self.statuLabel NightTextType:LabelColorGray];
+    
     
     self.statusText = [[UILabel alloc] init];
     self.statusText.text = @"更新中";
@@ -133,6 +166,9 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
+#warning 夜间模式改动
+    [self.statusText NightWithType:UIViewColorTypeNormal];
+    [self.statusText NightTextType:LabelColorBlack];
     
     
 }

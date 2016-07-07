@@ -8,7 +8,7 @@
 
 
 #import "BaseCell.h"
-
+#import "AVOSCloud/AVOSCloud.h"
 @interface MineTableViewCell : BaseCell
 
 /// 头像
@@ -25,5 +25,7 @@
 
 /// 图片上的button
 @property (nonatomic, strong) UIImageView *button;
+
+- (void)cellBindWithObject:(AVObject *)object;
 
 @end

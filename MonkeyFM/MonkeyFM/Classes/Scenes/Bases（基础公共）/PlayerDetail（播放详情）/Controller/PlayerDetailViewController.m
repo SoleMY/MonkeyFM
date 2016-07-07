@@ -13,6 +13,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVPlayerManager.h"
 #import "ListViewController.h"
+#import "UMSocial.h"
+#import "AVOSCloud/AVOSCloud.h"
+#import "LoginViewController.h"
 
 #define KAVPlayerManager [AVPlayerManager shareAVPlayerManager]
 
@@ -22,10 +25,24 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
     OrderMode,//顺序
 };
 
+typedef NS_ENUM(NSUInteger, isCollect) {
+    Collected,//收藏
+    UnCollect,//未收藏
+};
 
-@interface PlayerDetailViewController ()<AVPlayerManagerDelegate>
+typedef NS_ENUM(NSUInteger, isSubscribe) {
+    Subsricbe,
+    UnSubscribe,
+};
+
+@interface PlayerDetailViewController ()<AVPlayerManagerDelegate, UMSocialUIDelegate>
 {
     LoopMode _loopMode; //用来记录当前的播放模式
+    
+    isCollect _iscollect;
+    
+    isSubscribe _issubscribe;
+    
 }
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *firstImage;
@@ -50,11 +67,27 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
 @property (nonatomic, strong)AVPlayer *avPlayer;
 @property (nonatomic, assign)AVPlayerManagerStatus statu;
 @property (nonatomic, strong)NSTimer *timer;
+@property (nonatomic, strong)NSMutableArray *array;
+@property (weak, nonatomic) IBOutlet UIButton *collectButton;
+@property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
 
 @end
 
 @implementation PlayerDetailViewController
 
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+
+- (NSMutableArray *)array {
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
+}
 
 - (NSMutableArray *)allDataArray {
     if (!_allDataArray) {
@@ -63,9 +96,33 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
     return _allDataArray;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    PlayList *plist=  self.allDataArray[self.row];
+    AVQuery *query = [AVQuery queryWithClassName:@"Album"];
+    [query getObjectInBackgroundWithId:[[SingleList shareSingleList].objectIDdic objectForKey:plist.audioName] block:^(AVObject *object, NSError *error) {
+        
+        if ([object objectForKey:@"name"]) {
+            _iscollect = Collected;
+            [self.collectButton setImage:[UIImage imageNamed:@"chat_support_blue@2x"] forState:UIControlStateNormal];
+        }else {
+            _iscollect = UnCollect;
+            [self.collectButton setImage:[UIImage imageNamed:@"chat_support_green@2x"] forState:UIControlStateNormal];
+        }
+    }];
+    AVQuery *subscribeQuery = [AVQuery queryWithClassName:@"Subscribe"];
+    [subscribeQuery getObjectInBackgroundWithId:[[SingleList shareSingleList].subscribeIDdic objectForKey:plist.audioName] block:^(AVObject *object, NSError *error) {
+        if ([object objectForKey:@"name"]) {
+            _issubscribe = Subsricbe;
+            [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe_on"] forState:UIControlStateNormal];
+        } else {
+            _issubscribe = UnSubscribe;
+            [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe"] forState:UIControlStateNormal];
+        }
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.firstImage.alpha = 0;
     self.firstImage.backgroundColor = [UIColor lightGrayColor];
     self.secondImage.alpha = 0;
@@ -126,6 +183,7 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
 
 - (void)initLayout {
     PlayList *playlist = self.allDataArray[self.row];
+//    NSLog(@"%@", playlist.albumPic);
     [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:playlist.albumPic]];
     self.bgImageView.image = [self.bgImageView setImageToBlur:self.bgImageView.image blurRadius:50];
     self.titleLabel.text = playlist.audioName;
@@ -145,16 +203,6 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
     KAVPlayerManager.status = isPaused;
 }
 
-- (void)animation {
-    [UIView transitionWithView:self.view duration:1 options:0 animations:^{
-        self.firstImage.frame = self.secondImage.frame;
-        self.secondImage.frame = self.thirdImage.frame;
-        self.thirdImage.frame = self.fourthImage.frame;
-        self.fourthImage.frame = self.firstImage.frame;
-    } completion:^(BOOL finished) {
-        
-    }];
-}
 
 - (IBAction)nextButtonClick:(id)sender {
     NSInteger pageNum = self.allDataArray.count / 10;
@@ -180,16 +228,17 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
     NSString *str = [[SingleList shareSingleList].dict objectForKey:@"ID"];
     NSString *URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND,pageNum, PLAY_LIST_PROGRAM_APPENDTWO];
     NetWorking *networking = [[NetWorking alloc] init];
+    __weak typeof(self)weakSelf = self;
     [networking requestWithURL:URLString Bolck:^(id array) {
         NSDictionary *resultDic = array[@"result"];
         NSArray *dataList = resultDic[@"dataList"];
         for (NSDictionary *dict in dataList) {
             PlayList *playList =  [[PlayList alloc] init];
             [playList setValuesForKeysWithDictionary:dict];
-            [self.allDataArray addObject:playList];
+            [weakSelf.allDataArray addObject:playList];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self reloadInputViews];
+            [weakSelf reloadInputViews];
         });
     }];
 }
@@ -215,11 +264,10 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
 - (void)playDidFinished {
     [self getMusicByLoopMode];
 }
-//
+
 - (void)getMusicByLoopMode {
     switch (_loopMode) {
         case SingleMode:
-//            self.row;
             [self playAndSetUpViews];
             break;
         case OrderMode:
@@ -231,7 +279,6 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
             [self playAndSetUpViews];
             break;
         default:
-            NSLog(@"未知模式，请设置");
             break;
     }
 }
@@ -245,6 +292,103 @@ typedef NS_ENUM(NSUInteger, LoopMode) {
     PlayList *playlist = self.allDataArray[self.row];
     self.mp3URL = playlist.mp3PlayUrl;
     [KAVPlayerManager playWithUrl:self.mp3URL];
+}
+- (IBAction)shareButton:(id)sender {
+    PlayList *playlist = self.allDataArray[self.row];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:playlist.albumPic];
+    [UMSocialData defaultData].extConfig.title = playlist.name;
+//    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"577ba4d967e58e5e15002839"
+                                      shareText:playlist.audioName
+                                     shareImage:[UIImage imageNamed:@"icon"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                       delegate:self];
+    
+    
+}
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+
+- (IBAction)collectAction:(id)sender {
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser == nil) {
+        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+    } else  {
+        PlayList *playList = self.allDataArray[self.row];
+        if (_iscollect == UnCollect)  {
+            PlayList *playlist = self.allDataArray[self.row];
+            NSString *name = playlist.audioName;
+            NSString *ID = [[SingleList shareSingleList].dict objectForKey:@"ID"];
+            NSString *updateDay = playlist.updateTime;
+            NSString *pic = playList.albumPic;
+//            NSData *data = 
+            NSString *row = [NSString stringWithFormat:@"%ld", (long)self.row];
+            _iscollect = Collected;
+            AVObject *object = [AVObject objectWithClassName:@"Album"];
+            [object setObject:name forKey:@"name"];
+            [object setObject:ID forKey:@"ID"];
+            [object setObject:updateDay forKey:@"updateDay"];
+            [object setObject: currentUser.username forKey:@"userName"];
+            [object setObject:pic forKey:@"pic"];
+//            [object setObject:array forKey:@"array"];
+            [object setObject:row forKey:@"row"];
+            [object fetchWhenSave];
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [[SingleList shareSingleList].objectIDdic setObject:object.objectId forKey:playlist.audioName];
+                }
+            }];
+            [self.collectButton setImage:[UIImage imageNamed:@"chat_support_blue@2x"] forState:UIControlStateNormal];
+        } else {
+            AVObject *object = [AVObject objectWithClassName:@"Album" objectId:[[SingleList shareSingleList].objectIDdic objectForKey:playList.audioName]];
+            [object deleteInBackground];
+            _iscollect = UnCollect;
+            [self.collectButton setImage:[UIImage imageNamed:@"chat_support_green@2x"] forState:UIControlStateNormal];
+        }
+        }
+}
+- (IBAction)subscribeAction:(id)sender {
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser == nil) {
+        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+    } else  {
+        PlayList *playList = self.allDataArray[self.row];
+        if (_issubscribe == UnSubscribe)  {
+            PlayList *playlist = self.allDataArray[self.row];
+            NSString *name = playlist.audioName;
+            NSString *ID = [[SingleList shareSingleList].dict objectForKey:@"ID"];
+            NSString *updateDay = playlist.updateTime;
+            NSString *pic = playList.albumPic;
+            _issubscribe = Subsricbe;
+            AVObject *object = [AVObject objectWithClassName:@"Subscribe"];
+            [object setObject:name forKey:@"name"];
+            [object setObject:ID forKey:@"ID"];
+            [object setObject:updateDay forKey:@"updateDay"];
+            [object setObject: currentUser.username forKey:@"userName"];
+            [object setObject:pic forKey:@"pic"];
+            [object fetchWhenSave];
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [[SingleList shareSingleList].subscribeIDdic setObject:object.objectId forKey:playlist.audioName];
+                }
+            }];
+            [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe_on"] forState:UIControlStateNormal];
+        } else {
+            AVObject *object = [AVObject objectWithClassName:@"Subscribe" objectId:[[SingleList shareSingleList].subscribeIDdic objectForKey:playList.audioName]];
+            [object deleteInBackground];
+            _issubscribe = UnSubscribe;
+            [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe"] forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

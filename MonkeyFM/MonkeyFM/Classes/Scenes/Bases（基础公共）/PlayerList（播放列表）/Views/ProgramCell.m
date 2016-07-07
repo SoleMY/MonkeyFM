@@ -23,22 +23,29 @@
     self.titleLabel.text = @"第一期";
     self.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:self.titleLabel];
+    __weak typeof(self)weakSelf = self;
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(3);
-        make.left.equalTo(self.contentView).offset(5);
-        make.right.equalTo(self.contentView.mas_right).offset(-20);
+        make.top.equalTo(weakSelf.contentView).offset(3);
+        make.left.equalTo(weakSelf.contentView).offset(5);
+        make.right.equalTo(weakSelf.contentView.mas_right).offset(-20);
         make.height.mas_offset(25);
     }];
     
+#warning 夜间模式改动
+    [self.titleLabel NightWithType:UIViewColorTypeNormal];
+    [self.titleLabel NightTextType:LabelColorBlack];
+    
     self.listen = [[UIImageView alloc] init];
-    self.listen.backgroundColor = [UIColor orangeColor];
+//    self.listen.backgroundColor = [UIColor orangeColor];
+    self.listen.image = [UIImage imageNamed:@"icon_listen"];
     [self.contentView addSubview:self.listen];
     [self.listen mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(5);
-        make.left.equalTo(self.titleLabel).offset(0);
-        make.width.mas_offset(20);
-        make.height.mas_offset(20);
+        make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(5);
+        make.left.equalTo(weakSelf.titleLabel).offset(0);
+        make.width.mas_offset(15);
+        make.height.mas_offset(15);
     }];
+
     
     self.listenNumber = [[UILabel alloc] init];
     self.listenNumber.text = @"2903";
@@ -46,21 +53,27 @@
     self.listenNumber.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.listenNumber];
     [self.listenNumber mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.listen).offset(0);
-        make.left.equalTo(self.listen.mas_right).offset(3);
+        make.top.equalTo(weakSelf.listen).offset(0);
+        make.left.equalTo(weakSelf.listen.mas_right).offset(3);
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
+#warning 夜间模式改动
+    [self.listenNumber NightWithType:UIViewColorTypeNormal];
+    [self.listenNumber NightTextType:LabelColorGray];
     
     self.like = [[UIImageView alloc] init];
-    self.like.backgroundColor = [UIColor orangeColor];
+//    self.like.backgroundColor = [UIColor orangeColor];
+    self.like.image = [UIImage imageNamed:@"icon_detail_attention@2x"];
     [self.contentView addSubview:self.like];
     [self.like mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.listen).offset(0);
-        make.left.equalTo(self.listenNumber.mas_right).offset(5);
-        make.height.mas_offset(20);
-        make.width.mas_offset(20);
+        make.top.equalTo(weakSelf.listen).offset(0);
+        make.left.equalTo(weakSelf.listenNumber.mas_right).offset(5);
+        make.height.mas_offset(15);
+        make.width.mas_offset(15);
     }];
+    
+    
     
     self.likeNumber = [[UILabel alloc] init];
     self.likeNumber.text = @"4";
@@ -68,20 +81,24 @@
     self.likeNumber.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.likeNumber];
     [self.likeNumber mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.like).offset(0);
-        make.left.equalTo(self.like.mas_right).offset(3);
+        make.top.equalTo(weakSelf.like).offset(0);
+        make.left.equalTo(weakSelf.like.mas_right).offset(3);
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
+#warning 夜间模式改动
+    [self.likeNumber NightWithType:UIViewColorTypeNormal];
+    [self.likeNumber NightTextType:LabelColorGray];
     
     self.comment = [[UIImageView alloc] init];
-    self.comment.backgroundColor = [UIColor orangeColor];
+//    self.comment.backgroundColor = [UIColor orangeColor];
+    self.comment.image = [UIImage imageNamed:@"icon_radiodetail_arrowup@2x"];
     [self.contentView addSubview:self.comment];
     [self.comment mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.likeNumber).offset(0);
-        make.left.equalTo(self.likeNumber.mas_right).offset(5);
-        make.height.mas_offset(20);
-        make.width.mas_offset(20);
+        make.top.equalTo(weakSelf.likeNumber).offset(0);
+        make.left.equalTo(weakSelf.likeNumber.mas_right).offset(5);
+        make.height.mas_offset(15);
+        make.width.mas_offset(15);
     }];
     
     self.commentNumber = [[UILabel alloc] init];
@@ -90,11 +107,14 @@
     self.commentNumber.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.commentNumber];
     [self.commentNumber mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.comment).offset(0);
-        make.left.equalTo(self.comment.mas_right).offset(5);
+        make.top.equalTo(weakSelf.comment).offset(0);
+        make.left.equalTo(weakSelf.comment.mas_right).offset(5);
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
+#warning 夜间模式改动
+    [self.commentNumber NightWithType:UIViewColorTypeNormal];
+    [self.commentNumber NightTextType:LabelColorGray];
     
     self.dateLabel = [[UILabel alloc] init];
     self.dateLabel.text = @"2016-06-17";
@@ -102,11 +122,14 @@
     self.dateLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.dateLabel];
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.commentNumber).offset(0);
-        make.left.equalTo(self.commentNumber.mas_right).offset(5);
+        make.top.equalTo(weakSelf.commentNumber).offset(0);
+        make.left.equalTo(weakSelf.commentNumber.mas_right).offset(5);
         make.height.mas_offset(20);
         make.width.mas_offset(80);
     }];
+#warning 夜间模式改动
+    [self.dateLabel NightWithType:UIViewColorTypeNormal];
+    [self.dateLabel NightTextType:LabelColorGray];
     
 }
 

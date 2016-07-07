@@ -28,9 +28,13 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonAction)];
     NSArray *titleArray = @[@"节目", @"评论", @"详情"];
     NSArray *VCArray = @[@"ProgramViewController", @"CommentViewController", @"DetaileViewController"];
-    NSArray *colorArray = @[[UIColor greenColor], [UIColor grayColor], [UIColor greenColor]];
+    NSArray *colorArray = @[kNavigationBarTintColor, [UIColor grayColor], kNavigationBarTintColor];
     NinaPagerView *ninaPagerView = [[NinaPagerView alloc] initWithNinaPagerStyle:NinaPagerStyleBottomLine WithTitles:titleArray WithVCs:VCArray WithColorArrays:colorArray];
-
+#warning 夜间模式改动
+    [ninaPagerView NightWithType:UIViewColorTypeNormal];
+    
+#warning 夜间模式改动
+    [self.view NightWithType:UIViewColorTypeNormal];
     [self.view addSubview:ninaPagerView];
     ninaPagerView.pushEnabled = YES;
     self.navigationController.navigationBarHidden = NO;

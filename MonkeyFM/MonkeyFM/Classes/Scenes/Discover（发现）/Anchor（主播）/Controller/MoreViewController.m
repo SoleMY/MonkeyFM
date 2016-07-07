@@ -12,6 +12,8 @@
 #import "More.h"
 #import "PlayListViewController.h"
 #import "SingleList.h"
+#import "MJRefresh.h"
+
 @interface MoreViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)UITableView *tableView;
@@ -41,22 +43,32 @@
     [self request];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    __weak typeof(self)weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        
+    }];
+#warning 夜间模式改动
+    [self.tableView NightWithType:UIViewColorTypeNormal];
+    
 }
 
 - (void)request{
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@%@%@%@%@", Host_detaile_BaseURL, self.appendStr, Host_detaile_AppendURLOne, self.uid, Host_detaile_AppendURLTwo];
+    __weak typeof(self)weakSelf = self;
     [netWorking requestWithURL:URLString Bolck:^(id array) {
         NSDictionary *resultDic = array[@"result"];
         NSArray *dataListArr = resultDic[@"dataList"];
         for (NSDictionary *dict in dataListArr) {
             More *more = [[More alloc] init];
             [more setValuesForKeysWithDictionary:dict];
-            [self.allDataArr addObject:more];
+            [weakSelf.allDataArr addObject:more];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
         
     }];
@@ -76,12 +88,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"MoreCell" forIndexPath:indexPath];
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
+    
     More *more = self.allDataArr[indexPath.row];
     if ([self.appendStr isEqualToString:@"subscribe"]) {
         [cell.picture sd_setImageWithURL:[NSURL URLWithString: more.pic]];
         cell.titleLabel.text = more.name;
         cell.subLabel.text = more.desc;
-        self.Id = more.Id;
     } else if ([self.appendStr isEqualToString:@"like"]) {
         [cell.picture sd_setImageWithURL:[NSURL URLWithString:more.audioPic]];
         cell.titleLabel.text = more.audioName;
@@ -101,9 +115,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PlayListViewController *PlayListVC = [[PlayListViewController alloc] init];
-    NSString *str = [NSString stringWithFormat:@"%d", self.Id];
-    NSLog(@"%d", self.Id);
-    NSLog(@"%@", str);
+     More *more = self.allDataArr[indexPath.row];
+    [[SingleList shareSingleList].dict setObject:more.Id forKey:@"ID"];
     [self.navigationController pushViewController:PlayListVC animated:YES];
 }
 

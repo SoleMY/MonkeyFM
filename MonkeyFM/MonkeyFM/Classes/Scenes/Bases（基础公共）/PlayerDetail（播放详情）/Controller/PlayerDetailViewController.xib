@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -11,6 +10,7 @@
                 <outlet property="allTime" destination="tJh-Ws-jPZ" id="d8Z-x4-jDy"/>
                 <outlet property="backButton" destination="pYR-bn-YBf" id="axp-gX-FL3"/>
                 <outlet property="bgImageView" destination="Ksf-l9-col" id="J2j-kw-6np"/>
+                <outlet property="collectButton" destination="UO8-rm-pWB" id="QdQ-az-BQ5"/>
                 <outlet property="contentView" destination="HVG-8j-iw4" id="A2a-3B-trE"/>
                 <outlet property="firstImage" destination="ql9-QF-vAZ" id="C7A-8K-OYC"/>
                 <outlet property="fourthImage" destination="SSY-SD-7sV" id="E5A-hy-PIO"/>
@@ -21,6 +21,7 @@
                 <outlet property="playButton" destination="hRn-tQ-RH3" id="2Bf-IG-cZw"/>
                 <outlet property="progressSlider" destination="Bas-Y4-0NM" id="CIb-bC-k3T"/>
                 <outlet property="secondImage" destination="Iix-42-5zF" id="pgP-qg-ULG"/>
+                <outlet property="subscribeButton" destination="dom-Mx-opj" id="zdg-bk-mFS"/>
                 <outlet property="thirdImage" destination="0IW-H5-zIr" id="gT2-v7-xtC"/>
                 <outlet property="titleLabel" destination="IeE-87-C9h" id="yfT-1y-jBq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,6 +32,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-l9-col" userLabel="bg Image View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ql9-QF-vAZ">
                     <rect key="frame" x="90" y="70" width="234" height="200"/>
                     <constraints>
@@ -218,48 +222,39 @@
                         <constraint firstAttribute="height" constant="25" id="toc-M2-ezA"/>
                     </constraints>
                     <state key="normal" image="btn_audioplayer_subscribe"/>
+                    <connections>
+                        <action selector="subscribeAction:" destination="-1" eventType="touchUpInside" id="wpf-Ra-zGc"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UO8-rm-pWB">
-                    <rect key="frame" x="58" y="691" width="25" height="25"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UO8-rm-pWB">
+                    <rect key="frame" x="10" y="686" width="30" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="kcA-ij-9Wi"/>
                     </constraints>
                     <state key="normal" image="chat_support_green.png"/>
+                    <connections>
+                        <action selector="collectAction:" destination="-1" eventType="touchUpInside" id="gPF-IS-1vC"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-SF-cI8">
-                    <rect key="frame" x="55" y="594" width="171" height="220"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-pc-8wV">
+                    <rect key="frame" x="193" y="691" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Db2-X9-4F8"/>
-                        <constraint firstAttribute="height" constant="30" id="OyT-ND-zCh"/>
+                        <constraint firstAttribute="height" constant="30" id="VeE-fv-NMu"/>
+                        <constraint firstAttribute="width" constant="30" id="seK-N0-fvq"/>
                     </constraints>
+                    <state key="normal" image="btn_iCarousePlayer_Share_on"/>
+                    <connections>
+                        <action selector="shareButton:" destination="-1" eventType="touchUpInside" id="JX0-Os-whH"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-Uu-LiB">
-                    <rect key="frame" x="195" y="689" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-bg-TV3">
+                    <rect key="frame" x="369" y="691" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="HeD-7K-X4N"/>
-                        <constraint firstAttribute="height" constant="30" id="hNt-9y-pmR"/>
+                        <constraint firstAttribute="width" constant="30" id="PcT-Dw-Y0Q"/>
+                        <constraint firstAttribute="height" constant="30" id="p8f-BZ-0Wm"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" image="btn_iCarousePlayer_Download_on"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-oo-SBf">
-                    <rect key="frame" x="265" y="689" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="L0p-L1-SLB"/>
-                        <constraint firstAttribute="width" constant="30" id="wyl-5Y-FoB"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-VC-nby">
-                    <rect key="frame" x="335" y="689" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Ybr-GC-Kgq"/>
-                        <constraint firstAttribute="width" constant="30" id="epk-ZP-Ljt"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-l9-col">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -279,27 +274,23 @@
                 <constraint firstItem="Iix-42-5zF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="Kd2-uj-x7U"/>
                 <constraint firstItem="UO8-rm-pWB" firstAttribute="top" secondItem="HVG-8j-iw4" secondAttribute="bottom" constant="10" id="LRC-Ua-vot"/>
                 <constraint firstAttribute="trailing" secondItem="Iix-42-5zF" secondAttribute="trailing" constant="78" id="LrC-ec-AVr"/>
-                <constraint firstItem="p1K-SF-cI8" firstAttribute="centerY" secondItem="UO8-rm-pWB" secondAttribute="centerY" id="Mym-Ul-7LO"/>
-                <constraint firstItem="U2s-Uu-LiB" firstAttribute="centerY" secondItem="p1K-SF-cI8" secondAttribute="centerY" id="Pra-6I-niu"/>
                 <constraint firstAttribute="bottom" secondItem="UO8-rm-pWB" secondAttribute="bottom" constant="15" id="Q2Q-J3-L5e"/>
                 <constraint firstItem="pVc-gp-2U4" firstAttribute="centerY" secondItem="pYR-bn-YBf" secondAttribute="centerY" id="TbI-3P-UtC"/>
-                <constraint firstItem="p1K-SF-cI8" firstAttribute="leading" secondItem="UO8-rm-pWB" secondAttribute="trailing" constant="40" id="Vs6-ZB-dLK"/>
                 <constraint firstItem="0IW-H5-zIr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="XJ8-f7-Xwy"/>
-                <constraint firstItem="5Ra-oo-SBf" firstAttribute="leading" secondItem="U2s-Uu-LiB" secondAttribute="trailing" constant="40" id="YBh-7H-jil"/>
-                <constraint firstItem="U2s-Uu-LiB" firstAttribute="leading" secondItem="p1K-SF-cI8" secondAttribute="trailing" constant="40" id="bpg-v0-bFJ"/>
                 <constraint firstItem="Ksf-l9-col" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dRE-cm-Xoo"/>
-                <constraint firstItem="UO8-rm-pWB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="55" id="e8Q-wS-7lL"/>
+                <constraint firstItem="UO8-rm-pWB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="e8Q-wS-7lL"/>
                 <constraint firstItem="Iix-42-5zF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="78" id="fAC-sM-fjs"/>
+                <constraint firstItem="eqf-bg-TV3" firstAttribute="top" secondItem="HVG-8j-iw4" secondAttribute="bottom" constant="15" id="i1M-kM-mKm"/>
                 <constraint firstAttribute="trailing" secondItem="Ksf-l9-col" secondAttribute="trailing" id="irb-vc-CFz"/>
-                <constraint firstItem="5Ra-oo-SBf" firstAttribute="centerY" secondItem="U2s-Uu-LiB" secondAttribute="centerY" id="nWD-kx-tco"/>
                 <constraint firstAttribute="trailing" secondItem="SSY-SD-7sV" secondAttribute="trailing" constant="38" id="pwl-mm-fFq"/>
                 <constraint firstAttribute="trailing" secondItem="dom-Mx-opj" secondAttribute="trailing" constant="20" id="qv1-su-z8L"/>
                 <constraint firstItem="pYR-bn-YBf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="sEr-1v-zfT"/>
-                <constraint firstItem="C3L-VC-nby" firstAttribute="leading" secondItem="5Ra-oo-SBf" secondAttribute="trailing" constant="40" id="sHb-o7-fLQ"/>
                 <constraint firstItem="ql9-QF-vAZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="tAF-VF-qHQ"/>
-                <constraint firstItem="C3L-VC-nby" firstAttribute="centerY" secondItem="5Ra-oo-SBf" secondAttribute="centerY" id="uOV-e3-q5o"/>
                 <constraint firstAttribute="trailing" secondItem="0IW-H5-zIr" secondAttribute="trailing" constant="60" id="ub9-RM-fb3"/>
+                <constraint firstItem="PLB-pc-8wV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ueA-Op-UDx"/>
+                <constraint firstItem="PLB-pc-8wV" firstAttribute="top" secondItem="HVG-8j-iw4" secondAttribute="bottom" constant="15" id="vOC-Wr-ZEp"/>
                 <constraint firstAttribute="trailing" secondItem="ql9-QF-vAZ" secondAttribute="trailing" constant="90" id="wTa-wt-JVd"/>
+                <constraint firstAttribute="trailing" secondItem="eqf-bg-TV3" secondAttribute="trailing" constant="15" id="yE9-HG-1b5"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="336" y="370"/>
@@ -312,6 +303,8 @@
         <image name="btn_broadcastplayer_next" width="16" height="16"/>
         <image name="btn_broadcastplayer_play" width="54" height="54"/>
         <image name="btn_broadcastplayer_previous" width="16" height="16"/>
+        <image name="btn_iCarousePlayer_Download_on" width="36" height="36"/>
+        <image name="btn_iCarousePlayer_Share_on" width="36" height="36"/>
         <image name="chat_support_green.png" width="31" height="26"/>
         <image name="ic_broadcastplayer_playbill" width="21" height="19"/>
     </resources>

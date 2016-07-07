@@ -16,4 +16,6 @@
 
 @property (nonatomic, assign)NSInteger row;
 
+@property (nonatomic, strong)NSMutableArray *dataArray;
+
 @end

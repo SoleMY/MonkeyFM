@@ -44,14 +44,16 @@
     [self requestWithPage:@"1"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+#warning 夜间模式改动
+    [self.tableView NightWithType:UIViewColorTypeNormal];
     [self.tableView registerClass:[HostViewDetaileCell class] forCellReuseIdentifier:@"cell"];
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    __weak typeof(self)weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.tableView reloadData];
-        [self.tableView.mj_header endRefreshing];
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
 
     }];
     self.title = @"主播分类";
@@ -62,6 +64,7 @@
     self.appandingArray = [self.appendString componentsSeparatedByString:@"&"];
     NSString *URLStr = [NSString stringWithFormat:@"%@&%@&%@&pagenum=%@", self.appandingArray[0], self.appandingArray[1], self.appandingArray[2], page];
     NSString *str = [NSString stringWithFormat:@"%@%@%@", Host_Base_URL, URLStr, Host_append_URL];
+    __weak typeof(self)weakSelf = self;
     NetWorking *netWorking =[[NetWorking alloc] init];
     [netWorking requestWithURL:str Bolck:^(id array) {
         NSDictionary *resultDic = [array objectForKey:@"result"];
@@ -69,10 +72,10 @@
         for (NSDictionary *dic in dataList) {
             More *more=  [[More alloc] init];
             [more setValuesForKeysWithDictionary:dic];
-            [self.allDataArray addObject:more];
+            [weakSelf.allDataArray addObject:more];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
     }];
 }
@@ -91,21 +94,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HostViewDetaileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     More *more = self.allDataArray[indexPath.row];
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:more.avatar]];
     cell.nameLabel.text = more.nickName;
     cell.decLabel.text = more.desc;
     cell.fansNumber.text = [NSString stringWithFormat:@"粉丝数：%ld", more.fansCount];
+    __weak typeof(self)weakSelf = self;
     if (indexPath.row == self.allDataArray.count - 1) {
         self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            [self requestWithPage:[NSString stringWithFormat:@"%ld", indexPath.row / 20 + 2]];
-            self.tableView.mj_footer.hidden = YES;
-            [self.tableView.mj_footer endRefreshing];
+            [weakSelf requestWithPage:[NSString stringWithFormat:@"%ld", indexPath.row / 20 + 2]];
+            weakSelf.tableView.mj_footer.hidden = YES;
+            [weakSelf.tableView.mj_footer endRefreshing];
         }];
-        
     }
+   
     return cell;
 }
+
+- (void)followAction {
+    
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;

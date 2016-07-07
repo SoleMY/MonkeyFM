@@ -9,7 +9,7 @@
 #import "BaseCell.h"
 
 typedef void(^CollectBlock)();
-typedef void(^SmallCollect)();
+typedef void(^SmallCollect)(NSInteger row);
 
 @interface collectCell : BaseCell
 

@@ -45,23 +45,28 @@
     [self.tableView registerClass:[ProgramCell class] forCellReuseIdentifier:@"cell"];
     self.number = 1;
     [self request];
+    __weak typeof(self)weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+    }];
 }
 
 - (void)request {
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *str = [[SingleList shareSingleList].dict objectForKey:@"ID"];
     self.URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND, (long)self.number, PLAY_LIST_PROGRAM_APPENDTWO];
-    NSLog( @"%@", self.URLString);
+    __weak typeof(self)weakSelf = self;
     [netWorking requestWithURL:self.URLString Bolck:^(id array) {
         NSDictionary *resultDic = array[@"result"];
         NSArray *dataList = resultDic[@"dataList"];
         for (NSDictionary *dict in dataList) {
             PlayList *playList =  [[PlayList alloc] init];
             [playList setValuesForKeysWithDictionary:dict];
-            [self.allDataArray addObject:playList];
+            [weakSelf.allDataArray addObject:playList];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
     }];
 }
@@ -76,14 +81,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgramCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     PlayList  *playList =  self.allDataArray[indexPath.row];
     [cell bindWithModel:playList];
+    __weak typeof(self)weakSelf = self;
     if (indexPath.row == self.allDataArray.count - 1) {
         self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            self.number++;
-            [self request];
-            self.tableView.mj_footer.hidden = YES;
-            [self.tableView.mj_footer endRefreshing];
+            weakSelf.number++;
+            [weakSelf request];
+            weakSelf.tableView.mj_footer.hidden = YES;
+            [weakSelf.tableView.mj_footer endRefreshing];
         }];
     }
     return cell;
@@ -95,9 +103,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    PlayList *playList = self.allDataArray[indexPath.row];
     PlayerDetailViewController *playerDetaileVC = [[PlayerDetailViewController alloc] init];
-//    playerDetaileVC.playList = playList;
     playerDetaileVC.allDataArray = self.allDataArray;
     playerDetaileVC.row = indexPath.row;
     [self.navigationController pushViewController:playerDetaileVC animated:YES];

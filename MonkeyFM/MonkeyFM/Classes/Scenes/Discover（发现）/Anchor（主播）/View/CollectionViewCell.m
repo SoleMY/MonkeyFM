@@ -23,24 +23,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.restorationIdentifier = @"identifier_cell";
-//        self.backgroundColor = [UIColor clearColor];
-//        self.autoresizingMask = UIViewAutoresizingNone;
-//        
-//        CGFloat borderWidth = 0.5f;
-//        //        UIView *bgView = [[UIView alloc] initWithFrame:frame];
-//        //        bgView.layer.borderColor = [UIColor redColor].CGColor;
-//        //        bgView.layer.borderWidth = borderWidth;
-//        //        self.selectedBackgroundView = bgView;
-//        
-//        CGRect myContentRect = CGRectInset(self.contentView.bounds, borderWidth, borderWidth);
-//        
-//        self.myContentView = [[UIView alloc] initWithFrame:myContentRect];
-//        _myContentView.backgroundColor = [UIColor whiteColor];
-//        _myContentView.layer.borderColor = [UIColor colorWithWhite:0.1f alpha:0.2f].CGColor;
-//        _myContentView.layer.borderWidth = borderWidth;
-//        
-//        [self.contentView addSubview:_myContentView];
         [self initLayout];
 
     }
@@ -58,6 +40,9 @@
     self.nameLabel.text = @"主播";
     self.nameLabel.font = [UIFont systemFontOfSize:15];
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
+#warning 夜间模式改动
+    [self.nameLabel NightWithType:UIViewColorTypeNormal];
+    [self.nameLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.nameLabel];
     
     self.introduction = [[UILabel alloc] initWithFrame:CGRectMake(0, self.nameLabel.frame.origin.y + 20 , kIntroductionWidth + 20, kIntroductionHeight)];
@@ -65,6 +50,10 @@
     self.introduction.font = [UIFont systemFontOfSize:13];
     self.introduction.textColor = [UIColor grayColor];
     self.introduction.textAlignment = NSTextAlignmentCenter;
+#warning 夜间模式改动
+    [self.introduction NightWithType:UIViewColorTypeNormal];
+    [self.introduction NightTextType:LabelColorGray];
+    
     [self.contentView addSubview:self.introduction];
 }
 

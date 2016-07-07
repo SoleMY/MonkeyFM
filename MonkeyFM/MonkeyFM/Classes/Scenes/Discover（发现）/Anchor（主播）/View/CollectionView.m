@@ -43,7 +43,9 @@
     
     //    创建对象并指定样式
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.myFlowLayout];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+//    self.collectionView.backgroundColor = [UIColor whiteColor];
+#warning 夜间模式改动
+    [self.collectionView NightWithType:UIViewColorTypeNormal];
     [self addSubview:self.collectionView];
 }
 @end

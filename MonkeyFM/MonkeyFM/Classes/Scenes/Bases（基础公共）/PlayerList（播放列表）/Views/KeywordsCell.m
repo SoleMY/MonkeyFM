@@ -52,12 +52,16 @@
 - (void)initLayout {
     self.keywordLabel = [[UILabel alloc] init];
     self.keywordLabel.textColor = [UIColor grayColor];
+#warning 夜间模式改动
+    [self.keywordLabel NightWithType:UIViewColorTypeNormal];
+    [self.keywordLabel NightTextType:LabelColorBlack];
     self.keywordLabel.font = [UIFont systemFontOfSize:13];
     self.keywordLabel.text = @"关键字：";
+    __weak typeof(self)weakSelf = self;
     [self.contentView addSubview:self.keywordLabel];
     [self.keywordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10);
-        make.left.equalTo(self.contentView).offset(10);
+        make.top.equalTo(weakSelf.contentView).offset(10);
+        make.left.equalTo(weakSelf.contentView).offset(10);
         make.width.mas_offset(70);
     }];
     int j = 1;
@@ -66,7 +70,7 @@
         UIButton *button = [[UIButton alloc] init];
         [self.arr addObject:button];
 //        背景颜色
-        button.backgroundColor = [UIColor orangeColor];
+        button.backgroundColor = [UIColor lightGrayColor];
 //        字
         [button setTitle:self.buttonArray[i] forState:UIControlStateNormal];
         button.titleLabel.textAlignment = NSTextAlignmentCenter;

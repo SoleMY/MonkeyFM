@@ -37,7 +37,8 @@
 @property (nonatomic, strong)NSString *albumPic;
 @property (nonatomic, strong)NSString *mp3PlayUrl;
 @property (nonatomic, assign)NSInteger mp3Duration;
+@property (nonatomic, strong)NSString *audioId;
+@property (nonatomic, strong)NSString *audioPic;
+@property (nonatomic, strong)NSString *albumName;
 
-
-//@property (nonatomic, strong)NSString *audioName;
 @end

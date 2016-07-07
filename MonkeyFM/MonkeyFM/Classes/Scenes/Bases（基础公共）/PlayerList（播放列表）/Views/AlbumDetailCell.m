@@ -22,7 +22,6 @@
 - (void)initLayout {
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.text = @"相关专辑";
-    self.titleLabel.textColor = [UIColor grayColor];
     self.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:self.titleLabel];
     __weak typeof(self)weakSelf = self;
@@ -32,6 +31,10 @@
         make.width.mas_offset(100);
         make.height.mas_offset(20);
     }];
+    
+#warning 夜间模式改动
+    [self.titleLabel NightWithType:UIViewColorTypeNormal];
+    [self.titleLabel NightTextType:LabelColorGray];
     
     self.firstImageView = [[UIImageView alloc] init];
     self.firstImageView.backgroundColor = [UIColor orangeColor];
@@ -73,6 +76,10 @@
         make.left.equalTo(weakSelf.firstImageView).offset(0);
         make.right.equalTo(weakSelf.firstImageView).offset(0);
     }];
+#warning 夜间模式改动
+    [self.firstLabel NightWithType:UIViewColorTypeNormal];
+    [self.firstLabel NightTextType:LabelColorBlack];
+    
     
     self.secondLabel = [[UILabel alloc] init];
     self.secondLabel.text = @"第二章";
@@ -84,6 +91,10 @@
         make.left.equalTo(weakSelf.secondImageView).offset(0);
         make.right.equalTo(weakSelf.secondImageView).offset(0);
     }];
+#warning 夜间模式改动
+    [self.secondLabel NightWithType:UIViewColorTypeNormal];
+    [self.secondLabel NightTextType:LabelColorBlack];
+    
     
     self.thiredLabel = [[UILabel alloc] init];
     self.thiredLabel.text = @"第三章";
@@ -95,6 +106,10 @@
         make.right.equalTo(weakSelf.thiredImageView).offset(0);
         make.left.equalTo(weakSelf.thiredImageView).offset(0);
     }];
+#warning 夜间模式改动
+    [self.thiredLabel NightWithType:UIViewColorTypeNormal];
+    [self.thiredLabel NightTextType:LabelColorBlack];
+    
 }
 
 - (void)bindWithArray:(NSMutableArray *)array {

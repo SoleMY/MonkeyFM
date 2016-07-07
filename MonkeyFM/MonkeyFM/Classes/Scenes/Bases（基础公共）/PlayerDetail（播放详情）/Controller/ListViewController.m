@@ -17,9 +17,7 @@
 @implementation ListViewController
 
 - (void)viewDidLoad {
-//    self.view.alpha = 0;
     self.view.backgroundColor = [UIColor clearColor];
-//    self.view.alpha = 0;
     [super viewDidLoad];
     self.bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height / 2)];
     self.bgView.alpha = 0.5;

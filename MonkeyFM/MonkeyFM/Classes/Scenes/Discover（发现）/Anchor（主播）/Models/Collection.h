@@ -18,4 +18,6 @@
 
 @property (nonatomic, strong)NSString *albumName;
 
+@property (nonatomic, strong)NSString *audioId;
+
 @end

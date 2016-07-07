@@ -31,6 +31,9 @@
         make.width.mas_offset(70);
         make.height.mas_offset(25);
     }];
+#warning 夜间模式改动
+    [self.introductionLabel NightWithType:UIViewColorTypeNormal];
+    [self.introductionLabel NightTextType:LabelColorBlack];
     
     self.introductionText = [[UILabel alloc] init];
     self.introductionText.font = [UIFont systemFontOfSize:13];
@@ -42,7 +45,9 @@
         make.left.equalTo(mySelf.introductionLabel).offset(5);
         make.width.mas_offset([UIScreen mainScreen].bounds.size.width - 15);
     }];
-    
+#warning 夜间模式改动
+    [self.introductionText NightWithType:UIViewColorTypeNormal];
+    [self.introductionText NightTextType:LabelColorBlack];
     
 }
 

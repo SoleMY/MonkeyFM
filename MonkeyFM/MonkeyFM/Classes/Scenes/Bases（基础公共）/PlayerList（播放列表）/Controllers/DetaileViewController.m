@@ -14,7 +14,7 @@
 #import "NetWorking.h"
 #import "SingleList.h"
 #import "PlayList.h"
-//#import "<#header#>"
+#import "MJRefresh.h"
 
 @interface DetaileViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -67,39 +67,40 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.albumId = [[SingleList shareSingleList].dict objectForKey:@"ID"];
-    NSLog(@"%@", self.albumId);
     [self request];
-//    [self.tableView reloadData];
+    __weak typeof(self)weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        
+    }];
 }
 
 - (void)request {
     NetWorking *networking = [[NetWorking alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@%@%@", PLAY_LIST_DETAILE_BASEURL, self.albumId, PLAY_LIST_DETAILE_APPENDURL];
-    NSLog(@"%@", URLString);
+    __weak typeof(self)weakSelf = self;
     [networking requestWithURL:URLString Bolck:^(id array) {
         NSDictionary *dict = array[@"result"];
         PlayList *playlist = [[PlayList alloc] init];
-//        NSLog(@"%@", dict);
         [playlist setValuesForKeysWithDictionary:dict];
-        [self.allDataArray addObject:playlist];
+        [weakSelf.allDataArray addObject:playlist];
         dispatch_async(dispatch_get_main_queue(), ^{
-//            playlist.keyWords;
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
     }];
     
    NSString *URL = [NSString stringWithFormat:@"%@%@%@", PLAY_LIST_ABOUT_BASEURL, self.albumId, PLAY_LIST_DETAILE_APPENDURL];
     [networking requestWithURL:URL Bolck:^(id array) {
         NSDictionary *result = array[@"result"];
-        
         NSArray *dataList = result[@"dataList"];
         for (NSDictionary *dic in dataList) {
             PlayList *playList =[[PlayList alloc] init];
             [playList setValuesForKeysWithDictionary:dic];
-            [self.albumArray addObject:playList];
+            [weakSelf.albumArray addObject:playList];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
     }];
 }
@@ -118,6 +119,8 @@
     PlayList *playList = [self.allDataArray firstObject];
     if (indexPath.row == 0) {
         DetaileCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"detaileCell" forIndexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         cell.hostText.text = [playList.host[0] objectForKey:@"name"];
         cell.uploadingText.text = playList.uploadUserName;
         cell.accreditText.text = playList.copyrightLabel;
@@ -125,20 +128,28 @@
         return cell;
     }else if (indexPath.row == 1) {
         KeywordsCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"keyWordCell" forIndexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
             cell.buttonArray = playList.keyWords.mutableCopy;
         self.heightForCellButton = cell.numberOfButton;
         return cell;
     }else if (indexPath.row == 2) {
         IntroductionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"introductionCell" forIndexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         cell.introductionText.text = playList.radioDesc;
        self.heightForCellText = [SmallTools textHeightWithText:cell.introductionText.text font:[UIFont systemFontOfSize:13]];
         return cell;
     }else if (indexPath.row == 3) {
         AlbumDetailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"albumCell" forIndexPath:indexPath];
         [cell bindWithArray:self.albumArray];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     } else {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }
 }

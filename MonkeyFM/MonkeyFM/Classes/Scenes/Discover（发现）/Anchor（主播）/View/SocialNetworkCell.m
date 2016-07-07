@@ -34,21 +34,21 @@ static NSString * const identifier_SocialNetWork = @"identifier_SocialNetWork";
     self.myFlowLayout.minimumLineSpacing = 10;
     self.myFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//垂直方向
     self.myFlowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 10, 10);
-//    self.myFlowLayout.headerReferenceSize = CGSizeMake(30, self.frame.size.width);
-//    self.myFlowLayout.footerReferenceSize = CGSizeMake(30, 40);
-    
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:self.myFlowLayout];
     [self.contentView addSubview:self.collectionView];
      [self.collectionView registerClass:[SocialNetWork class] forCellWithReuseIdentifier:identifier_SocialNetWork];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+#warning 夜间模式改动
+    [self.collectionView NightWithType:UIViewColorTypeNormal];
+    
+    __weak typeof(self)weakSelf = self;
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(0);
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
-        make.bottom.equalTo(self).offset(0);
+        make.top.equalTo(weakSelf).offset(0);
+        make.left.equalTo(weakSelf).offset(0);
+        make.right.equalTo(weakSelf).offset(0);
+        make.bottom.equalTo(weakSelf).offset(0);
     }];
     self.collectionView.scrollEnabled = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
@@ -66,7 +66,6 @@ static NSString * const identifier_SocialNetWork = @"identifier_SocialNetWork";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SocialNetWork *socialNetWork = [self.collectionView dequeueReusableCellWithReuseIdentifier:identifier_SocialNetWork forIndexPath:indexPath];
-//    socialNetWork.backgroundColor = [UIColor redColor];
     return socialNetWork;
 }
 

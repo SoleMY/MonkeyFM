@@ -11,7 +11,13 @@
 #import "BaseNavigationViewController.h"
 #import "SWRevealViewController.h"
 #import "DrawerViewController.h"
+#import <AVFoundation/AVFoundation.h>
 #import "AVOSCloud/AVOSCloud.h"
+#import "UMSocial.h"
+//#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -36,7 +42,6 @@
     mainRevealController.delegate = self;
     self.window.rootViewController = mainRevealController;
     
-    
     // leanCloud
     [AVOSCloud setApplicationId:@"DU8A6QciEbo7IlkJccidr2Ko-gzGzoHsz"
                       clientKey:@"BYJ3oaaNNK0C6W6v9JtWdwjs"];
@@ -44,12 +49,22 @@
     
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    
+     [UMSocialData setAppKey:@"577ba4d967e58e5e15002839"];
+    
+    //设置友盟社会化组件appkey
+//    [UMSocialData setAppKey:UmengAppkey];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
+    //设置手机QQ 的AppId，Appkey，和分享URL，需要#import "UMSocialQQHandler.h"
+    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
+    //打开新浪微博的SSO开关，设置新浪微博回调地址，这里必须要和你在新浪微博后台设置的回调地址一致。
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
+        secret:@"04b48b094faeb16683c32669824ebdad"
+        RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
     return YES;
 }
-
-
-
-
 
 
 

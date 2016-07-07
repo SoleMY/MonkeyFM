@@ -20,7 +20,7 @@
 
 - (void)initLayout {
     self.headImage = [[UIImageView alloc] init];
-    self.headImage.backgroundColor = [UIColor orangeColor];
+    self.headImage.backgroundColor = [UIColor lightGrayColor];
     self.headImage.layer.cornerRadius = 15;
     self.headImage.layer.masksToBounds = YES;
     [self.contentView addSubview:self.headImage];
@@ -44,6 +44,9 @@
 //        make.width.mas_offset(100);
         make.height.mas_offset(15);
     }];
+#warning 夜间模式改动
+    [self.nameLabel NightWithType:UIViewColorTypeNormal];
+    [self.nameLabel NightTextType:LabelColorBlack];
     
     self.dateLabel = [[UILabel alloc] init];
     self.dateLabel.text = @"2015-09-30";
@@ -56,6 +59,10 @@
         make.width.mas_offset(100);
         make.height.mas_offset(15);
     }];
+#warning 夜间模式改动
+    [self.dateLabel NightWithType:UIViewColorTypeNormal];
+    [self.dateLabel NightTextType:LabelColorBlack];
+    
     
     self.zanNumber = [[UILabel alloc] init];
     self.zanNumber.textColor = [UIColor grayColor];
@@ -70,8 +77,13 @@
         make.height.mas_offset(20);
     }];
     
+#warning 夜间模式改动
+    [self.zanNumber NightWithType:UIViewColorTypeNormal];
+    [self.zanNumber NightTextType:LabelColorBlack];
+    
     self.zanButton = [[UIButton alloc] init];
-    self.zanButton.backgroundColor = [UIColor orangeColor];
+//    self.zanButton.backgroundColor = [UIColor orangeColor];
+    [self.zanButton setImage:[UIImage imageNamed:@"icon_comment_support@2x"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.zanButton];
     [self.zanButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.contentView).offset(5);
@@ -91,6 +103,9 @@
         make.left.equalTo(weakSelf.nameLabel).offset(0);
         make.right.equalTo(weakSelf.contentView).offset(-20);
     }];
+#warning 夜间模式改动
+    [self.commentLabel NightWithType:UIViewColorTypeNormal];
+    [self.commentLabel NightTextType:LabelColorBlack];
 
 }
 

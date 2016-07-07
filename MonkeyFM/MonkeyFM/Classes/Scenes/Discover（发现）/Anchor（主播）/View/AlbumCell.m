@@ -17,7 +17,6 @@
 @end
 
 @implementation AlbumCell
-//@synthesize albumArr = _albumArr;
 static NSString * const identifier_AlbumCell = @"identifier_Album";
 static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 
@@ -41,7 +40,10 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 
 - (void)initLayout {
     self.AlbumView = [[CollectionView alloc] initWithFrame: CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)];
-    self.AlbumView.backgroundColor = [UIColor redColor];
+//    self.AlbumView.backgroundColor = [UIColor redColor];
+#warning 夜间模式改动
+    [self.AlbumView NightWithType:UIViewColorTypeNormal];
+    
     self.AlbumView.collectionView.delegate = self;
     self.AlbumView.collectionView.dataSource = self;
     [self.contentView addSubview:self.AlbumView];
@@ -50,6 +52,8 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     self.AlbumView.collectionView.bounces = NO;
     [self.AlbumView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_AlbumCell];
     [self.AlbumView.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier_HeaderCell];
+#warning 夜间模式改动
+    [self.AlbumView.collectionView NightWithType:UIViewColorTypeNormal];
     [self.AlbumView.collectionView reloadData];
 }
 
@@ -70,6 +74,8 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     [cell.headPortrait sd_setImageWithURL:url];
     cell.nameLabel.text = more.name;
     cell.introduction.text = @"";
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     return cell;
 }
 
@@ -77,6 +83,16 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         HeadCollectionReusableView *headView = [self.AlbumView.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifier_HeaderCell forIndexPath:indexPath];
         headView.titleLabel.text = @"TA发布的专辑";
+        
+#warning 夜间模式改动
+        [headView.titleLabel NightWithType:UIViewColorTypeNormal];
+        [headView.titleLabel NightTextType:LabelColorBlack];
+        
+        
+#warning 夜间模式改动
+        [headView NightWithType:UIViewColorTypeNormal];
+        
+        
         if (self.albumArr.count >= 3) {
             [headView.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
             [headView.more addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
@@ -100,7 +116,6 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     More *model = self.albumArr[indexPath.row];
-//    NSString *str= [NSString stringWithFormat:@"%d", model.Id];
     [[SingleList shareSingleList].dict setObject:model.Id forKey:@"ID"];
 
     self.albumBlock();

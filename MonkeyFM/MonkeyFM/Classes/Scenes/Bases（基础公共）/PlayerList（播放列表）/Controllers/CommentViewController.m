@@ -47,23 +47,32 @@
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CommentCell class] forCellReuseIdentifier:@"cell"];
     self.number = 1;
+#warning 夜间模式改动
+    [self.tableView NightWithType:UIViewColorTypeNormal];
     [self request];
+    __weak typeof(self)weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
+        
+    }];
 }
 
 - (void)request {
     NSString *uid = [[SingleList shareSingleList].dict objectForKey:@"ID"];
-    NSString *URLStr =[NSString stringWithFormat:@"%@%@%@%d%@", PLAY_LIST_COMMENT_BASEURL, uid, PLAY_LIST_COMMENT_APPENDONE, self.number, PLAY_LIST_COMMENT_APPENDTWO];
+    NSString *URLStr =[NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_COMMENT_BASEURL, uid, PLAY_LIST_COMMENT_APPENDONE, (long)self.number, PLAY_LIST_COMMENT_APPENDTWO];
     NetWorking *netWork = [[NetWorking alloc] init];
+    __weak typeof(self)weakSelf = self;
     [netWork requestWithURL:URLStr Bolck:^(id array) {
         NSDictionary *dict = array[@"result"];
         NSArray *dataList = dict[@"dataList"];
         for (NSDictionary *dic in dataList) {
             PlayList *playList = [[PlayList alloc] init];
             [playList setValuesForKeysWithDictionary:dic];
-            [self.allDataArray addObject:playList];
+            [weakSelf.allDataArray addObject:playList];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
         
     }];
@@ -80,6 +89,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommentCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+#warning 夜间模式改动
+    [cell NightWithType:UIViewColorTypeNormal];
     [cell bindWithModel:self.allDataArray[indexPath.row]];
     if (indexPath.row == self.allDataArray.count - 1) {
         self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{

@@ -18,6 +18,13 @@ static SingleList *list;
         if (!list.dict) {
             list.dict = [NSMutableDictionary dictionary];
         }
+        if (!list.objectIDdic) {
+            list.objectIDdic= [NSMutableDictionary dictionary];
+        }
+        if (!list.subscribeIDdic) {
+            list.subscribeIDdic = [NSMutableDictionary dictionary];
+        }
+        
     });
     return list;
 }

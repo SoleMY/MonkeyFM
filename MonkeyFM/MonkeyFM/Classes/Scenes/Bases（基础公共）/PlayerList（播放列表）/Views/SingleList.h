@@ -11,7 +11,8 @@
 @interface SingleList : NSObject
 
 @property (nonatomic, strong)NSMutableDictionary *dict;
-
+@property (nonatomic, strong)NSMutableDictionary *objectIDdic;
+@property (nonatomic, strong)NSMutableDictionary *subscribeIDdic;
 + (instancetype)shareSingleList;
 
 @end

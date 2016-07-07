@@ -10,6 +10,9 @@
 #import "Collect.h"
 #import "HeadCollectionReusableView.h"
 #import "Collection.h"
+#import "SingleList.h"
+#import "PlayList.h"
+
 @interface collectCell() <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
@@ -48,15 +51,17 @@
     self.layout.sectionInset = UIEdgeInsetsMake(5, 0, 0, 0);
     
     self.collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:self.layout];
-    self.collectView.backgroundColor = [UIColor whiteColor];
+//    self.collectView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.collectView];
-    
+    __weak typeof(self)weakSelf = self;
     [self.collectView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(0);
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
-        make.bottom.equalTo(self).offset(0);
+        make.top.equalTo(weakSelf).offset(0);
+        make.left.equalTo(weakSelf).offset(0);
+        make.right.equalTo(weakSelf).offset(0);
+        make.bottom.equalTo(weakSelf).offset(0);
     }];
+#warning 夜间模式改动
+    [self.collectView NightWithType:UIViewColorTypeNormal];
     
     self.collectView.delegate = self;
     self.collectView.dataSource = self;
@@ -91,6 +96,11 @@
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
         HeadCollectionReusableView *headView = [self.collectView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headeView" forIndexPath:indexPath];
         headView.titleLabel.text = @"TA的收藏";
+#warning 夜间模式改动
+            [headView.titleLabel NightWithType:UIViewColorTypeNormal];
+            [headView.titleLabel NightTextType:LabelColorBlack];
+            
+            
         if (self.collectArr.count >= 3) {
             [headView.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
             [headView.more addTarget:self action:@selector(moreAction) forControlEvents:UIControlEventTouchUpInside];
@@ -111,8 +121,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.collectBlock();
+    PlayList *collection = self.collectArr[indexPath.row];
+    [[SingleList shareSingleList].dict setObject:collection.audioId forKey:@"ID"];
+    self.collectBlock(indexPath.row);
 }
-
 
 @end

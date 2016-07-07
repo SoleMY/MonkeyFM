@@ -12,7 +12,12 @@
 #import "BaseNavigationViewController.h"
 #import "LoginViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
+#import "PlayerDetailViewController.h"
+#import "SingleList.h"
+#import "PlayListViewController.h"
+#import "NetWorking.h"
 #import "SettingViewController.h"
+
 #define kCell @"cell"
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -26,9 +31,30 @@
 @property (nonatomic, strong) UIImageView *smallImageView;
 
 @property (nonatomic, strong) UIImagePickerController *imagePicker; //图片选择器
+
+@property (nonatomic, strong)NSMutableArray *allCollectionArray;
+
+@property (nonatomic, assign)NSInteger index;
+
+@property (nonatomic, strong)NSMutableArray *allSubscribeArray;
+
 @end
 
 @implementation MineViewController
+
+- (NSMutableArray *)allSubscribeArray {
+    if (!_allSubscribeArray) {
+        _allSubscribeArray = [NSMutableArray array];
+    }
+    return _allSubscribeArray;
+}
+
+- (NSMutableArray *)allCollectionArray {
+    if (!_allCollectionArray) {
+        _allCollectionArray = [NSMutableArray array];
+    }
+    return _allCollectionArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,12 +74,14 @@
     
     self.imagePicker = [[UIImagePickerController alloc] init];
     _imagePicker.delegate = self;
+    [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"subCell"];
+    
+    self.index = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-    
+    [self showSubscribe];
     AVUser *currentUser = [AVUser currentUser];
     
     NSData *data = [currentUser objectForKey:@"headImage"];
@@ -378,21 +406,49 @@
     return self.segmentView;
 }
 
-// 行数
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 30;
-}
+
 
 // 分区数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+// 行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"%ld",self.allCollectionArray.count);
+    
+    if (self.index == 0) {
+        return self.allSubscribeArray.count;
+    }else if (self.index == 1) {
+        return self.allCollectionArray.count;
+    }else {
+        return 0;
+    }
+    
+}
 
 // cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.index == 1) {
+    
+    MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    //    AVObject *object = self.allCollectionArray[indexPath.row];
+    [cell cellBindWithObject:self.allCollectionArray[indexPath.row]];
+    NSLog(@"%ld", _allCollectionArray.count);
+        return cell;
+    } else if(self.index == 0){
+    MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"subCell" forIndexPath:indexPath];
+        [subCell cellBindWithObject:self.allSubscribeArray[indexPath.row]];
+//    cell.nameLabel.text = [object objectForKey:@"name"];
+    return subCell;
+    } else {
+        MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"subCell" forIndexPath:indexPath];
+//        [subCell cellBindWithObject:self.allSubscribeArray[indexPath.row]];
+        //    cell.nameLabel.text = [object objectForKey:@"name"];
+        return subCell;
+    }
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
 #warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
@@ -412,30 +468,99 @@
 // cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 130;
+    return 80;
 }
 
 // segment代理
 - (void)touchLabelWithIndex:(NSInteger)index
 {
+    self.index = index;
     switch (index) {
         case 0:
+            [self showSubscribe];
+            [self.tableView reloadData];
+            [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"subCell"];
             break;
         case 1:
+            [self showCollection];
             [self.tableView reloadData];
+            [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"cell"];
             break;
         case 2:
+             [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"downLoadCell"];
             if (self.tableView.editing == YES) {
                 [self.tableView setEditing:NO animated:YES];
             } else {
                 [self.tableView setEditing:YES animated:YES];
             }
             break;
-        case 3:
-            
-            break;
         default:
             break;
+    }
+}
+
+- (void)showCollection {
+    AVUser *currentUser = [AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"Album"];
+    [query whereKey:@"userName" equalTo:currentUser.username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        _allCollectionArray = objects.mutableCopy;
+        NSLog(@"%@", objects);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
+- (void)showSubscribe {
+    AVUser *currentUsre = [AVUser currentUser];
+    AVQuery *query = [AVQuery queryWithClassName:@"Subscribe"];
+    [query whereKey:@"userName" equalTo:currentUsre.username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        _allSubscribeArray = objects.mutableCopy;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.index == 0) {
+        AVObject *object = self.allSubscribeArray[indexPath.row];
+        [[SingleList shareSingleList].dict setObject:[object objectForKey:@"ID"] forKey:@"ID"];
+        [self.navigationController pushViewController:[[PlayListViewController alloc] init] animated:YES];
+    } else if (self.index == 1) {
+        AVObject *object = self.allCollectionArray[indexPath.row];
+//       NSArray *array = [object objectForKey:@"array"];
+        NSInteger row = [[object objectForKey:@"row"] integerValue];
+        NSString *str= [object objectForKey:@"ID"];
+        NSInteger pageNum = row / 10 + 1;
+        NSString *URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND,pageNum, PLAY_LIST_PROGRAM_APPENDTWO];
+        NSLog(@"%@", URLString);
+        NetWorking *netWorking = [[NetWorking alloc] init];
+        [netWorking requestWithURL:URLString Bolck:^(id array) {
+            NSDictionary *resultDic = array[@"result"];
+            
+            NSArray *dataList = resultDic[@"dataList"];
+            NSMutableArray *dataArray = [NSMutableArray array];
+            for (NSDictionary *dict in dataList) {
+                PlayList *playList =  [[PlayList alloc] init];
+                [playList setValuesForKeysWithDictionary:dict];
+//                [self.allDataArray addObject:playList];
+                [dataArray addObject:playList];
+            }
+            PlayerDetailViewController *playerVC = [[PlayerDetailViewController alloc] init];
+            playerVC.allDataArray = dataArray;
+            playerVC.row = row;
+            [self.navigationController pushViewController:playerVC animated:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView  reloadData];
+            });
+        }];
+        
+        
+        
     }
 }
 

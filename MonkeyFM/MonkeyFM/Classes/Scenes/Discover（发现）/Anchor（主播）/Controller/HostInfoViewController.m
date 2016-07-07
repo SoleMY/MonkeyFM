@@ -23,6 +23,9 @@
 #import "MoreViewController.h"
 #import "MJRefresh.h"
 #import "PlayListViewController.h"
+#import "PlayerDetailViewController.h"
+#import "SingleList.h"
+#import "PlayList.h"
 
 @interface HostInfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -81,6 +84,9 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemAction)];
     self.bgTableView.delegate = self;
     self.bgTableView.dataSource = self;
+    
+#warning 夜间模式改动
+    [self.bgTableView NightWithType:UIViewColorTypeNormal];
     [self.bgTableView registerClass:[HeadImage class] forCellReuseIdentifier:@"headImage"];
     [self.bgTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.bgTableView.tableHeaderView = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
@@ -101,13 +107,14 @@
     
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *URLStr = [NSString stringWithFormat:@"%@%@%@", Host_detailed_Base_URL, self.uid, Host_detailed_append_URL];
+    __weak typeof(self)weakSelf = self;
     [netWorking requestWithURL:URLStr Bolck:^(id array) {
         NSDictionary *resultDic = [array objectForKey:@"result"];
         NSDictionary *infoDic = resultDic[@"info"];
 //        头视图图片和简介
         Host *host = [[Host alloc] init];
         [host setValuesForKeysWithDictionary:infoDic];
-        [self.infoListArr addObject:host];
+        [weakSelf.infoListArr addObject:host];
 //        name、pic
         NSDictionary *issuseDic = resultDic[@"issueList"];
         NSArray *issuseArr = issuseDic[@"dataList"];
@@ -115,7 +122,7 @@
         for (NSDictionary *dic in issuseArr) {
             More *more = [[More alloc] init];
             [more setValuesForKeysWithDictionary:dic];
-            [self.issueListArr addObject:more];
+            [weakSelf.issueListArr addObject:more];
         }
         
 //        name/pic
@@ -124,16 +131,16 @@
         for (NSDictionary *dic in subScribeArr) {
             HostTitle *model = [[HostTitle alloc] init];
             [model setValuesForKeysWithDictionary:dic];
-            [self.subscribeListArr addObject:model];
+            [weakSelf.subscribeListArr addObject:model];
         }
         
 //        收藏
         NSDictionary *collectionDic = resultDic[@"likedList"];
         NSArray *collectionArr = collectionDic[@"dataList"];
         for (NSDictionary *dic in collectionArr) {
-            Collection *collection = [[Collection alloc] init];
+            PlayList *collection = [[PlayList alloc] init];
             [collection setValuesForKeysWithDictionary:dic];
-            [self.likedListArr addObject:collection];
+            [weakSelf.likedListArr addObject:collection];
         }
         
         
@@ -141,9 +148,9 @@
             UIImageView *imageView = [[UIImageView alloc] init];
             [imageView sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
             UIImage * image = [imageView setImageToBlur:imageView.image blurRadius:21 ];
-            [self.bgTableView addScalableCoverWithImage: image smallImageURL:host.avatar];
-            [self.bgTableView reloadData];
-            [MBProgressHUD hideHUDForView:self.bgTableView animated:YES];
+            [weakSelf.bgTableView addScalableCoverWithImage: image smallImageURL:host.avatar];
+            [weakSelf.bgTableView reloadData];
+            [MBProgressHUD hideHUDForView:weakSelf.bgTableView animated:YES];
         });
     }];
 }
@@ -164,6 +171,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         HeadImage *image = [self.bgTableView dequeueReusableCellWithIdentifier:@"headImage" forIndexPath:indexPath];
+        
+#warning 夜间模式改动
+        [image NightWithType:UIViewColorTypeNormal];
         Host *host = [self.infoListArr firstObject];
         image.nameLabel.text= host.nickName;
         image.fansNumber.text = [NSString stringWithFormat:@"%ld", (long)host.fansNum];
@@ -172,14 +182,18 @@
         return image;
     }else if(indexPath.row == 2){
         SocialNetworkCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"netWorkCell" forIndexPath:indexPath];
+        
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }else if (indexPath.row == 3) {
         AlbumCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"AlbumCell" forIndexPath:indexPath];
         cell.albumArr = self.issueListArr;
+        __weak typeof(self)weakSelf = self;
         cell.block = ^(){
             MoreViewController *moreVC = [[MoreViewController alloc] init];
             moreVC.appendStr = @"issue/list";
-            moreVC.uid = self.uid;
+            moreVC.uid = weakSelf.uid;
             [self.navigationController pushViewController:moreVC animated:YES];
         };
         cell.albumBlock = ^(){
@@ -191,10 +205,11 @@
     }else if (indexPath.row == 4) {
         SubscribeCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"SubscribeCell" forIndexPath:indexPath];
         cell.collectionArr = self.subscribeListArr;
+        __weak typeof(self)weakSelf = self;
         cell.block =^(){
             MoreViewController *moreVC = [[MoreViewController alloc] init];
             moreVC.appendStr = @"subscribe";
-            moreVC.uid = self.uid;
+            moreVC.uid = weakSelf.uid;
             [self.navigationController pushViewController:moreVC animated:YES];
         };
 //        cell
@@ -206,15 +221,18 @@
     }else if (indexPath.row == 5) {
         collectCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"collectCell" forIndexPath:indexPath];
         cell.collectArr = self.likedListArr;
+        __weak typeof(self)weakSelf = self;
         cell.block =^(){
             MoreViewController *moreVC = [[MoreViewController alloc] init];
             moreVC.appendStr = @"like";
-            moreVC.uid = self.uid;
+            moreVC.uid = weakSelf.uid;
             [self.navigationController pushViewController:moreVC animated:YES];
         };
-        cell.collectBlock = ^(){
-//            PlayListViewController *playList = [[PlayListViewController alloc] init];
-//            [self.navigationController pushViewController:playList animated:YES];
+        cell.collectBlock = ^void(NSInteger row){
+            PlayerDetailViewController *playerVC = [[PlayerDetailViewController alloc] init];
+             playerVC.allDataArray = weakSelf.likedListArr;
+            playerVC.row = row;
+            [self.navigationController pushViewController:playerVC animated:YES];
         };
         return cell;
     } else {
@@ -226,6 +244,13 @@
         cell.textLabel.text = host.intro;
       self.height = [SmallTools textHeightWithText:cell.textLabel.text font:[UIFont systemFontOfSize:13]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+#warning 夜间模式改动
+        [cell NightWithType:UIViewColorTypeNormal];
+        
+#warning 夜间模式改动
+        [cell.textLabel NightWithType:UIViewColorTypeNormal];
+        [cell.textLabel NightTextType:LabelColorGray];
         return cell;
     }
 }

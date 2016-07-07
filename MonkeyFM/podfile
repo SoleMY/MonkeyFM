@@ -7,4 +7,5 @@ pod 'NinaPagerView'
 pod 'AVOSCloud'
 pod 'AVOSCloudIM'
 pod 'AVOSCloudCrashReporting'
+pod 'UMengSocialCOM', '~> 5.2.1'
 end

@@ -83,7 +83,6 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (void)moreAction{
-//    NSLog(@"----");
     self.block();
 }
 
@@ -94,11 +93,8 @@ static NSString *const identifier_HeaderCell = @"identifier_HeaderCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HostTitle *model = self.collectionArr[indexPath.row];
-//    NSString *str= [NSString stringWithFormat:@"%ld", model.Id];
-//    NSLog(@"%@", str);
     [[SingleList shareSingleList].dict setObject:model.Id forKey:@"ID"];
     self.subsribeblock();
-//    self.subsribeblock(indexPath);
 }
 
 @end
