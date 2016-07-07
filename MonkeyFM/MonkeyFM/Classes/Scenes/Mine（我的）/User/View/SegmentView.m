@@ -15,12 +15,12 @@
 @implementation SegmentView
 
 #pragma mark getter方法 懒加载
-//- (UIColor *)titleColor{
-//    if (!_titleColor) {
-//        _titleColor = [UIColor blackColor];
-//    }
-//    return _titleColor;
-//}
+- (UIColor *)titleColor{
+    if (!_titleColor) {
+        _titleColor = [UIColor blackColor];
+    }
+    return _titleColor;
+}
 
 - (CGFloat)titleFont{
     if (!_titleFont) {
@@ -165,7 +165,7 @@
         if ([label isEqual:selectedLabel]) {
             label.textColor = self.titleSelectedColor;
         }else{
-//            label.textColor = self.titleColor;
+            label.textColor = self.titleColor;
         }
     }
     CGRect scrollLineFrame = _scrollLine.frame;

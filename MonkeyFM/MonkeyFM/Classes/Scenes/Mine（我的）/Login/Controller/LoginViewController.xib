@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -8,11 +8,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="RetrievePassword" destination="rB0-Tm-xgG" id="KO4-YC-uPv"/>
                 <outlet property="backImageView" destination="68W-9d-xDv" id="dgN-yW-k7m"/>
                 <outlet property="headerImage" destination="Ubm-Lm-9pg" id="O6O-9e-Goa"/>
+                <outlet property="loginButton" destination="TRb-OB-VwJ" id="xMU-ai-Sgu"/>
                 <outlet property="nickName" destination="T8H-yw-9Do" id="4I3-qK-16Q"/>
                 <outlet property="password" destination="tQI-h7-dxG" id="iMv-br-qbR"/>
                 <outlet property="qq" destination="RNH-Ap-aq4" id="WAU-0b-rVD"/>
+                <outlet property="registButton" destination="e98-qH-m0W" id="DIy-CV-K0u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wechat" destination="4gv-g6-lmo" id="jiF-wD-PXZ"/>
                 <outlet property="weibo" destination="IvP-Ts-zv4" id="1iB-uH-J0j"/>
@@ -63,7 +66,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-OB-VwJ">
                     <rect key="frame" x="47" y="323" width="320" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <state key="normal" title="登 录"/>
+                    <state key="normal" title="登 录">
+                        <color key="titleColor" red="0.38388795563629707" green="1" blue="0.91241962563067724" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="fWf-3A-gW2"/>
                     </connections>
@@ -85,7 +90,7 @@
                         <constraint firstAttribute="height" constant="21" id="xXS-me-GCg"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="微信镂空.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gv-g6-lmo">

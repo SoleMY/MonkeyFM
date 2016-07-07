@@ -11,21 +11,30 @@
 #import "RegistViewController.h"
 #import "MineViewController.h"
 #import "RetrievePassword.h"
-
-@interface LoginViewController ()<UIGestureRecognizerDelegate>
+#import "UMSocial.h"
+#import "BaseNavigationViewController.h"
+@interface LoginViewController ()<UIGestureRecognizerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *wechat;
 @property (weak, nonatomic) IBOutlet UIImageView *qq;
 @property (weak, nonatomic) IBOutlet UIImageView *weibo;
 
+// 三个button属性
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registButton;
+@property (weak, nonatomic) IBOutlet UIButton *RetrievePassword;
 
 @end
+
+
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    __weak typeof(self)weakSelf = self;
+    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     // Do any additional setup after loading the view from its nib.
     
     // title
@@ -38,13 +47,30 @@
     
     [self addGesture];
     
-    [self.nickName addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
+//    [self.nickName addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
+    
+    
+    [self.loginButton setTitleColor:kNavigationBarTintColor forState:UIControlStateNormal];
+    [self.registButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.RetrievePassword setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.nickName.delegate = self;
+    [self.nickName becomeFirstResponder];
+    self.password.delegate = self;
+    [self.nickName becomeFirstResponder];
 }
 
-- (void)finishWrite:(UITextField *)sender
+// 当点击键盘return的时候
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [self.nickName resignFirstResponder]; // 释放第一响应者
+    [self.password resignFirstResponder];
+    return YES;
 }
-
+//  触摸屏幕回收键盘
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 - (void)viewWillAppear:(BOOL)animated
 {
      self.navigationController.navigationBarHidden = YES;
@@ -94,20 +120,58 @@
 // qq
 - (void)tapQQ:(UIGestureRecognizer *)sender
 {
-    NSLog(@"qq");
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        //          获取微博用户名、uid、token等
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            
+        }});
 }
 
 
 // 微信
 - (void)tapWechat:(UIGestureRecognizer *)sender
 {
-    NSLog(@"weChat");
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            
+        }
+        
+    });
+
 }
 
 // 微博
 - (void)tapWeibo:(UIGestureRecognizer *)sender
 {
-    NSLog(@"微博");
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        //          获取微博用户名、uid、token等
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            
+        }});
+
     
 }
 
@@ -119,7 +183,12 @@
 }
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    if (self.jumpMethod) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
