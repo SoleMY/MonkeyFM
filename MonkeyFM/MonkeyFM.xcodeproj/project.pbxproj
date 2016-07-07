@@ -329,7 +329,6 @@
 		D625C4171D2A8218005C2A6E /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVPlayerManager.m; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.m"; sourceTree = SOURCE_ROOT; };
 		D625C4191D2A9860005C2A6E /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		D625C41A1D2A9860005C2A6E /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-
 		D64EC2FA1D2B92C90079BFAD /* icon_comment_support@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_comment_support@2x.png"; sourceTree = "<group>"; };
 		D64EC2FC1D2B930B0079BFAD /* icon_detail_attention@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_detail_attention@2x.png"; sourceTree = "<group>"; };
 		D64EC2FE1D2B93240079BFAD /* icon_radiodetail_comment_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_radiodetail_comment_full@2x.png"; sourceTree = "<group>"; };
@@ -1655,7 +1654,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
-				8836C72BA370F065706394EC /* 📦 Check Pods Manifest.lock */,
+				8836C72BA370F065706394EC /* [CP] Check Pods Manifest.lock */,
 				1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */,
 				AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */,
 				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
@@ -1882,14 +1881,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8836C72BA370F065706394EC /* 📦 Check Pods Manifest.lock */ = {
+		8836C72BA370F065706394EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2269,7 +2268,7 @@
 					"-lz",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.MonkeyFM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2321,7 +2320,7 @@
 					"-lz",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.MonkeyFM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

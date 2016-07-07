@@ -40,6 +40,9 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
     popularTableView.delegate = self;
     popularTableView.dataSource = self;
     [popularTableView registerClass:[PopularItemListCell class] forCellReuseIdentifier:identifier_popularListCell];
+
+    [self.popularTableView NightWithType:UIViewColorTypeNormal];
+    
     [self.view addSubview:popularTableView];
     self.popularTableView = popularTableView;
     __weak typeof(self)weakSelf = self;
@@ -103,6 +106,8 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
     RadioPopularItemModel *model = self.allListInfoArray[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell bindModel:model];
+    
+    [cell NightWithType:UIViewColorTypeNormal];
     
     return cell;
 }

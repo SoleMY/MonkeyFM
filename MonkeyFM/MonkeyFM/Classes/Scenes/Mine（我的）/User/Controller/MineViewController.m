@@ -60,7 +60,6 @@
     [super viewDidLoad];
     
     __weak typeof(self)weakSelf = self;
-    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     
     // 设置tableView
     [self addTableViewMethod];
@@ -501,6 +500,7 @@
 
 - (void)showCollection {
     AVUser *currentUser = [AVUser currentUser];
+    if (currentUser) {
     AVQuery *query = [AVQuery queryWithClassName:@"Album"];
     [query whereKey:@"userName" equalTo:currentUser.username];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -511,10 +511,12 @@
             [self.tableView reloadData];
         });
     }];
+    }
 }
 
 - (void)showSubscribe {
     AVUser *currentUsre = [AVUser currentUser];
+    if (currentUsre) {
     AVQuery *query = [AVQuery queryWithClassName:@"Subscribe"];
     [query whereKey:@"userName" equalTo:currentUsre.username];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -523,6 +525,7 @@
             [self.tableView reloadData];
         });
     }];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

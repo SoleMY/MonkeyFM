@@ -56,7 +56,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
     // 第一步：注册cell
     [self.myView.collectionView registerClass:[ClassificationCell class] forCellWithReuseIdentifier:identifile_cell];
     __weak typeof(self)weakSelf = self;
-    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     self.title = @"分类";
     
 }

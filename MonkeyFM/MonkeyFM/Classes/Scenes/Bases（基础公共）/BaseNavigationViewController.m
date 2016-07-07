@@ -9,7 +9,7 @@
 #import "BaseNavigationViewController.h"
 #define kNavigationTintColor [UIColor whiteColor]
 
-@interface BaseNavigationViewController ()<UISearchBarDelegate>
+@interface BaseNavigationViewController ()
 
 
 
@@ -20,15 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    // 给所有的导航栏添加搜索栏
-    CGRect mainViewBounds = self.view.bounds;
-    self.customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(60, 30, mainViewBounds.size.width - 120, 20)];
-    self.customSearchBar.delegate = self;
-    self.customSearchBar.showsCancelButton = NO;
-    [self.view addSubview:self.customSearchBar];
+    
     // 导航栏的背景颜色
-    self.navigationBar.barTintColor = kNavigationBarTintColor;
+//    self.navigationBar.barTintColor = kNavigationBarTintColor;
     // 导航栏元素颜色
+    
+    [self.navigationBar NightWithType:UIViewColorTypeNormal];
     self.navigationBar.tintColor = kNavigationTintColor;
     
 }
