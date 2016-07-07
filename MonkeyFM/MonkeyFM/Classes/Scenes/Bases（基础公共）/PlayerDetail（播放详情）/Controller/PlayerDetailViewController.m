@@ -122,6 +122,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 }
 
 - (void)viewDidLoad {
+//    AVAudioPlayer
     [super viewDidLoad];
     self.firstImage.alpha = 0;
     self.firstImage.backgroundColor = [UIColor lightGrayColor];

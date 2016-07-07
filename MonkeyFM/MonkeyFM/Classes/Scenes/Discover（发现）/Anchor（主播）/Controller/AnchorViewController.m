@@ -71,7 +71,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     [self.collection.collectionView registerClass:[FirstCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"firstHeaderView"];
     [self request];
     __weak typeof(self)weakSelf = self;
-    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     self.title = @"主播";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
 }

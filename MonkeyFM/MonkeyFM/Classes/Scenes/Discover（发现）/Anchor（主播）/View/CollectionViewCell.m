@@ -64,13 +64,10 @@
     [host setValuesForKeysWithDictionary:dic];
     self.nameLabel.text = host.nickName;
 #warning 夜间模式改动
-    [self.nameLabel NightWithType:UIViewColorTypeNormal];
-    [self.nameLabel NightTextType:LabelColorBlack];
+//    [self.nameLabel NightWithType:UIViewColorTypeNormal];
+//    [self.nameLabel NightTextType:LabelColorBlack];
     
     self.introduction.text = host.recommendReson;
-#warning 夜间模式改动
-    [self.introduction NightWithType:UIViewColorTypeNormal];
-    [self.introduction NightTextType:LabelColorGray];
     [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];
 }
 
@@ -80,12 +77,6 @@
     Host *host = [[Host alloc] init];
     [host setValuesForKeysWithDictionary:dic];
     self.nameLabel.text = host.rname;
-#warning 夜间模式改动
-    
-    [self.nameLabel NightTextType:LabelColorBlack];
-    self.nameLabel.frame = CGRectMake(10, 0, kNameLabelWidth, kNameLabelHeight);
-    self.nameLabel.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-    self.nameLabel.font = [UIFont systemFontOfSize:10];
     self.introduction.text = nil;
     [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.pic]];
 }

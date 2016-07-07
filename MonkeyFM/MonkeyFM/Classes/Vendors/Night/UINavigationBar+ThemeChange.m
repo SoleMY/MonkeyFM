@@ -16,7 +16,7 @@
     
     [self setBarTintColor:[ThemeManage shareThemeManage].navBarColor];
     [self setBackgroundColor:[UIColor clearColor]];
-    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: [ThemeManage shareThemeManage].navBarColor}];
+    [self setTitleTextAttributes:@{NSForegroundColorAttributeName: [ThemeManage shareThemeManage].titleColor}];
     
     //改变电池栏Style
     if ([ThemeManage shareThemeManage].isNight) {

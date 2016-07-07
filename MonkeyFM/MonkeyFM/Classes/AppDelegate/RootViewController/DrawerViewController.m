@@ -21,8 +21,8 @@
 #import "AVOSCloud/AVOSCloud.h"
 
 #define kCellColor [UIColor clearColor]
-#define kHeadViewHeight self.rearTableView.frame.size.height / 4
-#define kUserPhotoWidth self.rearTableView.frame.size.width / 10
+#define kHeadViewHeight [UIScreen mainScreen].bounds.size.height / 4.5
+#define kUserPhotoWidth [UIScreen mainScreen].bounds.size.width / 6
 
 @interface DrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -32,11 +32,15 @@
 // 抽屉的大背景图片
 //@property (nonatomic, strong) UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
+@property (nonatomic, strong) UIImageView *userPhotoImageView;
+@property (nonatomic, strong) UILabel *userNameLabel;
+
 
 @end
 
 @implementation DrawerViewController
 //@synthesize rearTableView = _rearTableView;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,6 +57,7 @@
 
 - (void)layoutTableViewHeadView
 {
+    self.rearTableView.tableHeaderView = nil;
     // tableView头视图
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.rearTableView.frame.size.width, kHeadViewHeight)];
     headView.backgroundColor = [UIColor clearColor];
@@ -62,11 +67,12 @@
     self.rearTableView.tableHeaderView = headView;
     // 用户头像
     UIImageView *userPhotoImageView = [[UIImageView alloc] init];
-    userPhotoImageView.image = [UIImage imageNamed:@"user_photo"];
+    
     userPhotoImageView.backgroundColor = [UIColor grayColor];
     userPhotoImageView.layer.cornerRadius = kUserPhotoWidth / 2;
     userPhotoImageView.layer.masksToBounds = YES;
     [headView addSubview:userPhotoImageView];
+    self.userPhotoImageView = userPhotoImageView;
     [userPhotoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(headView).offset(71);
         make.left.equalTo(headView).offset(20);
@@ -75,13 +81,25 @@
     }];
     // 用户名
     UILabel *userNameLabel = [[UILabel alloc] init];
-    userNameLabel.text = @"UserNameLabel";
+    
     [headView addSubview:userNameLabel];
+    self.userNameLabel = userNameLabel;
     [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(userPhotoImageView.mas_centerY);
-        make.left.equalTo(userPhotoImageView.mas_right);
+        make.left.equalTo(userPhotoImageView.mas_right).offset(2);
         make.width.mas_equalTo(kUserPhotoWidth * 3);
     }];
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser != nil) {
+        AVUser *currentUser = [AVUser currentUser];
+        NSData *data = [currentUser objectForKey:@"headImage"];
+        self.userPhotoImageView.image = [UIImage imageWithData:data];
+        NSString *currentUsername = [AVUser currentUser].username;// 当前用户名
+        self.userNameLabel.text = currentUsername;
+    } else {
+        self.userNameLabel.text = @"用户未登录";
+        self.userPhotoImageView.image = [UIImage imageNamed:@"user_photo"];
+    }
 
 }
 
@@ -90,24 +108,22 @@
 {
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser != nil) {
-                
-    } else {
-        //缓存用户对象为空时，可打开用户注册界面…
-        LoginViewController *login = [[LoginViewController alloc] init];
-        login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:login animated:YES completion:^{
-            
-        }];
+        AVUser *currentUser = [AVUser currentUser];
+        NSData *data = [currentUser objectForKey:@"headImage"];
+        self.userPhotoImageView.image = [UIImage imageWithData:data];
+        NSString *currentUsername = [AVUser currentUser].username;// 当前用户名
+        self.userNameLabel.text = currentUsername;
     }
+    [self tableView:self.rearTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;
+    [self layoutTableViewHeadView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

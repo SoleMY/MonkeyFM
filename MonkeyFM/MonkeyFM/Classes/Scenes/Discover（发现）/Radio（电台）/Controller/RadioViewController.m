@@ -61,7 +61,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     [self createRadioTableView];
     // 数据请求
     [self requestData];
-    ((BaseNavigationViewController *)self.navigationController).customSearchBar.hidden = YES;
     self.title = @"电台";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
@@ -164,7 +163,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 listVC.selectedSegmentIndex = 0;
                 listVC.selectID = selectID;
                 [SelecID shareSelecID].selectIndex = selectID;
-                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
             #warning 夜间模式改动
@@ -182,7 +180,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 listVC.selectedSegmentIndex = 1;
                 listVC.selectID = selectID;
                 [SelecID shareSelecID].selectIndex = selectID;
-                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 [weakSelf.navigationController pushViewController:listVC animated:YES];
             };
             cell.allInfoDataArray = self.allInfoDataArray;
@@ -195,9 +192,11 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
             // 第2个分区 热播栏目的 cell
             PopularItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_popularCell forIndexPath:indexPath];
             cell.allInfoDataArray = self.allInfoDataArray;
+            
+            [cell NightWithType:UIViewColorTypeNormal];
+            
             cell.pushBlock = ^(NSString *relatedValue, NSString *titleName) {
                 PopularItemListViewController *popularListVC = [[PopularItemListViewController alloc] init];
-                ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
                 popularListVC.relatedValue = relatedValue;
                 popularListVC.titleName = titleName;
                 [weakSelf.navigationController pushViewController:popularListVC animated:YES];

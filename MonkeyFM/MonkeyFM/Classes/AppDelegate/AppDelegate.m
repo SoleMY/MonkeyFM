@@ -35,7 +35,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     BaseNavigationViewController *recommendNav = [[BaseNavigationViewController alloc] initWithRootViewController:[[RecommendViewController alloc] init]];
-    [recommendNav.navigationBar NightWithType:UIViewColorTypeNormal];
+//    [recommendNav.navigationBar NightWithType:UIViewColorTypeNormal];
     DrawerViewController *drawerVC = [[DrawerViewController alloc] init];
     SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
                                                     initWithRearViewController:drawerVC frontViewController:recommendNav];

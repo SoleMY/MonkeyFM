@@ -32,6 +32,7 @@ static ThemeManage *manage;
         self.navBarColor = [UIColor colorWithRed:0.06 green:0.08 blue:0.1 alpha:1];
         self.color2 = [UIColor colorWithRed:0.2 green:0.31 blue:0.43 alpha:1];
         self.textColorGray = [UIColor whiteColor];
+        self.titleColor = [UIColor whiteColor];
     }
     else{
         self.bgColor = [UIColor whiteColor];
@@ -41,6 +42,7 @@ static ThemeManage *manage;
         self.navBarColor = [UIColor colorWithRed:46 / 255.0 green:196 / 255.0 blue:196 / 255.0 alpha:1];
         self.color2 = [UIColor colorWithRed:0.57 green:0.66 blue:0.77 alpha:1];
         self.textColorGray = [UIColor grayColor];
+        self.titleColor = [UIColor whiteColor];
     }
     
     static dispatch_once_t onceToken;

@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Front View", nil);
+    self.title = @"推荐";
     
     SWRevealViewController *revealController = [self revealViewController];
     

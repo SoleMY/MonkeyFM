@@ -34,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak typeof(self)weakSelf = self;
-    ((BaseNavigationViewController *)weakSelf.navigationController).customSearchBar.hidden = YES;
     // Do any additional setup after loading the view from its nib.
     
     // title
@@ -184,11 +183,7 @@
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
     
-    if (self.jumpMethod) {
-        [self.navigationController popViewControllerAnimated:YES];
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

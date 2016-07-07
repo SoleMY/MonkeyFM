@@ -1675,6 +1675,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
+				8836C72BA370F065706394EC /* [CP] Check Pods Manifest.lock */,
+				1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */,
+				AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */,
+				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
+				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
 				23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
 				A57E60731D1BE159007EF7F1 /* Frameworks */,
@@ -1702,7 +1707,7 @@
 				TargetAttributes = {
 					A57E60751D1BE159007EF7F1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2SHWBPN8JF;
+						DevelopmentTeam = B3X95286R9;
 					};
 				};
 			};
@@ -1851,6 +1856,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1858,7 +1908,7 @@
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2194,7 +2244,7 @@
 					"-lz",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.MonkeyFM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2246,7 +2296,7 @@
 					"-lz",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.MonkeyFM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
