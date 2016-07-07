@@ -34,6 +34,7 @@
 		A5ABEE421D2B953600205DBA /* RadioDisPlayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5ABEE381D2B953600205DBA /* RadioDisPlayCollectionViewCell.xib */; };
 		A5ABEE431D2B953600205DBA /* RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A5ABEE3A1D2B953600205DBA /* RFLayout.m */; };
 		A5CDEDD21D2A5EE900E905DA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CDEDD11D2A5EE900E905DA /* MediaPlayer.framework */; };
+		D610E5511D2E5B91005325AB /* TodayWillListen.m in Sources */ = {isa = PBXBuildFile; fileRef = D610E5501D2E5B91005325AB /* TodayWillListen.m */; };
 		D625C4181D2A8218005C2A6E /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C4171D2A8218005C2A6E /* AVPlayerManager.m */; };
 		D625C41B1D2A9860005C2A6E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C41A1D2A9860005C2A6E /* ListViewController.m */; };
 		D64EC2FB1D2B92C90079BFAD /* icon_comment_support@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64EC2FA1D2B92C90079BFAD /* icon_comment_support@2x.png */; };
@@ -325,11 +326,12 @@
 		A5ABEE3A1D2B953600205DBA /* RFLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLayout.m; sourceTree = "<group>"; };
 		A5CDEDD11D2A5EE900E905DA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.debug.xcconfig"; sourceTree = "<group>"; };
+		D610E54F1D2E5B91005325AB /* TodayWillListen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayWillListen.h; sourceTree = "<group>"; };
+		D610E5501D2E5B91005325AB /* TodayWillListen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayWillListen.m; sourceTree = "<group>"; };
 		D625C4161D2A8218005C2A6E /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVPlayerManager.h; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.h"; sourceTree = SOURCE_ROOT; };
 		D625C4171D2A8218005C2A6E /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVPlayerManager.m; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.m"; sourceTree = SOURCE_ROOT; };
 		D625C4191D2A9860005C2A6E /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		D625C41A1D2A9860005C2A6E /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-
 		D64EC2FA1D2B92C90079BFAD /* icon_comment_support@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_comment_support@2x.png"; sourceTree = "<group>"; };
 		D64EC2FC1D2B930B0079BFAD /* icon_detail_attention@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_detail_attention@2x.png"; sourceTree = "<group>"; };
 		D64EC2FE1D2B93240079BFAD /* icon_radiodetail_comment_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_radiodetail_comment_full@2x.png"; sourceTree = "<group>"; };
@@ -807,6 +809,22 @@
 				A5ABEE381D2B953600205DBA /* RadioDisPlayCollectionViewCell.xib */,
 				A5ABEE391D2B953600205DBA /* RFLayout.h */,
 				A5ABEE3A1D2B953600205DBA /* RFLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D610E54A1D2E593F005325AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D610E54B1D2E593F005325AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D610E54F1D2E5B91005325AB /* TodayWillListen.h */,
+				D610E5501D2E5B91005325AB /* TodayWillListen.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1593,6 +1611,8 @@
 		D6C0A4E71D27509F00BA5E65 /* Recommend（推荐） */ = {
 			isa = PBXGroup;
 			children = (
+				D610E54A1D2E593F005325AB /* Model */,
+				D610E54B1D2E593F005325AB /* View */,
 				D6C0A4E81D27509F00BA5E65 /* Controller */,
 			);
 			path = "Recommend（推荐）";
@@ -1655,18 +1675,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
-				8836C72BA370F065706394EC /* 📦 Check Pods Manifest.lock */,
-				1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */,
-				AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */,
-				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
-				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
+				23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
 				A57E60731D1BE159007EF7F1 /* Frameworks */,
 				A57E60741D1BE159007EF7F1 /* Resources */,
-				CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */,
-				7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */,
-				A13A89AB02A6F8CE3BED561F /* 📦 Embed Pods Frameworks */,
-				BE00E1CB45AAE204C4F85B21 /* 📦 Copy Pods Resources */,
+				65E1493FF83C7DE5DE5C6E47 /* 📦 Embed Pods Frameworks */,
+				8FEB6A1875F319267A556833 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1837,52 +1851,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8836C72BA370F065706394EC /* 📦 Check Pods Manifest.lock */ = {
+		23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1897,7 +1866,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A13A89AB02A6F8CE3BED561F /* 📦 Embed Pods Frameworks */ = {
+		65E1493FF83C7DE5DE5C6E47 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1912,37 +1881,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BE00E1CB45AAE204C4F85B21 /* 📦 Copy Pods Resources */ = {
+		8FEB6A1875F319267A556833 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1957,21 +1896,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE9CC9381A3A8D1CA8EDD784 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1984,6 +1908,7 @@
 				A5ABEE431D2B953600205DBA /* RFLayout.m in Sources */,
 				A5ABEE3D1D2B953600205DBA /* RadioDisplayModel.m in Sources */,
 				D6C0A5CC1D27509F00BA5E65 /* ViewController.m in Sources */,
+				D610E5511D2E5B91005325AB /* TodayWillListen.m in Sources */,
 				D6C0A4FF1D27509F00BA5E65 /* AppDelegate.m in Sources */,
 				D6C0A5911D27509F00BA5E65 /* UIImage+ImageEffects.m in Sources */,
 				D6C0A5791D27509F00BA5E65 /* ProgramViewController.m in Sources */,

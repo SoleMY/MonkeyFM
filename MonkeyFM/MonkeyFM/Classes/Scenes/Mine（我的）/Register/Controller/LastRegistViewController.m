@@ -9,7 +9,7 @@
 #import "LastRegistViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
 #import "LoginViewController.h"
-@interface LastRegistViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate>
+@interface LastRegistViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nickname;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -47,9 +47,27 @@
     [self addFinishWrite];
 
     self.view.backgroundColor = kNavigationBarTintColor;
+    
+    self.nickname.delegate = self;
+    [self.nickname becomeFirstResponder];
+    self.password.delegate = self;
+    [self.password becomeFirstResponder];
+    self.email.delegate = self;
+    [self.email becomeFirstResponder];
 }
 
-
+// 当点击键盘return的时候
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.nickname resignFirstResponder]; // 释放第一响应者
+    [self.password resignFirstResponder];
+    [self.email resignFirstResponder];
+    return YES;
+}
+//  触摸屏幕回收键盘
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;

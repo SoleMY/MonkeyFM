@@ -8,11 +8,15 @@
 
 #import "BaseViewController.h"
 
+
+
 @interface LoginViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UITextField *nickName;
 
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+
+@property (nonatomic, assign) BOOL jumpMethod;
 
 @end
