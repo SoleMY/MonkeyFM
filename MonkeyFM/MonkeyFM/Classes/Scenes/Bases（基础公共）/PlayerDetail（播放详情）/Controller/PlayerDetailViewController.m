@@ -140,7 +140,11 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
             [self.downLoadButton setImage:[UIImage imageNamed:@"btn_offline_delete_select"] forState:UIControlStateNormal];
         }
     }
-    
+     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -346,7 +350,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 - (IBAction)collectAction:(id)sender {
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser == nil) {
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+        [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     } else  {
         PlayList *playList = self.allDataArray[self.row];
         if (_iscollect == UnCollect)  {
@@ -384,7 +388,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 - (IBAction)subscribeAction:(id)sender {
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser == nil) {
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+       [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     } else  {
         PlayList *playList = self.allDataArray[self.row];
         if (_issubscribe == UnSubscribe)  {

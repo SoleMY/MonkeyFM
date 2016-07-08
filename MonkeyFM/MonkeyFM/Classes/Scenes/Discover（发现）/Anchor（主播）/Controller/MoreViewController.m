@@ -44,13 +44,14 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     __weak typeof(self)weakSelf = self;
+    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
         
     }];
     [self.tableView NightWithType:UIViewColorTypeNormal];
-    
+    [self showGifView];
 }
 
 - (void)request{
@@ -68,6 +69,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.tableView reloadData];
+            [self hideGifView];
         });
         
     }];
@@ -116,6 +118,18 @@
      More *more = self.allDataArr[indexPath.row];
     [[SingleList shareSingleList].dict setObject:more.Id forKey:@"ID"];
     [self.navigationController pushViewController:PlayListVC animated:YES];
+}
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.tableView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

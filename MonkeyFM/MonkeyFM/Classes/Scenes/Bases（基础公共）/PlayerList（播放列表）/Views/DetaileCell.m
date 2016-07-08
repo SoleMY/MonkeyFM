@@ -59,7 +59,7 @@
         make.height.mas_offset(17);
     }];
     [self.sourceLabel NightWithType:UIViewColorTypeNormal];
-    [self.sourceText NightTextType:LabelColorGray];
+    [self.sourceLabel NightTextType:LabelColorGray];
     
     
     self.sourceText = [[UILabel alloc] init];

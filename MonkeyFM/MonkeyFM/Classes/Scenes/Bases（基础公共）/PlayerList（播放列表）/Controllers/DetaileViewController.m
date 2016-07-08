@@ -124,27 +124,32 @@
         cell.uploadingText.text = playList.uploadUserName;
         cell.accreditText.text = playList.copyrightLabel;
         cell.statusText.text = [NSString stringWithFormat:@"%@%@",playList.status,playList.updateDay];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.row == 1) {
         KeywordsCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"keyWordCell" forIndexPath:indexPath];
         [cell NightWithType:UIViewColorTypeNormal];
             cell.buttonArray = playList.keyWords.mutableCopy;
         self.heightForCellButton = cell.numberOfButton;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.row == 2) {
         IntroductionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"introductionCell" forIndexPath:indexPath];
         [cell NightWithType:UIViewColorTypeNormal];
         cell.introductionText.text = playList.radioDesc;
        self.heightForCellText = [SmallTools textHeightWithText:cell.introductionText.text font:[UIFont systemFontOfSize:13]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if (indexPath.row == 3) {
         AlbumDetailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"albumCell" forIndexPath:indexPath];
         [cell bindWithArray:self.albumArray];
         [cell NightWithType:UIViewColorTypeNormal];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         [cell NightWithType:UIViewColorTypeNormal];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }

@@ -122,7 +122,7 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>App plays audio</string>
+		<string>audio</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

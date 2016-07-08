@@ -36,7 +36,7 @@
     [self.titleLabel NightTextType:LabelColorGray];
     
     self.firstImageView = [[UIImageView alloc] init];
-    self.firstImageView.backgroundColor = [UIColor orangeColor];
+    self.firstImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.firstImageView];
     [self.firstImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(7);
@@ -46,7 +46,7 @@
     }];
     
     self.secondImageView = [[UIImageView alloc] init];
-    self.secondImageView.backgroundColor = [UIColor orangeColor];
+    self.secondImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.secondImageView];
     [self.secondImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.firstImageView).offset(0);
@@ -56,7 +56,7 @@
     }];
     
     self.thiredImageView = [[UIImageView alloc] init];
-    self.thiredImageView.backgroundColor = [UIColor orangeColor];
+    self.thiredImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.thiredImageView];
     [self.thiredImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.secondImageView).offset(0);
