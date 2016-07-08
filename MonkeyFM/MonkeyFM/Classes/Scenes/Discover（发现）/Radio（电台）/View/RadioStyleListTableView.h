@@ -10,7 +10,7 @@
 
 typedef void(^chooseAreaBlock)();
 
-typedef void(^DisplayDetailBlock)(NSInteger, NSInteger, NSInteger, NSIndexPath *);
+typedef void(^DisplayDetailBlock)(NSString *, NSInteger, NSIndexPath *);
 
 @interface RadioStyleListTableView : UITableView
 

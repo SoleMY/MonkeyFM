@@ -35,6 +35,7 @@
 		A55DD7291D2BFFC5009A28A3 /* UIView+ThemeChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A55DD7221D2BFFC5009A28A3 /* UIView+ThemeChange.m */; };
 		A55DD72C1D2C01AC009A28A3 /* rijian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A55DD72A1D2C01AC009A28A3 /* rijian@2x.png */; };
 		A55DD72D1D2C01AC009A28A3 /* yejian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A55DD72B1D2C01AC009A28A3 /* yejian@2x.png */; };
+		A55F7C001D2FD13700601CA8 /* SystemLight.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7BFF1D2FD13700601CA8 /* SystemLight.m */; };
 		A57257AE1D2BEBEE003529C5 /* 暂停button.png in Resources */ = {isa = PBXBuildFile; fileRef = A57257AD1D2BEBEE003529C5 /* 暂停button.png */; };
 		A57257B11D2BEF3A003529C5 /* RadioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57257B01D2BEF3A003529C5 /* RadioPlayerManager.m */; };
 		A5ABEE3B1D2B953600205DBA /* RadioDisPlayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5ABEE281D2B953600205DBA /* RadioDisPlayDetailViewController.m */; };
@@ -331,6 +332,8 @@
 		A55DD7221D2BFFC5009A28A3 /* UIView+ThemeChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ThemeChange.m"; sourceTree = "<group>"; };
 		A55DD72A1D2C01AC009A28A3 /* rijian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rijian@2x.png"; sourceTree = "<group>"; };
 		A55DD72B1D2C01AC009A28A3 /* yejian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yejian@2x.png"; sourceTree = "<group>"; };
+		A55F7BFE1D2FD13700601CA8 /* SystemLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemLight.h; sourceTree = "<group>"; };
+		A55F7BFF1D2FD13700601CA8 /* SystemLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemLight.m; sourceTree = "<group>"; };
 		A57257AD1D2BEBEE003529C5 /* 暂停button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停button.png"; sourceTree = "<group>"; };
 		A57257AF1D2BEF3A003529C5 /* RadioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioPlayerManager.h; sourceTree = "<group>"; };
 		A57257B01D2BEF3A003529C5 /* RadioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioPlayerManager.m; sourceTree = "<group>"; };
@@ -789,6 +792,15 @@
 			path = Night;
 			sourceTree = "<group>";
 		};
+		A55F7BFD1D2FD11B00601CA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A55F7BFE1D2FD13700601CA8 /* SystemLight.h */,
+				A55F7BFF1D2FD13700601CA8 /* SystemLight.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A57E606D1D1BE159007EF7F1 = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +932,7 @@
 		D6746F241D2CA4690012D208 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A55F7BFD1D2FD11B00601CA8 /* Model */,
 				D6746F251D2CA4690012D208 /* Controller */,
 				D6746F2A1D2CA4690012D208 /* View */,
 			);
@@ -1993,6 +2006,7 @@
 				A5ABEE3D1D2B953600205DBA /* RadioDisplayModel.m in Sources */,
 				D6C0A5CC1D27509F00BA5E65 /* ViewController.m in Sources */,
 				D610E5511D2E5B91005325AB /* TodayWillListen.m in Sources */,
+				A55F7C001D2FD13700601CA8 /* SystemLight.m in Sources */,
 				D6C0A4FF1D27509F00BA5E65 /* AppDelegate.m in Sources */,
 				D6C0A5911D27509F00BA5E65 /* UIImage+ImageEffects.m in Sources */,
 				D6C0A5791D27509F00BA5E65 /* ProgramViewController.m in Sources */,

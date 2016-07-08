@@ -103,7 +103,7 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         if (!_area) {
             _area = 1;
         }
-        self.displayBlock([model.ID integerValue], [model.classifyid integerValue], _area, indexPath);
+        self.displayBlock(model.ID, _area, indexPath);
         
     }
 }

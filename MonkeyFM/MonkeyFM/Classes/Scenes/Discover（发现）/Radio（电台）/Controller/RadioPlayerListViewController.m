@@ -153,7 +153,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
             table.emptyURL = emptyURL;
         }
         RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
-        table.displayBlock = ^(NSInteger ID, NSInteger classifyid, NSInteger area, NSIndexPath *scroll) {
+        table.displayBlock = ^(NSString *ID, NSInteger area, NSIndexPath *scroll) {
             displayVC.ID = ID;
             weakSelf.sendBlock = ^(NSInteger index) {
                 if (_segmentedStyle == 0) {

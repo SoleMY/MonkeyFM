@@ -10,7 +10,7 @@
 //@class CollectionView;
 
 typedef void(^block)(NSString *);
-typedef void(^Block)(NSInteger);
+typedef void(^Block)(NSString *);
 typedef void(^pushNewControllerPopularBlock)(NSString *,NSString *);
 @interface PopularItemTableViewCell : BaseCell
 

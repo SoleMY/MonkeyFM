@@ -38,6 +38,7 @@ static NSString * const identifier_cell = @"identifier_cell";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(backPop)];
     self.navigationItem.rightBarButtonItem = nil;
     [self setTableView];
+    [self showGifView];
     [self requestData];
     
 }
@@ -79,8 +80,22 @@ static NSString * const identifier_cell = @"identifier_cell";
     }];
 }
 
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self.chooseTableView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.chooseTableView animated:YES];
+}
+
 - (void)reloadUI
 {
+    [self hideGifView];
     [self.chooseTableView reloadData];
 }
 

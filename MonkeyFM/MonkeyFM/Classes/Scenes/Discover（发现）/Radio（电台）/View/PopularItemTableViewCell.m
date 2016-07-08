@@ -97,7 +97,7 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
             }
         } else {
             if (self.radioBlock) {
-                self.radioBlock([host.rvalue integerValue]);
+                self.radioBlock(host.rvalue);
             }
         }
     }

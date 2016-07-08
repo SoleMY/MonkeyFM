@@ -212,7 +212,7 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
                 PlayListViewController *playListVC = [[PlayListViewController alloc] init];
                 [weakSelf.navigationController pushViewController:playListVC animated:YES];
             };
-            cell.radioBlock = ^(NSInteger ID) {
+            cell.radioBlock = ^(NSString *ID) {
                 RadioDisPlayDetailViewController *displayVC = [[RadioDisPlayDetailViewController alloc] init];
                     displayVC.ID = ID;
                     displayVC.classifyid = 2;

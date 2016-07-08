@@ -166,23 +166,19 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
     }];
 
 }
-- (void)requestPlayDataWithId:(NSInteger)Id
+- (void)requestPlayDataWithId:(NSString *)Id
 {
     __weak typeof(self) weakSelf = self;
     [self.allDisplayPlayInfoArray removeAllObjects];
-    NSLog(@"%d", Id );
-    NSLog(@"%@", RADIO_DISPLAY_PLAY_EMPTY_URL(RADIO_DISPLAY_PLAY_BASE_URL, Id, RADIO_DISPLAY_PLAY_TAIL_URL));
     [[AFHTTPSessionManager manager] GET:RADIO_DISPLAY_PLAY_EMPTY_URL(RADIO_DISPLAY_PLAY_BASE_URL, Id, RADIO_DISPLAY_PLAY_TAIL_URL) parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
             NSDictionary *dic = responseObject[@"result"];
-            if (dic != nil) {
                 RadioDisplayPlayModel *model = [[RadioDisplayPlayModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.allDisplayPlayInfoArray addObject:model];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf.myCollectionView reloadData];
                 });
-            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -244,11 +240,7 @@ static NSString * const identifier_displayCell = @"identifier_displayCell";
     }
     NSInteger index = self.myCollectionView.contentOffset.x / offset;
     RadioDisplayModel *model = self.allDisplayListInfoArray[index];
-    [self requestPlayDataWithId:[model.ID integerValue]];
-    NSNumber *num = (NSNumber*)model.ID;
-    NSInteger tt = [num integerValue];
-    NSLog(@"%d", tt);
-    NSLog(@"%@", [NSString stringWithFormat:@"%@", model.ID]);
+    [self requestPlayDataWithId:model.ID];
     [self.backImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
     //给背景图添加毛玻璃
     self.toolBar = [[UIToolbar alloc] initWithFrame:[UIScreen mainScreen].bounds];

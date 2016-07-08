@@ -7,6 +7,7 @@
 //
 
 #import "SettingTableViewCell.h"
+#import "SystemLight.h"
 
 @interface SettingTableViewCell ()
 
@@ -63,14 +64,17 @@
 
 - (void)openOrCloseAction:(UISwitch *)sender
 {
+    
     if (self.status == isUseing) {
         
     } else if (self.status == isNight) {
         if (sender.isOn) {
+            [SystemLight shareSystemLight].currentLight = [UIScreen mainScreen].brightness;
             [ThemeManage shareThemeManage].isNight = YES;
-            
+            [UIScreen mainScreen].brightness = 0.2;
         } else {
             [ThemeManage shareThemeManage].isNight = NO;
+            [UIScreen mainScreen].brightness = [SystemLight shareSystemLight].currentLight;
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"changeColor" object:nil];
         [[NSUserDefaults standardUserDefaults] setBool:[ThemeManage shareThemeManage].isNight forKey:@"night"];

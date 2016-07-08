@@ -72,7 +72,7 @@
 
 #define RADIO_DISPLAY_LIST_BASE_URL @"http://api.kaolafm.com/api/v4/broadcast/list?&id="
 #define RADIO_DISPLAY_LIST_TAIL_URL @"&timezone=28800&installid=00034wu2&uid=2951383&udid=1c1b7cfae453ec10077f8c2d734085d4&sessionid=1c1b7cfae453ec10077f8c2d734085d41467343864881&imsi=460013924616707&operator=2&lon=116.344188&lat=40.030353&network=1&timestamp=1467343882&sign=e3c4197890795b12fc5ba17232c77c89&resolution=1080*1794&devicetype=0&channel=B-hicloud&version=4.8.3&appid=0&token=token2239b88800dde6d4d908799c6fb5acf7&"
-#define RADIO_DISPLAY_LIST_EMPTY_URL(BASE, ID, type, classifyid,TAIL) [NSString stringWithFormat:@"%@%ld&pagesize=40&type=%ld&classifyid=%ld%@", BASE, ID, type, classifyid, TAIL]
+#define RADIO_DISPLAY_LIST_EMPTY_URL(BASE, ID, type, classifyid,TAIL) [NSString stringWithFormat:@"%@%@&pagesize=40&type=%ld&classifyid=%ld%@", BASE, ID, type, classifyid, TAIL]
 
 #define RADIO_DISPLAY_AREA_BASE_URL @"http://api.kaolafm.com/api/v4/broadcast/search?type=1&pagesize=40&area="
 #define RADIO_DISPLAY_AREA_TAIL_URL @"&pagenum=1&classifyid=2&timezone=28800&resolution=640*1136&osversion=9.1&devicename=iPod%20touch%205G&screensize=320*568&version=4.8.1&udid=66f5ad1f7920c28abea929c92fb35b66&channel=appstore&lon=116.337500&playid=&sessionid=5469953C514B453B8AE8F1E8CFCF7794&action=1896&sign=cb39865d48a5df9bb515bf5235dd5e0d&operator=0&idfv=AAF4BDEA-DC14-40C3-8CA9-965A5EE4E58E&installid=00035BDN&suppermode=0&mac=020000000000&uid=&appid=0&timestamp=1467443482&devicetype=1&usertype=0&idfa=3FF1EDAA-41A4-4EF5-9A6B-2B1C34FDE52A&producer=apple&page=200041&lat=40.029220&network=1"
@@ -89,7 +89,7 @@
 
 #define RADIO_DISPLAY_PLAY_TAIL_URL @"&timezone=28800&resolution=640*1136&osversion=9.1&devicename=iPod%20touch%205G&screensize=320*568&version=4.8.1&udid=66f5ad1f7920c28abea929c92fb35b66&channel=appstore&lon=116.337500&playid=&sessionid=5469953C514B453B8AE8F1E8CFCF7794&action=1901&sign=cb39865d48a5df9bb515bf5235dd5e0d&operator=0&idfv=AAF4BDEA-DC14-40C3-8CA9-965A5EE4E58E&installid=00035BDN&suppermode=0&mac=020000000000&uid=&appid=0&timestamp=1467443484&devicetype=1&usertype=0&idfa=3FF1EDAA-41A4-4EF5-9A6B-2B1C34FDE52A&producer=apple&page=200042&lat=40.029220&network=1"
 
-#define RADIO_DISPLAY_PLAY_EMPTY_URL(BASE,ID,TAIL) [NSString stringWithFormat:@"%@%ld%@", BASE, ID,  TAIL]
+#define RADIO_DISPLAY_PLAY_EMPTY_URL(BASE,ID,TAIL) [NSString stringWithFormat:@"%@%@%@", BASE, ID,  TAIL]
 
 
 #define kRecommend_Pic_URL @"http://api.kaolafm.com/api/v4/pagecontent/list?pageid=104&installid=00034w5l&appid=0&operator=2&playid=&suppermode=0&devicetype=1&devicename=iPhone%206&lon=116.337465&channel=appstore&action=11&resolution=750*1334&version=4.8.1&udid=f2f2d9eed2fb9ba3702e22fef2c25836&usertype=0&sign=0a53d25f552ae99314f7617ae507be7f&mac=020000000000&uid=&timestamp=1466571728&sessionid=3CA1D5ABBD054C81B1CD156659740F36&idfv=EE9AD43F-BE4B-46D9-93EF-618ADCF8F3FC&network=1&timezone=28800&osversion=9.3.2&lat=40.029170&page=200014&producer=apple&screensize=375*667&idfa=93C34B9A-7617-440C-A463-B4D59B6B3689"
