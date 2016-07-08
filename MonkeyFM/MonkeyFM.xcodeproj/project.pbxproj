@@ -1128,7 +1128,6 @@
 				D6C0A3A31D27509F00BA5E65 /* MJRefresh */,
 				D6C0A3D91D27509F00BA5E65 /* user_photo.png */,
 				A51F69DE1D2F860B00612EF9 /* DrawerBackground.png */,
-				D6C0A3DA1D27509F00BA5E65 /* 图像 */,
 				D6C0A3F51D27509F00BA5E65 /* 图标 */,
 			);
 			path = Resources;
@@ -1856,7 +1855,6 @@
 				D6C0A5581D27509F00BA5E65 /* ic_homeinternet_on@3x.png in Resources */,
 				D6C0A55E1D27509F00BA5E65 /* 时间.png in Resources */,
 				A51F69D31D2F53C500612EF9 /* ic_fresh_4@2x.png in Resources */,
-				D6C0A5361D27509F00BA5E65 /* 动漫游戏.png in Resources */,
 				D6C0A54B1D27509F00BA5E65 /* chat_support_blue@2x.png in Resources */,
 				D6C0A5571D27509F00BA5E65 /* ic_homeinternet_on@2x.png in Resources */,
 				D6C0A51C1D27509F00BA5E65 /* btn_radiodetail_share_highlighted@2x.png in Resources */,
@@ -1911,7 +1909,6 @@
 				D6746F321D2CA4690012D208 /* LastRegistViewController.xib in Resources */,
 				D6C0A50D1D27509F00BA5E65 /* 财经.png in Resources */,
 				A51F69D01D2F53C500612EF9 /* ic_fresh_1@2x.png in Resources */,
-				D6C0A53A1D27509F00BA5E65 /* 外语.png in Resources */,
 				D6C0A5E31D27B18300BA5E65 /* 猴子.png in Resources */,
 				A5ABEE3C1D2B953600205DBA /* RadioDisPlayDetailViewController.xib in Resources */,
 				D6746F411D2CD8CF0012D208 /* yanzheng.png in Resources */,
@@ -2258,6 +2255,7 @@
 			baseConfigurationReference = AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				ENABLE_BITCODE = NO;
@@ -2310,6 +2308,7 @@
 			baseConfigurationReference = 2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				ENABLE_BITCODE = NO;
