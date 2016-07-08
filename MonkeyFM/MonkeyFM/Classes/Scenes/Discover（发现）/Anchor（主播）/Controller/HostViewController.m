@@ -44,7 +44,6 @@
     [self requestWithPage:@"1"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-#warning 夜间模式改动
     [self.tableView NightWithType:UIViewColorTypeNormal];
     [self.tableView registerClass:[HostViewDetaileCell class] forCellReuseIdentifier:@"cell"];
     self.view.backgroundColor = [UIColor grayColor];
@@ -94,7 +93,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HostViewDetaileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     More *more = self.allDataArray[indexPath.row];
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:more.avatar]];

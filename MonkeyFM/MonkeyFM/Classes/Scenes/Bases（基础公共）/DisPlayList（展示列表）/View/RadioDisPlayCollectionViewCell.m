@@ -12,10 +12,11 @@
 #import "RadioDisplayPlayModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import "RadioPlayerManager.h"
+#import "UMSocial.h"
 
 #define  kRadioPlayerManager [RadioPlayerManager shareRadioPlayerManager]
 
-@interface RadioDisPlayCollectionViewCell ()
+@interface RadioDisPlayCollectionViewCell ()<UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 @property (weak, nonatomic) IBOutlet UILabel *centerDesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *leftSeverTimeLabel;
@@ -73,6 +74,9 @@
 
 
 - (IBAction)shareAction:(id)sender {
+    if (self.shareBlock) {
+        self.shareBlock();
+    }
 }
 
 - (IBAction)showDisplayListAction:(id)sender {
@@ -127,6 +131,7 @@
 
 - (void)bindPlayModel:(RadioDisplayPlayModel *)playModel
 {
+    
     self.centerDesLabel.text = playModel.title;
     if (self.centerDesLabel == nil) {
         self.centerDesLabel.text = @"暂无节目信息";

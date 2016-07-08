@@ -49,7 +49,6 @@
         [weakSelf.tableView.mj_header endRefreshing];
         
     }];
-#warning 夜间模式改动
     [self.tableView NightWithType:UIViewColorTypeNormal];
     
 }
@@ -88,7 +87,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MoreCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"MoreCell" forIndexPath:indexPath];
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     
     More *more = self.allDataArr[indexPath.row];

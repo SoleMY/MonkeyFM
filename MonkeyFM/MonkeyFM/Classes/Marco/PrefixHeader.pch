@@ -18,7 +18,7 @@
 #import "MFM_Tool_COLOR.h"
 #import <MBProgressHUD.h>
 #import "Sinleton.h"
-
+#import "MBProgressHUD+GifHUD.h"
 // 夜间模式
 #import "ThemeManage.h"
 #import "UIView+ThemeChange.h"

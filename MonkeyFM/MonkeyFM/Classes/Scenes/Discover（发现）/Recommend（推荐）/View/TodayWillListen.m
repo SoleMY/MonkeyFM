@@ -42,7 +42,6 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
     self.TodayCollectionView.collectionView.scrollEnabled = NO;
     self.TodayCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.TodayCollectionView.collectionView.bounces = NO;
-#warning 夜间模式改动
     [self.TodayCollectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
 //    [self.TodayCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_popularCell];
@@ -73,7 +72,6 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
 ////        self.relatedValue = model.relatedValue;
 //        [cell bindPopularModel:model indexPath:indexPath];
 //        cell.headPortrait.layer.cornerRadius = 0;
-//#warning 夜间模式改动
 //        [cell NightWithType:UIViewColorTypeNormal];
 //        
 //        return cell;

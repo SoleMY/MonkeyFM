@@ -85,7 +85,6 @@
     self.bgTableView.delegate = self;
     self.bgTableView.dataSource = self;
     
-#warning 夜间模式改动
     [self.bgTableView NightWithType:UIViewColorTypeNormal];
     [self.bgTableView registerClass:[HeadImage class] forCellReuseIdentifier:@"headImage"];
     [self.bgTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -172,7 +171,6 @@
     if (indexPath.row == 0) {
         HeadImage *image = [self.bgTableView dequeueReusableCellWithIdentifier:@"headImage" forIndexPath:indexPath];
         
-#warning 夜间模式改动
         [image NightWithType:UIViewColorTypeNormal];
         Host *host = [self.infoListArr firstObject];
         image.nameLabel.text= host.nickName;
@@ -183,7 +181,6 @@
     }else if(indexPath.row == 2){
         SocialNetworkCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"netWorkCell" forIndexPath:indexPath];
         
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }else if (indexPath.row == 3) {
@@ -245,10 +242,8 @@
       self.height = [SmallTools textHeightWithText:cell.textLabel.text font:[UIFont systemFontOfSize:13]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         
-#warning 夜间模式改动
         [cell.textLabel NightWithType:UIViewColorTypeNormal];
         [cell.textLabel NightTextType:LabelColorGray];
         return cell;

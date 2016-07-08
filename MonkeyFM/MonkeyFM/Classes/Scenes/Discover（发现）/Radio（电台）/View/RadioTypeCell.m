@@ -34,7 +34,6 @@
         
         [self.contentView addSubview:myContentView];
         self.radioTypeLabel = [[UILabel alloc] initWithFrame:self.bounds];
-#warning 夜间模式改动
         [self.radioTypeLabel NightWithType:UIViewColorTypeNormal];
         [self.radioTypeLabel NightTextType:LabelColorBlack];
         [myContentView addSubview:self.radioTypeLabel];

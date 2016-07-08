@@ -53,9 +53,10 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     [self setSmallSegmentedControl];
     // 请求数据
     [self requestData];
-    
 
 }
+
+
 
 - (void)requestData
 {
@@ -192,6 +193,7 @@ typedef NS_ENUM(NSUInteger, SegmentedStyle) {
     self.navigationSegmented = [[UISegmentedControl alloc] initWithItems:itemsArray];
     // 设置属性
     self.navigationSegmented.backgroundColor = [UIColor whiteColor];
+    [self.navigationSegmented NightWithType:UIViewColorTypeNormal];
     self.navigationSegmented.frame = CGRectMake(0, 0, 200, 30);
     
     self.navigationSegmented.layer.cornerRadius = 5;

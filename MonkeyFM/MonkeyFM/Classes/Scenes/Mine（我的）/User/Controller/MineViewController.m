@@ -156,7 +156,7 @@
     
     // segment
     self.segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 50)];
-#warning 夜间模式改动
+
     [self.segmentView NightWithType:UIViewColorTypeNormal];
 
     self.segmentView.titleArray = @[@"订阅",@"收藏", @"离线"];
@@ -433,7 +433,6 @@
     if (self.index == 1) {
     
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     //    AVObject *object = self.allCollectionArray[indexPath.row];
     [cell cellBindWithObject:self.allCollectionArray[indexPath.row]];

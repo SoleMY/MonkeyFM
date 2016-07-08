@@ -31,7 +31,6 @@
         make.width.mas_offset(150);
         make.height.mas_offset(25);
     }];
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     
@@ -71,7 +70,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.followNumber NightWithType:UIViewColorTypeNormal];
     [self.followNumber NightTextType:LabelColorGray];
     
@@ -87,7 +85,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.fansNumber NightWithType:UIViewColorTypeNormal];
     [self.fansNumber NightTextType:LabelColorGray];
     
@@ -102,7 +99,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.followText NightWithType:UIViewColorTypeNormal];
     [self.followText NightTextType:LabelColorGray];
     self.fansText = [[UILabel alloc] init];
@@ -115,7 +111,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.fansText NightWithType:UIViewColorTypeNormal];
     [self.fansText NightTextType:LabelColorGray];
     

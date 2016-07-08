@@ -40,7 +40,6 @@ static NSString * const identifier_SocialNetWork = @"identifier_SocialNetWork";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-#warning 夜间模式改动
     [self.collectionView NightWithType:UIViewColorTypeNormal];
     
     __weak typeof(self)weakSelf = self;

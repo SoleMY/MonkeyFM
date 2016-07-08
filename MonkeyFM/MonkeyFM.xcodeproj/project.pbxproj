@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51F69AF1D2F522800612EF9 /* MBProgressHUD+GifHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A51F69AE1D2F522800612EF9 /* MBProgressHUD+GifHUD.m */; };
+		A51F69D01D2F53C500612EF9 /* ic_fresh_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69C61D2F53C500612EF9 /* ic_fresh_1@2x.png */; };
+		A51F69D11D2F53C500612EF9 /* ic_fresh_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69C71D2F53C500612EF9 /* ic_fresh_2@2x.png */; };
+		A51F69D21D2F53C500612EF9 /* ic_fresh_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69C81D2F53C500612EF9 /* ic_fresh_3@2x.png */; };
+		A51F69D31D2F53C500612EF9 /* ic_fresh_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69C91D2F53C500612EF9 /* ic_fresh_4@2x.png */; };
+		A51F69D41D2F53C500612EF9 /* ic_fresh_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69CA1D2F53C500612EF9 /* ic_fresh_5@2x.png */; };
+		A51F69D51D2F53C500612EF9 /* ic_fresh_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69CB1D2F53C500612EF9 /* ic_fresh_6@2x.png */; };
+		A51F69D61D2F53C500612EF9 /* ic_fresh_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69CC1D2F53C500612EF9 /* ic_fresh_7@2x.png */; };
+		A51F69D71D2F53C500612EF9 /* ic_fresh_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69CD1D2F53C500612EF9 /* ic_fresh_8@2x.png */; };
+		A51F69D81D2F53C500612EF9 /* ic_fresh_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69CE1D2F53C500612EF9 /* ic_fresh_9@2x.png */; };
+		A51F69DF1D2F860B00612EF9 /* DrawerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A51F69DE1D2F860B00612EF9 /* DrawerBackground.png */; };
 		A52A92091D1CC5880005E26E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A92081D1CC5880005E26E /* UIKit.framework */; };
 		A52A920B1D1CC5900005E26E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920A1D1CC5900005E26E /* CoreGraphics.framework */; };
 		A52A920D1D1CC5990005E26E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A920C1D1CC5990005E26E /* Foundation.framework */; };
@@ -280,6 +291,18 @@
 /* Begin PBXFileReference section */
 		2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonkeyFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM.release.xcconfig"; sourceTree = "<group>"; };
 		5336AFD45BF12460228CE937 /* libPods-MonkeyFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonkeyFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51F69AD1D2F522800612EF9 /* MBProgressHUD+GifHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+GifHUD.h"; sourceTree = "<group>"; };
+		A51F69AE1D2F522800612EF9 /* MBProgressHUD+GifHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+GifHUD.m"; sourceTree = "<group>"; };
+		A51F69C61D2F53C500612EF9 /* ic_fresh_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_1@2x.png"; sourceTree = "<group>"; };
+		A51F69C71D2F53C500612EF9 /* ic_fresh_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_2@2x.png"; sourceTree = "<group>"; };
+		A51F69C81D2F53C500612EF9 /* ic_fresh_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_3@2x.png"; sourceTree = "<group>"; };
+		A51F69C91D2F53C500612EF9 /* ic_fresh_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_4@2x.png"; sourceTree = "<group>"; };
+		A51F69CA1D2F53C500612EF9 /* ic_fresh_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_5@2x.png"; sourceTree = "<group>"; };
+		A51F69CB1D2F53C500612EF9 /* ic_fresh_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_6@2x.png"; sourceTree = "<group>"; };
+		A51F69CC1D2F53C500612EF9 /* ic_fresh_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_7@2x.png"; sourceTree = "<group>"; };
+		A51F69CD1D2F53C500612EF9 /* ic_fresh_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_8@2x.png"; sourceTree = "<group>"; };
+		A51F69CE1D2F53C500612EF9 /* ic_fresh_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_fresh_9@2x.png"; sourceTree = "<group>"; };
+		A51F69DE1D2F860B00612EF9 /* DrawerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrawerBackground.png; sourceTree = "<group>"; };
 		A52A92081D1CC5880005E26E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A52A920A1D1CC5900005E26E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A52A920C1D1CC5990005E26E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -729,6 +752,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A51F69C51D2F53C500612EF9 /* 猴子 */ = {
+			isa = PBXGroup;
+			children = (
+				A51F69C61D2F53C500612EF9 /* ic_fresh_1@2x.png */,
+				A51F69C71D2F53C500612EF9 /* ic_fresh_2@2x.png */,
+				A51F69C81D2F53C500612EF9 /* ic_fresh_3@2x.png */,
+				A51F69C91D2F53C500612EF9 /* ic_fresh_4@2x.png */,
+				A51F69CA1D2F53C500612EF9 /* ic_fresh_5@2x.png */,
+				A51F69CB1D2F53C500612EF9 /* ic_fresh_6@2x.png */,
+				A51F69CC1D2F53C500612EF9 /* ic_fresh_7@2x.png */,
+				A51F69CD1D2F53C500612EF9 /* ic_fresh_8@2x.png */,
+				A51F69CE1D2F53C500612EF9 /* ic_fresh_9@2x.png */,
+			);
+			path = "猴子";
+			sourceTree = "<group>";
+		};
 		A55DD7141D2BFFC5009A28A3 /* Night */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +1018,8 @@
 		D6C0A3801D27509F00BA5E65 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				A51F69AD1D2F522800612EF9 /* MBProgressHUD+GifHUD.h */,
+				A51F69AE1D2F522800612EF9 /* MBProgressHUD+GifHUD.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1026,6 +1067,7 @@
 		D6C0A3931D27509F00BA5E65 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A51F69C51D2F53C500612EF9 /* 猴子 */,
 				D6C0A3941D27509F00BA5E65 /* 8.png等多个文件 2 */,
 				D6C0A39C1D27509F00BA5E65 /* audio-frequency.png */,
 				D6C0A39D1D27509F00BA5E65 /* btn_anchor_back@2x.png */,
@@ -1036,6 +1078,7 @@
 				D6C0A3A21D27509F00BA5E65 /* left_list.png */,
 				D6C0A3A31D27509F00BA5E65 /* MJRefresh */,
 				D6C0A3D91D27509F00BA5E65 /* user_photo.png */,
+				A51F69DE1D2F860B00612EF9 /* DrawerBackground.png */,
 				D6C0A3DA1D27509F00BA5E65 /* 图像 */,
 				D6C0A3F51D27509F00BA5E65 /* 图标 */,
 			);
@@ -1675,12 +1718,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57E608D1D1BE159007EF7F1 /* Build configuration list for PBXNativeTarget "MonkeyFM" */;
 			buildPhases = (
-				8836C72BA370F065706394EC /* [CP] Check Pods Manifest.lock */,
 				1616043E69D5DAEC408694FA /* [CP] Check Pods Manifest.lock */,
-				AB363DEDC331AAFCF2F8C570 /* [CP] Check Pods Manifest.lock */,
-				B691471E8C72E957D0D6912F /* [CP] Check Pods Manifest.lock */,
 				309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */,
-				23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */,
+				23038C37D3A28F7F84E5F5A6 /* [CP] Check Pods Manifest.lock */,
 				A57E60721D1BE159007EF7F1 /* Sources */,
 				A57E60731D1BE159007EF7F1 /* Frameworks */,
 				A57E60741D1BE159007EF7F1 /* Resources */,
@@ -1707,7 +1747,6 @@
 				TargetAttributes = {
 					A57E60751D1BE159007EF7F1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = B3X95286R9;
 					};
 				};
 			};
@@ -1741,6 +1780,8 @@
 				D6C0A54E1D27509F00BA5E65 /* ic_homecountry@3x.png in Resources */,
 				D6746F4D1D2CE3550012D208 /* tabbar_icon_me_normal@2x.png in Resources */,
 				D6C0A51E1D27509F00BA5E65 /* btn_radiondetail_subcribe_highlighted@2x.png in Resources */,
+				A51F69D41D2F53C500612EF9 /* ic_fresh_5@2x.png in Resources */,
+				A51F69DF1D2F860B00612EF9 /* DrawerBackground.png in Resources */,
 				D6C0A5151D27509F00BA5E65 /* addAttention@3x.png in Resources */,
 				D6C0A5511D27509F00BA5E65 /* ic_homehomeinternet@2x.png in Resources */,
 				D6C0A5411D27509F00BA5E65 /* 汽车.png in Resources */,
@@ -1748,6 +1789,7 @@
 				D6C0A5B21D27509F00BA5E65 /* RadioPlayerListViewController.xib in Resources */,
 				D6C0A5E91D27B68600BA5E65 /* 微信.png in Resources */,
 				D6C0A50B1D27509F00BA5E65 /* 科技.png in Resources */,
+				A51F69D81D2F53C500612EF9 /* ic_fresh_9@2x.png in Resources */,
 				D6C0A5C61D27509F00BA5E65 /* RecommendViewController.xib in Resources */,
 				D6C0A5691D27509F00BA5E65 /* BaseViewController.xib in Resources */,
 				D6C0A5E71D27B68600BA5E65 /* 微博.png in Resources */,
@@ -1770,6 +1812,7 @@
 				D6C0A5141D27509F00BA5E65 /* left_list.png in Resources */,
 				D6C0A4FE1D27509F00BA5E65 /* Main.storyboard in Resources */,
 				D6746F4B1D2CE2BA0012D208 /* email.png in Resources */,
+				A51F69D11D2F53C500612EF9 /* ic_fresh_2@2x.png in Resources */,
 				D6C0A54F1D27509F00BA5E65 /* ic_homecountry_on@2x.png in Resources */,
 				D6C0A5421D27509F00BA5E65 /* 生活.png in Resources */,
 				D6746F4F1D2CF30F0012D208 /* settings.png in Resources */,
@@ -1786,6 +1829,7 @@
 				D6C0A5CA1D27509F00BA5E65 /* Info.plist in Resources */,
 				D6746F431D2CDC310012D208 /* true.png in Resources */,
 				A57257AE1D2BEBEE003529C5 /* 暂停button.png in Resources */,
+				A51F69D61D2F53C500612EF9 /* ic_fresh_7@2x.png in Resources */,
 				D6C0A5611D27509F00BA5E65 /* 评论数.png in Resources */,
 				D6C0A51D1D27509F00BA5E65 /* btn_radiondetail_subcribe@2x.png in Resources */,
 				D6C0A55B1D27509F00BA5E65 /* ic_homeprovince_on@3x.png in Resources */,
@@ -1793,6 +1837,7 @@
 				D6C0A5461D27509F00BA5E65 /* 讲座讲坛.png in Resources */,
 				D6C0A5581D27509F00BA5E65 /* ic_homeinternet_on@3x.png in Resources */,
 				D6C0A55E1D27509F00BA5E65 /* 时间.png in Resources */,
+				A51F69D31D2F53C500612EF9 /* ic_fresh_4@2x.png in Resources */,
 				D6C0A5361D27509F00BA5E65 /* 动漫游戏.png in Resources */,
 				D6C0A54B1D27509F00BA5E65 /* chat_support_blue@2x.png in Resources */,
 				D6C0A5571D27509F00BA5E65 /* ic_homeinternet_on@2x.png in Resources */,
@@ -1805,6 +1850,7 @@
 				D6C0A5131D27509F00BA5E65 /* ico_letter@2x.png in Resources */,
 				D6C0A54C1D27509F00BA5E65 /* chat_support_green@2x.png in Resources */,
 				D64EC2FD1D2B930B0079BFAD /* icon_detail_attention@2x.png in Resources */,
+				A51F69D51D2F53C500612EF9 /* ic_fresh_6@2x.png in Resources */,
 				D6C0A5601D27509F00BA5E65 /* 网络台.png in Resources */,
 				D6746F341D2CA4690012D208 /* RegistViewController.xib in Resources */,
 				D6746F471D2CE2740012D208 /* name.png in Resources */,
@@ -1824,6 +1870,8 @@
 				D6C0A5B01D27509F00BA5E65 /* PopularItemListViewController.xib in Resources */,
 				D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */,
 				D64EC2FB1D2B92C90079BFAD /* icon_comment_support@2x.png in Resources */,
+				A51F69D21D2F53C500612EF9 /* ic_fresh_3@2x.png in Resources */,
+				A51F69D71D2F53C500612EF9 /* ic_fresh_8@2x.png in Resources */,
 				D6C0A4FC1D27509F00BA5E65 /* Assets.xcassets in Resources */,
 				A55DD72D1D2C01AC009A28A3 /* yejian@2x.png in Resources */,
 				D6C0A50E1D27509F00BA5E65 /* audio-frequency.png in Resources */,
@@ -1843,6 +1891,7 @@
 				D6C0A5091D27509F00BA5E65 /* 广播剧.png in Resources */,
 				D6746F321D2CA4690012D208 /* LastRegistViewController.xib in Resources */,
 				D6C0A50D1D27509F00BA5E65 /* 财经.png in Resources */,
+				A51F69D01D2F53C500612EF9 /* ic_fresh_1@2x.png in Resources */,
 				D6C0A53A1D27509F00BA5E65 /* 外语.png in Resources */,
 				D6C0A5E31D27B18300BA5E65 /* 猴子.png in Resources */,
 				A5ABEE3C1D2B953600205DBA /* RadioDisPlayDetailViewController.xib in Resources */,
@@ -1871,7 +1920,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
+		23038C37D3A28F7F84E5F5A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1886,22 +1935,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7349BCA6BE4C8A09C2AD1868 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MonkeyFM/Pods-MonkeyFM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		23038C37D3A28F7F84E5F5A6 /* 📦 Check Pods Manifest.lock */ = {
+		309006141FFBD1332B36D266 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1983,6 +2017,7 @@
 				A531713F1D2CAE65007E1425 /* FileHandleManager.m in Sources */,
 				D6C0A5621D27509F00BA5E65 /* BaseCell.m in Sources */,
 				D6C0A57B1D27509F00BA5E65 /* PlayListViewController.m in Sources */,
+				A51F69AF1D2F522800612EF9 /* MBProgressHUD+GifHUD.m in Sources */,
 				D6C0A5B81D27509F00BA5E65 /* RadioStyleModel.m in Sources */,
 				D6C0A5A61D27509F00BA5E65 /* NewsAllModel.m in Sources */,
 				A55DD7291D2BFFC5009A28A3 /* UIView+ThemeChange.m in Sources */,
@@ -2204,8 +2239,8 @@
 			baseConfigurationReference = AE7407C7F972658D06FEA1B5 /* Pods-MonkeyFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2246,7 +2281,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "48de9f41-00e8-46df-a050-e4c95a53b60f";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2256,8 +2291,8 @@
 			baseConfigurationReference = 2559DFF8A5DBC5D9B69BB834 /* Pods-MonkeyFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Yang (F2N9DLANA4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Yang (F2N9DLANA4)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2298,7 +2333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.firstgroupproject.MonkeyFM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "48de9f41-00e8-46df-a050-e4c95a53b60f";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

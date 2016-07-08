@@ -50,7 +50,6 @@
     // title
     self.nameLabel = [[UILabel alloc] init];
     self.nameLabel.text = @"qr";
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     
@@ -66,7 +65,6 @@
     // 内容
     self.descLabel = [[UILabel alloc] init];
     self.descLabel.text = @"werwer";
-#warning 夜间模式改动
     [self.descLabel NightWithType:UIViewColorTypeNormal];
     [self.descLabel NightTextType:LabelColorBlack];
     
@@ -86,7 +84,6 @@
     self.utimeLabel.textColor = [UIColor lightGrayColor];
     self.utimeLabel.textAlignment = NSTextAlignmentRight;
     self.utimeLabel.text = @"3434234";
-#warning 夜间模式改动
     [self.utimeLabel NightWithType:UIViewColorTypeNormal];
     [self.utimeLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.utimeLabel];

@@ -60,7 +60,6 @@
         make.right.equalTo(weakSelf).offset(0);
         make.bottom.equalTo(weakSelf).offset(0);
     }];
-#warning 夜间模式改动
     [self.collectView NightWithType:UIViewColorTypeNormal];
     
     self.collectView.delegate = self;
@@ -96,7 +95,6 @@
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
         HeadCollectionReusableView *headView = [self.collectView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headeView" forIndexPath:indexPath];
         headView.titleLabel.text = @"TA的收藏";
-#warning 夜间模式改动
             [headView.titleLabel NightWithType:UIViewColorTypeNormal];
             [headView.titleLabel NightTextType:LabelColorBlack];
             

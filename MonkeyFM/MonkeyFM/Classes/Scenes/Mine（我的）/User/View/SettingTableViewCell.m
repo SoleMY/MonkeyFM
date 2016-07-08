@@ -21,7 +21,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initLayout];
-#warning 夜间模式
         [self.contentView NightWithType:UIViewColorTypeNormal];
     }
     return self;
@@ -42,13 +41,19 @@
         make.width.mas_equalTo(200);
     }];
     
-    UISwitch *rightSwitch = [[UISwitch alloc] init];
-    rightSwitch.onTintColor = kNavigationBarTintColor;
-    [rightSwitch addTarget:self action:@selector(openOrCloseAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:rightSwitch];
-    self.rightSwitch = rightSwitch;
+    UISwitch *nightSwitch = [[UISwitch alloc] init];
+    if ([ThemeManage shareThemeManage].isNight) {
+        nightSwitch.on = YES;
+    } else {
+        nightSwitch.on = NO;
+    }
     
-    [self.rightSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+    [nightSwitch addTarget:self action:@selector(openOrCloseAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:nightSwitch];
+    self.nightSwitch = nightSwitch;
+    self.nightSwitch.onTintColor = [UIColor darkGrayColor];
+    
+    [self.nightSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.contentView).offset(-16);
         make.top.equalTo(weakSelf.contentView).offset(7);
         
@@ -56,9 +61,20 @@
 }
 
 
-- (void)openOrCloseAction
+- (void)openOrCloseAction:(UISwitch *)sender
 {
-    
+    if (self.status == isUseing) {
+        
+    } else if (self.status == isNight) {
+        if (sender.isOn) {
+            [ThemeManage shareThemeManage].isNight = YES;
+            
+        } else {
+            [ThemeManage shareThemeManage].isNight = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeColor" object:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:[ThemeManage shareThemeManage].isNight forKey:@"night"];
+    }
 }
 
 

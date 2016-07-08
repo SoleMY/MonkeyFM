@@ -32,7 +32,6 @@
         make.height.mas_offset(20);
     }];
     
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorGray];
     
@@ -76,7 +75,6 @@
         make.left.equalTo(weakSelf.firstImageView).offset(0);
         make.right.equalTo(weakSelf.firstImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.firstLabel NightWithType:UIViewColorTypeNormal];
     [self.firstLabel NightTextType:LabelColorBlack];
     
@@ -91,7 +89,6 @@
         make.left.equalTo(weakSelf.secondImageView).offset(0);
         make.right.equalTo(weakSelf.secondImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.secondLabel NightWithType:UIViewColorTypeNormal];
     [self.secondLabel NightTextType:LabelColorBlack];
     
@@ -106,7 +103,6 @@
         make.right.equalTo(weakSelf.thiredImageView).offset(0);
         make.left.equalTo(weakSelf.thiredImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.thiredLabel NightWithType:UIViewColorTypeNormal];
     [self.thiredLabel NightTextType:LabelColorBlack];
     

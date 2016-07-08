@@ -22,7 +22,6 @@
     self.segment = [[UISegmentedControl alloc] initWithItems:@[@"节目", @"评论", @"详情"]];
     self.segment.selectedSegmentIndex = 0;
 //    self.segment.tintColor  = [UIColor redColor];
-#warning 夜间模式改动
     [self NightWithType:UIViewColorTypeNormal];
     [self addSubview:self.segment];
 }

@@ -55,7 +55,6 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     self.radioTypeView.bounces = NO;
     [self.contentView addSubview:self.radioTypeView];
 //    self.backgroundColor = [UIColor whiteColor];
-#warning 夜间模式改动
     [self.radioTypeView NightWithType:UIViewColorTypeNormal];
     
     [self.radioTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,7 +81,6 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[1];
         [cell bindModel:model indexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     } else {
@@ -91,7 +89,6 @@ static NSString * const identifier_typeCell = @"identifier_typeCell";
     }
 }
 
-#warning 选中跳转
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RadioModel *model = [[RadioModel alloc] init];
