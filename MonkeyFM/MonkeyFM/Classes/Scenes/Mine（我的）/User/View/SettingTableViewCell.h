@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, status) {
 @interface SettingTableViewCell : BaseCell
 
 @property (nonatomic, strong) UILabel *leftTextLabel;
-@property (nonatomic, strong) UISwitch *rightSwitch;
+@property (nonatomic, strong) UISwitch *nightSwitch;
 @property (nonatomic, assign) status status;
 
 @end

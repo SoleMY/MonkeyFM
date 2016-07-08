@@ -44,7 +44,6 @@
         make.right.equalTo(mySelf.contentView).offset(5);
         make.height.mas_offset(kNameLabelHeight);
     }];
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     
@@ -58,7 +57,6 @@
         make.height.mas_offset(kNameLabelHeight);
     }];
     
-#warning 夜间模式改动
     [self.decLabel NightWithType:UIViewColorTypeNormal];
     [self.decLabel NightTextType:LabelColorBlack];
     
@@ -72,7 +70,6 @@
         make.width.mas_offset(150);
         make.height.mas_offset(kNameLabelHeight);
     }];
-#warning 夜间模式改动
     [self.fansNumber NightWithType:UIViewColorTypeNormal];
     [self.fansNumber NightTextType:LabelColorGray];
     

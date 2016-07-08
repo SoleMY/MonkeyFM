@@ -47,7 +47,6 @@
     
     // title
     self.nameLabel = [[UILabel alloc] init];
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     

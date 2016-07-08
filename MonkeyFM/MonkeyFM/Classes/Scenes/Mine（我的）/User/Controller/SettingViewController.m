@@ -40,10 +40,10 @@ static NSString * const identifier_switchCell = @"identifier_switchCell";
 - (void)setTableView
 {
     // 适配夜间模式
-//    [self.settingTableView NightWithType:UIViewColorTypeNormal];
+    [self.settingTableView NightWithType:UIViewColorTypeNormal];
 //    [self.settingTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier_cell];
     [self.settingTableView registerClass:[SettingTableViewCell class] forCellReuseIdentifier:identifier_switchCell];
-    [self.textDict setValue:[NSArray arrayWithObjects:@"使用移动流量收听", @"夜间模式", nil] forKey:@"0"];
+    [self.textDict setValue:[NSArray arrayWithObjects:@"夜间模式", nil] forKey:@"0"];
     [self.textDict setValue:[NSArray arrayWithObjects:@"当前版本", @"清除缓存", @"关于我们", nil] forKey:@"1"];
 }
 
@@ -63,6 +63,11 @@ static NSString * const identifier_switchCell = @"identifier_switchCell";
 {
     if (indexPath.section == 0) {
         SettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier_switchCell forIndexPath:indexPath];
+//        if (indexPath.row == 0) {
+//            cell.status = isUseing;
+//        } else {
+            cell.status = isNight;
+//        }
         cell.leftTextLabel.text = [self.textDict objectForKey:[NSString stringWithFormat:@"%ld", indexPath.section]][indexPath.row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;

@@ -30,7 +30,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
-#warning 夜间模式改动
     [self.hostLabel NightWithType:UIViewColorTypeNormal];
     [self.hostLabel NightTextType:LabelColorGray];
     
@@ -45,7 +44,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(weakSelf.frame.size.width - 60);
     }];
-#warning 夜间模式改动
     [self.hostText NightWithType:UIViewColorTypeNormal];
     [self.hostText NightTextType:LabelColorBlack];
     
@@ -60,7 +58,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
-#warning 夜间模式改动
     [self.sourceLabel NightWithType:UIViewColorTypeNormal];
     [self.sourceText NightTextType:LabelColorGray];
     
@@ -75,7 +72,6 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.sourceText NightWithType:UIViewColorTypeNormal];
     [self.sourceText NightTextType:LabelColorBlack];
     
@@ -92,7 +88,6 @@
         make.height.mas_offset(17);
     }];
     
-#warning 夜间模式改动
     [self.uploadingLabel NightWithType:UIViewColorTypeNormal];
     [self.uploadingLabel NightTextType:LabelColorGray];
     
@@ -106,7 +101,6 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.uploadingText NightWithType:UIViewColorTypeNormal];
     [self.uploadingText NightTextType:LabelColorBlack];
     
@@ -122,7 +116,6 @@
         make.width.mas_offset(70);
         make.height.mas_offset(17);
     }];
-#warning 夜间模式改动
     [self.accreditLabel NightWithType:UIViewColorTypeNormal];
     [self.accreditLabel NightTextType:LabelColorGray];
     
@@ -136,7 +129,6 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.accreditText NightWithType:UIViewColorTypeNormal];
     [self.accreditText NightTextType:LabelColorBlack];
     
@@ -151,7 +143,6 @@
         make.width.mas_offset(50);
         make.height.mas_offset(17);
     }];
-#warning 夜间模式改动
     [self.statuLabel NightWithType:UIViewColorTypeNormal];
     [self.statuLabel NightTextType:LabelColorGray];
     
@@ -166,7 +157,6 @@
         make.width.mas_offset(weakSelf.frame.size.width - 60);
         make.height.mas_offset(20);
     }];
-#warning 夜间模式改动
     [self.statusText NightWithType:UIViewColorTypeNormal];
     [self.statusText NightTextType:LabelColorBlack];
     

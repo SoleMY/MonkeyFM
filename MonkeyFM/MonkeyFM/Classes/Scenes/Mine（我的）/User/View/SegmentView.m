@@ -117,10 +117,8 @@
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(i * ItemWidth, 0, ItemWidth, ItemHeight)];
         titleLabel.text = [self.titleArray objectAtIndex:i];
         
-#warning 夜间模式改动
         [titleLabel NightWithType:UIViewColorTypeNormal];
         [titleLabel NightTextType:LabelColorBlack];
-//        titleLabel.textColor =  self.titleColor;
         titleLabel.font = [UIFont systemFontOfSize:self.titleFont];
         titleLabel.textAlignment = NSTextAlignmentCenter;
                 titleLabel.tag = 100+i;

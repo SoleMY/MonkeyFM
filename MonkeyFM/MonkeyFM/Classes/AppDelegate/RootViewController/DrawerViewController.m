@@ -46,12 +46,10 @@
     [super viewDidLoad];
 //    self.view.backgroundColor = kNavigationBarTintColor;
     self.rearTableView.backgroundColor = kDrawerBackgroundColor;
-    [self.view addSubview:self.backImageView];
     
     // 设置头视图
     [self layoutTableViewHeadView];
     
-    //    SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
 
 }
 
@@ -81,9 +79,12 @@
     }];
     // 用户名
     UILabel *userNameLabel = [[UILabel alloc] init];
+//    [userNameLabel NightWithType:UIViewColorTypeNormal];
     
+    [userNameLabel NightTextType:LabelColorBlack];
     [headView addSubview:userNameLabel];
     self.userNameLabel = userNameLabel;
+    self.userNameLabel.backgroundColor = [UIColor clearColor];
     [userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(userPhotoImageView.mas_centerY);
         make.left.equalTo(userPhotoImageView.mas_right).offset(2);
@@ -124,6 +125,7 @@
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;
     [self layoutTableViewHeadView];
+    [self.rearTableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -146,14 +148,11 @@
 {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.backgroundColor = [UIColor clearColor];
     NSInteger row = indexPath.row;
-    
     if (nil == cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    
     NSString *text = nil;
     if (row == 0)
     {
@@ -191,7 +190,13 @@
 //        text = @"我的";
 //    }
     
+    
+    
+    
+//    [cell.textLabel NightWithType:UIViewColorTypeNormal];
     cell.textLabel.text = NSLocalizedString( text, nil );
+    [cell.textLabel NightTextType:LabelColorBlack];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.backgroundColor = kCellColor;
     return cell;
 }

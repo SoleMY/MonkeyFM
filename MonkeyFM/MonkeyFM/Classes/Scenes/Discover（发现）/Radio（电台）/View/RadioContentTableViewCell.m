@@ -57,7 +57,6 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     [self.contentView addSubview:self.radioContentView];
 //    self.backgroundColor = [UIColor whiteColor];
     
-#warning 夜间模式改动
     [self NightWithType:UIViewColorTypeNormal];
     [self.radioContentView NightWithType:UIViewColorTypeNormal];
     [self.radioContentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -94,7 +93,6 @@ static NSString * const identifier_contentCell = @"identifier_contentCell";
     }
 }
 
-#warning 选中跳转
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RadioModel *model = [[RadioModel alloc] init];

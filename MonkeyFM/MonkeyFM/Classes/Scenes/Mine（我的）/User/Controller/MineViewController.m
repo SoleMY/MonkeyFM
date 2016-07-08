@@ -197,7 +197,7 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     
     // segment
     self.segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 50)];
-#warning 夜间模式改动
+
     [self.segmentView NightWithType:UIViewColorTypeNormal];
 
     self.segmentView.titleArray = @[@"订阅",@"收藏", @"离线"];

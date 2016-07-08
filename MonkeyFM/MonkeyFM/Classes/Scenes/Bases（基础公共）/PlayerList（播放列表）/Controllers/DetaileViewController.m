@@ -119,7 +119,6 @@
     PlayList *playList = [self.allDataArray firstObject];
     if (indexPath.row == 0) {
         DetaileCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"detaileCell" forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         cell.hostText.text = [playList.host[0] objectForKey:@"name"];
         cell.uploadingText.text = playList.uploadUserName;
@@ -128,14 +127,12 @@
         return cell;
     }else if (indexPath.row == 1) {
         KeywordsCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"keyWordCell" forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
             cell.buttonArray = playList.keyWords.mutableCopy;
         self.heightForCellButton = cell.numberOfButton;
         return cell;
     }else if (indexPath.row == 2) {
         IntroductionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"introductionCell" forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         cell.introductionText.text = playList.radioDesc;
        self.heightForCellText = [SmallTools textHeightWithText:cell.introductionText.text font:[UIFont systemFontOfSize:13]];
@@ -143,12 +140,10 @@
     }else if (indexPath.row == 3) {
         AlbumDetailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"albumCell" forIndexPath:indexPath];
         [cell bindWithArray:self.albumArray];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     } else {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }

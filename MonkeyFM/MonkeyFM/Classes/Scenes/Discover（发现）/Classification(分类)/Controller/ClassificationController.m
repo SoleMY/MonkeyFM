@@ -40,7 +40,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
      self.myView = [[ClassificationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.view = self.myView;
     
-#warning 夜间模式改动
     [self.view NightWithType:UIViewColorTypeNormal];
 }
 
@@ -48,10 +47,8 @@ static  NSString *const identifile_cell = @"identifile_cell";
     [super viewDidLoad];
     
     [self requstData];
-#warning 请求完数据 加载视图
     self.myView.collectionView.delegate = self;
     self.myView.collectionView.dataSource = self;
-#warning 夜间模式改动
     [self.myView.collectionView NightWithType:UIViewColorTypeNormal];
     // 第一步：注册cell
     [self.myView.collectionView registerClass:[ClassificationCell class] forCellWithReuseIdentifier:identifile_cell];
@@ -85,7 +82,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
     ClassificationModel *model = self.allArray[indexPath.row];
         cell.label.text = model.title;
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
 
 //    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.backgroundPic]];

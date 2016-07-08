@@ -47,7 +47,6 @@
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CommentCell class] forCellReuseIdentifier:@"cell"];
     self.number = 1;
-#warning 夜间模式改动
     [self.tableView NightWithType:UIViewColorTypeNormal];
     [self request];
     __weak typeof(self)weakSelf = self;
@@ -89,7 +88,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommentCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     [cell bindWithModel:self.allDataArray[indexPath.row]];
     if (indexPath.row == self.allDataArray.count - 1) {
