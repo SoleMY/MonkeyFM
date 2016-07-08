@@ -78,6 +78,10 @@ singletion_implementation(AVPlayerManager)
     self.status = isPaused;
 }
 
+- (void)stop {
+    _avPlayer = nil;
+}
+
 //跳转
 - (void)seekToTime:(CGFloat)time {
     //    value = senconds * timescale

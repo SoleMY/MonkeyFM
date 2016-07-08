@@ -26,7 +26,7 @@
 - (void)initLayout
 {
     self.pic = [[UIImageView alloc] init];
-    self.pic.image = [UIImage imageNamed:@"4-140R1102943.jpg"];
+//    self.pic.image = [UIImage imageNamed:@"4-140R1102943.jpg"];
     [self.contentView addSubview:self.pic];
     __weak typeof(self)mySelf = self;
     [self.pic mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -41,10 +41,11 @@
     [self.pic addSubview:self.button];
     
     [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(imageWidth);
-        make.height.mas_equalTo(imageWidth);
-        make.bottom.equalTo(mySelf.pic.mas_bottom).offset(-kSpace);
-        make.right.equalTo(mySelf.pic.mas_right).offset(-kSpace);
+        make.center.equalTo(mySelf.pic);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
+//        make.bottom.equalTo(mySelf.pic.mas_bottom).offset(-kSpace);
+//        make.right.equalTo(mySelf.pic.mas_right).offset(-kSpace);
     }];
     
     // title
@@ -60,7 +61,8 @@
         
         make.top.equalTo(mySelf.pic.mas_top).offset(1.5*kSpace);
         make.left.equalTo(mySelf.pic.mas_right).offset(kSpace);
-        make.width.mas_equalTo(cellHeightAndSpace);
+//        make.width.mas_equalTo(cellHeightAndSpace + );
+        make.right.equalTo(mySelf.contentView).offset(-10);
     }];
     
     // 内容

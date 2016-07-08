@@ -12,6 +12,7 @@
                 <outlet property="bgImageView" destination="Ksf-l9-col" id="J2j-kw-6np"/>
                 <outlet property="collectButton" destination="UO8-rm-pWB" id="QdQ-az-BQ5"/>
                 <outlet property="contentView" destination="HVG-8j-iw4" id="A2a-3B-trE"/>
+                <outlet property="downLoadButton" destination="eqf-bg-TV3" id="zEn-jb-HL2"/>
                 <outlet property="firstImage" destination="ql9-QF-vAZ" id="C7A-8K-OYC"/>
                 <outlet property="fourthImage" destination="SSY-SD-7sV" id="E5A-hy-PIO"/>
                 <outlet property="headImage" destination="pVc-gp-2U4" id="GXa-BG-92A"/>
@@ -68,7 +69,7 @@
                                 <constraint firstAttribute="height" constant="21" id="Sht-Wq-pQb"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiS-EP-wAZ">
@@ -78,7 +79,7 @@
                                 <constraint firstAttribute="height" constant="15" id="bYP-I0-WJZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -92,7 +93,7 @@
                                 <constraint firstAttribute="width" constant="60" id="S0V-Jb-Aq6"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRn-tQ-RH3">
@@ -254,6 +255,9 @@
                         <constraint firstAttribute="height" constant="30" id="p8f-BZ-0Wm"/>
                     </constraints>
                     <state key="normal" image="btn_iCarousePlayer_Download_on"/>
+                    <connections>
+                        <action selector="downLoadActionn:" destination="-1" eventType="touchUpInside" id="DRt-3Q-SHl"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

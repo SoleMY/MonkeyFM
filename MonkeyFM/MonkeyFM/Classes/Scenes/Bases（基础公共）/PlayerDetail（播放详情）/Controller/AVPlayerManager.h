@@ -48,6 +48,8 @@ singleton_interface(AVPlayerManager)
 //暂停
 - (void)pause;
 
+- (void)stop;
+
 //跳转
 - (void)seekToTime:(CGFloat)time;
 
