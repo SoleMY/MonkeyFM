@@ -15,4 +15,7 @@
 
 @property (nonatomic, strong) NSString *urlString;
 
+
+@property (nonatomic, assign) BOOL isHaveString;
+
 @end

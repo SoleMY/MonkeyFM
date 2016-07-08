@@ -105,32 +105,46 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    TodayModel *model = self.albumArr[indexPath.row];
-    [[SingleList shareSingleList].dict setObject:model.rid forKey:@"ID"];
-    NSLog(@"%@", model.rid);
-    NSString *str = [[SingleList shareSingleList].dict objectForKey:@"ID"];
-    NSString *URLString = [NSString stringWithFormat:@"%@%@%@%d%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND,1, PLAY_LIST_PROGRAM_APPENDTWO];
-    NSLog(@"%@", URLString);
-    NetWorking *networking = [[NetWorking alloc] init];
-    __weak typeof(self)weakSelf = self;
-    [networking requestWithURL:URLString Bolck:^(id array) {
-        NSDictionary *resultDic = array[@"result"];
-        NSArray *dataList = resultDic[@"dataList"];
-        for (NSDictionary *dict in dataList) {
-            PlayList *playList =  [[PlayList alloc] init];
-            [playList setValuesForKeysWithDictionary:dict];
-//            NSLog(@"%@", dict);
-            [weakSelf.allDataArray addObject:playList];
+    switch (indexPath.section) {
+        {case 0:
+            self.albumBlock();
+            break;
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf reloadInputViews];
-        });
-    }];
-    
-    self.albumBlock();
-
-//    NSLog(@"$@aa");
+        {case 1:
+            self.albumBlock();
+            break;
+        }
+        {case 2:
+            self.albumBlock();
+            break;
+        }
+        {case 3:
+            self.albumBlock();
+            break;
+        }
+        {case 4:
+            self.albumBlock();
+            break;
+        }
+        {case 5:
+            self.albumBlock();
+            break;
+        }
+        {case 6:
+            self.albumBlock();
+            break;
+        }
+        {case 7:
+            self.albumBlock();
+            break;
+        }
+        {case 8:
+            self.albumBlock();
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

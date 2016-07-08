@@ -81,9 +81,9 @@
 
 - (void)requstData
 {
-    self.urlString = [NSString stringWithFormat:@"%@%@%@", classification_Base_URL, self.classificationModel.categoryId, classification_Appending_URL];
-    NSLog(@"self.urlString ==========     //  %@", self.classificationModel.categoryId);
-    NSLog(@"%@", self.urlString);
+    if (self.isHaveString == NO) {
+        self.urlString = [NSString stringWithFormat:@"%@%@%@", classification_Base_URL, self.classificationModel.categoryId, classification_Appending_URL];
+    }
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:self.urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
