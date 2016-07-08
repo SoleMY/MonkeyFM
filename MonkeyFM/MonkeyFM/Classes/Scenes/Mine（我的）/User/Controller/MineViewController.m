@@ -17,9 +17,21 @@
 #import "PlayListViewController.h"
 #import "NetWorking.h"
 #import "SettingViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "AVPlayerManager.h"
 
 #define kCell @"cell"
+
+typedef NS_ENUM(NSUInteger, isPlay) {
+    Play,
+    Pause,
+};
+
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, TouchLabelDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+{
+    isPlay _isplay;
+}
+
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) UIImageView *myImageView;
@@ -38,9 +50,20 @@
 
 @property (nonatomic, strong)NSMutableArray *allSubscribeArray;
 
+@property (nonatomic, strong)NSMutableArray *allDownLoadArray;
+
+@property (nonatomic, strong)AVPlayer *player;
+
 @end
 
 @implementation MineViewController
+
+- (NSMutableArray *)allDownLoadArray {
+    if (!_allDownLoadArray) {
+        _allDownLoadArray = [NSMutableArray array];
+    }
+    return _allDownLoadArray;
+}
 
 - (NSMutableArray *)allSubscribeArray {
     if (!_allSubscribeArray) {
@@ -58,7 +81,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [session setActive:YES error:nil];
     __weak typeof(self)weakSelf = self;
     
     // 设置tableView
@@ -74,7 +99,7 @@
     self.imagePicker = [[UIImagePickerController alloc] init];
     _imagePicker.delegate = self;
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"subCell"];
-    
+    _isplay = Pause;
     self.index = 0;
     
     self.title = @"个人中心";
@@ -99,10 +124,24 @@
         self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
         self.myImageView.backgroundColor = kNavigationBarTintColor;
         self.nameLabel.text = @"您还未登录";
-        
         [self.tableView reloadData];
     }
+    
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSArray *array =   [manager contentsOfDirectoryAtPath:caches error:nil];
+    self.allDownLoadArray = nil;
+    for (NSString *str in array) {
+        if ( [str rangeOfString:@".mp3"].location != NSNotFound){
+            [self.allDownLoadArray addObject:str];
+        }
+    }
+    
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [_player pause];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
@@ -145,6 +184,8 @@
     self.smallImageView.image = [UIImage imageNamed:@"user_photo"];
     self.myImageView.image = [UIImage imageNamed:@""];
     self.myImageView.backgroundColor = kNavigationBarTintColor;
+    self.allSubscribeArray = nil;
+    self.allCollectionArray = nil;
     [self.tableView reloadData];
 }
 - (void)addTableViewMethod
@@ -160,7 +201,7 @@
     
     // segment
     self.segmentView = [[SegmentView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 50)];
-#warning 夜间模式改动
+
     [self.segmentView NightWithType:UIViewColorTypeNormal];
 
     self.segmentView.titleArray = @[@"订阅",@"收藏", @"离线"];
@@ -448,7 +489,7 @@
     }else if (self.index == 1) {
         return self.allCollectionArray.count;
     }else {
-        return 0;
+        return self.allDownLoadArray.count;
     }
     
 }
@@ -459,6 +500,7 @@
     if (self.index == 1) {
     
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
 #warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     //    AVObject *object = self.allCollectionArray[indexPath.row];
@@ -467,17 +509,27 @@
         return cell;
     } else if(self.index == 0){
     MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"subCell" forIndexPath:indexPath];
+        subCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         [subCell cellBindWithObject:self.allSubscribeArray[indexPath.row]];
 //    cell.nameLabel.text = [object objectForKey:@"name"];
     return subCell;
-    } else {
-        MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"subCell" forIndexPath:indexPath];
-//        [subCell cellBindWithObject:self.allSubscribeArray[indexPath.row]];
-        //    cell.nameLabel.text = [object objectForKey:@"name"];
+    } else if (self.index == 2){
+        MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"downLoadCell" forIndexPath:indexPath];
+        subCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        subCell.nameLabel.text = self.allDownLoadArray[indexPath.row];
+        subCell.descLabel.text = @"";
+        subCell.utimeLabel.text = @"";
+        subCell.pic.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0  blue:arc4random() % 256 / 255.0  alpha:1];
+#warning 夜间模式改动
+        [subCell NightWithType:UIViewColorTypeNormal];
+        subCell.pic.layer.cornerRadius = 20;
+        subCell.pic.layer.masksToBounds = YES;
         return subCell;
     }
+    
     MineTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCell forIndexPath:indexPath];
-
+cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
     
@@ -514,12 +566,8 @@
             [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"cell"];
             break;
         case 2:
-             [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"downLoadCell"];
-            if (self.tableView.editing == YES) {
-                [self.tableView setEditing:NO animated:YES];
-            } else {
-                [self.tableView setEditing:YES animated:YES];
-            }
+            [self.tableView reloadData];
+            [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"downLoadCell"];
             break;
         default:
             break;
@@ -563,7 +611,6 @@
         [self.navigationController pushViewController:[[PlayListViewController alloc] init] animated:YES];
     } else if (self.index == 1) {
         AVObject *object = self.allCollectionArray[indexPath.row];
-//       NSArray *array = [object objectForKey:@"array"];
         NSInteger row = [[object objectForKey:@"row"] integerValue];
         NSString *str= [object objectForKey:@"ID"];
         NSInteger pageNum = row / 10 + 1;
@@ -578,7 +625,6 @@
             for (NSDictionary *dict in dataList) {
                 PlayList *playList =  [[PlayList alloc] init];
                 [playList setValuesForKeysWithDictionary:dict];
-//                [self.allDataArray addObject:playList];
                 [dataArray addObject:playList];
             }
             PlayerDetailViewController *playerVC = [[PlayerDetailViewController alloc] init];
@@ -589,12 +635,55 @@
                 [self.tableView  reloadData];
             });
         }];
+    } else if (self.index ==2) {
+        if (_isplay == Pause) {
         
-        
+            NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *str = [NSString stringWithFormat:@"%@/%@", caches,self.allDownLoadArray[indexPath.row]];
+            NSURL *fileURL = [NSURL fileURLWithPath:str];
+            _isplay = Play;
+            
+            
+            if ([AVPlayerManager shareAVPlayerManager].status == isPlaying) {
+                [[AVPlayerManager shareAVPlayerManager] stop];
+            }
+            _player = [[AVPlayer alloc] initWithURL:fileURL];
+//            [AVPlayerManager shareAVPlayerManager]
+            [_player play];
+        } else {
+            [_player pause];
+            _isplay = Pause;
+        }
         
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (self.index == 0) {
+            AVObject *object = self.allSubscribeArray[indexPath.row];
+            [object deleteInBackground];
+            [self.allSubscribeArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        } else if (self.index == 1) {
+            AVObject *object = self.allCollectionArray[indexPath.row];
+            [object deleteInBackground];
+            [self.allCollectionArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        } else if (self.index == 2) {
+            NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *str = [NSString stringWithFormat:@"%@/%@", caches,self.allDownLoadArray[indexPath.row]];
+            NSFileManager *manager = [NSFileManager defaultManager];
+            [manager removeItemAtPath:str error:nil];
+            [self.allDownLoadArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        }
+    }
+}
 
 - (void)tapSettingImageView:(UIGestureRecognizer *)sender
 {
@@ -604,6 +693,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 
 @end

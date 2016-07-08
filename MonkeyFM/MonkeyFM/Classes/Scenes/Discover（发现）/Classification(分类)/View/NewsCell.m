@@ -47,8 +47,11 @@
     
     // title
     self.nameLabel = [[UILabel alloc] init];
+<<<<<<< HEAD
     self.nameLabel.font = [UIFont systemFontOfSize:16];
 #warning 夜间模式改动
+=======
+>>>>>>> 3fad5033ffa37dc8184f694c766549717fe6dd3b
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     

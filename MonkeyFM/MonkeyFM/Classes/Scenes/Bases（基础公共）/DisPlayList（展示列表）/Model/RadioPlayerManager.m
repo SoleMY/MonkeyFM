@@ -27,7 +27,7 @@ singletion_implementation(RadioPlayerManager)
         // 设置播放初始状态
         self.status = isStoped;
         // 使用通知中心监听播放完成,AVPlayerItemDidPlayToEndTimeNotification
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidPlayFinish) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidPlayFinish) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
         
     }
     return self;

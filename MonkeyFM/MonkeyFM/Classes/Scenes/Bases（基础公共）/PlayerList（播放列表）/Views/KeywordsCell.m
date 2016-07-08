@@ -52,7 +52,6 @@
 - (void)initLayout {
     self.keywordLabel = [[UILabel alloc] init];
     self.keywordLabel.textColor = [UIColor grayColor];
-#warning 夜间模式改动
     [self.keywordLabel NightWithType:UIViewColorTypeNormal];
     [self.keywordLabel NightTextType:LabelColorBlack];
     self.keywordLabel.font = [UIFont systemFontOfSize:13];

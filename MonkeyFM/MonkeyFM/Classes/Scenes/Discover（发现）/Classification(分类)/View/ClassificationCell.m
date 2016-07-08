@@ -39,7 +39,6 @@
     self.photoImage = [[UIImageView alloc] init];
     
     self.label = [[UILabel alloc] init];
-#warning 夜间模式改动
     [self.label NightWithType:UIViewColorTypeNormal];
     [self.label NightTextType:LabelColorBlack];
     self.label.textAlignment = NSTextAlignmentCenter;

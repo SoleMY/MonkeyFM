@@ -39,7 +39,6 @@
         make.height.mas_offset(25);
         make.width.mas_offset(200);
     }];
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorBlack];
     
@@ -54,7 +53,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(300);
     }];
-#warning 夜间模式改动
     [self.subLabel NightWithType:UIViewColorTypeNormal];
     [self.subLabel NightTextType:LabelColorGray];
     

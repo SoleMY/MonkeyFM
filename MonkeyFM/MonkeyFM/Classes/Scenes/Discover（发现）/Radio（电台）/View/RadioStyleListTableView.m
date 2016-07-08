@@ -55,10 +55,22 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
             
         }];
         [self NightWithType:UIViewColorTypeNormal];
-
+        [self showGifView];
     }
     return self;
 }
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self animated:YES];
+}
+
 
 #pragma mark - UITableViewDataSourceMethod ---
 
@@ -91,7 +103,7 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
         if (!_area) {
             _area = 1;
         }
-        self.displayBlock([model.ID integerValue], [model.classifyid integerValue], _area, indexPath);
+        self.displayBlock(model.ID, _area, indexPath);
         
     }
 }
@@ -188,6 +200,7 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
     NSString *str2 = [self.emptyURL substringFromIndex:(range.location + range.length + index)];
     self.emptyURL = [NSString stringWithFormat:@"%@%ld%@", str, self.area, str2];
     [self.allTableViewInfoArray removeAllObjects];
+    [self showGifView];
     [self requestData];
     self.length = _area;
     
@@ -223,7 +236,7 @@ static NSString * const identifier_styleCell = @"identifier_styleCell";
                     }
                 }
                 [weakSelf reloadData];
-                
+                [weakSelf hideGifView];
             });
         }
         

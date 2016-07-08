@@ -85,7 +85,6 @@
     self.bgTableView.delegate = self;
     self.bgTableView.dataSource = self;
     
-#warning 夜间模式改动
     [self.bgTableView NightWithType:UIViewColorTypeNormal];
     [self.bgTableView registerClass:[HeadImage class] forCellReuseIdentifier:@"headImage"];
     [self.bgTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -99,12 +98,10 @@
     [self.bgTableView reloadData];
     self.title = @"主播详情";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self showGifView];
 }
 
 - (void)request {
-    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.bgTableView animated:YES];
-    HUD.backgroundColor = [UIColor whiteColor];
-    
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *URLStr = [NSString stringWithFormat:@"%@%@%@", Host_detailed_Base_URL, self.uid, Host_detailed_append_URL];
     __weak typeof(self)weakSelf = self;
@@ -150,7 +147,8 @@
             UIImage * image = [imageView setImageToBlur:imageView.image blurRadius:21 ];
             [weakSelf.bgTableView addScalableCoverWithImage: image smallImageURL:host.avatar];
             [weakSelf.bgTableView reloadData];
-            [MBProgressHUD hideHUDForView:weakSelf.bgTableView animated:YES];
+//            [MBProgressHUD hideHUDForView:weakSelf.bgTableView animated:YES];
+            [self hideGifView];
         });
     }];
 }
@@ -172,7 +170,6 @@
     if (indexPath.row == 0) {
         HeadImage *image = [self.bgTableView dequeueReusableCellWithIdentifier:@"headImage" forIndexPath:indexPath];
         
-#warning 夜间模式改动
         [image NightWithType:UIViewColorTypeNormal];
         Host *host = [self.infoListArr firstObject];
         image.nameLabel.text= host.nickName;
@@ -183,7 +180,6 @@
     }else if(indexPath.row == 2){
         SocialNetworkCell *cell = [self.bgTableView dequeueReusableCellWithIdentifier:@"netWorkCell" forIndexPath:indexPath];
         
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }else if (indexPath.row == 3) {
@@ -245,10 +241,8 @@
       self.height = [SmallTools textHeightWithText:cell.textLabel.text font:[UIFont systemFontOfSize:13]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         
-#warning 夜间模式改动
         [cell.textLabel NightWithType:UIViewColorTypeNormal];
         [cell.textLabel NightTextType:LabelColorGray];
         return cell;
@@ -287,7 +281,17 @@
         return self.height + 10;
     }
 }
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.bgTableView];
+}
 
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

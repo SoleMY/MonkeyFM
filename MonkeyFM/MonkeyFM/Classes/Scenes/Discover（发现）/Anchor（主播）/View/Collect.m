@@ -42,7 +42,6 @@
         make.height.mas_offset(kTitleLabelHeight);
         make.width.mas_offset(kTitleLabelWidth);
     }];
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorBlack];
     
@@ -55,7 +54,6 @@
         make.height.mas_offset(kTitleLabelHeight);
         make.width.mas_offset(kTitleLabelWidth);
     }];
-#warning 夜间模式改动
     [self.decLabel NightWithType:UIViewColorTypeNormal];
     [self.decLabel NightTextType:LabelColorGray];
     
@@ -68,7 +66,6 @@
         make.width.mas_offset(80);
         make.height.mas_offset(kTitleLabelHeight);
     }];
-#warning 夜间模式改动
     [self.dateLabel NightWithType:UIViewColorTypeNormal];
     [self.dateLabel NightTextType:LabelColorGray];
     

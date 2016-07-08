@@ -57,9 +57,24 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
         [weakSelf.popularTableView.mj_header endRefreshing];
         
     }];
+    [self showGifView];
     // 请求数据
     [self requestData];
 }
+
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self.popularTableView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.popularTableView animated:YES];
+}
+
 
 - (void)backAction
 {
@@ -91,6 +106,7 @@ static NSString * const identifier_popularListCell = @"identifier_popularListCel
 
 - (void)reloadDataAndShowUI
 {
+    [self hideGifView];
     [self.popularTableView reloadData];
 }
 

@@ -10,7 +10,7 @@
 
 @interface RadioDisPlayDetailViewController : BaseViewController
 
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) NSString *ID;
 
 @property (nonatomic, assign) NSInteger classifyid;
 

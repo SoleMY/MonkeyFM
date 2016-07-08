@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
     UnSubscribe,
 };
 
-@interface PlayerDetailViewController ()<AVPlayerManagerDelegate, UMSocialUIDelegate>
+@interface PlayerDetailViewController ()<AVPlayerManagerDelegate, UMSocialUIDelegate, NSURLSessionDownloadDelegate>
 {
     LoopMode _loopMode; //用来记录当前的播放模式
     
@@ -70,10 +70,22 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 @property (nonatomic, strong)NSMutableArray *array;
 @property (weak, nonatomic) IBOutlet UIButton *collectButton;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeButton;
+@property (nonatomic, strong)NSURLSession *session;
+@property (nonatomic, strong)NSURLSessionDownloadTask *task;
+@property (weak, nonatomic) IBOutlet UIButton *downLoadButton;
+
 
 @end
 
 @implementation PlayerDetailViewController
+
+- (NSURLSession *)session {
+    if (!_session) {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    }
+    return _session;
+}
 
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
@@ -119,6 +131,20 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
             [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe"] forState:UIControlStateNormal];
         }
     }];
+    
+    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSArray *array = [manager contentsOfDirectoryAtPath:caches error:nil];
+    for (NSString *str in array) {
+        if ([str rangeOfString:plist.audioName].location !=NSNotFound) {
+            [self.downLoadButton setImage:[UIImage imageNamed:@"btn_offline_delete_select"] forState:UIControlStateNormal];
+        }
+    }
+     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -146,7 +172,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
     [self.playButton setImage:[UIImage imageNamed:@"btn_broadcastplayer_pause"] forState:UIControlStateNormal];
     self.progressSlider.value= 0;
     KAVPlayerManager.delegate = self;
-    _loopMode = SingleMode;
+    _loopMode = OrderMode;
 }
 - (IBAction)LoopMode:(id)sender {
     if (_loopMode == SingleMode) {
@@ -171,7 +197,8 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
         [KAVPlayerManager pause];
     } else {
         [self.playButton setImage:[UIImage imageNamed:@"btn_broadcastplayer_pause"] forState:UIControlStateNormal];
-        [KAVPlayerManager playWithUrl:self.mp3URL];
+//        [KAVPlayerManager playWithUrl:self.mp3URL];
+        [KAVPlayerManager play];
     }
     
 }
@@ -228,6 +255,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 - (void)requestWithPageNum:(NSInteger)pageNum {
     NSString *str = [[SingleList shareSingleList].dict objectForKey:@"ID"];
     NSString *URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND,pageNum, PLAY_LIST_PROGRAM_APPENDTWO];
+    
     NetWorking *networking = [[NetWorking alloc] init];
     __weak typeof(self)weakSelf = self;
     [networking requestWithURL:URLString Bolck:^(id array) {
@@ -322,7 +350,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 - (IBAction)collectAction:(id)sender {
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser == nil) {
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+        [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     } else  {
         PlayList *playList = self.allDataArray[self.row];
         if (_iscollect == UnCollect)  {
@@ -360,7 +388,7 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
 - (IBAction)subscribeAction:(id)sender {
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser == nil) {
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+       [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     } else  {
         PlayList *playList = self.allDataArray[self.row];
         if (_issubscribe == UnSubscribe)  {
@@ -390,6 +418,60 @@ typedef NS_ENUM(NSUInteger, isSubscribe) {
             [self.subscribeButton setImage:[UIImage imageNamed:@"btn_audioplayer_subscribe"] forState:UIControlStateNormal];
         }
     }
+}
+- (IBAction)downLoadActionn:(id)sender {
+    if (self.task == nil) {
+      
+        PlayList *playList = self.allDataArray[self.row];
+        NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        NSFileManager *manager = [NSFileManager defaultManager];
+        NSArray *array = [manager contentsOfDirectoryAtPath:caches error:nil];
+        for (NSString *str in array) {
+            if ([str rangeOfString:playList.audioName].location !=NSNotFound) {
+                [self setHUDWithTitle:@"亲，已经下载过啦~~"];
+            } else {
+                  [self start];
+                [self.downLoadButton setImage:[UIImage imageNamed:@"btn_offline_delete_select"] forState:UIControlStateNormal];
+            }
+        }
+    }
+}
+
+- (void)setHUDWithTitle:(NSString *)title {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = title;
+    hud.margin = 5.f;
+    hud.yOffset = 0.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
+}
+
+- (void)start {
+    PlayList *playlist = self.allDataArray[self.row];
+    NSURL *url = [NSURL URLWithString:playlist.mp3PlayUrl];
+    self.task = [self.session downloadTaskWithURL:url];
+    [self.task resume];
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
+    UIAlertController *alterVC = [UIAlertController alertControllerWithTitle:@"文件下载完成" message:@"下载成功" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *sure= [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alterVC addAction:sure];
+    [alterVC addAction:cancle];
+    [self presentViewController:alterVC animated:YES completion:nil];
+    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    //    NSFileManager *manager = [NSFileManager defaultManager];
+    PlayList *playlist = self.allDataArray[self.row];
+    NSString *file = [caches stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mp3", playlist.audioName]];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    [manager moveItemAtPath:location.path toPath:file error:nil];
+    //    NSArray *array =   [manager contentsOfDirectoryAtPath:caches error:nil];
 }
 
 - (void)didReceiveMemoryWarning {

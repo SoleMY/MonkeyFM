@@ -44,7 +44,6 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
     self.radioPopularCollectionView.collectionView.scrollEnabled = NO;
     self.radioPopularCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioPopularCollectionView.collectionView.bounces = NO;
-#warning 夜间模式改动
     [self.radioPopularCollectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
     [self.radioPopularCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_popularCell];
@@ -75,7 +74,6 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
         self.relatedValue = model.relatedValue;
         [cell bindPopularModel:model indexPath:indexPath];
         cell.headPortrait.layer.cornerRadius = 0;
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
        
         return cell;
@@ -99,7 +97,7 @@ static NSString * const identifier_popularCell = @"identifier_popularCell";
             }
         } else {
             if (self.radioBlock) {
-                self.radioBlock([host.rvalue integerValue]);
+                self.radioBlock(host.rvalue);
             }
         }
     }

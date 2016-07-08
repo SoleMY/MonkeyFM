@@ -81,7 +81,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgramCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
     PlayList  *playList =  self.allDataArray[indexPath.row];
     [cell bindWithModel:playList];

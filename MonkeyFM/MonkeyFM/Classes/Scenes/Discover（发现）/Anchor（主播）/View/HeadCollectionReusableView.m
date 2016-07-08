@@ -21,7 +21,6 @@
 - (void)initLayout {
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 150, 30)];
     self.titleLabel.text = @"TAde";
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorBlack];
     [self addSubview:self.titleLabel];

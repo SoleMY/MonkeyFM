@@ -44,7 +44,6 @@
         make.right.equalTo(mySelf.contentView).offset(5);
         make.height.mas_offset(kNameLabelHeight);
     }];
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     
@@ -58,7 +57,6 @@
         make.height.mas_offset(kNameLabelHeight);
     }];
     
-#warning 夜间模式改动
     [self.decLabel NightWithType:UIViewColorTypeNormal];
     [self.decLabel NightTextType:LabelColorBlack];
     
@@ -72,13 +70,12 @@
         make.width.mas_offset(150);
         make.height.mas_offset(kNameLabelHeight);
     }];
-#warning 夜间模式改动
     [self.fansNumber NightWithType:UIViewColorTypeNormal];
     [self.fansNumber NightTextType:LabelColorGray];
     
     self.followButton = [[UIButton alloc] init];
 
-    [self.followButton setImage:[UIImage imageNamed:@"chat_support_green@2x"] forState:UIControlStateNormal];
+    [self.followButton setImage:[UIImage imageNamed:@"like67"] forState:UIControlStateNormal];
     self.followButton.tintColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.followButton];
      [self.followButton addTarget:self action:@selector(followAction) forControlEvents:UIControlEventTouchUpInside];
@@ -86,8 +83,8 @@
     [self.followButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(mySelf.contentView).offset(30);
         make.right.equalTo(mySelf.contentView).offset(-15);
-        make.width.mas_equalTo(30);
-        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(18);
+        make.height.mas_equalTo(18);
     }];
 }
 

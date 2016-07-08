@@ -68,6 +68,9 @@
                     <state key="normal" title="+订阅">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="subscribeAction:" destination="-1" eventType="touchUpInside" id="WGH-cL-nPS"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSg-Q4-rGb">
                     <rect key="frame" x="253" y="20" width="30" height="30"/>

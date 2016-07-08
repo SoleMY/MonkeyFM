@@ -31,7 +31,6 @@
         make.height.mas_offset(25);
     }];
     
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorBlack];
     
@@ -58,7 +57,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
-#warning 夜间模式改动
     [self.listenNumber NightWithType:UIViewColorTypeNormal];
     [self.listenNumber NightTextType:LabelColorGray];
     
@@ -86,7 +84,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
-#warning 夜间模式改动
     [self.likeNumber NightWithType:UIViewColorTypeNormal];
     [self.likeNumber NightTextType:LabelColorGray];
     
@@ -112,7 +109,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(50);
     }];
-#warning 夜间模式改动
     [self.commentNumber NightWithType:UIViewColorTypeNormal];
     [self.commentNumber NightTextType:LabelColorGray];
     
@@ -127,7 +123,6 @@
         make.height.mas_offset(20);
         make.width.mas_offset(80);
     }];
-#warning 夜间模式改动
     [self.dateLabel NightWithType:UIViewColorTypeNormal];
     [self.dateLabel NightTextType:LabelColorGray];
     

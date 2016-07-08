@@ -34,13 +34,13 @@
     self.headPortrait.frame = CGRectMake(10, 0, kHeadPortraitWidth, kHeadPortraitHeight);
     self.headPortrait.layer.cornerRadius = self.headPortrait.frame.size.width / 2;
     self.headPortrait.layer.masksToBounds = YES;
+    self.headPortrait.backgroundColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.headPortrait];
     
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kNameLabelX, self.headPortrait.frame.size.height + 5, kNameLabelWidth, kNameLabelHeight)];
     self.nameLabel.text = @"主播";
     self.nameLabel.font = [UIFont systemFontOfSize:15];
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
-#warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.nameLabel];
@@ -50,7 +50,6 @@
     self.introduction.font = [UIFont systemFontOfSize:13];
     self.introduction.textColor = [UIColor grayColor];
     self.introduction.textAlignment = NSTextAlignmentCenter;
-#warning 夜间模式改动
     [self.introduction NightWithType:UIViewColorTypeNormal];
     [self.introduction NightTextType:LabelColorGray];
     
@@ -63,9 +62,6 @@
     Host *host = [[Host alloc] init];
     [host setValuesForKeysWithDictionary:dic];
     self.nameLabel.text = host.nickName;
-#warning 夜间模式改动
-//    [self.nameLabel NightWithType:UIViewColorTypeNormal];
-//    [self.nameLabel NightTextType:LabelColorBlack];
     
     self.introduction.text = host.recommendReson;
     [self.headPortrait sd_setImageWithURL:[NSURL URLWithString:host.avatar]];

@@ -43,7 +43,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
     self.radioAnchorCollectionView.collectionView.scrollEnabled = NO;
     self.radioAnchorCollectionView.collectionView.showsVerticalScrollIndicator = NO;
     self.radioAnchorCollectionView.collectionView.bounces = NO;
-#warning 夜间模式改动
     [self.radioAnchorCollectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
     [self.radioAnchorCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_anchorCell];
@@ -73,12 +72,10 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         RadioModel *model = [[RadioModel alloc] init];
         model = self.allInfoDataArray[4];
         [cell bindRecommendModel:model indexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     } else {
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         return cell;
     }
@@ -102,7 +99,6 @@ static NSString * const identifier_anchorCell = @"identifier_anchorCell";
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
             HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
             RadioModel *model = self.allInfoDataArray[4];
-//            HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = model.name;
             [otherHead.more setImage:[UIImage imageNamed:@"btn_anchor_more@2x"] forState:UIControlStateNormal];
             [otherHead.more addTarget:self action:@selector(moreActionWithIndexPath:) forControlEvents:UIControlEventTouchUpInside];

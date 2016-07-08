@@ -20,6 +20,7 @@
 @property(nonatomic, retain)UIColor *navBarColor;
 @property(nonatomic, retain)UIColor *colorClear;
 @property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *segmentedColor;
 
 #pragma mark -
 /**是否是夜间*/

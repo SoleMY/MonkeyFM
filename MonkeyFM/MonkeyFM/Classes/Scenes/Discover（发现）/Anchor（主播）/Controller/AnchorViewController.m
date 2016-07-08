@@ -62,7 +62,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     //    设置代理
     self.collection.collectionView.dataSource = self;
     self.collection.collectionView.delegate = self;
-#warning 夜间模式改动
     [self.collection.collectionView NightWithType:UIViewColorTypeNormal];
     //   第一步： 注册collectionViewCell
     [self.collection.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_cell];
@@ -73,6 +72,7 @@ static NSString *const identifier_cell = @"identifier_cell";
     __weak typeof(self)weakSelf = self;
     self.title = @"主播";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self showGifView];
 }
 - (void)request {
     NetWorking *networking = [[NetWorking alloc] init];
@@ -94,6 +94,7 @@ static NSString *const identifier_cell = @"identifier_cell";
                 }
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.collection.collectionView reloadData];
+            [self hideGifView];
         });
     }];
 
@@ -124,7 +125,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     }else {
     //    第二步：重用cell
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_cell forIndexPath:indexPath];
-#warning 夜间模式改动
         [cell NightWithType:UIViewColorTypeNormal];
         if (indexPath.section == 1) {
             Host *host = self.hostArray[indexPath.row];
@@ -151,7 +151,6 @@ static NSString *const identifier_cell = @"identifier_cell";
     if (indexPath.section == 0) {
         if ([kind isEqualToString: UICollectionElementKindSectionHeader]) {
             FirstCollectionReusableView *firstHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"firstHeaderView" forIndexPath:indexPath];
-#warning 夜间模式改动
             [firstHeaderView NightWithType:UIViewColorTypeNormal];
             [[Request alloc] requestWithURL:shuffing_host_URL view:firstHeaderView frame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
                return firstHeaderView;
@@ -162,7 +161,6 @@ static NSString *const identifier_cell = @"identifier_cell";
         if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
             HeadCollectionReusableView *otherHead = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerView" forIndexPath:indexPath];
             self.compent = indexPath.section;
-#warning 夜间模式改动
             [otherHead NightWithType:UIViewColorTypeNormal];
             HostTitle *title = self.titleArray[indexPath.section + 1];
             otherHead.titleLabel.text = title.name;
@@ -211,6 +209,18 @@ static NSString *const identifier_cell = @"identifier_cell";
     HostViewController *hostVC = [[HostViewController alloc] init];
     hostVC.appendString = self.appendString;
     [self.navigationController pushViewController:hostVC animated:YES];
+}
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.collection];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 

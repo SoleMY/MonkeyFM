@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 @class RadioDisplayModel;
 @class RadioDisplayPlayModel;
+
+typedef void(^ShareBlock)();
 @interface RadioDisPlayCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) RadioDisplayModel *model;
+@property (nonatomic, copy) ShareBlock shareBlock;
 
 - (void)bindModel:(RadioDisplayModel *)model;
 

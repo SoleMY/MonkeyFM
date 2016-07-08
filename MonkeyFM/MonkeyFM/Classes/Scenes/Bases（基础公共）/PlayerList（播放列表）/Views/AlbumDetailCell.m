@@ -32,12 +32,11 @@
         make.height.mas_offset(20);
     }];
     
-#warning 夜间模式改动
     [self.titleLabel NightWithType:UIViewColorTypeNormal];
     [self.titleLabel NightTextType:LabelColorGray];
     
     self.firstImageView = [[UIImageView alloc] init];
-    self.firstImageView.backgroundColor = [UIColor orangeColor];
+    self.firstImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.firstImageView];
     [self.firstImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(7);
@@ -47,7 +46,7 @@
     }];
     
     self.secondImageView = [[UIImageView alloc] init];
-    self.secondImageView.backgroundColor = [UIColor orangeColor];
+    self.secondImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.secondImageView];
     [self.secondImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.firstImageView).offset(0);
@@ -57,7 +56,7 @@
     }];
     
     self.thiredImageView = [[UIImageView alloc] init];
-    self.thiredImageView.backgroundColor = [UIColor orangeColor];
+    self.thiredImageView.backgroundColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.thiredImageView];
     [self.thiredImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.secondImageView).offset(0);
@@ -76,7 +75,6 @@
         make.left.equalTo(weakSelf.firstImageView).offset(0);
         make.right.equalTo(weakSelf.firstImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.firstLabel NightWithType:UIViewColorTypeNormal];
     [self.firstLabel NightTextType:LabelColorBlack];
     
@@ -91,7 +89,6 @@
         make.left.equalTo(weakSelf.secondImageView).offset(0);
         make.right.equalTo(weakSelf.secondImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.secondLabel NightWithType:UIViewColorTypeNormal];
     [self.secondLabel NightTextType:LabelColorBlack];
     
@@ -106,7 +103,6 @@
         make.right.equalTo(weakSelf.thiredImageView).offset(0);
         make.left.equalTo(weakSelf.thiredImageView).offset(0);
     }];
-#warning 夜间模式改动
     [self.thiredLabel NightWithType:UIViewColorTypeNormal];
     [self.thiredLabel NightTextType:LabelColorBlack];
     

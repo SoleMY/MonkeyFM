@@ -41,6 +41,7 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     }
     return self;
 }
+<<<<<<< HEAD
 
 
 
@@ -66,6 +67,25 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 #warning 夜间模式改动
     [self.AlbumView.collectionView NightWithType:UIViewColorTypeNormal];
     [self.AlbumView.collectionView reloadData];
+=======
+- (void)createRadioHeaderView
+{
+    self.TodayCollectionView = [[CollectionView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300)];
+    self.TodayCollectionView.collectionView.delegate = self;
+    self.TodayCollectionView.collectionView.dataSource = self;
+    [self.contentView addSubview:self.TodayCollectionView];
+    self.TodayCollectionView.collectionView.scrollEnabled = NO;
+    self.TodayCollectionView.collectionView.showsVerticalScrollIndicator = NO;
+    self.TodayCollectionView.collectionView.bounces = NO;
+    [self.TodayCollectionView NightWithType:UIViewColorTypeNormal];
+    //   第一步： 注册collectionViewCell
+//    [self.TodayCollectionView.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:identifier_popularCell];
+    [self.TodayCollectionView.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    //    注册头视图
+//    [self.TodayCollectionView.collectionView registerClass:[HeadCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+//    [self.TodayCollectionView.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"view"];
+    
+>>>>>>> 3fad5033ffa37dc8184f694c766549717fe6dd3b
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -77,6 +97,7 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+<<<<<<< HEAD
     CollectionViewCell *cell = [self.AlbumView.collectionView dequeueReusableCellWithReuseIdentifier:identifier_AlbumCell forIndexPath:indexPath];
     cell.headPortrait.layer.cornerRadius = 0;
     if (self.albumArr) {
@@ -95,6 +116,22 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
     [cell NightWithType:UIViewColorTypeNormal];
 
     }
+=======
+    //    第二步：重用cell
+//    if (self.allInfoDataArray.count > 0) {
+    
+//        CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier_popularCell forIndexPath:indexPath];
+//        RadioModel *model = [[RadioModel alloc] init];
+//        model = self.allInfoDataArray[3];
+////        self.relatedValue = model.relatedValue;
+//        [cell bindPopularModel:model indexPath:indexPath];
+//        cell.headPortrait.layer.cornerRadius = 0;
+//        [cell NightWithType:UIViewColorTypeNormal];
+//        
+//        return cell;
+//    } else {
+        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+>>>>>>> 3fad5033ffa37dc8184f694c766549717fe6dd3b
         return cell;
 }
 
