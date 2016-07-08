@@ -41,6 +41,7 @@
     self.navigationController.navigationBar.translucent = YES;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -69,7 +70,7 @@
     
     //设置控件位置y
     
-    self.menuframe = CGRectMake(0, 0, ScreenW, 40);
+    self.menuframe = CGRectMake(0, 64, ScreenW, 40);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
     
     //调用父类方法加载控件
@@ -80,9 +81,11 @@
 
 - (void)requstData
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", classification_Base_URL, self.classificationModel.categoryId, classification_Appending_URL];
+    self.urlString = [NSString stringWithFormat:@"%@%@%@", classification_Base_URL, self.classificationModel.categoryId, classification_Appending_URL];
+    NSLog(@"self.urlString ==========     //  %@", self.classificationModel.categoryId);
+    NSLog(@"%@", self.urlString);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:self.urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         // 请求成功，解析数据
         

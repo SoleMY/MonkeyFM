@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) ClassificationModel *classificationModel;
 
+@property (nonatomic, strong) NSString *urlString;
+
 @end

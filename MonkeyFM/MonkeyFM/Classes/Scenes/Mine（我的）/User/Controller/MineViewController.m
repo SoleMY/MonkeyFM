@@ -66,7 +66,7 @@
     
     
     // 添加左右navigationbar
-    [self addNavBar];
+//    [self addNavBar];
     
     // 添加观察者
     [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -76,6 +76,10 @@
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:@"subCell"];
     
     self.index = 0;
+    
+    self.title = @"个人中心";
+    
+    [self.tableView NightWithType:UIViewColorTypeNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,12 +129,12 @@
     }
 }
 
-- (void)addNavBar
-{
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(cancleButton:)];
-    
-}
+//- (void)addNavBar
+//{
+//    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(cancleButton:)];
+//    
+//}
 
 
 // 右按钮注销
@@ -145,7 +149,7 @@
 }
 - (void)addTableViewMethod
 {
-    self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     
     [self.view addSubview:self.tableView];
     
@@ -261,9 +265,32 @@
        
         make.top.equalTo(mySelf.myImageView.mas_top).offset(20);
         make.left.equalTo(mySelf.myImageView.mas_left).offset(20);
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(40);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
     }];
+    
+    // 注销button
+    UIImageView *outImageView = [[UIImageView alloc] init];
+    outImageView.image = [UIImage imageNamed:@"sign-out"];
+    [self.myImageView addSubview:outImageView];
+    outImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *outTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancleButton:)];
+    // 设置轻拍次数
+    outTapGR.numberOfTapsRequired = 1;
+    
+    outTapGR.delegate = self;
+    
+    // 添加手势
+    [outImageView addGestureRecognizer:outTapGR];
+    
+    [outImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(mySelf.myImageView.mas_top).offset(20);
+        make.right.equalTo(mySelf.myImageView.mas_right).offset(-20);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
+    }];
+
     
     self.smallImageView = [[UIImageView alloc] initWithImage:self.myImageView.image];
     [self.myImageView addSubview:_smallImageView];
@@ -415,7 +442,6 @@
 // 行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%ld",self.allCollectionArray.count);
     
     if (self.index == 0) {
         return self.allSubscribeArray.count;

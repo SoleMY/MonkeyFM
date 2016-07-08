@@ -7,7 +7,12 @@
 //
 
 #import "BaseCell.h"
-
+#import "CollectionView.h"
+typedef void(^BaseBlock)();
+typedef void(^AlbumBlock)();
 @interface TodayWillListen : BaseCell
-
+@property (nonatomic, copy)BaseBlock block;
+@property (nonatomic, copy)AlbumBlock albumBlock;
+@property (nonatomic, strong)CollectionView *AlbumView;
+@property (nonatomic, strong)NSMutableArray *albumArr;
 @end

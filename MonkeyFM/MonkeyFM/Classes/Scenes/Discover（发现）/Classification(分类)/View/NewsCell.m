@@ -47,6 +47,7 @@
     
     // title
     self.nameLabel = [[UILabel alloc] init];
+    self.nameLabel.font = [UIFont systemFontOfSize:16];
 #warning 夜间模式改动
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
@@ -61,6 +62,7 @@
     
     // 内容
     self.descLabel = [[UILabel alloc] init];
+    self.descLabel.font = [UIFont systemFontOfSize:14];
     [self.descLabel NightWithType:UIViewColorTypeNormal];
     [self.descLabel NightTextType:LabelColorBlack];
     self.descLabel.textColor = [UIColor lightGrayColor];
@@ -91,6 +93,7 @@
     
     // 评论数
     self.hotLabel = [[UILabel alloc] init];
+    self.hotLabel.font = [UIFont systemFontOfSize:12];
     [self.hotLabel NightWithType:UIViewColorTypeNormal];
     [self.hotLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.hotLabel];
@@ -120,6 +123,7 @@
     
     // 时间
     self.utimeLabel = [[UILabel alloc] init];
+    self.utimeLabel.font = [UIFont systemFontOfSize:13];
     [self.utimeLabel NightWithType:UIViewColorTypeNormal];
     [self.utimeLabel NightTextType:LabelColorBlack];
     self.utimeLabel.textColor = [UIColor lightGrayColor];

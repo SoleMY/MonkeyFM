@@ -60,6 +60,12 @@ static  NSString *const identifile_cell = @"identifile_cell";
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -145,7 +151,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
     [task resume];
     
 }
-
 
 
 @end
