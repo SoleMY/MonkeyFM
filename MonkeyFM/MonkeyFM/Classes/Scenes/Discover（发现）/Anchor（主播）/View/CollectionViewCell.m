@@ -34,6 +34,7 @@
     self.headPortrait.frame = CGRectMake(10, 0, kHeadPortraitWidth, kHeadPortraitHeight);
     self.headPortrait.layer.cornerRadius = self.headPortrait.frame.size.width / 2;
     self.headPortrait.layer.masksToBounds = YES;
+    self.headPortrait.backgroundColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.headPortrait];
     
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kNameLabelX, self.headPortrait.frame.size.height + 5, kNameLabelWidth, kNameLabelHeight)];

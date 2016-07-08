@@ -57,6 +57,7 @@
     }];
     self.title = @"主播分类";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self showGifView];
 }
 
 - (void)requestWithPage:(NSString *)page  {
@@ -75,6 +76,7 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.tableView reloadData];
+            [weakSelf hideGifView];
         });
     }];
 }
@@ -128,6 +130,19 @@
     hostInfoVC.uid = more.uid;
     [self.navigationController pushViewController:hostInfoVC animated:YES];
 }
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.tableView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

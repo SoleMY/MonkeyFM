@@ -98,12 +98,10 @@
     [self.bgTableView reloadData];
     self.title = @"主播详情";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self showGifView];
 }
 
 - (void)request {
-    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.bgTableView animated:YES];
-    HUD.backgroundColor = [UIColor whiteColor];
-    
     NetWorking *netWorking = [[NetWorking alloc] init];
     NSString *URLStr = [NSString stringWithFormat:@"%@%@%@", Host_detailed_Base_URL, self.uid, Host_detailed_append_URL];
     __weak typeof(self)weakSelf = self;
@@ -149,7 +147,8 @@
             UIImage * image = [imageView setImageToBlur:imageView.image blurRadius:21 ];
             [weakSelf.bgTableView addScalableCoverWithImage: image smallImageURL:host.avatar];
             [weakSelf.bgTableView reloadData];
-            [MBProgressHUD hideHUDForView:weakSelf.bgTableView animated:YES];
+//            [MBProgressHUD hideHUDForView:weakSelf.bgTableView animated:YES];
+            [self hideGifView];
         });
     }];
 }
@@ -282,7 +281,17 @@
         return self.height + 10;
     }
 }
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.bgTableView];
+}
 
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

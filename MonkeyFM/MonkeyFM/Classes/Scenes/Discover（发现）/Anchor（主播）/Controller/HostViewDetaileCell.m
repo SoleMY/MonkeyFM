@@ -75,7 +75,7 @@
     
     self.followButton = [[UIButton alloc] init];
 
-    [self.followButton setImage:[UIImage imageNamed:@"chat_support_green@2x"] forState:UIControlStateNormal];
+    [self.followButton setImage:[UIImage imageNamed:@"like67"] forState:UIControlStateNormal];
     self.followButton.tintColor = kNavigationBarTintColor;
     [self.contentView addSubview:self.followButton];
      [self.followButton addTarget:self action:@selector(followAction) forControlEvents:UIControlEventTouchUpInside];
@@ -83,8 +83,8 @@
     [self.followButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(mySelf.contentView).offset(30);
         make.right.equalTo(mySelf.contentView).offset(-15);
-        make.width.mas_equalTo(30);
-        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(18);
+        make.height.mas_equalTo(18);
     }];
 }
 

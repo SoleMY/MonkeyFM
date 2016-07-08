@@ -72,6 +72,7 @@ static NSString *const identifier_cell = @"identifier_cell";
     __weak typeof(self)weakSelf = self;
     self.title = @"主播";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self showGifView];
 }
 - (void)request {
     NetWorking *networking = [[NetWorking alloc] init];
@@ -93,6 +94,7 @@ static NSString *const identifier_cell = @"identifier_cell";
                 }
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.collection.collectionView reloadData];
+            [self hideGifView];
         });
     }];
 
@@ -207,6 +209,18 @@ static NSString *const identifier_cell = @"identifier_cell";
     HostViewController *hostVC = [[HostViewController alloc] init];
     hostVC.appendString = self.appendString;
     [self.navigationController pushViewController:hostVC animated:YES];
+}
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:CGRectMake(0, 0, 300, 70) andShowToView:self.collection];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
