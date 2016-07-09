@@ -41,8 +41,8 @@
         
         _string = string;
         
-        [self requstTableViewData];
     }
+    [self requstTableViewData];
 }
 
 - (void)requstTableViewData
@@ -72,7 +72,7 @@
         });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
+
     }];
     
 }

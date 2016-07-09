@@ -61,6 +61,7 @@
     // 设置颜色和圆角
     [self setShape];
     
+    [self.view NightWithType:UIViewColorTypeNormal];
 }
 
 

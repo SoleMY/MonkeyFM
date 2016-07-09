@@ -32,6 +32,7 @@
     self.title = @"注册";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton:)];
     
+    [self.view NightWithType:UIViewColorTypeNormal];
     // 设置颜色和圆角
     [self setShape];
     
@@ -42,6 +43,8 @@
     self.verification.delegate = self;
     self.verification.keyboardType = UIKeyboardTypeNumberPad;
     [self.phoneNum becomeFirstResponder];
+    
+    
     
 }
 

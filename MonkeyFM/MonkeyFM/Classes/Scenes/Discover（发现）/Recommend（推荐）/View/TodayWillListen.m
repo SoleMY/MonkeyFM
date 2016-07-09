@@ -130,10 +130,6 @@ static NSString * const identifier_HeaderCell = @"identifier_HeaderCell";
             self.albumBlock();
             break;
         }
-        {case 8:
-            self.albumBlock();
-            break;
-        }
         default:
             break;
     }

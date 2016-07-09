@@ -73,6 +73,7 @@
 		D6060E621D2FA80C00F80888 /* 财经.png in Resources */ = {isa = PBXBuildFile; fileRef = D6060E491D2FA80C00F80888 /* 财经.png */; };
 		D6060E631D2FA80C00F80888 /* 音乐.png in Resources */ = {isa = PBXBuildFile; fileRef = D6060E4A1D2FA80C00F80888 /* 音乐.png */; };
 		D610E5511D2E5B91005325AB /* TodayWillListen.m in Sources */ = {isa = PBXBuildFile; fileRef = D610E5501D2E5B91005325AB /* TodayWillListen.m */; };
+		D6160BD21D30FCB00040C2DB /* AboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6160BD11D30FCB00040C2DB /* AboutUsCell.m */; };
 		D625C4181D2A8218005C2A6E /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C4171D2A8218005C2A6E /* AVPlayerManager.m */; };
 		D625C41B1D2A9860005C2A6E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D625C41A1D2A9860005C2A6E /* ListViewController.m */; };
 		D64EC2FB1D2B92C90079BFAD /* icon_comment_support@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D64EC2FA1D2B92C90079BFAD /* icon_comment_support@2x.png */; };
@@ -382,6 +383,8 @@
 		D6060E4A1D2FA80C00F80888 /* 音乐.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "音乐.png"; sourceTree = "<group>"; };
 		D610E54F1D2E5B91005325AB /* TodayWillListen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayWillListen.h; sourceTree = "<group>"; };
 		D610E5501D2E5B91005325AB /* TodayWillListen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayWillListen.m; sourceTree = "<group>"; };
+		D6160BD01D30FCB00040C2DB /* AboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsCell.h; sourceTree = "<group>"; };
+		D6160BD11D30FCB00040C2DB /* AboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsCell.m; sourceTree = "<group>"; };
 		D625C4161D2A8218005C2A6E /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVPlayerManager.h; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.h"; sourceTree = SOURCE_ROOT; };
 		D625C4171D2A8218005C2A6E /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVPlayerManager.m; path = "MonkeyFM/Classes/Scenes/Bases（基础公共）/PlayerDetail（播放详情）/Controller/AVPlayerManager.m"; sourceTree = SOURCE_ROOT; };
 		D625C4191D2A9860005C2A6E /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
@@ -1005,6 +1008,8 @@
 				D6746F2E1D2CA4690012D208 /* SegmentView.m */,
 				A53171401D2D2B36007E1425 /* SettingTableViewCell.h */,
 				A53171411D2D2B36007E1425 /* SettingTableViewCell.m */,
+				D6160BD01D30FCB00040C2DB /* AboutUsCell.h */,
+				D6160BD11D30FCB00040C2DB /* AboutUsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2030,6 +2035,7 @@
 				D6C0A5231D27509F00BA5E65 /* MJRefreshAutoStateFooter.m in Sources */,
 				D6C0A5AF1D27509F00BA5E65 /* PopularItemListViewController.m in Sources */,
 				D6C0A5891D27509F00BA5E65 /* HostViewController.m in Sources */,
+				D6160BD21D30FCB00040C2DB /* AboutUsCell.m in Sources */,
 				D6C0A5671D27509F00BA5E65 /* BaseView.m in Sources */,
 				D6C0A5041D27509F00BA5E65 /* shuffingNetRequest.m in Sources */,
 				A55DD7281D2BFFC5009A28A3 /* UIView+RemoveNotifition.m in Sources */,

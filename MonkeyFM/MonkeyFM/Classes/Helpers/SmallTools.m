@@ -75,5 +75,14 @@
     return rect.size.width;
 }
 
++ (CGFloat)cellTextHeightWithText:(NSString *)text font:(UIFont *)font {
+    // 第一个参数
+    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, 10000);
+    
+    // 第二个参数：设置以行高为单位
+    CGRect rect = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
+    
+    return rect.size.height;
+}
 
 @end

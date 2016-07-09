@@ -43,7 +43,7 @@
     [self.mima becomeFirstResponder];
     self.mima2.delegate = self;
     [self.mima2 becomeFirstResponder];
-    
+    [self.view NightWithType:UIViewColorTypeNormal];
 }
 
 // 当点击键盘return的时候

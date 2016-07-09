@@ -26,4 +26,8 @@
 
 + (CGFloat)FramWithtextHeightWithText:(NSString *)text font:(UIFont *)font;
 
+
+// 声明类方法用来计算文本高度
++ (CGFloat)cellTextHeightWithText:(NSString *)text font:(UIFont *)font;
+
 @end

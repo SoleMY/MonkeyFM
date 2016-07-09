@@ -56,6 +56,7 @@
     self.tableView.dataSource = self;
     [self.tableView registerClass:[TodayWillListen class] forCellReuseIdentifier:@"Today"];
     [self.tableView registerClass:[PopularItemTableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self requstToday];
     
 }
 
@@ -63,7 +64,7 @@
 {
     // 解析数据
     self.index = 0;
-    [self requstToday];
+    
 }
 
 - (void)requstToday
@@ -91,7 +92,7 @@
                 
             }
             
-            if (i > 2 && i != 4 && i != 5 && i != 6 && i != 7 && i != 9 && i != 10 && i != 12 && i != 11 && i != 15 && i != 16) {
+            if (i > 2 && i != 4 && i != 5 && i != 6 && i != 7 && i != 8 && i != 9 && i != 10 && i != 12 && i != 11 && i != 15 && i != 16) {
                 
                 [self.allInfoRecommendDictionary setValue:mArr forKey:[NSString stringWithFormat:@"%ld", self.index]];
                 self.index++;
@@ -192,13 +193,7 @@
             break;
         }
             
-        {case 8:
-            cell.albumBlock = ^(){
-                [self section8];
-            };
-            break;
-        }
-        default:
+            default:
             break;
     }
     
@@ -241,36 +236,32 @@
             [button addTarget:self action:@selector(clickButtonAction:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 1:
-            nameLabel.text = @"电台精选";
+            nameLabel.text = @"搞笑段子";
             [button addTarget:self action:@selector(clickButtonSection1:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 2:
-            nameLabel.text = @"搞笑段子";
+            nameLabel.text = @"热度新闻";
             [button addTarget:self action:@selector(clickButtonSection2:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 3:
-            nameLabel.text = @"热度新闻";
+            nameLabel.text = @"经典小说";
             [button addTarget:self action:@selector(clickButtonSection3:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 4:
-            nameLabel.text = @"经典小说";
+            nameLabel.text = @"逗咖相声";
             [button addTarget:self action:@selector(clickButtonSection4:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 5:
-            nameLabel.text = @"逗咖相声";
+            nameLabel.text = @"育儿亲子";
             [button addTarget:self action:@selector(clickButtonSection5:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 6:
-            nameLabel.text = @"育儿亲子";
+            nameLabel.text = @"军事热点";
             [button addTarget:self action:@selector(clickButtonSection6:) forControlEvents:UIControlEventTouchUpInside];
             break;
         case 7:
-            nameLabel.text = @"军事热点";
-            [button addTarget:self action:@selector(clickButtonSection7:) forControlEvents:UIControlEventTouchUpInside];
-            break;
-        case 8:
             nameLabel.text = @"听音乐";
-            [button addTarget:self action:@selector(clickButtonSection8:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(clickButtonSection7:) forControlEvents:UIControlEventTouchUpInside];
             break;
     }
 
@@ -318,10 +309,6 @@
     [self section7];
 }
 
-- (void)clickButtonSection8:(UIButton *)sender
-{
-    [self section8];
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -338,16 +325,8 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section1
-{
-    RadioPlayerListViewController *detail = [[RadioPlayerListViewController alloc] init];
-    detail.selectedSegmentIndex = 0;
-    [SelecID shareSelecID].selectIndex = 1;
-   // detail.scrollIndexPath
-    [self.navigationController pushViewController:detail animated:YES];
-}
 
-- (void)section2
+- (void)section1
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
@@ -355,7 +334,7 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section3
+- (void)section2
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
@@ -363,7 +342,7 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section4
+- (void)section3
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
@@ -371,7 +350,7 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section5
+- (void)section4
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
@@ -379,7 +358,7 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section6
+- (void)section5
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
@@ -387,14 +366,14 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (void)section7
+- (void)section6
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
     detail.urlString = kSection7;
     [self.navigationController pushViewController:detail animated:YES];
 }
-- (void)section8
+- (void)section7
 {
     DetailClassificationViewController *detail = [[DetailClassificationViewController alloc] init];
     detail.isHaveString = YES;
