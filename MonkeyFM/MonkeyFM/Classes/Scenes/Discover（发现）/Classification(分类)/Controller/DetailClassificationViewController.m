@@ -37,7 +37,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    self.menuframe = CGRectMake(0, 0, ScreenW, 40);
     self.navigationController.navigationBar.translucent = YES;
 }
 
@@ -47,8 +46,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 请求数据
     [self requstData];
-//    self.menuframe = CGRectMake(0, 64, ScreenW, 40);
-
     self.title = @"详情";
 }
 
@@ -59,7 +56,6 @@
     for (DetailSegment *model in self.allArray) {
         MryPageTable *table = [[MryPageTable alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         table.string = [NSString stringWithFormat:@"%@%@%@", kBaseURL, model.categoryId, kAppendingURL];
-        
         table.block = ^(){
             PlayListViewController *playList = [[PlayListViewController alloc] init];
             [self.navigationController pushViewController:playList animated:YES];
@@ -69,12 +65,10 @@
     }
     
     //设置控件位置y
-    
     self.menuframe = CGRectMake(0, 64, ScreenW, 40);
     self.tableframe = CGRectMake(0, CGRectGetMaxY(self.menuframe), ScreenW, ScreenH - CGRectGetMaxY(self.menuframe));
-    
     //调用父类方法加载控件
-    [super viewDidLoad]; //最后执行
+    [super viewDidLoad];
 }
 
 
@@ -88,7 +82,6 @@
     [manager GET:self.urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         // 请求成功，解析数据
-        
         NSDictionary *resultDict = responseObject[@"result"];
         
         NSArray *dataListArray = resultDict[@"dataList"];
@@ -98,6 +91,7 @@
             DetailSegment *segmentModel = [[DetailSegment alloc] init];
             [segmentModel setValuesForKeysWithDictionary:lastDict];
             [self.allArray addObject:segmentModel];
+            
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self addDemo];

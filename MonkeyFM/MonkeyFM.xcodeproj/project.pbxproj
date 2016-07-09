@@ -280,7 +280,8 @@
 		D6C0A5EB1D27B76500BA5E65 /* 微信镂空.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A5EA1D27B76500BA5E65 /* 微信镂空.png */; };
 		D6CA26CA1D2A7E9E00803148 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */; };
 		D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */; };
-		D6D3EFFF1D3091B6007BE512 /* 色值.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D3EFFE1D3091B6007BE512 /* 色值.png */; };
+		D6D3F0011D30A07A007BE512 /* 色值.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D3F0001D30A07A007BE512 /* 色值.png */; };
+		D6D3F0031D30A296007BE512 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D3F0021D30A296007BE512 /* logout.png */; };
 		D6E37DCB1D2A48A600E1DF77 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCA1D2A48A600E1DF77 /* SystemConfiguration.framework */; };
 		D6E37DCD1D2A48B600E1DF77 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCC1D2A48B600E1DF77 /* MobileCoreServices.framework */; };
 		D6E37DCF1D2A48C100E1DF77 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCE1D2A48C100E1DF77 /* CoreTelephony.framework */; };
@@ -713,7 +714,8 @@
 		D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		D6CA26CC1D2A7EF700803148 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
-		D6D3EFFE1D3091B6007BE512 /* 色值.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "色值.png"; sourceTree = "<group>"; };
+		D6D3F0001D30A07A007BE512 /* 色值.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "色值.png"; sourceTree = "<group>"; };
+		D6D3F0021D30A296007BE512 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		D6E37DCA1D2A48A600E1DF77 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6E37DCC1D2A48B600E1DF77 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D6E37DCE1D2A48C100E1DF77 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -1138,7 +1140,8 @@
 		D6C0A3941D27509F00BA5E65 /* 8.png等多个文件 2 */ = {
 			isa = PBXGroup;
 			children = (
-				D6D3EFFE1D3091B6007BE512 /* 色值.png */,
+				D6D3F0021D30A296007BE512 /* logout.png */,
+				D6D3F0001D30A07A007BE512 /* 色值.png */,
 				D6060E2F1D2F891400F80888 /* sign-out.png */,
 				D6746F4C1D2CE3550012D208 /* tabbar_icon_me_normal@2x.png */,
 				D6746F4A1D2CE2BA0012D208 /* email.png */,
@@ -1850,7 +1853,7 @@
 				A57257AE1D2BEBEE003529C5 /* 暂停button.png in Resources */,
 				D6060E4D1D2FA80C00F80888 /* 体育.png in Resources */,
 				A51F69D61D2F53C500612EF9 /* ic_fresh_7@2x.png in Resources */,
-				D6D3EFFF1D3091B6007BE512 /* 色值.png in Resources */,
+				D6D3F0011D30A07A007BE512 /* 色值.png in Resources */,
 				D6C0A5611D27509F00BA5E65 /* 评论数.png in Resources */,
 				D6C0A51D1D27509F00BA5E65 /* btn_radiondetail_subcribe@2x.png in Resources */,
 				D6C0A55B1D27509F00BA5E65 /* ic_homeprovince_on@3x.png in Resources */,
@@ -1901,6 +1904,7 @@
 				D6060E561D2FA80C00F80888 /* 恐怖故事.png in Resources */,
 				D6746F301D2CA4690012D208 /* LoginViewController.xib in Resources */,
 				D6060E4F1D2FA80C00F80888 /* 军事.png in Resources */,
+				D6D3F0031D30A296007BE512 /* logout.png in Resources */,
 				D6060E5F1D2FA80C00F80888 /* 综艺娱乐.png in Resources */,
 				A53171471D2D3F5E007E1425 /* AboutUsViewController.xib in Resources */,
 				D6746F491D2CE29E0012D208 /* login_username_icon@2x.png in Resources */,

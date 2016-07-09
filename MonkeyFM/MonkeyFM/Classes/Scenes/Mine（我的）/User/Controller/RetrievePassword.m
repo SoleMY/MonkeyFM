@@ -9,13 +9,12 @@
 #import "RetrievePassword.h"
 #import "AVOSCloud/AVOSCloud.h"
 @interface RetrievePassword ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *telTextField;
 @property (weak, nonatomic) IBOutlet UITextField *VerificationCode;
-
 @property (weak, nonatomic) IBOutlet UITextField *mima;
 @property (weak, nonatomic) IBOutlet UITextField *mima2;
 @property (weak, nonatomic) IBOutlet UIButton *verification;
-
 @property (weak, nonatomic) IBOutlet UIButton *retrieve;
 
 @end
@@ -25,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view from its nib.
     self.title = @"找回密码";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton:)];
     
@@ -47,15 +45,17 @@
     [self.mima2 becomeFirstResponder];
     
 }
+
 // 当点击键盘return的时候
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.telTextField resignFirstResponder]; // 释放第一响应者
+    [self.telTextField resignFirstResponder];
     [self.VerificationCode resignFirstResponder];
     [self.mima resignFirstResponder];
     [self.mima2 resignFirstResponder];
     return YES;
 }
+
 //  触摸屏幕回收键盘
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
@@ -93,17 +93,6 @@
     [self.retrieve setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
 }
-
-
-- (void)viewWillAppear:(BOOL)animated
-{
-//    self.navigationController.navigationBarHidden = YES;
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = NO;
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

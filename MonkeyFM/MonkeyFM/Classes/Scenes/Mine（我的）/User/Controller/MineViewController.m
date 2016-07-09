@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, isPlay) {
 
 @property (nonatomic, strong) UIImageView *smallImageView;
 
-@property (nonatomic, strong) UIImagePickerController *imagePicker; //图片选择器
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @property (nonatomic, strong)NSMutableArray *allCollectionArray;
 
@@ -89,9 +89,8 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     // 设置tableView
     [self addTableViewMethod];
     
-    
     // 添加左右navigationbar
-//    [self addNavBar];
+    [self addNavBar];
     
     // 添加观察者
     [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -152,12 +151,9 @@ typedef NS_ENUM(NSUInteger, isPlay) {
         // 设置圆角
         smallImageView.layer.masksToBounds=YES;
         smallImageView.layer.cornerRadius=40/2.0f; //设置为图片宽度的一半出来为圆形
-//        smallImageView.layer.borderWidth=1.0f; //边框宽度
-//        smallImageView.layer.borderColor=[[UIColor orangeColor] CGColor];//边框颜色
         smallImageView.frame = CGRectMake(0, 0, 40, 40);
 
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-//        [view addSubview:nameLabel];
         
         [view addSubview:smallImageView];
         [self.navigationItem setTitleView:view];
@@ -168,16 +164,19 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     }
 }
 
-//- (void)addNavBar
-//{
-//    
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(cancleButton:)];
-//    
-//}
+- (void)addNavBar
+{
+    
+    UIBarButtonItem *settingItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"色值"] style:UIBarButtonItemStylePlain target:self action:@selector(tapSettingImageView:)];
+    
+    UIBarButtonItem *outItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(cancleButton:)];
+    self.navigationItem.rightBarButtonItems = @[settingItem, outItem];
+    
+}
 
 
 // 右按钮注销
-- (void)cancleButton:(UIBarButtonItem *)sender
+- (void)cancleButton:(id *)sender
 {
     [AVUser logOut];
     self.nameLabel.text = @"您还未登录";
@@ -212,8 +211,6 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     
     [self.view addSubview:self.segmentView];
     
-//    self.tableView.bounces = NO;
-    
     [self.tableView registerClass:[MineTableViewCell class] forCellReuseIdentifier:kCell];
 }
 
@@ -222,13 +219,9 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     self.tableView.tableHeaderView = nil;
     self.myImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4-140R1102943"]];
     self.myImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 220);
-    
     self.myImageView.userInteractionEnabled = YES;
-    
     [self setBackImageGlass];
-    
     self.tableView.tableHeaderView = self.myImageView;
-    
     // 添加图片上的各种控件
     [self addControls];
     
@@ -237,12 +230,8 @@ typedef NS_ENUM(NSUInteger, isPlay) {
 // 手势
 - (void)tapAvatarView:(UIGestureRecognizer *)sender
 {
-    
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser != nil) {
-        // 跳转到首页
-        
-        NSLog(@"当前用户正在登录中");
         // 调用系统相册、相机
         // 添加alertSheet
         __weak typeof(self)weakSelf = self;
@@ -266,7 +255,6 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     } else {
         //缓存用户对象为空时，可打开用户注册界面…
         LoginViewController *login = [[LoginViewController alloc] init];
-//        login.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self.navigationController pushViewController:login animated:YES];
     }
     
@@ -277,9 +265,7 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:self.myImageView.frame];
     //设置toolBar的样式
     toolBar.barStyle = UIBarStyleBlackTranslucent;
-    
     toolBar.alpha = 0.7;
-    
     [UIView animateWithDuration:1 animations:^{
         [self.myImageView addSubview:toolBar];
     }];
@@ -289,54 +275,8 @@ typedef NS_ENUM(NSUInteger, isPlay) {
 - (void)addControls
 {
      __weak typeof(self)mySelf = self;
-    UIImageView *settingImageView = [[UIImageView alloc] init];
-    settingImageView.image = [UIImage imageNamed:@"settings"];
-    [self.myImageView addSubview:settingImageView];
-    settingImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSettingImageView:)];
-    // 设置轻拍次数
-    aTapGR.numberOfTapsRequired = 1;
-    
-    aTapGR.delegate = self;
-    
-    // 添加手势
-    [settingImageView addGestureRecognizer:aTapGR];
-
-    [settingImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.top.equalTo(mySelf.myImageView.mas_top).offset(20);
-        make.left.equalTo(mySelf.myImageView.mas_left).offset(20);
-        make.width.mas_equalTo(30);
-        make.height.mas_equalTo(30);
-    }];
-    
-    // 注销button
-    UIImageView *outImageView = [[UIImageView alloc] init];
-    outImageView.image = [UIImage imageNamed:@"sign-out"];
-    [self.myImageView addSubview:outImageView];
-    outImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *outTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancleButton:)];
-    // 设置轻拍次数
-    outTapGR.numberOfTapsRequired = 1;
-    
-    outTapGR.delegate = self;
-    
-    // 添加手势
-    [outImageView addGestureRecognizer:outTapGR];
-    
-    [outImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.equalTo(mySelf.myImageView.mas_top).offset(20);
-        make.right.equalTo(mySelf.myImageView.mas_right).offset(-20);
-        make.width.mas_equalTo(30);
-        make.height.mas_equalTo(30);
-    }];
-
-    
     self.smallImageView = [[UIImageView alloc] initWithImage:self.myImageView.image];
     [self.myImageView addSubview:_smallImageView];
-    
-   
     [_smallImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(mySelf.myImageView);
         make.top.equalTo(mySelf.myImageView.mas_top).offset(10);
@@ -360,8 +300,6 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     
     
     self.nameLabel = [[UILabel alloc] init];
-    //    NSString *currentEmail = [AVUser currentUser].email
-    
     [self.myImageView addSubview:self.nameLabel];
     [self.nameLabel sizeToFit];
     self.nameLabel.font = [UIFont systemFontOfSize:22];
@@ -433,22 +371,17 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     // 赋值头像
     _myImageView.image = image;
     
-    // ==== //
-    // AVUser 存储
     NSData *data = UIImageJPEGRepresentation(image,1.0);
     [[AVUser currentUser] setObject:data forKeyedSubscript:@"headImage"];
     [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"##########%@", error);
     }];
     
-    // ==== //
-    
     // 如果是相机
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(saveImage), nil);
     }
     [self.tableView reloadData];
-    // dismiss当前的选择页面
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 #warning 这个需要实现什么
@@ -494,7 +427,6 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     
 }
 
-// cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.index == 1) {
@@ -503,16 +435,13 @@ typedef NS_ENUM(NSUInteger, isPlay) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 #warning 夜间模式改动
     [cell NightWithType:UIViewColorTypeNormal];
-    //    AVObject *object = self.allCollectionArray[indexPath.row];
     [cell cellBindWithObject:self.allCollectionArray[indexPath.row]];
-    NSLog(@"%ld", _allCollectionArray.count);
         return cell;
     } else if(self.index == 0){
     MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"subCell" forIndexPath:indexPath];
         subCell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         [subCell cellBindWithObject:self.allSubscribeArray[indexPath.row]];
-//    cell.nameLabel.text = [object objectForKey:@"name"];
     return subCell;
     } else if (self.index == 2){
         MineTableViewCell *subCell = [self.tableView dequeueReusableCellWithIdentifier:@"downLoadCell" forIndexPath:indexPath];
@@ -521,7 +450,6 @@ typedef NS_ENUM(NSUInteger, isPlay) {
         subCell.descLabel.text = @"";
         subCell.utimeLabel.text = @"";
         subCell.pic.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0  blue:arc4random() % 256 / 255.0  alpha:1];
-#warning 夜间模式改动
         [subCell NightWithType:UIViewColorTypeNormal];
         subCell.pic.layer.cornerRadius = 20;
         subCell.pic.layer.masksToBounds = YES;
@@ -615,7 +543,6 @@ cell.selectionStyle = UITableViewCellSelectionStyleNone;
         NSString *str= [object objectForKey:@"ID"];
         NSInteger pageNum = row / 10 + 1;
         NSString *URLString = [NSString stringWithFormat:@"%@%@%@%ld%@", PLAY_LIST_PROGRAM_BASEURL, str, PLAY_LIST_PROGRAM_APPEND,pageNum, PLAY_LIST_PROGRAM_APPENDTWO];
-        NSLog(@"%@", URLString);
         NetWorking *netWorking = [[NetWorking alloc] init];
         [netWorking requestWithURL:URLString Bolck:^(id array) {
             NSDictionary *resultDic = array[@"result"];
@@ -648,7 +575,6 @@ cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [[AVPlayerManager shareAVPlayerManager] stop];
             }
             _player = [[AVPlayer alloc] initWithURL:fileURL];
-//            [AVPlayerManager shareAVPlayerManager]
             [_player play];
         } else {
             [_player pause];
@@ -685,7 +611,7 @@ cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 }
 
-- (void)tapSettingImageView:(UIGestureRecognizer *)sender
+- (void)tapSettingImageView:(id *)sender
 {
     SettingViewController *setting = [[SettingViewController alloc] init];
     [self.navigationController pushViewController:setting animated:YES];

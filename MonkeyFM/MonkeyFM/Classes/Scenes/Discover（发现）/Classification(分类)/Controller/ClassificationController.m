@@ -12,9 +12,10 @@
 #import "ClassificationModel.h"
 #import "DetailClassificationViewController.h"
 #import "BaseNavigationViewController.h"
-@interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong)ClassificationView *myView;
 
+@interface ClassificationController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong)ClassificationView *myView;
 @property (nonatomic, strong)NSMutableArray *allArray;
 
 @end
@@ -31,16 +32,13 @@
 }
 
 // 定义全局的重用标识符
-
 static  NSString *const identifile_cell = @"identifile_cell";
-
 
 - (void)loadView
 {
      self.myView = [[ClassificationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.view = self.myView;
-    
-    [self.view NightWithType:UIViewColorTypeNormal];
+     self.view = self.myView;
+     [self.view NightWithType:UIViewColorTypeNormal];
 }
 
 - (void)viewDidLoad {
@@ -52,7 +50,6 @@ static  NSString *const identifile_cell = @"identifile_cell";
     [self.myView.collectionView NightWithType:UIViewColorTypeNormal];
     // 第一步：注册cell
     [self.myView.collectionView registerClass:[ClassificationCell class] forCellWithReuseIdentifier:identifile_cell];
-    __weak typeof(self)weakSelf = self;
     self.title = @"分类";
     
 }
@@ -65,10 +62,9 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-#pragma mark UICollectionViewDataSource Method---
 
 // 设置多少个分区
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -85,14 +81,10 @@ static  NSString *const identifile_cell = @"identifile_cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     // 第二步：重用cell
     ClassificationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifile_cell forIndexPath:indexPath];
-
     ClassificationModel *model = self.allArray[indexPath.row];
         cell.label.text = model.title;
     [cell NightWithType:UIViewColorTypeNormal];
-
-//    [cell.photoImage sd_setImageWithURL:[NSURL URLWithString:model.backgroundPic]];
-   
-     cell.photoImage.image = [UIImage imageNamed:model.title];
+    cell.photoImage.image = [UIImage imageNamed:model.title];
     
     return cell;
 }
@@ -111,8 +103,8 @@ static  NSString *const identifile_cell = @"identifile_cell";
 
 - (void)requstData
 {
-
-
+    [self showGifView];
+    
     NSString *urlString = classification_Url;
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -136,6 +128,7 @@ static  NSString *const identifile_cell = @"identifile_cell";
                 
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideGifView];
                 [mySelf.myView.collectionView reloadData];
             });
         } else {
@@ -148,5 +141,17 @@ static  NSString *const identifile_cell = @"identifile_cell";
     
 }
 
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self.myView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.myView animated:YES];
+}
 
 @end

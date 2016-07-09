@@ -21,7 +21,6 @@
 // 图片下的介绍
 @property (nonatomic, strong) NSString *rname;
 @property (nonatomic, strong) NSString *des;
-
 @property (nonatomic, strong) NSString *name;
 
 @end

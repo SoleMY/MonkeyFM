@@ -12,10 +12,7 @@
 @interface DetailClassificationViewController : MryScrollPageVC
 
 @property (nonatomic, strong) ClassificationModel *classificationModel;
-
 @property (nonatomic, strong) NSString *urlString;
-
-
 @property (nonatomic, assign) BOOL isHaveString;
 
 @end

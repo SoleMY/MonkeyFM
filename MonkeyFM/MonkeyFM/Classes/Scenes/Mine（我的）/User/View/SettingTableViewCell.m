@@ -53,18 +53,15 @@
     [self.contentView addSubview:nightSwitch];
     self.nightSwitch = nightSwitch;
     self.nightSwitch.onTintColor = [UIColor darkGrayColor];
-    
     [self.nightSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.contentView).offset(-16);
         make.top.equalTo(weakSelf.contentView).offset(7);
-        
     }];
 }
 
 
 - (void)openOrCloseAction:(UISwitch *)sender
 {
-    
     if (self.status == isUseing) {
         
     } else if (self.status == isNight) {
@@ -80,8 +77,5 @@
         [[NSUserDefaults standardUserDefaults] setBool:[ThemeManage shareThemeManage].isNight forKey:@"night"];
     }
 }
-
-
-
 
 @end

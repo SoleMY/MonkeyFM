@@ -9,12 +9,14 @@
 #import "LastRegistViewController.h"
 #import "AVOSCloud/AVOSCloud.h"
 #import "LoginViewController.h"
+#import "MineViewController.h"
 @interface LastRegistViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nickname;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (nonatomic, strong) UIImagePickerController *imagePicker; //图片选择器
+@property (weak, nonatomic) IBOutlet UIButton *finishButton;
 
 @end
 
@@ -24,10 +26,7 @@
     [super viewDidLoad];
     // 设置圆角
     self.headerImage.layer.masksToBounds=YES;
-    self.headerImage.layer.cornerRadius=150/2.0f; //设置为图片宽度的一半出来为圆形
-//    self.headerImage.layer.borderWidth=1.0f; //边框宽度
-//    self.headerImage.layer.borderColor=[[UIColor greenColor] CGColor];//边框颜色
-
+    self.headerImage.layer.cornerRadius=100/2.0f;
     // 图片添加手势
     self.headerImage.userInteractionEnabled = YES;
     UITapGestureRecognizer *aTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapheaderImage:)];
@@ -46,7 +45,7 @@
     // 写完之后判断
     [self addFinishWrite];
 
-    self.view.backgroundColor = kNavigationBarTintColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.nickname.delegate = self;
     [self.nickname becomeFirstResponder];
@@ -54,6 +53,43 @@
     [self.password becomeFirstResponder];
     self.email.delegate = self;
     [self.email becomeFirstResponder];
+    
+//    self.navigationController.navigationBarHidden = NO;
+    self.title = @"用户信息";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_anchor_back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButton:)];
+    
+    // 设置颜色和圆角
+    [self setShape];
+    
+}
+
+
+- (void)setShape {
+    self.nickname.layer.cornerRadius = 10;
+    self.nickname.layer.borderWidth = 1;
+    self.nickname.layer.borderColor = kNavigationBarTintColor.CGColor;
+    //    self.phoneNum.layer.opacity = 0.5;
+    self.password.layer.cornerRadius = 10;
+    self.password.layer.borderWidth = 1;
+    self.password.layer.borderColor = kNavigationBarTintColor.CGColor;
+    //
+    self.email.layer.cornerRadius = 10;
+    self.email.layer.borderWidth = 1;
+    self.email.layer.borderColor = kNavigationBarTintColor.CGColor;
+    //
+    self.finishButton.layer.cornerRadius = 10;
+    self.finishButton.layer.borderWidth = 1;
+    self.finishButton.layer.borderColor = kNavigationBarTintColor.CGColor;
+    self.finishButton.backgroundColor = kNavigationBarTintColor;
+    [self.finishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    
+}
+
+
+- (void)backButton:(UIBarButtonItem *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // 当点击键盘return的时候
@@ -68,6 +104,7 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
@@ -121,7 +158,8 @@
                 LoginViewController *login = [[LoginViewController alloc] init];
                 login.nickName.text = self.nickname.text;
                 login.headerImage = self.headerImage;
-                [self.navigationController pushViewController:login animated:YES];
+                MineViewController *mine = [[MineViewController alloc] init];
+                [self.navigationController pushViewController:mine animated:YES];
             } else {
                 [self setHUDWithTitle:@"未知错误"];
             }
@@ -139,12 +177,6 @@
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:1];
 }
-
-- (IBAction)backButton:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 
 - (void)tapheaderImage:(UIGestureRecognizer *)sender {
     // 调用系统相册、相机

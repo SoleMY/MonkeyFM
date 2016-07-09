@@ -11,7 +11,9 @@
 #import "PlayListViewController.h"
 #import "SingleList.h"
 @interface MryPageTable ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic, strong) NSMutableArray *newsAllArray;
+
 @end
 
 @implementation MryPageTable
@@ -43,9 +45,9 @@
     }
 }
 
-
 - (void)requstTableViewData
 {
+    [self showGifView];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:self.string parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -56,19 +58,23 @@
         
         NSArray *dataListArray = dict[@"dataList"];
         
-        for (NSDictionary *modelDic in dataListArray) {
-            NewsAllModel *model = [[NewsAllModel alloc] init];
-            [model setValuesForKeysWithDictionary:modelDic];
-            [self.newsAllArray addObject:model];
+        if (dataListArray.count > 0) {
+            for (NSDictionary *modelDic in dataListArray) {
+                NewsAllModel *model = [[NewsAllModel alloc] init];
+                [model setValuesForKeysWithDictionary:modelDic];
+                [self.newsAllArray addObject:model];
+            }
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideGifView];
             [self reloadData];
         });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
     }];
+    
 }
 
 
@@ -114,11 +120,21 @@
     
     NewsAllModel *new = self.newsAllArray[indexPath.row];
     NSString *str = [NSString stringWithFormat:@"%ld", new.Id];
-//    NSLog(@"++++%ld", new.Id);
     [[SingleList shareSingleList].dict setValue:str forKey:@"ID"];
     self.block();
-    
-   
-//    
 }
+
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self animated:YES];
+}
+
 @end

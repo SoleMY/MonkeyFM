@@ -81,14 +81,14 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-//    self.navigationController.navigationBarHidden = YES;
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = NO;
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+////    self.navigationController.navigationBarHidden = YES;
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    self.navigationController.navigationBarHidden = NO;
+//}
 
 - (void)finishWrite:(UITextField *)sender
 {
@@ -125,14 +125,9 @@
        [myself setHUDWithTitle:@"注册成功"];
         LastRegistViewController *last = [[LastRegistViewController alloc] init];
         [myself.navigationController pushViewController:last animated:YES];
-       
-        
-        
     }];
           
       } else {
-//          LastRegistViewController *last = [[LastRegistViewController alloc] init];
-//          [myself presentViewController:last animated:YES completion:nil];
           [self setHUDWithTitle:@"请输入手机号"];
       }
 

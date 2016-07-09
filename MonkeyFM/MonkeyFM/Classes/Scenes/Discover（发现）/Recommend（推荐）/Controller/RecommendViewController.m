@@ -50,9 +50,6 @@
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
     
-    
-    // +++++++++++++++++++++++++++++++++++++
-    
     // 设置头视图
     [self setHeaderView];
     self.tableView.delegate = self;
@@ -60,8 +57,6 @@
     [self.tableView registerClass:[TodayWillListen class] forCellReuseIdentifier:@"Today"];
     [self.tableView registerClass:[PopularItemTableViewCell class] forCellReuseIdentifier:@"cell"];
     
-    // 解析数据
-//    [self requstToday];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -71,32 +66,31 @@
     [self requstToday];
 }
 
-//static NSInteger j = 0;
 - (void)requstToday
 {
-//   static NSInteger j = 0;
+
+    [self showGifView];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:kRecommend_Pic_URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dict = responseObject[@"result"];
         
         NSArray *listArray = [dict objectForKey:@"dataList"];
+        
         for (NSInteger i = 0; i < listArray.count; i++) {
             
             NSDictionary *oneObject = listArray[i];
-            
             NSArray *allDataArray = oneObject[@"dataList"];
             NSMutableArray *mArr = [NSMutableArray array];
+            
             for (NSDictionary *dic in allDataArray) {
                 
                 TodayModel *today = [[TodayModel alloc] init];
-               
                 [today setValuesForKeysWithDictionary:dic];
-                
-                
                 [mArr addObject:today];
                 
             }
+            
             if (i > 2 && i != 4 && i != 5 && i != 6 && i != 7 && i != 9 && i != 10 && i != 12 && i != 11 && i != 15 && i != 16) {
                 
                 [self.allInfoRecommendDictionary setValue:mArr forKey:[NSString stringWithFormat:@"%ld", self.index]];
@@ -104,7 +98,10 @@
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideGifView];
             [self.tableView reloadData];
+            
         });
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -118,7 +115,6 @@
     [self.view addSubview:self.tableView];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)];
-//    view.backgroundColor = [UIColor yellowColor];
     
     Request *request = [[Request alloc] init];
     [request requestWithURL:kRecommend_Pic_URL view:view frame:view.frame];
@@ -133,14 +129,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return [[self.allInfoRecommendDictionary objectForKey:[NSString stringWithFormat:@"%ld", section]] count];
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
     TodayWillListen *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Today" forIndexPath:indexPath];
     switch (indexPath.section) {
         {case 0:
@@ -210,9 +203,12 @@
     }
     
     NSArray *arr = [self.allInfoRecommendDictionary objectForKey:[NSString stringWithFormat:@"%ld", indexPath.section]];
-    cell.albumArr = arr.mutableCopy;
-
-
+    if (arr.count > 0) {
+        cell.albumArr = arr.mutableCopy;
+    } else {
+        [self requstToday];
+    }
+   
     return cell;
 }
 
@@ -225,8 +221,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
+    
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 30)];
-//    nameLabel.text = @"今日必听";
+
     [nameLabel NightWithType:UIViewColorTypeNormal];
     [nameLabel NightTextType:LabelColorBlack];
 
@@ -276,10 +273,7 @@
             [button addTarget:self action:@selector(clickButtonSection8:) forControlEvents:UIControlEventTouchUpInside];
             break;
     }
-    //
 
-//    view.backgroundColor = [UIColor whiteColor];
-//    view.alpha = 0.7;
     [view NightWithType:UIViewColorTypeNormal];
     return view;
 }
@@ -349,6 +343,7 @@
     RadioPlayerListViewController *detail = [[RadioPlayerListViewController alloc] init];
     detail.selectedSegmentIndex = 0;
     [SelecID shareSelecID].selectIndex = 1;
+   // detail.scrollIndexPath
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -405,6 +400,19 @@
     detail.isHaveString = YES;
     detail.urlString = kSection8;
     [self.navigationController pushViewController:detail animated:YES];
+}
+
+
+- (void)showGifView
+{
+    // 加载等待视图
+    [MBProgressHUD setUpGifWithFrame:HUD_FRAME andShowToView:self.tableView];
+}
+
+- (void)hideGifView
+{
+    // 隐藏等待视图
+    [MBProgressHUD hideHUDForView:self.tableView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

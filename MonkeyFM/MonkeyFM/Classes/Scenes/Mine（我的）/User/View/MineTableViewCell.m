@@ -26,7 +26,6 @@
 - (void)initLayout
 {
     self.pic = [[UIImageView alloc] init];
-//    self.pic.image = [UIImage imageNamed:@"4-140R1102943.jpg"];
     [self.contentView addSubview:self.pic];
     __weak typeof(self)mySelf = self;
     [self.pic mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,23 +43,17 @@
         make.center.equalTo(mySelf.pic);
         make.width.mas_equalTo(30);
         make.height.mas_equalTo(30);
-//        make.bottom.equalTo(mySelf.pic.mas_bottom).offset(-kSpace);
-//        make.right.equalTo(mySelf.pic.mas_right).offset(-kSpace);
     }];
     
     // title
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.text = @"qr";
     [self.nameLabel NightWithType:UIViewColorTypeNormal];
     [self.nameLabel NightTextType:LabelColorBlack];
     
-
     [self.contentView addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.top.equalTo(mySelf.pic.mas_top).offset(1.5*kSpace);
         make.left.equalTo(mySelf.pic.mas_right).offset(kSpace);
-//        make.width.mas_equalTo(cellHeightAndSpace + );
         make.right.equalTo(mySelf.contentView).offset(-10);
     }];
     
@@ -69,7 +62,6 @@
     self.descLabel.text = @"werwer";
     [self.descLabel NightWithType:UIViewColorTypeNormal];
     [self.descLabel NightTextType:LabelColorBlack];
-    
     [self.contentView addSubview:self.descLabel];
     [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -90,12 +82,9 @@
     [self.utimeLabel NightTextType:LabelColorBlack];
     [self.contentView addSubview:self.utimeLabel];
     [self.utimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
         make.bottom.equalTo(mySelf.contentView).offset(-10);
-//        make.trailing.equalTo(mySelf.descLabel);
         make.right.equalTo(mySelf.contentView.mas_right).offset(-5);
         make.width.mas_equalTo(130);
-        NSLog(@"111");
     }];
     
 }
@@ -103,7 +92,6 @@
 
 - (void)cellBindWithObject:(AVObject *)object {
     self.nameLabel.text = [object objectForKey:@"name"];
-    self.descLabel.text = @"";
     self.utimeLabel.text = [object objectForKey:@"updateDay"];
     NSString *picURL = [object objectForKey:@"pic"];
     [self.pic sd_setImageWithURL:[NSURL URLWithString:picURL]];

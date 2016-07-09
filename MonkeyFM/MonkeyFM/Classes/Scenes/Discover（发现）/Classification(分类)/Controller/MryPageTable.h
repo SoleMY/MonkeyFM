@@ -15,17 +15,10 @@ typedef void(^MryPageBlock)();
 @interface MryPageTable : UITableView
 
 @property (nonatomic, strong)NSString *ID;
-
 @property (nonatomic, copy)MryPageBlock block;
-
 @property (nonatomic,copy) NSString *title;
-
 @property (nonatomic, strong) NewsAllModel *model;
-
 @property (nonatomic, strong) DetailSegment *segmentModel;
-
-
-
 @property (nonatomic, strong) NSString *string;
 
 @end

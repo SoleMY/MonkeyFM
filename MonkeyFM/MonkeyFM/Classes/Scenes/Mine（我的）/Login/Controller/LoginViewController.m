@@ -33,21 +33,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    __weak typeof(self)weakSelf = self;
-    // Do any additional setup after loading the view from its nib.
     
-    // title
-    self.title = @"登录";
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor whiteColor]};
     
-    // 失败的渲染
-//    [self.backImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.backImageView.backgroundColor = kNavigationBarTintColor;
     
     [self addGesture];
-    
-//    [self.nickName addTarget:self action:@selector(finishWrite:) forControlEvents:UIControlEventEditingDidEnd];
-    
     
     [self.loginButton setTitleColor:kNavigationBarTintColor forState:UIControlStateNormal];
     [self.registButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -119,58 +110,20 @@
 // qq
 - (void)tapQQ:(UIGestureRecognizer *)sender
 {
-//    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
-//    
-//    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-//        
-//        //          获取微博用户名、uid、token等
-//        
-//        if (response.responseCode == UMSResponseCodeSuccess) {
-//            
-//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
-//            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
-//            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
-//            
-//        }});
+
 }
 
 
 // 微信
 - (void)tapWechat:(UIGestureRecognizer *)sender
 {
-//    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
-//    
-//    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-//        
-//        if (response.responseCode == UMSResponseCodeSuccess) {
-//            
-//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
-//            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
-//            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
-//            
-//        }
-//        
-//    });
-
+    
 }
 
 // 微博
 - (void)tapWeibo:(UIGestureRecognizer *)sender
 {
-//    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
-//    
-//    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-//        
-//        //          获取微博用户名、uid、token等
-//        
-//        if (response.responseCode == UMSResponseCodeSuccess) {
-//            
-//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
-//            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
-//            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
-//            
-//        }});
-    
+
 }
 
 
@@ -181,10 +134,8 @@
 }
 
 - (IBAction)BackButtonAction:(UIButton *)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 // 登录button
 - (IBAction)loginButton:(UIButton *)sender {
@@ -193,12 +144,10 @@
     [AVUser logInWithUsernameInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
         if (user != nil) {
             [self setHUDWithTitle:@"登陆成功"];
-            MineViewController *mine = [[MineViewController alloc] init];
-            [mySelf.navigationController pushViewController:mine animated:YES];
+            [mySelf.navigationController popViewControllerAnimated:YES];
             
         } else {
             [AVUser logInWithMobilePhoneNumberInBackground:self.nickName.text password:self.password.text block:^(AVUser *user, NSError *error) {
-                
                 if (user != nil) {
                     [self setHUDWithTitle:@"登陆成功"];
                     MineViewController *mine = [[MineViewController alloc] init];
@@ -234,7 +183,6 @@
 - (IBAction)registButton:(id)sender {
     
     RegistViewController *regist = [[RegistViewController alloc] init];
-    
     [self.navigationController pushViewController:regist animated:YES];
     
 }
