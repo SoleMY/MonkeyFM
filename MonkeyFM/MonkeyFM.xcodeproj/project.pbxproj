@@ -280,6 +280,7 @@
 		D6C0A5EB1D27B76500BA5E65 /* 微信镂空.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C0A5EA1D27B76500BA5E65 /* 微信镂空.png */; };
 		D6CA26CA1D2A7E9E00803148 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */; };
 		D6CA26CB1D2A7E9E00803148 /* PlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */; };
+		D6D3EFFF1D3091B6007BE512 /* 色值.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D3EFFE1D3091B6007BE512 /* 色值.png */; };
 		D6E37DCB1D2A48A600E1DF77 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCA1D2A48A600E1DF77 /* SystemConfiguration.framework */; };
 		D6E37DCD1D2A48B600E1DF77 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCC1D2A48B600E1DF77 /* MobileCoreServices.framework */; };
 		D6E37DCF1D2A48C100E1DF77 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E37DCE1D2A48C100E1DF77 /* CoreTelephony.framework */; };
@@ -712,6 +713,7 @@
 		D6CA26C81D2A7E9E00803148 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		D6CA26C91D2A7E9E00803148 /* PlayerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerDetailViewController.xib; sourceTree = "<group>"; };
 		D6CA26CC1D2A7EF700803148 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		D6D3EFFE1D3091B6007BE512 /* 色值.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "色值.png"; sourceTree = "<group>"; };
 		D6E37DCA1D2A48A600E1DF77 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6E37DCC1D2A48B600E1DF77 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D6E37DCE1D2A48C100E1DF77 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -1128,7 +1130,6 @@
 				D6C0A3A31D27509F00BA5E65 /* MJRefresh */,
 				D6C0A3D91D27509F00BA5E65 /* user_photo.png */,
 				A51F69DE1D2F860B00612EF9 /* DrawerBackground.png */,
-				D6C0A3DA1D27509F00BA5E65 /* 图像 */,
 				D6C0A3F51D27509F00BA5E65 /* 图标 */,
 			);
 			path = Resources;
@@ -1137,6 +1138,7 @@
 		D6C0A3941D27509F00BA5E65 /* 8.png等多个文件 2 */ = {
 			isa = PBXGroup;
 			children = (
+				D6D3EFFE1D3091B6007BE512 /* 色值.png */,
 				D6060E2F1D2F891400F80888 /* sign-out.png */,
 				D6746F4C1D2CE3550012D208 /* tabbar_icon_me_normal@2x.png */,
 				D6746F4A1D2CE2BA0012D208 /* email.png */,
@@ -1848,6 +1850,7 @@
 				A57257AE1D2BEBEE003529C5 /* 暂停button.png in Resources */,
 				D6060E4D1D2FA80C00F80888 /* 体育.png in Resources */,
 				A51F69D61D2F53C500612EF9 /* ic_fresh_7@2x.png in Resources */,
+				D6D3EFFF1D3091B6007BE512 /* 色值.png in Resources */,
 				D6C0A5611D27509F00BA5E65 /* 评论数.png in Resources */,
 				D6C0A51D1D27509F00BA5E65 /* btn_radiondetail_subcribe@2x.png in Resources */,
 				D6C0A55B1D27509F00BA5E65 /* ic_homeprovince_on@3x.png in Resources */,
@@ -1856,7 +1859,6 @@
 				D6C0A5581D27509F00BA5E65 /* ic_homeinternet_on@3x.png in Resources */,
 				D6C0A55E1D27509F00BA5E65 /* 时间.png in Resources */,
 				A51F69D31D2F53C500612EF9 /* ic_fresh_4@2x.png in Resources */,
-				D6C0A5361D27509F00BA5E65 /* 动漫游戏.png in Resources */,
 				D6C0A54B1D27509F00BA5E65 /* chat_support_blue@2x.png in Resources */,
 				D6C0A5571D27509F00BA5E65 /* ic_homeinternet_on@2x.png in Resources */,
 				D6C0A51C1D27509F00BA5E65 /* btn_radiodetail_share_highlighted@2x.png in Resources */,
@@ -1911,7 +1913,6 @@
 				D6746F321D2CA4690012D208 /* LastRegistViewController.xib in Resources */,
 				D6C0A50D1D27509F00BA5E65 /* 财经.png in Resources */,
 				A51F69D01D2F53C500612EF9 /* ic_fresh_1@2x.png in Resources */,
-				D6C0A53A1D27509F00BA5E65 /* 外语.png in Resources */,
 				D6C0A5E31D27B18300BA5E65 /* 猴子.png in Resources */,
 				A5ABEE3C1D2B953600205DBA /* RadioDisPlayDetailViewController.xib in Resources */,
 				D6746F411D2CD8CF0012D208 /* yanzheng.png in Resources */,

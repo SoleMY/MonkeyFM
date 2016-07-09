@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, isPlay) {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayback error:nil];
     [session setActive:YES error:nil];
-    __weak typeof(self)weakSelf = self;
+    
     
     // 设置tableView
     [self addTableViewMethod];
